@@ -27,7 +27,7 @@ for UniformRandomTimer in root.iter('UniformRandomTimer'):
     # print(UniformRandomTimer.attrib)
     # print(UniformRandomTimer.get('enabled'))
     UniformRandomTimer.set('enabled', 'false')
-    print(UniformRandomTimer.attrib)
+    #print(UniformRandomTimer.attrib)
 
 
 tree.write('output.xml')
