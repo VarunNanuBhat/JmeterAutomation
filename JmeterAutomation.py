@@ -23,6 +23,7 @@ for ele in root.iter():
 
 
 # getting specific element of xml tree
+# test class is considered
 for UniformRandomTimer in root.iter('UniformRandomTimer'):
     # print(UniformRandomTimer.attrib)
     # print(UniformRandomTimer.get('enabled'))
