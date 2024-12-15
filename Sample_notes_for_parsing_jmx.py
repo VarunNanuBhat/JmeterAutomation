@@ -17,4 +17,16 @@ for child_element in root.iter():
 # The root.iter() method helps us find particular interest elements.
 # This method will give all the subelements under the root matching the specified element.
 for child_element in root.iter("stringProp"):
-    print(child_element.tag, child_element.attrib)
+    # print(child_element.tag, child_element.attrib)
+    pass
+# Print the text associated with elements (tags)
+for child_element in root.iter("stringProp"):
+    # print(child_element.tag, child_element.text)
+    pass
+
+# Extract texts from subelements of an element
+for child_element in root.iter("HeaderManager"):
+    for sub_child_element in child_element.iter("stringProp"):
+        # print(sub_child_element.tag, sub_child_element.text)
+        pass
+
