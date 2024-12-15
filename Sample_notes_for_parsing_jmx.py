@@ -63,6 +63,6 @@ for child_element in root.iter("HeaderManager"):
     for sub_child_element in child_element.iter("collectionProp"):
         for sub_child_element2 in list(sub_child_element):
             if(sub_child_element2.get("name") == "Authorization"):
-                sub_child_element.remove(sub_child_element2)
-
+                # sub_child_element.remove(sub_child_element2)
+                pass
 tree.write('output.xml')
