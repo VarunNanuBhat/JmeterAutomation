@@ -1,5 +1,6 @@
 import ttkbootstrap as ttk
 from tkinter import filedialog, Listbox, Tk, StringVar
+from Jmeter_Automation_Methods import JMXModifier  # Importing the JMXModifier class
 
 
 # Function to handle file uploads
@@ -47,22 +48,44 @@ def go_to_http_header_page():
     http_header_frame.pack(pady=20)
 
 
-# Function to handle HTTP Header modifications
 def modify_http_header():
     header_name = header_name_var.get()
     header_value = header_value_var.get()
     if not header_name or not header_value:
         status_label_http.config(text="Please fill in both fields.", bootstyle="danger")
     else:
-        # Call the backend function to modify HTTP header
+        error_message = None
+        # Call the backend function to modify HTTP header for each uploaded file
         for file_path in uploaded_file_paths:
-            modify_http_header_backend(file_path, header_name, header_value)
-        status_label_http.config(text="HTTP Header Modified Successfully!", bootstyle="success")
+            error_message = modify_http_header_backend(file_path, header_name, header_value)
+            if error_message:
+                break  # Stop processing if there's an error
+
+        # Update the status label based on success or failure
+        if error_message:
+            status_label_http.config(text=error_message, bootstyle="danger")
+        else:
+            status_label_http.config(text="HTTP Header Modified Successfully!", bootstyle="success")
 
 
-# Mock backend function for modifying HTTP Header Manager (replace with actual method)
 def modify_http_header_backend(file_path, header_name, header_value):
-    print(f"Modifying {file_path} with Header Name: {header_name}, Value: {header_value}")
+    try:
+        # Initialize JMXModifier with the uploaded file path
+        modifier = JMXModifier(file_path)
+
+        # Call the method to modify the HTTP header
+        modifier.modify_http_header(header_name, header_value)
+
+        # Save the modified file with a new name
+        output_path = file_path.replace(".jmx", "_modified.jmx")
+        modifier.save_changes(output_path)
+
+        return None  # No errors, modification successful
+
+    except ValueError as e:  # ValueError is raised when header is not found
+        return f"Error: {str(e)}"
+    except Exception as e:
+        return f"Error modifying file {file_path}: {str(e)}"
 
 
 # Create the main window with ttkbootstrap styling
