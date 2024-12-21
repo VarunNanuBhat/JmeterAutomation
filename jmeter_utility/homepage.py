@@ -2,6 +2,7 @@ import ttkbootstrap as ttk
 from file_upload_page import FileUploadPage
 from select_functionality import SelectFunctionality
 from http_header_modify_page import HttpHeaderPage
+from http_header_delete_page import HttpHeaderDeletePage
 
 
 class App(ttk.Window):
@@ -13,7 +14,8 @@ class App(ttk.Window):
         # Initialize frames
         self.file_upload_page = FileUploadPage(self)
         self.select_functionality = SelectFunctionality(self)
-        self.http_header_page = HttpHeaderPage(self)
+        self.http_header_modify_page = HttpHeaderPage(self)
+        self.http_header_delete_page = HttpHeaderDeletePage(self)
 
         # Start with the file upload page
         self.show_page(self.file_upload_page)

@@ -1,8 +1,9 @@
 import ttkbootstrap as ttk
 from tkinter import StringVar, ttk
 from tkinter import messagebox
+from jmeter_methods.Jmeter_Automation_Methods import JMXModifier
 
-class HTTPHeaderDeletePage(ttk.Frame):
+class HttpHeaderDeletePage(ttk.Frame):
     def __init__(self, parent):
         super().__init__(parent, padding=20)
         self.parent = parent
