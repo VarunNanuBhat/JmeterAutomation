@@ -30,11 +30,28 @@ class JMXModifier:
                     if attrib_value2 == 'Header.value':
                         string_prop.text = new_value
                         modified = True
-                        # print(f"Modified {header_name} to {new_value}")
 
         if not modified:
             print(f"Header '{header_name}' not found in the file.")
             raise ValueError(f"Header '{header_name}' not found in the file.")
+
+    def delete_http_header(self, header_name):
+        """
+        Deletes a specific key-value pair from the HTTP Header Manager.
+
+        :param header_name: Name of the HTTP header to delete.
+        """
+        deleted = False
+        for header_manager in self.root.iter("HeaderManager"):
+            for collection_prop in header_manager.iter("collectionProp"):
+                for element_prop in list(collection_prop):  # Use list() to avoid runtime modification issues
+                    if element_prop.get("name") == header_name:
+                        collection_prop.remove(element_prop)
+                        deleted = True
+
+        if not deleted:
+            print(f"Header '{header_name}' not found or not deleted.")
+            raise ValueError(f"Header '{header_name}' not found or not deleted.")
 
     def save_changes(self, output_path):
         """
@@ -42,5 +59,5 @@ class JMXModifier:
 
         :param output_path: Path to save the modified XML.
         """
-        self.tree.write(output_path)
+        self.tree.write(output_path, encoding="utf-8", xml_declaration=True)
         print(f"Changes saved to {output_path}")

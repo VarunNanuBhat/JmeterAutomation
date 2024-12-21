@@ -1,6 +1,6 @@
 import ttkbootstrap as ttk
-from tkinter import filedialog, Listbox, Tk, StringVar
-from Jmeter_Automation_Methods import JMXModifier  # Importing the JMXModifier class
+from tkinter import filedialog, Listbox, StringVar
+from jmeter_methods.Jmeter_Automation_Methods import JMXModifier  # Importing the JMXModifier class
 
 
 # Function to handle file uploads
