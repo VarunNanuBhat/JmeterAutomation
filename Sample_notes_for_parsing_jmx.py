@@ -57,6 +57,36 @@ for child_element in root.iter("HTTPSamplerProxy"):
             # print(sub_child_element.text)
             pass
 
+# Iterate through all the requests and disable the URL's of each tag in sub nodes that end with with certain texts.
+for child_element in root.iter("HTTPSamplerProxy"):
+    for sub_child_element in child_element.iter("stringProp"):
+        if(sub_child_element.get("name") == "HTTPSampler.path"):
+            url = sub_child_element.text
+            if (url != None and url.endswith("svg")):
+                # child_element.set('enabled', 'false')
+                pass
+
+# Disable particular sampler:
+# if requested sampler contains guiclass, it can be disabled
+
+
+
+# change the domain name
+
+
+
+# Iterate through all the requests and remove the URL's of each tag in sub nodes that end with certain texts.
+for child_element in root.iter("HTTPSamplerProxy"):
+    for sub_child_element in child_element.iter("stringProp"):
+        if(sub_child_element.get("name") == "HTTPSampler.path"):
+            url = sub_child_element.text
+            if (url != None and url.endswith("svg")):
+                parent = root.find(".//HTTPSamplerProxy/..")  # Find the parent element
+                if parent is not None:
+                    parent.remove(child_element)
+                    print(f"Removed HTTPSamplerProxy with URL: {url}")
+
+
 # Delete a node in xml
 # Delete a particular header key value pair
 for child_element in root.iter("HeaderManager"):

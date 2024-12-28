@@ -12,46 +12,69 @@ class JMXModifier:
             self.root = self.tree.getroot()
         except ET.ParseError as e:
             print(f"Error parsing XML file {file_path}: {e}")
-            raise  # Re-raise exception to notify front-end about the error
+            raise
 
-    def modify_http_header(self, header_name, new_value):
+    def enable_endpoints(self, text):
         """
-        Modifies the value of a specified HTTP header.
+        Enable endpoints whose URLs end with the specified text.
 
-        :param header_name: Name of the HTTP header to modify.
-        :param new_value: New value to assign to the header.
+        :param text: Text to match the endpoint URL.
         """
         modified = False
-        for element_prop in self.root.iter('elementProp'):
-            attrib_value = element_prop.get('name')
-            if attrib_value == header_name:
-                for string_prop in element_prop.iter('stringProp'):
-                    attrib_value2 = string_prop.get('name')
-                    if attrib_value2 == 'Header.value':
-                        string_prop.text = new_value
+        for child_element in self.root.iter("HTTPSamplerProxy"):
+            for sub_child_element in child_element.iter("stringProp"):
+                if sub_child_element.get("name") == "HTTPSampler.path":
+                    url = sub_child_element.text
+                    if url and url.endswith(text):
+                        child_element.set('enabled', 'true')
+                        # print(f"Enabled HTTPSamplerProxy with URL: {url}")
                         modified = True
 
         if not modified:
-            print(f"Header '{header_name}' not found in the file.")
-            raise ValueError(f"Header '{header_name}' not found in the file.")
+            print(f"No endpoints ending with '{text}' were found to enable.")
+        return modified
 
-    def delete_http_header(self, header_name):
+    def disable_endpoints(self, text):
         """
-        Deletes a specific key-value pair from the HTTP Header Manager.
+        Disable endpoints whose URLs end with the specified text.
 
-        :param header_name: Name of the HTTP header to delete.
+        :param text: Text to match the endpoint URL.
         """
-        deleted = False
-        for header_manager in self.root.iter("HeaderManager"):
-            for collection_prop in header_manager.iter("collectionProp"):
-                for element_prop in list(collection_prop):  # Use list() to avoid runtime modification issues
-                    if element_prop.get("name") == header_name:
-                        collection_prop.remove(element_prop)
-                        deleted = True
+        modified = False
+        for child_element in self.root.iter("HTTPSamplerProxy"):
+            for sub_child_element in child_element.iter("stringProp"):
+                if sub_child_element.get("name") == "HTTPSampler.path":
+                    url = sub_child_element.text
+                    if url and url.endswith(text):
+                        child_element.set('enabled', 'false')
+                        # print(f"Disabled HTTPSamplerProxy with URL: {url}")
+                        modified = True
 
-        if not deleted:
-            print(f"Header '{header_name}' not found or not deleted.")
-            raise ValueError(f"Header '{header_name}' not found or not deleted.")
+        if not modified:
+            print(f"No endpoints ending with '{text}' were found to disable.")
+        return modified
+
+    def delete_endpoints(self, text):
+        """
+        Delete endpoints whose URLs end with the specified text.
+
+        :param text: Text to match the endpoint URL.
+        """
+        modified = False
+        for child_element in list(self.root.iter("HTTPSamplerProxy")):
+            for sub_child_element in child_element.iter("stringProp"):
+                if sub_child_element.get("name") == "HTTPSampler.path":
+                    url = sub_child_element.text
+                    if url and url.endswith(text):
+                        parent = self.root.find(".//HTTPSamplerProxy/..")
+                        if parent is not None:
+                            parent.remove(child_element)
+                            # print(f"Deleted HTTPSamplerProxy with URL: {url}")
+                            modified = True
+
+        if not modified:
+            print(f"No endpoints ending with '{text}' were found to delete.")
+        return modified
 
     def save_changes(self, output_path):
         """
@@ -61,3 +84,19 @@ class JMXModifier:
         """
         self.tree.write(output_path, encoding="utf-8", xml_declaration=True)
         print(f"Changes saved to {output_path}")
+
+    def update_endpoints(self, text, action):
+        """
+        Update endpoints by calling the appropriate method.
+
+        :param text: Text to match the endpoint URL.
+        :param action: Action to perform - "enable", "disable", or "delete".
+        """
+        if action == "enable":
+            return self.enable_endpoints(text)
+        elif action == "disable":
+            return self.disable_endpoints(text)
+        elif action == "delete":
+            return self.delete_endpoints(text)
+        else:
+            raise ValueError(f"Invalid action '{action}'. Please choose 'enable', 'disable', or 'delete'.")

@@ -12,7 +12,7 @@ class SelectFunctionality(ttk.Frame):
             values=[
                 "Modify HTTP Header Manager Values",
                 "Delete HTTP Header Values",
-                "Disable endpoints ending with certain texts",
+                "Enable/Disable/Delete endpoints ending with specific texts",
                 "Delete endpoints ending with certain texts",
                 "Disable sampler"
             ],
@@ -29,3 +29,5 @@ class SelectFunctionality(ttk.Frame):
             self.parent.show_page(self.parent.http_header_modify_page)
         if selected_option == "Delete HTTP Header Values":
             self.parent.show_page(self.parent.http_header_delete_page)
+        if selected_option == "Enable/Disable/Delete endpoints ending with specific texts":
+            self.parent.show_page(self.parent.endpoint_modifier_with_url)
