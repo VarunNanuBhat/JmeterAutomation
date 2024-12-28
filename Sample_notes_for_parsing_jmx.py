@@ -68,7 +68,15 @@ for child_element in root.iter("HTTPSamplerProxy"):
 
 # Disable particular sampler:
 # if requested sampler contains guiclass, it can be disabled
-
+# Iterate through all the requests and disable the URL's of each tag in sub nodes that end with with certain texts.
+for child_element in root.iter("HTTPSamplerProxy"):
+    for sub_child_element in child_element.iter("stringProp"):
+        if(sub_child_element.get("name") == "HTTPSampler.domain"):
+            domain = sub_child_element.text
+            print(domain)
+            if (domain != None and domain == "play.google.com"):
+                child_element.set('enabled', 'false')
+                # pass
 
 
 # change the domain name
@@ -83,8 +91,9 @@ for child_element in root.iter("HTTPSamplerProxy"):
             if (url != None and url.endswith("svg")):
                 parent = root.find(".//HTTPSamplerProxy/..")  # Find the parent element
                 if parent is not None:
-                    parent.remove(child_element)
-                    print(f"Removed HTTPSamplerProxy with URL: {url}")
+                    # parent.remove(child_element)
+                    # print(f"Removed HTTPSamplerProxy with URL: {url}")
+                    pass
 
 
 # Delete a node in xml
