@@ -117,17 +117,15 @@ class JMXModifier:
                             if url and url.endswith(text):  # Match the URL
                                 # Remove the HTTPSamplerProxy
                                 parent.remove(child_element)
-                                print(f"Deleted HTTPSamplerProxy with URL: {url}")
+                                # print(f"Deleted HTTPSamplerProxy with URL: {url}")
 
                                 # Also remove the <hashtree> node if it's the next element
                                 if i + 1 < len(children) and children[i + 1].tag == "hashTree":
                                     parent.remove(children[i + 1])
-                                    print("Deleted associated <hashtree> node.")
+                                    # print("Deleted associated <hashtree> node.")
 
                                 modified = True
 
-        if not modified:
-            print(f"No endpoints ending with '{text}' were found to delete.")
         return modified
 
     def save_changes(self, output_path):
