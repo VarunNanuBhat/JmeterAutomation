@@ -14,6 +14,47 @@ class JMXModifier:
             print(f"Error parsing XML file {file_path}: {e}")
             raise
 
+    def modify_http_header(self, header_name, new_value):
+        """
+        Modifies the value of a specified HTTP header.
+
+        :param header_name: Name of the HTTP header to modify.
+        :param new_value: New value to assign to the header.
+        """
+        modified = False
+        for element_prop in self.root.iter('elementProp'):
+            attrib_value = element_prop.get('name')
+            if attrib_value == header_name:
+                for string_prop in element_prop.iter('stringProp'):
+                    attrib_value2 = string_prop.get('name')
+                    if attrib_value2 == 'Header.value':
+                        string_prop.text = new_value
+                        modified = True
+
+        if not modified:
+            print(f"Header '{header_name}' not found in the file.")
+            raise ValueError(f"Header '{header_name}' not found in the file.")
+
+    def delete_http_header(self, header_name):
+        """
+        Deletes a specific key-value pair from the HTTP Header Manager.
+
+        :param header_name: Name of the HTTP header to delete.
+        """
+        deleted = False
+        for header_manager in self.root.iter("HeaderManager"):
+            for collection_prop in header_manager.iter("collectionProp"):
+                for element_prop in list(collection_prop):  # Use list() to avoid runtime modification issues
+                    if element_prop.get("name") == header_name:
+                        collection_prop.remove(element_prop)
+                        deleted = True
+
+        if not deleted:
+            print(f"Header '{header_name}' not found or not deleted.")
+            raise ValueError(f"Header '{header_name}' not found or not deleted.")
+
+
+
     def enable_endpoints(self, text):
         """
         Enable endpoints whose URLs end with the specified text.
@@ -56,21 +97,34 @@ class JMXModifier:
 
     def delete_endpoints(self, text):
         """
-        Delete endpoints whose URLs end with the specified text.
+        Delete endpoints whose URLs end with the specified text,
+        along with their associated <hashtree> node.
 
         :param text: Text to match the endpoint URL.
         """
         modified = False
-        for child_element in list(self.root.iter("HTTPSamplerProxy")):
-            for sub_child_element in child_element.iter("stringProp"):
-                if sub_child_element.get("name") == "HTTPSampler.path":
-                    url = sub_child_element.text
-                    if url and url.endswith(text):
-                        parent = self.root.find(".//HTTPSamplerProxy/..")
-                        if parent is not None:
-                            parent.remove(child_element)
-                            # print(f"Deleted HTTPSamplerProxy with URL: {url}")
-                            modified = True
+
+        # Iterate over all <hashTree> elements
+        for parent in self.root.findall(".//hashTree"):  # Iterate through all <hashTree> nodes
+            children = list(parent)  # Get the direct children of <hashTree>
+
+            for i, child_element in enumerate(children):
+                if child_element.tag == "HTTPSamplerProxy":  # Match the HTTPSamplerProxy
+                    # Check if the HTTPSamplerProxy has a stringProp with name 'HTTPSampler.path'
+                    for sub_child_element in child_element.iter("stringProp"):
+                        if sub_child_element.get("name") == "HTTPSampler.path":
+                            url = sub_child_element.text
+                            if url and url.endswith(text):  # Match the URL
+                                # Remove the HTTPSamplerProxy
+                                parent.remove(child_element)
+                                print(f"Deleted HTTPSamplerProxy with URL: {url}")
+
+                                # Also remove the <hashtree> node if it's the next element
+                                if i + 1 < len(children) and children[i + 1].tag == "hashTree":
+                                    parent.remove(children[i + 1])
+                                    print("Deleted associated <hashtree> node.")
+
+                                modified = True
 
         if not modified:
             print(f"No endpoints ending with '{text}' were found to delete.")
