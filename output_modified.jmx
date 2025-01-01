@@ -2495,6 +2495,252 @@
           </UniformRandomTimer>
           <hashTree />
         </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-menu-bars.svg" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments" />
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
+          <stringProp name="HTTPSampler.port" />
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding" />
+          <stringProp name="HTTPSampler.path">themes/custom/sce_responsive/images/nav-menu-bars.svg</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re" />
+          <stringProp name="HTTPSampler.connect_timeout" />
+          <stringProp name="HTTPSampler.response_timeout" />
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">test3.dms.sce.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua</stringProp>
+                <stringProp name="Header.value">" Not A;Brand";v="99", "Chromium";v="101", "Google Chrome";v="101"</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                <stringProp name="Header.value">?0</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-platform" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                <stringProp name="Header.value">"Windows"</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">no-cors</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">image</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree />
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">78.0</stringProp>
+            <stringProp name="ConstantTimer.delay">156.0</stringProp>
+          </UniformRandomTimer>
+          <hashTree />
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-search.svg" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments" />
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
+          <stringProp name="HTTPSampler.port" />
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding" />
+          <stringProp name="HTTPSampler.path">themes/custom/sce_responsive/images/nav-search.svg</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re" />
+          <stringProp name="HTTPSampler.connect_timeout" />
+          <stringProp name="HTTPSampler.response_timeout" />
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">test3.dms.sce.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua</stringProp>
+                <stringProp name="Header.value">" Not A;Brand";v="99", "Chromium";v="101", "Google Chrome";v="101"</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                <stringProp name="Header.value">?0</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-platform" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                <stringProp name="Header.value">"Windows"</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">no-cors</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">image</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://test3.dms.sce.com/sites/default/files/css/css_iu2Yf8untKJ_JEUyTBDDIHh3vRl9JKw1OzozwnzN19Q.css</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree />
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">4.4</stringProp>
+            <stringProp name="ConstantTimer.delay">8.8</stringProp>
+          </UniformRandomTimer>
+          <hashTree />
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-logo-sce.svg" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments" />
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
+          <stringProp name="HTTPSampler.port" />
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding" />
+          <stringProp name="HTTPSampler.path">themes/custom/sce_responsive/images/nav-logo-sce.svg</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re" />
+          <stringProp name="HTTPSampler.connect_timeout" />
+          <stringProp name="HTTPSampler.response_timeout" />
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">test3.dms.sce.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua</stringProp>
+                <stringProp name="Header.value">" Not A;Brand";v="99", "Chromium";v="101", "Google Chrome";v="101"</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                <stringProp name="Header.value">?0</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-platform" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                <stringProp name="Header.value">"Windows"</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">no-cors</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">image</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree />
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">0.4</stringProp>
+            <stringProp name="ConstantTimer.delay">0.8</stringProp>
+          </UniformRandomTimer>
+          <hashTree />
+        </hashTree>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://test3.dms.sce.com/sites/default/files/homepage/hero-image.jpg" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
@@ -2608,6 +2854,252 @@
           <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
             <stringProp name="RandomTimer.range">12.4</stringProp>
             <stringProp name="ConstantTimer.delay">24.8</stringProp>
+          </UniformRandomTimer>
+          <hashTree />
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-for-your-home.svg" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments" />
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
+          <stringProp name="HTTPSampler.port" />
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding" />
+          <stringProp name="HTTPSampler.path">themes/custom/sce_responsive/images/menus-for-your-home.svg</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re" />
+          <stringProp name="HTTPSampler.connect_timeout" />
+          <stringProp name="HTTPSampler.response_timeout" />
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">test3.dms.sce.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua</stringProp>
+                <stringProp name="Header.value">" Not A;Brand";v="99", "Chromium";v="101", "Google Chrome";v="101"</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                <stringProp name="Header.value">?0</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-platform" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                <stringProp name="Header.value">"Windows"</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">no-cors</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">image</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://test3.dms.sce.com/sites/default/files/css/css_iu2Yf8untKJ_JEUyTBDDIHh3vRl9JKw1OzozwnzN19Q.css</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree />
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">46.800000000000004</stringProp>
+            <stringProp name="ConstantTimer.delay">93.60000000000001</stringProp>
+          </UniformRandomTimer>
+          <hashTree />
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-for-your-biz.svg" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments" />
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
+          <stringProp name="HTTPSampler.port" />
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding" />
+          <stringProp name="HTTPSampler.path">themes/custom/sce_responsive/images/menus-for-your-biz.svg</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re" />
+          <stringProp name="HTTPSampler.connect_timeout" />
+          <stringProp name="HTTPSampler.response_timeout" />
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">test3.dms.sce.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua</stringProp>
+                <stringProp name="Header.value">" Not A;Brand";v="99", "Chromium";v="101", "Google Chrome";v="101"</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                <stringProp name="Header.value">?0</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-platform" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                <stringProp name="Header.value">"Windows"</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">no-cors</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">image</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://test3.dms.sce.com/sites/default/files/css/css_iu2Yf8untKJ_JEUyTBDDIHh3vRl9JKw1OzozwnzN19Q.css</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree />
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">6.4</stringProp>
+            <stringProp name="ConstantTimer.delay">12.8</stringProp>
+          </UniformRandomTimer>
+          <hashTree />
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-collapse.svg" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments" />
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
+          <stringProp name="HTTPSampler.port" />
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding" />
+          <stringProp name="HTTPSampler.path">themes/custom/sce_responsive/images/menus-collapse.svg</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re" />
+          <stringProp name="HTTPSampler.connect_timeout" />
+          <stringProp name="HTTPSampler.response_timeout" />
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">test3.dms.sce.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua</stringProp>
+                <stringProp name="Header.value">" Not A;Brand";v="99", "Chromium";v="101", "Google Chrome";v="101"</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                <stringProp name="Header.value">?0</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-platform" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                <stringProp name="Header.value">"Windows"</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">no-cors</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">image</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://test3.dms.sce.com/sites/default/files/css/css_iu2Yf8untKJ_JEUyTBDDIHh3vRl9JKw1OzozwnzN19Q.css</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree />
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">0.0</stringProp>
+            <stringProp name="ConstantTimer.delay">0.0</stringProp>
           </UniformRandomTimer>
           <hashTree />
         </hashTree>
@@ -2789,6 +3281,252 @@
           </UniformRandomTimer>
           <hashTree />
         </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments" />
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
+          <stringProp name="HTTPSampler.port" />
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding" />
+          <stringProp name="HTTPSampler.path">sites/default/files/2020-09/content-rebates.svg</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re" />
+          <stringProp name="HTTPSampler.connect_timeout" />
+          <stringProp name="HTTPSampler.response_timeout" />
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">test3.dms.sce.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua</stringProp>
+                <stringProp name="Header.value">" Not A;Brand";v="99", "Chromium";v="101", "Google Chrome";v="101"</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                <stringProp name="Header.value">?0</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-platform" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                <stringProp name="Header.value">"Windows"</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">no-cors</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">image</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree />
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">8.8</stringProp>
+            <stringProp name="ConstantTimer.delay">17.6</stringProp>
+          </UniformRandomTimer>
+          <hashTree />
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://test3.dms.sce.com/sites/default/files/2020-09/content-compare-rates.svg" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments" />
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
+          <stringProp name="HTTPSampler.port" />
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding" />
+          <stringProp name="HTTPSampler.path">sites/default/files/2020-09/content-compare-rates.svg</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re" />
+          <stringProp name="HTTPSampler.connect_timeout" />
+          <stringProp name="HTTPSampler.response_timeout" />
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">test3.dms.sce.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua</stringProp>
+                <stringProp name="Header.value">" Not A;Brand";v="99", "Chromium";v="101", "Google Chrome";v="101"</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                <stringProp name="Header.value">?0</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-platform" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                <stringProp name="Header.value">"Windows"</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">no-cors</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">image</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree />
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">6.4</stringProp>
+            <stringProp name="ConstantTimer.delay">12.8</stringProp>
+          </UniformRandomTimer>
+          <hashTree />
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://test3.dms.sce.com/sites/default/files/2020-09/content-energy-advisor.svg" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments" />
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
+          <stringProp name="HTTPSampler.port" />
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding" />
+          <stringProp name="HTTPSampler.path">sites/default/files/2020-09/content-energy-advisor.svg</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re" />
+          <stringProp name="HTTPSampler.connect_timeout" />
+          <stringProp name="HTTPSampler.response_timeout" />
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">test3.dms.sce.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua</stringProp>
+                <stringProp name="Header.value">" Not A;Brand";v="99", "Chromium";v="101", "Google Chrome";v="101"</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                <stringProp name="Header.value">?0</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-platform" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                <stringProp name="Header.value">"Windows"</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">no-cors</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">image</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree />
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">0.4</stringProp>
+            <stringProp name="ConstantTimer.delay">0.8</stringProp>
+          </UniformRandomTimer>
+          <hashTree />
+        </hashTree>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://api.onedrive.com:443" enabled="false">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
@@ -2820,6 +3558,88 @@
           <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
             <stringProp name="RandomTimer.range">84.4</stringProp>
             <stringProp name="ConstantTimer.delay">168.8</stringProp>
+          </UniformRandomTimer>
+          <hashTree />
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://test3.dms.sce.com/sites/default/files/2020-09/content-paperless-bill.svg" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments" />
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
+          <stringProp name="HTTPSampler.port" />
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding" />
+          <stringProp name="HTTPSampler.path">sites/default/files/2020-09/content-paperless-bill.svg</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re" />
+          <stringProp name="HTTPSampler.connect_timeout" />
+          <stringProp name="HTTPSampler.response_timeout" />
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">test3.dms.sce.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua</stringProp>
+                <stringProp name="Header.value">" Not A;Brand";v="99", "Chromium";v="101", "Google Chrome";v="101"</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                <stringProp name="Header.value">?0</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-platform" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                <stringProp name="Header.value">"Windows"</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">no-cors</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">image</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree />
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">89.60000000000001</stringProp>
+            <stringProp name="ConstantTimer.delay">179.20000000000002</stringProp>
           </UniformRandomTimer>
           <hashTree />
         </hashTree>
@@ -3349,6 +4169,170 @@
           </UniformRandomTimer>
           <hashTree />
         </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-down-arrow-black.svg" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments" />
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
+          <stringProp name="HTTPSampler.port" />
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding" />
+          <stringProp name="HTTPSampler.path">themes/custom/sce_responsive/images/nav-down-arrow-black.svg</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re" />
+          <stringProp name="HTTPSampler.connect_timeout" />
+          <stringProp name="HTTPSampler.response_timeout" />
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">test3.dms.sce.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua</stringProp>
+                <stringProp name="Header.value">" Not A;Brand";v="99", "Chromium";v="101", "Google Chrome";v="101"</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                <stringProp name="Header.value">?0</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-platform" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                <stringProp name="Header.value">"Windows"</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">no-cors</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">image</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://test3.dms.sce.com/sites/default/files/css/css_iu2Yf8untKJ_JEUyTBDDIHh3vRl9JKw1OzozwnzN19Q.css</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree />
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">3.6</stringProp>
+            <stringProp name="ConstantTimer.delay">7.2</stringProp>
+          </UniformRandomTimer>
+          <hashTree />
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://test3.dms.sce.com/themes/custom/sce_responsive/images/cta-right-arrow-black.svg" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments" />
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
+          <stringProp name="HTTPSampler.port" />
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding" />
+          <stringProp name="HTTPSampler.path">themes/custom/sce_responsive/images/cta-right-arrow-black.svg</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re" />
+          <stringProp name="HTTPSampler.connect_timeout" />
+          <stringProp name="HTTPSampler.response_timeout" />
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">test3.dms.sce.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua</stringProp>
+                <stringProp name="Header.value">" Not A;Brand";v="99", "Chromium";v="101", "Google Chrome";v="101"</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                <stringProp name="Header.value">?0</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-platform" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                <stringProp name="Header.value">"Windows"</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">no-cors</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">image</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://test3.dms.sce.com/sites/default/files/css/css_iu2Yf8untKJ_JEUyTBDDIHh3vRl9JKw1OzozwnzN19Q.css</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree />
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">2.8000000000000003</stringProp>
+            <stringProp name="ConstantTimer.delay">5.6000000000000005</stringProp>
+          </UniformRandomTimer>
+          <hashTree />
+        </hashTree>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://test3.dms.sce.com/themes/custom/sce_responsive/images/triangle_16.png" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
@@ -3428,6 +4412,580 @@
           <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
             <stringProp name="RandomTimer.range">1.2000000000000002</stringProp>
             <stringProp name="ConstantTimer.delay">2.4000000000000004</stringProp>
+          </UniformRandomTimer>
+          <hashTree />
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://test3.dms.sce.com/themes/custom/sce_responsive/images/cta-right-arrow-green.svg" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments" />
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
+          <stringProp name="HTTPSampler.port" />
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding" />
+          <stringProp name="HTTPSampler.path">themes/custom/sce_responsive/images/cta-right-arrow-green.svg</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re" />
+          <stringProp name="HTTPSampler.connect_timeout" />
+          <stringProp name="HTTPSampler.response_timeout" />
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">test3.dms.sce.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua</stringProp>
+                <stringProp name="Header.value">" Not A;Brand";v="99", "Chromium";v="101", "Google Chrome";v="101"</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                <stringProp name="Header.value">?0</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-platform" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                <stringProp name="Header.value">"Windows"</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">no-cors</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">image</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://test3.dms.sce.com/sites/default/files/css/css_iu2Yf8untKJ_JEUyTBDDIHh3vRl9JKw1OzozwnzN19Q.css</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree />
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">1.6</stringProp>
+            <stringProp name="ConstantTimer.delay">3.2</stringProp>
+          </UniformRandomTimer>
+          <hashTree />
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://test3.dms.sce.com/themes/custom/sce_responsive/images/cards-corner-piece.svg" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments" />
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
+          <stringProp name="HTTPSampler.port" />
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding" />
+          <stringProp name="HTTPSampler.path">themes/custom/sce_responsive/images/cards-corner-piece.svg</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re" />
+          <stringProp name="HTTPSampler.connect_timeout" />
+          <stringProp name="HTTPSampler.response_timeout" />
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">test3.dms.sce.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua</stringProp>
+                <stringProp name="Header.value">" Not A;Brand";v="99", "Chromium";v="101", "Google Chrome";v="101"</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                <stringProp name="Header.value">?0</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-platform" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                <stringProp name="Header.value">"Windows"</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">no-cors</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">image</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://test3.dms.sce.com/sites/default/files/css/css_iu2Yf8untKJ_JEUyTBDDIHh3vRl9JKw1OzozwnzN19Q.css</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree />
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">3.6</stringProp>
+            <stringProp name="ConstantTimer.delay">7.2</stringProp>
+          </UniformRandomTimer>
+          <hashTree />
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://test3.dms.sce.com/themes/custom/sce_responsive/images/facebook.svg" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments" />
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
+          <stringProp name="HTTPSampler.port" />
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding" />
+          <stringProp name="HTTPSampler.path">themes/custom/sce_responsive/images/facebook.svg</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re" />
+          <stringProp name="HTTPSampler.connect_timeout" />
+          <stringProp name="HTTPSampler.response_timeout" />
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">test3.dms.sce.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua</stringProp>
+                <stringProp name="Header.value">" Not A;Brand";v="99", "Chromium";v="101", "Google Chrome";v="101"</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                <stringProp name="Header.value">?0</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-platform" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                <stringProp name="Header.value">"Windows"</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">no-cors</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">image</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://test3.dms.sce.com/sites/default/files/css/css_iu2Yf8untKJ_JEUyTBDDIHh3vRl9JKw1OzozwnzN19Q.css</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree />
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">1.2000000000000002</stringProp>
+            <stringProp name="ConstantTimer.delay">2.4000000000000004</stringProp>
+          </UniformRandomTimer>
+          <hashTree />
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://test3.dms.sce.com/themes/custom/sce_responsive/images/instagram.svg" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments" />
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
+          <stringProp name="HTTPSampler.port" />
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding" />
+          <stringProp name="HTTPSampler.path">themes/custom/sce_responsive/images/instagram.svg</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re" />
+          <stringProp name="HTTPSampler.connect_timeout" />
+          <stringProp name="HTTPSampler.response_timeout" />
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">test3.dms.sce.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua</stringProp>
+                <stringProp name="Header.value">" Not A;Brand";v="99", "Chromium";v="101", "Google Chrome";v="101"</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                <stringProp name="Header.value">?0</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-platform" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                <stringProp name="Header.value">"Windows"</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">no-cors</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">image</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://test3.dms.sce.com/sites/default/files/css/css_iu2Yf8untKJ_JEUyTBDDIHh3vRl9JKw1OzozwnzN19Q.css</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree />
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">14.0</stringProp>
+            <stringProp name="ConstantTimer.delay">28.0</stringProp>
+          </UniformRandomTimer>
+          <hashTree />
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://test3.dms.sce.com/themes/custom/sce_responsive/images/youtube.svg" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments" />
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
+          <stringProp name="HTTPSampler.port" />
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding" />
+          <stringProp name="HTTPSampler.path">themes/custom/sce_responsive/images/youtube.svg</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re" />
+          <stringProp name="HTTPSampler.connect_timeout" />
+          <stringProp name="HTTPSampler.response_timeout" />
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">test3.dms.sce.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua</stringProp>
+                <stringProp name="Header.value">" Not A;Brand";v="99", "Chromium";v="101", "Google Chrome";v="101"</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                <stringProp name="Header.value">?0</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-platform" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                <stringProp name="Header.value">"Windows"</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">no-cors</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">image</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://test3.dms.sce.com/sites/default/files/css/css_iu2Yf8untKJ_JEUyTBDDIHh3vRl9JKw1OzozwnzN19Q.css</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree />
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">15.200000000000001</stringProp>
+            <stringProp name="ConstantTimer.delay">30.400000000000002</stringProp>
+          </UniformRandomTimer>
+          <hashTree />
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://test3.dms.sce.com/themes/custom/sce_responsive/images/twitter.svg" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments" />
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
+          <stringProp name="HTTPSampler.port" />
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding" />
+          <stringProp name="HTTPSampler.path">themes/custom/sce_responsive/images/twitter.svg</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re" />
+          <stringProp name="HTTPSampler.connect_timeout" />
+          <stringProp name="HTTPSampler.response_timeout" />
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">test3.dms.sce.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua</stringProp>
+                <stringProp name="Header.value">" Not A;Brand";v="99", "Chromium";v="101", "Google Chrome";v="101"</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                <stringProp name="Header.value">?0</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-platform" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                <stringProp name="Header.value">"Windows"</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">no-cors</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">image</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://test3.dms.sce.com/sites/default/files/css/css_iu2Yf8untKJ_JEUyTBDDIHh3vRl9JKw1OzozwnzN19Q.css</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree />
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">1.2000000000000002</stringProp>
+            <stringProp name="ConstantTimer.delay">2.4000000000000004</stringProp>
+          </UniformRandomTimer>
+          <hashTree />
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://test3.dms.sce.com/themes/custom/sce_responsive/images/cta-right-arrow-white.svg" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments" />
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
+          <stringProp name="HTTPSampler.port" />
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding" />
+          <stringProp name="HTTPSampler.path">themes/custom/sce_responsive/images/cta-right-arrow-white.svg</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re" />
+          <stringProp name="HTTPSampler.connect_timeout" />
+          <stringProp name="HTTPSampler.response_timeout" />
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">test3.dms.sce.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua</stringProp>
+                <stringProp name="Header.value">" Not A;Brand";v="99", "Chromium";v="101", "Google Chrome";v="101"</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                <stringProp name="Header.value">?0</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-platform" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                <stringProp name="Header.value">"Windows"</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">no-cors</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">image</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://test3.dms.sce.com/sites/default/files/css/css_iu2Yf8untKJ_JEUyTBDDIHh3vRl9JKw1OzozwnzN19Q.css</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree />
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">1.6</stringProp>
+            <stringProp name="ConstantTimer.delay">3.2</stringProp>
           </UniformRandomTimer>
           <hashTree />
         </hashTree>
@@ -3777,6 +5335,88 @@
           <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
             <stringProp name="RandomTimer.range">392.40000000000003</stringProp>
             <stringProp name="ConstantTimer.delay">784.8000000000001</stringProp>
+          </UniformRandomTimer>
+          <hashTree />
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-user-icon-black.svg" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments" />
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
+          <stringProp name="HTTPSampler.port" />
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding" />
+          <stringProp name="HTTPSampler.path">themes/custom/sce_responsive/images/nav-user-icon-black.svg</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re" />
+          <stringProp name="HTTPSampler.connect_timeout" />
+          <stringProp name="HTTPSampler.response_timeout" />
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">test3.dms.sce.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua</stringProp>
+                <stringProp name="Header.value">" Not A;Brand";v="99", "Chromium";v="101", "Google Chrome";v="101"</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                <stringProp name="Header.value">?0</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-platform" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                <stringProp name="Header.value">"Windows"</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">no-cors</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">image</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree />
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">10.4</stringProp>
+            <stringProp name="ConstantTimer.delay">20.8</stringProp>
           </UniformRandomTimer>
           <hashTree />
         </hashTree>
@@ -4295,6 +5935,334 @@
           <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
             <stringProp name="RandomTimer.range">18.400000000000002</stringProp>
             <stringProp name="ConstantTimer.delay">36.800000000000004</stringProp>
+          </UniformRandomTimer>
+          <hashTree />
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://test3.dms.sce.com/themes/custom/sce_responsive/images/cta-external-link-black.svg" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments" />
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
+          <stringProp name="HTTPSampler.port" />
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding" />
+          <stringProp name="HTTPSampler.path">themes/custom/sce_responsive/images/cta-external-link-black.svg</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re" />
+          <stringProp name="HTTPSampler.connect_timeout" />
+          <stringProp name="HTTPSampler.response_timeout" />
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">test3.dms.sce.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua</stringProp>
+                <stringProp name="Header.value">" Not A;Brand";v="99", "Chromium";v="101", "Google Chrome";v="101"</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                <stringProp name="Header.value">?0</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-platform" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                <stringProp name="Header.value">"Windows"</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">no-cors</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">image</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://test3.dms.sce.com/sites/default/files/css/css_iu2Yf8untKJ_JEUyTBDDIHh3vRl9JKw1OzozwnzN19Q.css</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree />
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">32.0</stringProp>
+            <stringProp name="ConstantTimer.delay">64.0</stringProp>
+          </UniformRandomTimer>
+          <hashTree />
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://test3.dms.sce.com/themes/custom/sce_responsive/images/cta-external-link-green.svg" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments" />
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
+          <stringProp name="HTTPSampler.port" />
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding" />
+          <stringProp name="HTTPSampler.path">themes/custom/sce_responsive/images/cta-external-link-green.svg</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re" />
+          <stringProp name="HTTPSampler.connect_timeout" />
+          <stringProp name="HTTPSampler.response_timeout" />
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">test3.dms.sce.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua</stringProp>
+                <stringProp name="Header.value">" Not A;Brand";v="99", "Chromium";v="101", "Google Chrome";v="101"</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                <stringProp name="Header.value">?0</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-platform" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                <stringProp name="Header.value">"Windows"</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">no-cors</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">image</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://test3.dms.sce.com/sites/default/files/css/css_iu2Yf8untKJ_JEUyTBDDIHh3vRl9JKw1OzozwnzN19Q.css</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree />
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">2.4000000000000004</stringProp>
+            <stringProp name="ConstantTimer.delay">4.800000000000001</stringProp>
+          </UniformRandomTimer>
+          <hashTree />
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://test3.dms.sce.com/themes/custom/sce_responsive/images/cta-external-link-white.svg" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments" />
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
+          <stringProp name="HTTPSampler.port" />
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding" />
+          <stringProp name="HTTPSampler.path">themes/custom/sce_responsive/images/cta-external-link-white.svg</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re" />
+          <stringProp name="HTTPSampler.connect_timeout" />
+          <stringProp name="HTTPSampler.response_timeout" />
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">test3.dms.sce.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua</stringProp>
+                <stringProp name="Header.value">" Not A;Brand";v="99", "Chromium";v="101", "Google Chrome";v="101"</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                <stringProp name="Header.value">?0</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-platform" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                <stringProp name="Header.value">"Windows"</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">no-cors</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">image</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://test3.dms.sce.com/sites/default/files/css/css_iu2Yf8untKJ_JEUyTBDDIHh3vRl9JKw1OzozwnzN19Q.css</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree />
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">4.4</stringProp>
+            <stringProp name="ConstantTimer.delay">8.8</stringProp>
+          </UniformRandomTimer>
+          <hashTree />
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://test3.dms.sce.com/themes/custom/sce_responsive/images/Icon_Close.svg" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments" />
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
+          <stringProp name="HTTPSampler.port" />
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding" />
+          <stringProp name="HTTPSampler.path">themes/custom/sce_responsive/images/Icon_Close.svg</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re" />
+          <stringProp name="HTTPSampler.connect_timeout" />
+          <stringProp name="HTTPSampler.response_timeout" />
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">test3.dms.sce.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua</stringProp>
+                <stringProp name="Header.value">" Not A;Brand";v="99", "Chromium";v="101", "Google Chrome";v="101"</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                <stringProp name="Header.value">?0</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-platform" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                <stringProp name="Header.value">"Windows"</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">no-cors</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">image</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree />
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">400.40000000000003</stringProp>
+            <stringProp name="ConstantTimer.delay">800.8000000000001</stringProp>
           </UniformRandomTimer>
           <hashTree />
         </hashTree>
@@ -5952,7 +7920,7 @@
           </UniformRandomTimer>
           <hashTree />
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://www.googletagmanager.com:443" enabled="false">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://www.googletagmanager.com:443" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>

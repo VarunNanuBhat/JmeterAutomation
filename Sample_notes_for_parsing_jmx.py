@@ -73,17 +73,26 @@ for child_element in root.iter("HTTPSamplerProxy"):
     for sub_child_element in child_element.iter("stringProp"):
         if(sub_child_element.get("name") == "HTTPSampler.domain"):
             domain = sub_child_element.text
-            print(domain)
+            # print(domain)
             if (domain != None and domain == "play.google.com"):
                 child_element.set('enabled', 'false')
                 # pass
 
 
 # change the domain name
+for child_element in root.iter("HTTPSamplerProxy"):
+    for sub_child_element in child_element.iter("stringProp"):
+        if sub_child_element.get("name") == "HTTPSampler.domain":
+            domain = sub_child_element.text
+            if domain != None and domain == "play.google.com":
+                # print(domain)
+                sub_child_element.text = "new domain value"
+                # print(f"Domain updated to: {sub_child_element.text}")
 
 
 
 # Iterate through all the requests and remove the URL's of each tag in sub nodes that end with certain texts.
+# This is half implementation. We should also remove the associated samplers for the corresponding HTTP request
 for child_element in root.iter("HTTPSamplerProxy"):
     for sub_child_element in child_element.iter("stringProp"):
         if(sub_child_element.get("name") == "HTTPSampler.path"):

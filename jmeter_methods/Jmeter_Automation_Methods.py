@@ -128,14 +128,79 @@ class JMXModifier:
 
         return modified
 
-    def save_changes(self, output_path):
+    def enable_domain_endpoints(self, text):
         """
-        Save the modified XML tree to a new file.
+        Enable endpoints with specific domain name.
 
-        :param output_path: Path to save the modified XML.
+        :param text: Text to match the domain name
         """
-        self.tree.write(output_path, encoding="utf-8", xml_declaration=True)
-        print(f"Changes saved to {output_path}")
+        modified = False
+        for child_element in self.root.iter("HTTPSamplerProxy"):
+            for sub_child_element in child_element.iter("stringProp"):
+                if sub_child_element.get("name") == "HTTPSampler.domain":
+                    domain = sub_child_element.text
+                    if domain != None and domain == text:
+                        child_element.set('enabled', 'true')
+                        # print(f"Enabled HTTPSamplerProxy with URL: {url}")
+                        modified = True
+
+        if not modified:
+            print(f"No endpoints ending with '{text}' were found to enable.")
+        return modified
+
+    def disable_domain_endpoints(self, text):
+        """
+        Disable eendpoints with specific domain name.
+
+        :param text: Text to match the domain name.
+        """
+        modified = False
+        for child_element in self.root.iter("HTTPSamplerProxy"):
+            for sub_child_element in child_element.iter("stringProp"):
+                if sub_child_element.get("name") == "HTTPSampler.domain":
+                    domain = sub_child_element.text
+                    if domain != None and domain == text:
+                        child_element.set('enabled', 'false')
+                        # print(f"Disabled HTTPSamplerProxy with URL: {url}")
+                        modified = True
+
+        if not modified:
+            print(f"No endpoints ending with '{text}' were found to disable.")
+        return modified
+
+    def delete_domain_endpoints(self, text):
+        """
+        Delete endpoints with specific domain name,
+        along with their associated <hashtree> node.
+
+        :param text: Text to match the domain name.
+        """
+        modified = False
+
+        # Iterate over all <hashTree> elements
+        for parent in self.root.findall(".//hashTree"):  # Iterate through all <hashTree> nodes
+            children = list(parent)  # Get the direct children of <hashTree>
+
+            for i, child_element in enumerate(children):
+                if child_element.tag == "HTTPSamplerProxy":  # Match the HTTPSamplerProxy
+                    # Check if the HTTPSamplerProxy has a stringProp with name 'HTTPSampler.path'
+                    for sub_child_element in child_element.iter("stringProp"):
+                        if sub_child_element.get("name") == "HTTPSampler.domain":
+                            domain = sub_child_element.text
+                            if domain != None and domain == text: # Match the URL
+                                # Remove the HTTPSamplerProxy
+                                parent.remove(child_element)
+                                # print(f"Deleted HTTPSamplerProxy with URL: {url}")
+
+                                # Also remove the <hashtree> node if it's the next element
+                                if i + 1 < len(children) and children[i + 1].tag == "hashTree":
+                                    parent.remove(children[i + 1])
+                                    # print("Deleted associated <hashtree> node.")
+
+                                modified = True
+
+        return modified
+
 
     def update_endpoints(self, text, action):
         """
@@ -152,3 +217,28 @@ class JMXModifier:
             return self.delete_endpoints(text)
         else:
             raise ValueError(f"Invalid action '{action}'. Please choose 'enable', 'disable', or 'delete'.")
+
+    def update_domain_endpoints(self, text, action):
+        """
+        Update endpoints by calling the appropriate method.
+
+        :param text: Text to match the endpoint URL.
+        :param action: Action to perform - "enable", "disable", or "delete".
+        """
+        if action == "enable":
+            return self.enable_domain_endpoints(text)
+        elif action == "disable":
+            return self.disable_domain_endpoints(text)
+        elif action == "delete":
+            return self.delete_domain_endpoints(text)
+        else:
+            raise ValueError(f"Invalid action '{action}'. Please choose 'enable', 'disable', or 'delete'.")
+
+    def save_changes(self, output_path):
+        """
+        Save the modified XML tree to a new file.
+
+        :param output_path: Path to save the modified XML.
+        """
+        self.tree.write(output_path, encoding="utf-8", xml_declaration=True)
+        print(f"Changes saved to {output_path}")

@@ -474,7 +474,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">play.google.com</stringProp>
+          <stringProp name="HTTPSampler.domain">new domain value</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -575,7 +575,7 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">play.google.com</stringProp>
+          <stringProp name="HTTPSampler.domain">new domain value</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -13633,7 +13633,7 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">play.google.com</stringProp>
+          <stringProp name="HTTPSampler.domain">new domain value</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -15271,7 +15271,7 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">play.google.com</stringProp>
+          <stringProp name="HTTPSampler.domain">new domain value</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -17035,7 +17035,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">play.google.com</stringProp>
+          <stringProp name="HTTPSampler.domain">new domain value</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -17102,7 +17102,7 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">play.google.com</stringProp>
+          <stringProp name="HTTPSampler.domain">new domain value</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -17209,7 +17209,7 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">play.google.com</stringProp>
+          <stringProp name="HTTPSampler.domain">new domain value</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -17344,7 +17344,7 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">play.google.com</stringProp>
+          <stringProp name="HTTPSampler.domain">new domain value</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
