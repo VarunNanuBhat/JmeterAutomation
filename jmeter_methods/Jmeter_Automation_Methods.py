@@ -234,6 +234,27 @@ class JMXModifier:
         else:
             raise ValueError(f"Invalid action '{action}'. Please choose 'enable', 'disable', or 'delete'.")
 
+    def replace_domain_name(self, old_domain, new_domain):
+        """
+        Replace domain names in the request URL.
+
+        :param old_domain: The domain name to be replaced.
+        :param new_domain: The new domain name to replace with.
+        """
+        modified = False
+        for child_element in self.root.iter("HTTPSamplerProxy"):
+            for sub_child_element in child_element.iter("stringProp"):
+                if sub_child_element.get("name") == "HTTPSampler.domain":
+                    domain = sub_child_element.text
+                    if domain and domain == old_domain:
+                        sub_child_element.text = new_domain
+                        modified = True
+                        print(f"Replaced domain '{old_domain}' with '{new_domain}' in HTTPSamplerProxy.")
+
+        if not modified:
+            print(f"No domain '{old_domain}' found in the file to replace.")
+        return modified
+
     def save_changes(self, output_path):
         """
         Save the modified XML tree to a new file.
