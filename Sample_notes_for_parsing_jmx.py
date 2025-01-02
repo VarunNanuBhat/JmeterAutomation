@@ -8,7 +8,7 @@
 
 import xml.etree.ElementTree as ET
 
-tree = ET.parse('Trail.xml')
+tree = ET.parse('output2.jmx')
 
 # Get the root and print
 root = tree.getroot()
@@ -66,6 +66,31 @@ for child_element in root.iter("HTTPSamplerProxy"):
                 # child_element.set('enabled', 'false')
                 pass
 
+
+# Replace particular strings in request URL
+for child_element in root.iter("HTTPSamplerProxy"):
+    for sub_child_element in child_element.iter("stringProp"):
+        if(sub_child_element.get("name") == "HTTPSampler.path"):
+            url = sub_child_element.text
+            if (url != None and "hash-check" in url):
+                url = url.replace("hash-check","new-text")
+                # sub_child_element.text = url
+                # print(url)
+
+# replace particular string in body data and parameters
+for child_element in root.iter("collectionProp"):
+    for sub_child_element in child_element.iter("stringProp"):
+        # print(sub_child_element.tag, sub_child_element.attrib)
+        # print(sub_child_element.attrib.get("name"))
+        if sub_child_element.attrib.get("name") == "Argument.value":
+            text = sub_child_element.text
+            if (text != None and "11223344" in text):
+                text = text.replace("11223344", "replaced")
+                sub_child_element.text = text
+                print(text)
+
+
+
 # Disable particular sampler:
 # if requested sampler contains guiclass, it can be disabled
 # Iterate through all the requests and disable the URL's of each tag in sub nodes that end with with certain texts.
@@ -86,8 +111,9 @@ for child_element in root.iter("HTTPSamplerProxy"):
             domain = sub_child_element.text
             if domain != None and domain == "play.google.com":
                 # print(domain)
-                sub_child_element.text = "new domain value"
+                # sub_child_element.text = "new domain value"
                 # print(f"Domain updated to: {sub_child_element.text}")
+                pass
 
 
 
@@ -113,4 +139,9 @@ for child_element in root.iter("HeaderManager"):
             if(sub_child_element2.get("name") == "Authorization"):
                 # sub_child_element.remove(sub_child_element2)
                 pass
-tree.write('output.xml')
+
+
+
+
+
+tree.write('Trail.xml')
