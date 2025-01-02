@@ -249,10 +249,11 @@ class JMXModifier:
                     if domain and domain == old_domain:
                         sub_child_element.text = new_domain
                         modified = True
-                        print(f"Replaced domain '{old_domain}' with '{new_domain}' in HTTPSamplerProxy.")
+                        # print(f"Replaced domain '{old_domain}' with '{new_domain}' in HTTPSamplerProxy.")
 
         if not modified:
-            print(f"No domain '{old_domain}' found in the file to replace.")
+            # print(f"No domain '{old_domain}' found in the file to replace.")
+            pass
         return modified
 
     def save_changes(self, output_path):
