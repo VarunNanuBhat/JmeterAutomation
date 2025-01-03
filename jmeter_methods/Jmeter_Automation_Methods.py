@@ -271,10 +271,11 @@ class JMXModifier:
                     if url and old_string in url:
                         sub_child_element.text = url.replace(old_string, new_string)
                         modified = True
-                        print(f"Replaced '{old_string}' with '{new_string}' in URL: {url}")
+                        # print(f"Replaced '{old_string}' with '{new_string}' in URL: {url}")
 
         if not modified:
-            print(f"No URLs containing '{old_string}' were found to replace.")
+            # print(f"No URLs containing '{old_string}' were found to replace.")
+            pass
         return modified
 
 
@@ -293,10 +294,11 @@ class JMXModifier:
                     if text and old_string in text:
                         string_prop.text = text.replace(old_string, new_string)
                         modified = True
-                        print(f"Replaced '{old_string}' with '{new_string}' in body data/parameters: {text}")
+                        # print(f"Replaced '{old_string}' with '{new_string}' in body data/parameters: {text}")
 
         if not modified:
-            print(f"No body data or parameters containing '{old_string}' were found to replace.")
+            # print(f"No body data or parameters containing '{old_string}' were found to replace.")
+            pass
         return modified
 
 
