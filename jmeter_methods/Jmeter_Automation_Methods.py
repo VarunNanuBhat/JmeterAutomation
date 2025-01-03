@@ -256,6 +256,51 @@ class JMXModifier:
             pass
         return modified
 
+    def replace_string_in_url(self, old_string, new_string):
+        """
+        Replace a specific substring in the URLs of all HTTP Samplers.
+
+        :param old_string: The substring to replace in the URL.
+        :param new_string: The substring to replace it with.
+        """
+        modified = False
+        for child_element in self.root.iter("HTTPSamplerProxy"):
+            for sub_child_element in child_element.iter("stringProp"):
+                if sub_child_element.get("name") == "HTTPSampler.path":
+                    url = sub_child_element.text
+                    if url and old_string in url:
+                        sub_child_element.text = url.replace(old_string, new_string)
+                        modified = True
+                        # print(f"Replaced '{old_string}' with '{new_string}' in URL: {url}")
+
+        if not modified:
+            print(f"No URLs containing '{old_string}' were found to replace.")
+        return modified
+
+
+    def replace_string_in_body_and_params(self, old_string, new_string):
+        """
+        Replace a specific substring in the body data and parameters.
+
+        :param old_string: The substring to replace.
+        :param new_string: The substring to replace it with.
+        """
+        modified = False
+        for collection_prop in self.root.iter("collectionProp"):
+            for string_prop in collection_prop.iter("stringProp"):
+                if string_prop.get("name") == "Argument.value":
+                    text = string_prop.text
+                    if text and old_string in text:
+                        string_prop.text = text.replace(old_string, new_string)
+                        modified = True
+                        # print(f"Replaced '{old_string}' with '{new_string}' in body data/parameters: {text}")
+
+        if not modified:
+            print(f"No body data or parameters containing '{old_string}' were found to replace.")
+        return modified
+
+
+
     def save_changes(self, output_path):
         """
         Save the modified XML tree to a new file.

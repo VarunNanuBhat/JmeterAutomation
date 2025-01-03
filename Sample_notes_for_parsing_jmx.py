@@ -86,8 +86,8 @@ for child_element in root.iter("collectionProp"):
             text = sub_child_element.text
             if (text != None and "11223344" in text):
                 text = text.replace("11223344", "replaced")
-                sub_child_element.text = text
-                print(text)
+                # sub_child_element.text = text
+                # print(text)
 
 
 
