@@ -14,7 +14,7 @@ class SelectFunctionality(ttk.Frame):
                 "Delete HTTP Header Values",
                 "Enable/Disable/Delete endpoints ending with specific texts",
                 "Enable/Disable/Delete endpoints ending with specific domains",
-                "Replace domain names"
+                "Replace contents in URL/Prams & body"
             ],
             state="readonly", width=50
         )
@@ -35,3 +35,5 @@ class SelectFunctionality(ttk.Frame):
             self.parent.show_page(self.parent.endpoint_modifier_with_domain)
         if selected_option == "Replace domain names":
             self.parent.show_page(self.parent.replace_domain_name_page)
+        if selected_option == "Replace contents in URL/Prams & body":
+            self.parent.show_page(self.parent.replace_contents_page)

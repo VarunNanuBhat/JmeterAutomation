@@ -6,6 +6,7 @@ from http_header_delete_page import HttpHeaderDeletePage
 from endpoint_modifier_with_url import EndpointActionPage
 from endpoint_modifier_with_domain import EndpointActionPageForDomain
 from replace_domain_name_page import ReplaceDomainNamePage
+from replace_contents_page import ReplaceContentPage
 
 
 class App(ttk.Window):
@@ -22,6 +23,7 @@ class App(ttk.Window):
         self.endpoint_modifier_with_url = EndpointActionPage(self)
         self.endpoint_modifier_with_domain = EndpointActionPageForDomain(self)
         self.replace_domain_name_page = ReplaceDomainNamePage(self)
+        self.replace_contents_page = ReplaceContentPage(self)
 
         # Start with the file upload page
         self.show_page(self.file_upload_page)
