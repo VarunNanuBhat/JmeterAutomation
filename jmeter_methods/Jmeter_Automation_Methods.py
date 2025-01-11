@@ -14,26 +14,28 @@ class JMXModifier:
             print(f"Error parsing XML file {file_path}: {e}")
             raise
 
-    def modify_http_header(self, header_name, new_value):
+    def modify_http_headers(self, headers):
         """
-        Modifies the value of a specified HTTP header.
+        Modifies the values of multiple specified HTTP headers.
 
-        :param header_name: Name of the HTTP header to modify.
-        :param new_value: New value to assign to the header.
+        :param headers: A dictionary where keys are header names and values are the new values for the headers.
         """
-        modified = False
+        modified_headers = set()
         for element_prop in self.root.iter('elementProp'):
             attrib_value = element_prop.get('name')
-            if attrib_value == header_name:
+            if attrib_value in headers:
                 for string_prop in element_prop.iter('stringProp'):
                     attrib_value2 = string_prop.get('name')
                     if attrib_value2 == 'Header.value':
-                        string_prop.text = new_value
-                        modified = True
+                        string_prop.text = headers[attrib_value]
+                        modified_headers.add(attrib_value)
 
-        if not modified:
-            print(f"Header '{header_name}' not found in the file.")
-            raise ValueError(f"Header '{header_name}' not found in the file.")
+        # Check for any headers that weren't found in the file
+        not_found_headers = set(headers.keys()) - modified_headers
+        if not_found_headers:
+            print(f"Headers not found in the file: {', '.join(not_found_headers)}")
+            raise ValueError(f"Headers not found in the file: {', '.join(not_found_headers)}")
+
 
     def delete_http_header(self, header_name):
         """
