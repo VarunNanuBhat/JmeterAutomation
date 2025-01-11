@@ -38,6 +38,17 @@ for child_element in root.iter("HeaderManager"):
         # print(sub_child_element.tag, sub_child_element.text)
         pass
 
+# Extract unique header values texts from subelements of an element
+header_name_array = []
+for child_element in root.iter("HeaderManager"):
+    for sub_child_element in child_element.iter("stringProp"):
+        if sub_child_element.get("name") == "Header.name":
+            if sub_child_element.text not in header_name_array:
+                header_name_array.append(sub_child_element.text)
+                # print(sub_child_element.text)
+                pass
+
+
 # List all items of a node in key value pair.
 for child_element in root.iter("HeaderManager"):
     # print(child_element.items())
