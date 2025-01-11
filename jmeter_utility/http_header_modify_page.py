@@ -2,6 +2,9 @@ import ttkbootstrap as ttk
 from tkinter import StringVar
 from jmeter_methods.Jmeter_Automation_Methods import JMXModifier
 
+# enable reset_http_headers method if you want to reset header page on re-starting
+
+
 class HttpHeaderPage(ttk.Frame):
     def __init__(self, parent):
         super().__init__(parent, padding=20)
@@ -24,6 +27,10 @@ class HttpHeaderPage(ttk.Frame):
         # Apply Changes button
         apply_button = ttk.Button(self, text="Apply Changes", bootstyle="primary", command=self.modify_http_headers)
         apply_button.grid(row=1, column=3, pady=20, padx=20, sticky="e")
+
+        # Go Back button (navigate back to home)
+        back_button = ttk.Button(self, text="Go Back", bootstyle="danger", command=self.go_back_to_home)
+        back_button.grid(row=2, column=3, pady=20, padx=20, sticky="e")
 
         # Status label at the bottom
         self.status_label = ttk.Label(self, text="", font=("Arial", 14), anchor="center", wraplength=500)
@@ -102,3 +109,39 @@ class HttpHeaderPage(ttk.Frame):
 
         except Exception as e:
             raise ValueError(f"Error modifying file {file_path}: {str(e)}")
+
+    def go_back_to_home(self):
+        """Go back to the file upload page and reset the file list."""
+        # Reset the uploaded file list in the file upload page
+        self.parent.file_upload_page.uploaded_file_paths = []
+
+        # Clear the listbox to show an empty state
+        self.parent.file_upload_page.file_listbox.delete(0, 'end')
+
+        # Reset the status label
+        self.parent.file_upload_page.status_label.config(text="")
+
+        # Hide the 'Next Page' button initially
+        self.parent.file_upload_page.next_page_button.grid_remove()
+
+        # Clear status label in HttpHeaderPage (this clears success/error message)
+        self.status_label.config(text="")
+
+        # Reset the HTTP Header fields (clear existing header rows and messages)
+        # enable this method if you want to reset header page on re-starting
+        #self.reset_http_headers()
+
+        # Show the file upload page
+        self.parent.show_page(self.parent.file_upload_page)
+
+    def reset_http_headers(self):
+        """Reset the HTTP Header fields to their initial state."""
+
+        # Clear all dynamically added header input fields and labels
+        for widget in self.grid_slaves():
+            if isinstance(widget, ttk.Entry) or isinstance(widget, ttk.Label):
+                widget.grid_forget()
+
+        # Reinitialize the headers list and add the first empty header row
+        self.headers = []  # Clear all previously entered headers
+        self.add_header_row()  # Add a fresh header row

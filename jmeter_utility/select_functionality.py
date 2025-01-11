@@ -14,6 +14,7 @@ class SelectFunctionality(ttk.Frame):
                 "Delete HTTP Header Values",
                 "Enable/Disable/Delete endpoints ending with specific texts",
                 "Enable/Disable/Delete endpoints ending with specific domains",
+                "Replace domain names",
                 "Replace contents in URL/Prams & body"
             ],
             state="readonly", width=50
