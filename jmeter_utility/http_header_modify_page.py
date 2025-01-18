@@ -22,8 +22,8 @@ class HttpHeaderPage(ttk.Frame):
         add_button = ttk.Button(self, text="+ Add Header", bootstyle="success", command=self.add_header_row)
         add_button.grid(row=1, column=0, pady=20, padx=20, sticky="w")
 
-        # Apply Changes button
-        apply_button = ttk.Button(self, text="Apply Changes", bootstyle="primary", command=self.modify_http_headers)
+        # Preview Changes button
+        apply_button = ttk.Button(self, text="Preview Changes", bootstyle="primary", command=self.navigate_to_checkout)
         apply_button.grid(row=1, column=3, pady=20, padx=20, sticky="e")
 
         # List Headers button
@@ -42,6 +42,7 @@ class HttpHeaderPage(ttk.Frame):
         self.grid_rowconfigure(0, weight=0)  # Title row should not expand
         self.grid_rowconfigure(1, weight=0)  # Button row should not expand
         self.grid_rowconfigure(999, weight=1)  # Status row should be pushed to the bottom
+
 
     def add_header_row(self):
         """Dynamically add a row for a new header."""
@@ -64,54 +65,6 @@ class HttpHeaderPage(ttk.Frame):
 
         self.headers.append((header_name_var, header_value_var))
 
-    def modify_http_headers(self):
-        """Apply modifications for all entered headers."""
-        uploaded_file_paths = self.parent.file_upload_page.get_uploaded_files()
-
-        if not uploaded_file_paths:
-            self.status_label.config(text="No files uploaded!", bootstyle="danger")
-            return
-
-        headers_to_modify = {}
-        for header_name_var, header_value_var in self.headers:
-            header_name = header_name_var.get().strip()
-            header_value = header_value_var.get().strip()
-            if header_name and header_value:
-                headers_to_modify[header_name] = header_value
-
-        if not headers_to_modify:
-            self.status_label.config(text="Please enter at least one header name and value.", bootstyle="danger")
-            return
-
-        error_message = None
-        for file_path in uploaded_file_paths:
-            try:
-                self.modify_http_headers_backend(file_path, headers_to_modify)
-            except ValueError as e:
-                error_message = str(e)
-                break
-
-        if error_message:
-            self.status_label.config(text=error_message, bootstyle="danger")
-        else:
-            self.status_label.config(text="HTTP Headers Modified Successfully!", bootstyle="success")
-
-    @staticmethod
-    def modify_http_headers_backend(file_path, headers):
-        try:
-            # Initialize JMXModifier with the uploaded file path
-            modifier = JMXModifier(file_path)
-
-            # Call the method to modify all HTTP headers
-            modifier.modify_http_headers(headers)
-
-            # Save the modified file with a new name
-            output_path = file_path.replace(".jmx", "_modified.jmx")
-            modifier.save_changes(output_path)
-
-        except Exception as e:
-            raise ValueError(f"Error modifying file {file_path}: {str(e)}")
-
     def navigate_to_list_headers(self):
         """Navigate to the List Headers page."""
         try:
@@ -133,6 +86,23 @@ class HttpHeaderPage(ttk.Frame):
 
         except Exception as e:
             self.status_label.config(text=f"Error: {str(e)}", bootstyle="danger")
+
+    def navigate_to_checkout(self):
+        """Navigate to the checkout page with requested modifications."""
+        headers_to_modify = {}
+        for header_name_var, header_value_var in self.headers:
+            header_name = header_name_var.get().strip()
+            header_value = header_value_var.get().strip()
+            if header_name and header_value:
+                headers_to_modify[header_name] = header_value
+
+        if not headers_to_modify:
+            self.status_label.config(text="Please enter at least one header name and value.", bootstyle="danger")
+            return
+
+        # Navigate to the CheckoutPage and display modifications
+        self.parent.checkout_for_http_header_modify.display_modifications(headers_to_modify)
+        self.parent.show_page(self.parent.checkout_for_http_header_modify)
 
 
     def go_back_to_home(self):

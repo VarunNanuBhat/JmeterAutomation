@@ -9,6 +9,7 @@ from replace_domain_name_page import ReplaceDomainNamePage
 from replace_contents_page import ReplaceContentPage
 from http_header_list_page import ListHeadersPage
 from modify_selected_headers_page import ModifySelectedHeadersPage
+from checkout_for_http_header_modify import CheckoutPageForHeaderModify
 
 
 class App(ttk.Window):
@@ -28,6 +29,7 @@ class App(ttk.Window):
         self.replace_contents_page = ReplaceContentPage(self)
         self.http_header_list_page = ListHeadersPage(self)
         self.modify_selected_headers_page = ModifySelectedHeadersPage(self)
+        self.checkout_for_http_header_modify = CheckoutPageForHeaderModify(self)
 
 
         # Start with the file upload page
