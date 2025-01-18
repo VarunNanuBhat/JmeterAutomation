@@ -7,8 +7,9 @@
 
 
 import xml.etree.ElementTree as ET
+tree = ET.parse('output_modified.jmx')
 
-tree = ET.parse('output2.jmx')
+#tree = ET.parse('output2.jmx')
 
 # Get the root and print
 root = tree.getroot()
@@ -150,6 +151,18 @@ for child_element in root.iter("HeaderManager"):
             if(sub_child_element2.get("name") == "Authorization"):
                 # sub_child_element.remove(sub_child_element2)
                 pass
+
+
+# List out all unique samplers
+sampler_array = []
+for child_element in root.iter():
+    child_element.get("testname") and child_element.get("testclass")
+    if child_element.get("testname") != None and child_element.get("testclass") != None:
+        if (child_element.get("testclass") != "HTTPSamplerProxy"):
+            if (child_element.get("testname") not in sampler_array):
+                sampler_array.append(child_element.get("testname"))
+                print(child_element.get("testname"))
+
 
 
 
