@@ -1,6 +1,4 @@
 import ttkbootstrap as ttk
-from tkinter import StringVar
-
 
 class ListHeadersPage(ttk.Frame):
     def __init__(self, parent):
@@ -8,7 +6,7 @@ class ListHeadersPage(ttk.Frame):
         self.parent = parent
 
         # List to store the selected headers
-        self.selected_headers = []
+        self.selected_headers = []  # Store boolean variables for checkboxes
 
         # Title Label
         title_label = ttk.Label(self, text="List of Headers", font=("Arial", 16, "bold"))
@@ -31,9 +29,13 @@ class ListHeadersPage(ttk.Frame):
         self.checkbox_frame = ttk.Frame(self.canvas)
         self.canvas.create_window((0, 0), window=self.checkbox_frame, anchor="nw")
 
-        # Add a "Back" button to go back to the header modification page
+        # Add the Modify Headers button outside the scrollable area
+        modify_button = ttk.Button(self, text="Modify Headers", bootstyle="primary", command=self.navigate_to_modify_headers)
+        modify_button.grid(row=2, column=0, columnspan=4, pady=10)
+
+        # Add Go Back button to go back to the header modification page
         back_button = ttk.Button(self, text="Go Back", bootstyle="danger", command=self.go_back_to_http_header_page)
-        back_button.grid(row=2, column=3, pady=20, padx=20, sticky="e")
+        back_button.grid(row=3, column=3, pady=20, padx=20, sticky="e")
 
     def populate_headers(self, headers):
         """Populate headers with checkboxes for each header."""
@@ -47,7 +49,7 @@ class ListHeadersPage(ttk.Frame):
 
         # Create a Checkbutton for each header in the list
         for i, header in enumerate(self.headers):
-            var = StringVar(value="off")
+            var = ttk.BooleanVar(value=False)  # Set initial state to False (unselected)
             check_button = ttk.Checkbutton(self.checkbox_frame, text=header, variable=var)
             check_button.grid(row=i, column=0, sticky="w", padx=10, pady=5)
             self.selected_headers.append(var)
@@ -60,9 +62,20 @@ class ListHeadersPage(ttk.Frame):
         """Return the list of selected headers."""
         selected = []
         for i, var in enumerate(self.selected_headers):
-            if var.get() == "on":
+            if var.get():  # This checks if checkbox is selected (True)
                 selected.append(self.headers[i])
+        print(f"Selected headers: {selected}")  # Debugging line
         return selected
+
+    def navigate_to_modify_headers(self):
+        selected_headers = self.get_selected_headers()
+        print(f"Selected Headers: {selected_headers}")  # Debugging line
+
+        # Pass selected headers to the ModifySelectedHeadersPage
+        self.parent.modify_selected_headers_page.populate_headers(selected_headers)
+
+        # Show the modify headers page
+        self.parent.show_page(self.parent.modify_selected_headers_page)
 
     def go_back_to_http_header_page(self):
         """Navigate back to the HTTP Header Page."""

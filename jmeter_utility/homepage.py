@@ -8,6 +8,7 @@ from endpoint_modifier_with_domain import EndpointActionPageForDomain
 from replace_domain_name_page import ReplaceDomainNamePage
 from replace_contents_page import ReplaceContentPage
 from http_header_list_page import ListHeadersPage
+from modify_selected_headers_page import ModifySelectedHeadersPage
 
 
 class App(ttk.Window):
@@ -26,6 +27,8 @@ class App(ttk.Window):
         self.replace_domain_name_page = ReplaceDomainNamePage(self)
         self.replace_contents_page = ReplaceContentPage(self)
         self.http_header_list_page = ListHeadersPage(self)
+        self.modify_selected_headers_page = ModifySelectedHeadersPage(self)
+
 
         # Start with the file upload page
         self.show_page(self.file_upload_page)
