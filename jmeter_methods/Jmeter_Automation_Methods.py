@@ -36,6 +36,19 @@ class JMXModifier:
             print(f"Headers not found in the file: {', '.join(not_found_headers)}")
             raise ValueError(f"Headers not found in the file: {', '.join(not_found_headers)}")
 
+    def list_header_names(self):
+        """
+        Collects unique HTTP header names from the JMX file.
+        """
+        header_name_array = set()  # Use a set to ensure uniqueness
+
+        for child_element in self.root.iter("HeaderManager"):
+            for sub_child_element in child_element.iter("stringProp"):
+                if sub_child_element.get("name") == "Header.name":
+                    header_name_array.add(sub_child_element.text)
+
+        return list(header_name_array)
+
 
     def delete_http_header(self, header_name):
         """

@@ -1,8 +1,6 @@
 import ttkbootstrap as ttk
-from tkinter import StringVar
+from tkinter import StringVar, Canvas, Scrollbar, Frame, BOTH, RIGHT, LEFT, Y
 from jmeter_methods.Jmeter_Automation_Methods import JMXModifier
-
-# enable reset_http_headers method if you want to reset header page on re-starting
 
 
 class HttpHeaderPage(ttk.Frame):
@@ -27,6 +25,10 @@ class HttpHeaderPage(ttk.Frame):
         # Apply Changes button
         apply_button = ttk.Button(self, text="Apply Changes", bootstyle="primary", command=self.modify_http_headers)
         apply_button.grid(row=1, column=3, pady=20, padx=20, sticky="e")
+
+        # List Headers button
+        list_button = ttk.Button(self, text="List Headers", bootstyle="info", command=self.navigate_to_list_headers)
+        list_button.grid(row=1, column=1, pady=20, padx=20, sticky="e")
 
         # Go Back button (navigate back to home)
         back_button = ttk.Button(self, text="Go Back", bootstyle="danger", command=self.go_back_to_home)
@@ -109,6 +111,29 @@ class HttpHeaderPage(ttk.Frame):
 
         except Exception as e:
             raise ValueError(f"Error modifying file {file_path}: {str(e)}")
+
+    def navigate_to_list_headers(self):
+        """Navigate to the List Headers page."""
+        try:
+            # Retrieve headers from the JMX file
+            uploaded_file_paths = self.parent.file_upload_page.get_uploaded_files()
+            if not uploaded_file_paths:
+                self.status_label.config(text="No files uploaded!", bootstyle="danger")
+                return
+
+            # Get unique headers from the first uploaded file (extend as needed)
+            unique_headers = set()
+            for file_path in uploaded_file_paths:
+                modifier = JMXModifier(file_path)
+                unique_headers.update(modifier.list_header_names())
+
+            # Populate the headers in ListHeadersPage and navigate
+            self.parent.http_header_list_page.populate_headers(list(unique_headers))
+            self.parent.show_page(self.parent.http_header_list_page)
+
+        except Exception as e:
+            self.status_label.config(text=f"Error: {str(e)}", bootstyle="danger")
+
 
     def go_back_to_home(self):
         """Go back to the file upload page and reset the file list."""
