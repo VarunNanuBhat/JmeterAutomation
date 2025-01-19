@@ -216,6 +216,41 @@ class JMXModifier:
 
         return modified
 
+    def enable_samplers_by_name(self, name):
+        """
+        Enable samplers whose 'testname' attribute matches the specified name.
+
+        :param name: Name to match the sampler's 'testname' attribute.
+        :return: True if at least one sampler was modified; otherwise, False.
+        """
+        modified = False
+        for child_element in self.root.iter():
+            if child_element.get("testname") == name:
+                child_element.set("enabled", "true")
+                modified = True
+
+        if not modified:
+            print(f"No samplers with testname '{name}' were found to enable.")
+        return modified
+
+
+    def disable_samplers_by_name(self, name):
+        """
+        Disable samplers whose 'testname' attribute matches the specified name.
+
+        :param name: Name to match the sampler's 'testname' attribute.
+        :return: True if at least one sampler was modified; otherwise, False.
+        """
+        modified = False
+        for child_element in self.root.iter():
+            if child_element.get("testname") == name:
+                child_element.set("enabled", "false")
+                modified = True
+
+        if not modified:
+            print(f"No samplers with testname '{name}' were found to disable.")
+        return modified
+
 
     def update_endpoints(self, text, action):
         """
