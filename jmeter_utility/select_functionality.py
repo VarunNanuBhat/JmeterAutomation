@@ -15,7 +15,8 @@ class SelectFunctionality(ttk.Frame):
                 "Enable/Disable/Delete endpoints ending with specific texts",
                 "Enable/Disable/Delete endpoints ending with specific domains",
                 "Replace domain names",
-                "Replace contents in URL/Prams & body"
+                "Replace contents in URL/Prams & body",
+                "Enable/Disable/Delete endpoints based on Sampler Names"
             ],
             state="readonly", width=50
         )
@@ -38,3 +39,5 @@ class SelectFunctionality(ttk.Frame):
             self.parent.show_page(self.parent.replace_domain_name_page)
         if selected_option == "Replace contents in URL/Prams & body":
             self.parent.show_page(self.parent.replace_contents_page)
+        if selected_option == "Enable/Disable/Delete endpoints based on Sampler Names":
+            self.parent.show_page(self.parent.sampler_modifier_page)
