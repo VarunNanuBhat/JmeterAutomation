@@ -216,6 +216,7 @@ class JMXModifier:
 
         return modified
 
+
     def enable_samplers_by_name(self, name):
         """
         Enable samplers whose 'testname' attribute matches the specified name.
@@ -249,6 +250,35 @@ class JMXModifier:
 
         if not modified:
             print(f"No samplers with testname '{name}' were found to disable.")
+        return modified
+
+    def delete_samplers_by_name(self, name):
+        """
+        Delete samplers with a specific 'testname' attribute,
+        along with their associated <hashTree> node.
+
+        :param name: Name to match the sampler's 'testname' attribute.
+        :return: True if at least one sampler was deleted; otherwise, False.
+        """
+        modified = False
+
+        # Iterate over all <hashTree> elements
+        for parent in self.root.findall(".//hashTree"):  # Find all <hashTree> nodes
+            children = list(parent)  # Get the direct children of <hashTree>
+
+            for i, child_element in enumerate(children):
+                if child_element.get("testname") == name:  # Match 'testname' attribute
+                    # Remove the sampler
+                    parent.remove(child_element)
+
+                    # Also remove the associated <hashTree> node if it is the next sibling
+                    if i + 1 < len(children) and children[i + 1].tag == "hashTree":
+                        parent.remove(children[i + 1])
+
+                    modified = True
+
+        if not modified:
+            print(f"No samplers with testname '{name}' were found to delete.")
         return modified
 
 
