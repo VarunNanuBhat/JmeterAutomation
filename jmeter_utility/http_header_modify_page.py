@@ -32,7 +32,8 @@ class HttpHeaderPage(ttk.Frame):
 
         # Go Back button (navigate back to home)
         back_button = ttk.Button(self, text="Go Back", bootstyle="danger", command=self.go_back_to_home)
-        back_button.grid(row=2, column=3, pady=20, padx=20, sticky="e")
+        # Adjust the grid position and alignment
+        back_button.grid(row=1, column=2, pady=20, padx=20, sticky="e")
 
         # Status label at the bottom
         self.status_label = ttk.Label(self, text="", font=("Arial", 14), anchor="center", wraplength=500)
