@@ -12,6 +12,7 @@ from modify_selected_headers_page import ModifySelectedHeadersPage
 from checkout_for_http_header_modify import CheckoutPageForHeaderModify
 from checkout_for_http_header_delete import CheckoutPageForHeaderDelete
 from sampler_modifier_page import SamplerModifierPage
+from delete_selected_headers import DeleteSelectedHeadersPage
 
 
 class App(ttk.Window):
@@ -34,6 +35,7 @@ class App(ttk.Window):
         self.checkout_for_http_header_modify = CheckoutPageForHeaderModify(self)
         self.checkout_for_http_header_delete = CheckoutPageForHeaderDelete(self)
         self.sampler_modifier_page = SamplerModifierPage(self)
+        self.delete_selected_headers = DeleteSelectedHeadersPage(self)
 
 
         # Start with the file upload page

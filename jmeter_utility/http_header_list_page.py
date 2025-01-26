@@ -29,12 +29,20 @@ class ListHeadersPage(ttk.Frame):
         self.checkbox_frame = ttk.Frame(self.canvas)
         self.canvas.create_window((0, 0), window=self.checkbox_frame, anchor="nw")
 
-        # Add the Modify Headers button outside the scrollable area
-        modify_button = ttk.Button(self, text="Modify Headers", bootstyle="primary", command=self.navigate_to_modify_headers)
-        modify_button.grid(row=2, column=0, columnspan=4, pady=10)
+        # Add the Modify Headers button
+        modify_button = ttk.Button(
+            self, text="Modify Headers", bootstyle="primary", command=self.navigate_to_modify_headers
+        )
+        modify_button.grid(row=2, column=0, pady=10, padx=10, sticky="w")
 
-        # Add Go Back button to go back to the header modification page
-        back_button = ttk.Button(self, text="Go Back", bootstyle="danger", command=self.go_back_to_http_header_page)
+        # Add the Delete Headers button
+        delete_button = ttk.Button(
+            self, text="Delete Headers", bootstyle="danger", command=self.navigate_to_delete_headers
+        )
+        delete_button.grid(row=2, column=1, pady=10, padx=10, sticky="w")
+
+        # Add Go Back button to go back to the HTTP Header Page
+        back_button = ttk.Button(self, text="Go Back", bootstyle="secondary", command=self.go_back_to_http_header_page)
         back_button.grid(row=3, column=3, pady=20, padx=20, sticky="e")
 
     def populate_headers(self, headers):
@@ -64,18 +72,33 @@ class ListHeadersPage(ttk.Frame):
         for i, var in enumerate(self.selected_headers):
             if var.get():  # This checks if checkbox is selected (True)
                 selected.append(self.headers[i])
-        print(f"Selected headers: {selected}")  # Debugging line
         return selected
 
     def navigate_to_modify_headers(self):
+        """Navigate to the ModifySelectedHeadersPage with the selected headers."""
         selected_headers = self.get_selected_headers()
-        print(f"Selected Headers: {selected_headers}")  # Debugging line
+        if not selected_headers:
+            print("No headers selected for modification!")  # Debugging message
+            return
 
         # Pass selected headers to the ModifySelectedHeadersPage
         self.parent.modify_selected_headers_page.populate_headers(selected_headers)
 
         # Show the modify headers page
         self.parent.show_page(self.parent.modify_selected_headers_page)
+
+    def navigate_to_delete_headers(self):
+        """Navigate to the DeleteSelectedHeadersPage with the selected headers."""
+        selected_headers = self.get_selected_headers()
+        if not selected_headers:
+            print("No headers selected for deletion!")  # Debugging message
+            return
+
+        # Pass selected headers to the DeleteSelectedHeadersPage
+        self.parent.delete_selected_headers.populate_headers(selected_headers)
+
+        # Show the delete headers page
+        self.parent.show_page(self.parent.delete_selected_headers)
 
     def go_back_to_http_header_page(self):
         """Navigate back to the HTTP Header Page."""
