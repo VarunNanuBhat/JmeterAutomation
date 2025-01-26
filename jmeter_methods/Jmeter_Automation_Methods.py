@@ -216,6 +216,19 @@ class JMXModifier:
 
         return modified
 
+    def list_unique_domain_names(self):
+        """
+        Collects unique domain names from the HTTPSamplerProxy elements in the JMX file.
+        """
+        domain_array = set()  # Use a set to ensure uniqueness
+
+        for child_element in self.root.iter("HTTPSamplerProxy"):
+            for sub_child_element in child_element.iter("stringProp"):
+                if sub_child_element.get("name") == "HTTPSampler.domain":
+                    domain_array.add(sub_child_element.text)
+
+        return list(domain_array)  # Convert set back to list for consistency
+
 
     def enable_samplers_by_name(self, name):
         """
