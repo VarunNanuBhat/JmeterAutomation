@@ -128,6 +128,15 @@ for child_element in root.iter("HTTPSamplerProxy"):
                 pass
 
 
+# List all unique domain names
+domain_array = []
+for child_element in root.iter("HTTPSamplerProxy"):
+    for sub_child_element in child_element.iter("stringProp"):
+        if sub_child_element.get("name") == "HTTPSampler.domain":
+            if sub_child_element.text not in domain_array:
+                domain_array.append(sub_child_element.text)
+                print(sub_child_element.text)
+
 
 # Iterate through all the requests and remove the URL's of each tag in sub nodes that end with certain texts.
 # This is half implementation. We should also remove the associated samplers for the corresponding HTTP request
