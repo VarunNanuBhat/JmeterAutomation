@@ -16,6 +16,7 @@ from delete_selected_headers import DeleteSelectedHeadersPage
 from checkout_for_domain_page import CheckoutPageForDomain
 from domain_list_page import ListDomains
 from modify_selected_domains_page import ModifySelectedDomainsPage
+from checkout_for_replace_domain_page import CheckoutPageForReplaceDomain
 
 
 class App(ttk.Window):
@@ -42,6 +43,7 @@ class App(ttk.Window):
         self.checkout_for_domain_page = CheckoutPageForDomain(self)
         self.domain_list_page = ListDomains(self)
         self.modify_selected_domains_page = ModifySelectedDomainsPage(self)
+        self.checkout_for_replace_domain_page = CheckoutPageForReplaceDomain(self)
 
 
         # Start with the file upload page

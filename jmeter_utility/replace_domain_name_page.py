@@ -9,87 +9,127 @@ class ReplaceDomainNamePage(ttk.Frame):
         super().__init__(parent, padding=20)
         self.parent = parent
 
+        # Store multiple domain pairs
+        self.domains_to_replace = []
+
         # Title for the page
         title_label = ttk.Label(self, text="Replace Domain Name in Requests", font=("Arial", 22, "bold"))
-        title_label.grid(row=0, column=0, columnspan=2, pady=20)
+        title_label.grid(row=0, column=0, columnspan=4, pady=20)
 
-        # Label and Entry for the Old Domain Name
-        old_domain_label = ttk.Label(self, text="Enter Domain Name to Replace:", font=("Arial", 14))
-        old_domain_label.grid(row=1, column=0, padx=20, pady=10, sticky="w")
+        # Add Domain button
+        add_button = ttk.Button(self, text="+ Add Domain", bootstyle="success", command=self.add_domain_row)
+        add_button.grid(row=1, column=0, pady=10, padx=10, sticky="w")
 
-        self.old_domain_var = StringVar()
-        old_domain_entry = ttk.Entry(self, textvariable=self.old_domain_var, width=50)
-        old_domain_entry.grid(row=1, column=1, padx=20, pady=10)
+        # Preview Changes button
+        preview_button = ttk.Button(self, text="Preview Changes", bootstyle="primary", command=self.navigate_to_checkout)
+        preview_button.grid(row=1, column=1, pady=10, padx=10, sticky="w")
 
-        # Label and Entry for the New Domain Name
-        new_domain_label = ttk.Label(self, text="Enter New Domain Name or New Text:", font=("Arial", 14))
-        new_domain_label.grid(row=2, column=0, padx=20, pady=10, sticky="w")
+        # Go Back button
+        back_button = ttk.Button(self, text="Go Back", bootstyle="danger", command=self.go_back_to_home)
+        back_button.grid(row=1, column=2, pady=20, padx=20, sticky="e")
 
-        self.new_domain_var = StringVar()
-        new_domain_entry = ttk.Entry(self, textvariable=self.new_domain_var, width=50)
-        new_domain_entry.grid(row=2, column=1, padx=20, pady=10)
-
-        # Button to replace the domain name
-        replace_button = ttk.Button(self, text="Replace Domain Name", bootstyle="primary", command=self.replace_domain)
-        replace_button.grid(row=3, column=0, columnspan=2, pady=20)
 
         # Status Label
         self.status_label = ttk.Label(self, text="", font=("Arial", 14), anchor="center")
-        self.status_label.grid(row=4, column=0, columnspan=2, pady=10)
+        self.status_label.grid(row=999, column=0, columnspan=4, pady=10)
 
-    def replace_domain(self):
-        old_domain = self.old_domain_var.get()
-        new_domain = self.new_domain_var.get()
+        # Add the first input row by default
+        self.add_domain_row()
 
-        if not old_domain or not new_domain:
-            self.status_label.config(
-                text="Both the old domain name and new domain name are required.",
-                bootstyle="danger"
-            )
+    def add_domain_row(self):
+        """Dynamically add a new row for entering a domain replacement pair."""
+        row_index = len(self.domains_to_replace) + 2
+
+        old_domain_var = StringVar()
+        new_domain_var = StringVar()
+
+        # Old Domain Entry
+        old_domain_label = ttk.Label(self, text=f"Old Domain {row_index - 1}:", font=("Arial", 12))
+        old_domain_label.grid(row=row_index, column=0, padx=10, pady=5, sticky="w")
+
+        old_domain_entry = ttk.Entry(self, textvariable=old_domain_var, width=30)
+        old_domain_entry.grid(row=row_index, column=1, padx=10, pady=5)
+
+        # New Domain Entry
+        new_domain_label = ttk.Label(self, text="New Domain:", font=("Arial", 12))
+        new_domain_label.grid(row=row_index, column=2, padx=10, pady=5, sticky="w")
+
+        new_domain_entry = ttk.Entry(self, textvariable=new_domain_var, width=30)
+        new_domain_entry.grid(row=row_index, column=3, padx=10, pady=5)
+
+        # Store the entry variables
+        self.domains_to_replace.append((old_domain_var, new_domain_var))
+
+    def navigate_to_checkout(self):
+        """Navigate to the checkout page to preview domain replacements."""
+        domain_pairs = [(old_var.get().strip(), new_var.get().strip()) for old_var, new_var in self.domains_to_replace]
+        domain_pairs = [(old, new) for old, new in domain_pairs if old and new]  # Remove empty fields
+
+        if not domain_pairs:
+            self.status_label.config(text="Please enter at least one domain pair.", bootstyle="danger")
             return
 
-        # Call the method to replace the domain in the uploaded files
+        self.parent.checkout_for_replace_domain_page.display_changes(domain_pairs)
+        self.parent.show_page(self.parent.checkout_for_replace_domain_page)
+
+    def replace_domain(self):
+        """Replace all specified domains in the uploaded JMX files."""
+        domain_pairs = [(old_var.get().strip(), new_var.get().strip()) for old_var, new_var in self.domains_to_replace]
+        domain_pairs = [(old, new) for old, new in domain_pairs if old and new]  # Remove empty fields
+
+        if not domain_pairs:
+            self.status_label.config(text="Please enter at least one domain pair.", bootstyle="danger")
+            return
+
         try:
             error_message = None
             for file_path in self.parent.file_upload_page.uploaded_file_paths:
-                error_message = self.replace_domain_backend(file_path, old_domain, new_domain)
+                error_message = self.replace_domain_backend(file_path, domain_pairs)
                 if error_message:
-                    break  # Stop processing if there's an error
+                    break  # Stop if an error occurs
 
-            # Show success or failure message
             if error_message:
                 self.status_label.config(text=error_message, bootstyle="danger")
             else:
-                self.status_label.config(
-                    text=f"Domain '{old_domain}' successfully replaced with '{new_domain}'!",
-                    bootstyle="success"
-                )
+                self.status_label.config(text="Domains replaced successfully!", bootstyle="success")
+
         except Exception as e:
             self.status_label.config(text=f"Error: {str(e)}", bootstyle="danger")
 
-    def replace_domain_backend(self, file_path, old_domain, new_domain):
-        """
-        Replace the specified domain name in the JMX file.
-
-        :param file_path: Path of the JMX file to modify.
-        :param old_domain: Domain name to replace.
-        :param new_domain: New domain name to replace with.
-        :return: None if successful, or an error message if there is a failure.
-        """
+    def replace_domain_backend(self, file_path, domain_pairs):
+        """Replace multiple domain names in the JMX file."""
         try:
-            # Initialize JMXModifier with the uploaded file path
             modifier = JMXModifier(file_path)
 
-            # Call the method to replace the domain name
-            modifier.replace_domain_name(old_domain, new_domain)
+            for old_domain, new_domain in domain_pairs:
+                modifier.replace_domain_name(old_domain, new_domain)
 
-            # Save the modified file with a new name
             output_path = file_path.replace(".jmx", "_modified.jmx")
             modifier.save_changes(output_path)
 
-            return None  # No errors, replacement successful
+            return None  # No errors
 
         except ValueError as e:
             return f"Error: {str(e)}"
         except Exception as e:
             return f"Error modifying file {file_path}: {str(e)}"
+
+    def go_back_to_home(self):
+        """Go back to the file upload page and reset the file list."""
+        self.parent.file_upload_page.uploaded_file_paths = []
+        self.parent.file_upload_page.file_listbox.delete(0, 'end')
+        self.parent.file_upload_page.status_label.config(text="")
+        self.parent.file_upload_page.next_page_button.grid_remove()
+        self.status_label.config(text="")
+
+        self.reset_domain_entries()
+        self.parent.show_page(self.parent.file_upload_page)
+
+    def reset_domain_entries(self):
+        """Reset the domain entry fields to their initial state."""
+        for widget in self.grid_slaves():
+            if isinstance(widget, ttk.Entry) or isinstance(widget, ttk.Label):
+                widget.grid_forget()
+
+        self.domains_to_modify = []
+        self.add_domain_row()
