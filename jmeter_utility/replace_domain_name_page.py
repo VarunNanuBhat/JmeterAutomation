@@ -24,6 +24,11 @@ class ReplaceDomainNamePage(ttk.Frame):
         preview_button = ttk.Button(self, text="Preview Changes", bootstyle="primary", command=self.navigate_to_checkout)
         preview_button.grid(row=1, column=1, pady=10, padx=10, sticky="w")
 
+        # List Domains button
+        list_button = ttk.Button(self, text="List Domains", bootstyle="info",
+                                 command=self.navigate_to_list_domain_names)
+        list_button.grid(row=1, column=1, pady=20, padx=20, sticky="e")
+
         # Go Back button
         back_button = ttk.Button(self, text="Go Back", bootstyle="danger", command=self.go_back_to_home)
         back_button.grid(row=1, column=2, pady=20, padx=20, sticky="e")
@@ -59,6 +64,26 @@ class ReplaceDomainNamePage(ttk.Frame):
 
         # Store the entry variables
         self.domains_to_replace.append((old_domain_var, new_domain_var))
+
+    def navigate_to_list_domain_names(self):
+        """Navigate to the List Domain Names page."""
+        try:
+            uploaded_file_paths = self.parent.file_upload_page.get_uploaded_files()
+            if not uploaded_file_paths:
+                self.status_label.config(text="No files uploaded!", bootstyle="danger")
+                return
+
+            unique_domain_names = set()
+            for file_path in uploaded_file_paths:
+                modifier = JMXModifier(file_path)
+                unique_domain_names.update(modifier.list_unique_domain_names())
+
+            self.parent.domain_list_page.populate_domain_names(list(unique_domain_names))
+            self.parent.show_page(self.parent.domain_list_page)
+
+        except Exception as e:
+            self.status_label.config(text=f"Error: {str(e)}", bootstyle="danger")
+
 
     def navigate_to_checkout(self):
         """Navigate to the checkout page to preview domain replacements."""

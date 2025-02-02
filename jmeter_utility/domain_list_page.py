@@ -38,9 +38,9 @@ class ListDomains(ttk.Frame):
         )
         modify_button.grid(row=2, column=0, pady=10, padx=10, sticky="w")
 
-        # Add the Delete Domains button
+        # Add the replace Domains button
         delete_button = ttk.Button(
-            self, text="Delete Domains", bootstyle="danger", command=self.navigate_to_delete_domains
+            self, text="Delete Domains", bootstyle="danger", command=self.navigate_to_replace_domains
         )
         delete_button.grid(row=2, column=1, pady=10, padx=10, sticky="w")
 
@@ -99,18 +99,18 @@ class ListDomains(ttk.Frame):
         # Show the modify domains page
         self.parent.show_page(self.parent.modify_selected_domains_page)
 
-    def navigate_to_delete_domains(self):
-        """Navigate to the DeleteSelectedDomainsPage with the selected domains."""
+    def navigate_to_replace_domains(self):
+        """Navigate to the ReplaceSelectedDomainsPage with the selected domains."""
         selected_domain_names = self.get_selected_domain_names()
         if not selected_domain_names:
-            print("No domain names selected for deletion!")  # Debugging message
+            print("No domain names selected for replacement!")  # Debugging message
             return
 
-        # Pass selected domains to the DeleteSelectedDomainsPage
-        self.parent.delete_selected_domains.populate_domain_names(selected_domain_names)
+        # Pass selected domains to the ReplaceSelectedDomainsPage
+        self.parent.replace_selected_domains_page.populate_domain_names(selected_domain_names)
 
-        # Show the delete domains page
-        self.parent.show_page(self.parent.delete_selected_domains)
+        # Show the replace domains page
+        self.parent.show_page(self.parent.replace_selected_domains_page)
 
     def go_back_to_http_header_page(self):
         """Navigate back to the HTTP Header Page."""

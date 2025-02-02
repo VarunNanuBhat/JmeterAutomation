@@ -17,6 +17,7 @@ from checkout_for_domain_page import CheckoutPageForDomain
 from domain_list_page import ListDomains
 from modify_selected_domains_page import ModifySelectedDomainsPage
 from checkout_for_replace_domain_page import CheckoutPageForReplaceDomain
+from replace_selected_domains_page import ReplaceSelectedDomainsPage
 
 
 class App(ttk.Window):
@@ -44,6 +45,7 @@ class App(ttk.Window):
         self.domain_list_page = ListDomains(self)
         self.modify_selected_domains_page = ModifySelectedDomainsPage(self)
         self.checkout_for_replace_domain_page = CheckoutPageForReplaceDomain(self)
+        self.replace_selected_domains_page = ReplaceSelectedDomainsPage(self)
 
 
         # Start with the file upload page
