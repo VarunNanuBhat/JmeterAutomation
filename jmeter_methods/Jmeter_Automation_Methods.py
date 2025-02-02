@@ -294,6 +294,22 @@ class JMXModifier:
             print(f"No samplers with testname '{name}' were found to delete.")
         return modified
 
+    def list_unique_sampler_names(self):
+        """
+        Collects unique sampler names from the JMX file, excluding HTTPSamplerProxy.
+        """
+        sampler_names = set()  # Use a set to store unique values
+
+        for child_element in self.root.iter():
+            test_name = child_element.get("testname")
+            test_class = child_element.get("testclass")
+
+            if test_name and test_class and test_class != "HTTPSamplerProxy":
+                sampler_names.add(test_name)
+
+        return list(sampler_names)
+
+
 
     def update_endpoints(self, text, action):
         """
