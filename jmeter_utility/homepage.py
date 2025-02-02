@@ -19,6 +19,10 @@ from modify_selected_domains_page import ModifySelectedDomainsPage
 from checkout_for_replace_domain_page import CheckoutPageForReplaceDomain
 from replace_selected_domains_page import ReplaceSelectedDomainsPage
 from checkout_for_sampler_page import CheckoutForSamplerPage
+from sampler_list_page import ListSamplers
+from modify_selected_samplers_page import ModifySelectedSamplersPage
+
+
 
 
 class App(ttk.Window):
@@ -48,6 +52,8 @@ class App(ttk.Window):
         self.checkout_for_replace_domain_page = CheckoutPageForReplaceDomain(self)
         self.replace_selected_domains_page = ReplaceSelectedDomainsPage(self)
         self.checkout_for_sampler_page = CheckoutForSamplerPage(self)
+        self.sampler_list_page = ListSamplers(self)
+        self.modify_selected_samplers_page = ModifySelectedSamplersPage(self)
 
 
         # Start with the file upload page
