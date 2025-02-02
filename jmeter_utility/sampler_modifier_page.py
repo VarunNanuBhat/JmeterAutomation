@@ -17,6 +17,11 @@ class SamplerModifierPage(ttk.Frame):
         add_button = ttk.Button(self, text="+ Add Sampler", bootstyle="success", command=self.add_sampler_row)
         add_button.grid(row=1, column=0, pady=10, padx=20, sticky="w")
 
+        # List Domains button
+        list_button = ttk.Button(self, text="List Samplers", bootstyle="info",
+                                 command=self.navigate_to_list_sampler_names)
+        list_button.grid(row=1, column=1, pady=20, padx=20, sticky="e")
+
         # Preview Changes button
         preview_button = ttk.Button(self, text="Preview Changes", bootstyle="primary",command=self.navigate_to_checkout)
         preview_button.grid(row=1, column=3, pady=20, padx=20, sticky="e")
@@ -70,5 +75,24 @@ class SamplerModifierPage(ttk.Frame):
         self.parent.checkout_for_sampler_page.display_changes(samplers, action)
         self.parent.show_page(self.parent.checkout_for_sampler_page)
 
+
+    def navigate_to_list_sampler_names(self):
+        """Navigate to the List Domain Names page."""
+        try:
+            uploaded_file_paths = self.parent.file_upload_page.get_uploaded_files()
+            if not uploaded_file_paths:
+                self.status_label.config(text="No files uploaded!", bootstyle="danger")
+                return
+
+            unique_sampler_names = set()
+            for file_path in uploaded_file_paths:
+                modifier = JMXModifier(file_path)
+                unique_sampler_names.update(modifier.list_unique_sampler_names())
+
+            self.parent.sampler_list_page.populate_sampler_names(list(unique_sampler_names))
+            self.parent.show_page(self.parent.sampler_list_page)
+
+        except Exception as e:
+            self.status_label.config(text=f"Error: {str(e)}", bootstyle="danger")
 
 
