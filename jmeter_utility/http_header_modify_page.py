@@ -109,16 +109,16 @@ class HttpHeaderPage(ttk.Frame):
     def go_back_to_home(self):
         """Go back to the file upload page and reset the file list."""
         # Reset the uploaded file list in the file upload page
-        self.parent.file_upload_page.uploaded_file_paths = []
+        # self.parent.file_upload_page.uploaded_file_paths = []
 
         # Clear the listbox to show an empty state
-        self.parent.file_upload_page.file_listbox.delete(0, 'end')
+        # self.parent.file_upload_page.file_listbox.delete(0, 'end')
 
         # Reset the status label
         self.parent.file_upload_page.status_label.config(text="")
 
         # Hide the 'Next Page' button initially
-        self.parent.file_upload_page.next_page_button.grid_remove()
+        # self.parent.file_upload_page.next_page_button.grid_remove()
 
         # Clear status label in HttpHeaderPage (this clears success/error message)
         self.status_label.config(text="")

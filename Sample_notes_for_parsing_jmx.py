@@ -228,3 +228,13 @@ Include FAQs for common issues users might face.
 Implement basic AI to suggest common fixes or optimizations for JMX files.
 Add natural language input for tasks (e.g., "disable all endpoints with domain example.com").
 '''
+
+
+'''
+recommended fixes: 
+1. in endpoint modifier based on domain, even if i give wrong domain, I get the output as changes applied succesfully. 
+2. For endpoint modifer with specific texts, upon clicking on apply changes, I should be able to land in home page as that of endpoint modifier with domain
+3. Endpoint modifer with spcific texts: Add option to add multiple endpoints at same time and make in sink with other pages 
+4. In HTTP header modify, checkout page, if the headers are not found, it does not print a error message, instad it give me error in console. 
+
+'''
