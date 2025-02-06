@@ -29,7 +29,10 @@ class App(ttk.Window):
     def __init__(self):
         super().__init__(themename="darkly")
         self.title("Modern JMeter Automation Tool")
-        self.geometry("800x600")
+
+        # Set full screen dynamically
+        self.geometry(f"{self.winfo_screenwidth()}x{self.winfo_screenheight()}")
+        self.state("zoomed")  # Maximize window
 
         # Initialize frames
         self.file_upload_page = FileUploadPage(self)
