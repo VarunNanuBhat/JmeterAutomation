@@ -22,7 +22,7 @@ class CheckoutPageForHeaderModify(ttk.Frame):
         button_frame.pack(fill="x", pady=10)
 
         # Back Button
-        back_button = ttk.Button(button_frame, text="Go Back", bootstyle="danger", command=self.go_back_to_http_headers)
+        back_button = ttk.Button(button_frame, text="Go Back", bootstyle="danger", command=self.go_back_to_file_upload)
         back_button.pack(side="left", padx=20, pady=10)
 
         # Confirm Button
@@ -50,9 +50,6 @@ class CheckoutPageForHeaderModify(ttk.Frame):
             ttk.Label(self.preview_frame, text=header_name, font=("Arial", 12)).grid(row=row, column=0, padx=20, pady=5, sticky="w")
             ttk.Label(self.preview_frame, text=header_value, font=("Arial", 12)).grid(row=row, column=1, padx=20, pady=5, sticky="w")
 
-    def go_back_to_http_headers(self):
-        """Navigate back to the HTTP Header Manager page."""
-        self.parent.show_page(self.parent.http_header_page)
 
     def confirm_changes(self):
         """Confirm the changes and apply modifications."""
