@@ -7,27 +7,35 @@ class CheckoutPageForHeaderModify(ttk.Frame):
     def __init__(self, parent):
         super().__init__(parent, padding=20)
         self.parent = parent
-        self.headers_displayed = {}  # Initialize to store displayed headers
+        self.headers_displayed = {}  # Store displayed headers
 
         # Title Label
-        title_label = ttk.Label(self, text="Checkout Page", font=("Arial", 16, "bold"))
+        title_label = ttk.Label(self, text="Checkout Page", font=("Arial", 18, "bold"))
         title_label.pack(pady=10)
 
         # Frame for header modifications
         self.preview_frame = ttk.Frame(self)
         self.preview_frame.pack(fill=BOTH, expand=True, pady=20)
 
+        # Button Frame (For Back & Confirm)
+        button_frame = ttk.Frame(self)
+        button_frame.pack(fill="x", pady=10)
+
         # Back Button
-        back_button = ttk.Button(self, text="Go Back", bootstyle="danger", command=self.go_back_to_http_headers)
+        back_button = ttk.Button(button_frame, text="Go Back", bootstyle="danger", command=self.go_back_to_http_headers)
         back_button.pack(side="left", padx=20, pady=10)
 
         # Confirm Button
-        confirm_button = ttk.Button(self, text="Confirm Changes", bootstyle="success", command=self.confirm_changes)
+        confirm_button = ttk.Button(button_frame, text="Confirm Changes", bootstyle="success", command=self.confirm_changes)
         confirm_button.pack(side="right", padx=20, pady=10)
+
+        # 🔥 Status Label (To show success/error messages)
+        self.status_label = ttk.Label(self, text="", font=("Arial", 12, "bold"), bootstyle="info")
+        self.status_label.pack(pady=10)
 
     def display_modifications(self, headers_to_modify):
         """Display the headers and their new values in the preview frame."""
-        self.headers_displayed = headers_to_modify  # Save the headers for later use
+        self.headers_displayed = headers_to_modify  # Save headers for later use
 
         # Clear existing content in the preview frame
         for widget in self.preview_frame.winfo_children():
@@ -48,15 +56,15 @@ class CheckoutPageForHeaderModify(ttk.Frame):
 
     def confirm_changes(self):
         """Confirm the changes and apply modifications."""
-        headers_to_modify = self.headers_displayed  # Retrieve the saved headers
+        headers_to_modify = self.headers_displayed  # Retrieve saved headers
         uploaded_file_paths = self.parent.file_upload_page.get_uploaded_files()
 
         if not uploaded_file_paths:
-            self.parent.file_upload_page.status_label.config(text="No files uploaded!", bootstyle="danger")
+            self.status_label.config(text="❌ No files uploaded!", bootstyle="danger")
             return
 
         if not headers_to_modify:
-            self.parent.file_upload_page.status_label.config(text="No headers to modify!", bootstyle="danger")
+            self.status_label.config(text="❌ No headers to modify!", bootstyle="danger")
             return
 
         # Apply changes to each file
@@ -68,11 +76,12 @@ class CheckoutPageForHeaderModify(ttk.Frame):
                 error_message = str(e)
                 break
 
-        # Update status
+        # Update status with success or error message
         if error_message:
-            self.parent.file_upload_page.status_label.config(text=error_message, bootstyle="danger")
+            self.status_label.config(text=f"❌ {error_message}", bootstyle="danger")
         else:
-            self.parent.file_upload_page.status_label.config(text="HTTP Headers Modified Successfully!", bootstyle="success")
+            num_headers_modified = len(headers_to_modify)
+            self.status_label.config(text=f"✅ {num_headers_modified} headers modified successfully!", bootstyle="success")
 
     @staticmethod
     def modify_http_headers_backend(file_path, headers):
