@@ -36,11 +36,11 @@ class ListDomains(ttk.Frame):
         button_frame.grid(row=2, column=0, columnspan=3, pady=10, sticky="ew")
 
         # Add the Modify Endpoints button
-        modify_button = ttk.Button(button_frame, text="✏ Modify", bootstyle="primary", command=self.navigate_to_modify_domain)
+        modify_button = ttk.Button(button_frame, text="✏ Modify Endpoints", bootstyle="primary", command=self.navigate_to_modify_domain)
         modify_button.pack(side="left", fill="x", expand=True, padx=5)
 
         # Add the replace Domains button
-        delete_button = ttk.Button(button_frame, text="🗑 Delete", bootstyle="danger", command=self.navigate_to_replace_domains)
+        delete_button = ttk.Button(button_frame, text="🗑 Replace Domains", bootstyle="danger", command=self.navigate_to_replace_domains)
         delete_button.pack(side="left", fill="x", expand=True, padx=5)
 
         home_button = ttk.Button(button_frame, text="🏠 Home", bootstyle="secondary", command=self.go_back_to_home)

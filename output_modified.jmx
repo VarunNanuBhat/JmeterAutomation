@@ -740,10 +740,6 @@
                 <stringProp name="Header.name">ScenarioType</stringProp>
                 <stringProp name="Header.value">BO</stringProp>
               </elementProp>
-              <elementProp name="X-CustomIdentity" elementType="Header">
-                <stringProp name="Header.name">X-CustomIdentity</stringProp>
-                <stringProp name="Header.value">SkyDriveSync=24581135-c9b1-4f47-ba96-ffff1d000000</stringProp>
-              </elementProp>
               <elementProp name="X-RequestStats" elementType="Header">
                 <stringProp name="Header.name">X-RequestStats</stringProp>
                 <stringProp name="Header.value">btuc=0;did=e91c39e9-3bdb-91aa-cfb9-197b472412c9;ftuc=0;stid=681b3153-bf3e-44b7-bb4f-6908afc8dbb9;</stringProp>
@@ -751,10 +747,6 @@
               <elementProp name="X-SubscriptionIdToNotNotify" elementType="Header">
                 <stringProp name="Header.name">X-SubscriptionIdToNotNotify</stringProp>
                 <stringProp name="Header.value">WLS_SubscriptionId_0B8B56B6-F883-4598-BBDE-93F642BD5BDD</stringProp>
-              </elementProp>
-              <elementProp name="X-SynchronousMetadata" elementType="Header">
-                <stringProp name="Header.name">X-SynchronousMetadata</stringProp>
-                <stringProp name="Header.value">false</stringProp>
               </elementProp>
               <elementProp name="X-TransactionId" elementType="Header">
                 <stringProp name="Header.name">X-TransactionId</stringProp>
@@ -934,10 +926,6 @@
               <elementProp name="ScenarioType" elementType="Header">
                 <stringProp name="Header.name">ScenarioType</stringProp>
                 <stringProp name="Header.value">BO</stringProp>
-              </elementProp>
-              <elementProp name="SyncGhostLevelSupport" elementType="Header">
-                <stringProp name="Header.name">SyncGhostLevelSupport</stringProp>
-                <stringProp name="Header.value">GhostRoot</stringProp>
               </elementProp>
               <elementProp name="X-EnumerationReason" elementType="Header">
                 <stringProp name="Header.name">X-EnumerationReason</stringProp>
@@ -6468,10 +6456,6 @@
                 <stringProp name="Header.name">Connection</stringProp>
                 <stringProp name="Header.value">keep-alive</stringProp>
               </elementProp>
-              <elementProp name="X-Goog-Encode-Response-If-Executable" elementType="Header">
-                <stringProp name="Header.name">X-Goog-Encode-Response-If-Executable</stringProp>
-                <stringProp name="Header.value">base64</stringProp>
-              </elementProp>
               <elementProp name="X-Goog-Api-Key" elementType="Header">
                 <stringProp name="Header.name">X-Goog-Api-Key</stringProp>
                 <stringProp name="Header.value">AIzaSyBOti4mM-6x9WDnZIjIeyEU21OpBXqWBgw</stringProp>
@@ -6794,10 +6778,6 @@
               <elementProp name="Connection" elementType="Header">
                 <stringProp name="Header.name">Connection</stringProp>
                 <stringProp name="Header.value">keep-alive</stringProp>
-              </elementProp>
-              <elementProp name="X-Goog-Encode-Response-If-Executable" elementType="Header">
-                <stringProp name="Header.name">X-Goog-Encode-Response-If-Executable</stringProp>
-                <stringProp name="Header.value">base64</stringProp>
               </elementProp>
               <elementProp name="X-Goog-Api-Key" elementType="Header">
                 <stringProp name="Header.name">X-Goog-Api-Key</stringProp>
@@ -17633,10 +17613,6 @@
                 <stringProp name="Header.name">ScenarioType</stringProp>
                 <stringProp name="Header.value">BO</stringProp>
               </elementProp>
-              <elementProp name="X-CustomIdentity" elementType="Header">
-                <stringProp name="Header.name">X-CustomIdentity</stringProp>
-                <stringProp name="Header.value">SkyDriveSync=24581135-c9b1-4f47-ba96-ffff1e000000</stringProp>
-              </elementProp>
               <elementProp name="X-RequestStats" elementType="Header">
                 <stringProp name="Header.name">X-RequestStats</stringProp>
                 <stringProp name="Header.value">btuc=0;did=e91c39e9-3bdb-91aa-cfb9-197b472412c9;ftuc=0;stid=091ac5d4-839b-45c2-8350-394d617bd66f;</stringProp>
@@ -17644,10 +17620,6 @@
               <elementProp name="X-SubscriptionIdToNotNotify" elementType="Header">
                 <stringProp name="Header.name">X-SubscriptionIdToNotNotify</stringProp>
                 <stringProp name="Header.value">WLS_SubscriptionId_0B8B56B6-F883-4598-BBDE-93F642BD5BDD</stringProp>
-              </elementProp>
-              <elementProp name="X-SynchronousMetadata" elementType="Header">
-                <stringProp name="Header.name">X-SynchronousMetadata</stringProp>
-                <stringProp name="Header.value">false</stringProp>
               </elementProp>
               <elementProp name="X-TransactionId" elementType="Header">
                 <stringProp name="Header.name">X-TransactionId</stringProp>
@@ -17769,10 +17741,6 @@
               <elementProp name="ScenarioType" elementType="Header">
                 <stringProp name="Header.name">ScenarioType</stringProp>
                 <stringProp name="Header.value">BO</stringProp>
-              </elementProp>
-              <elementProp name="SyncGhostLevelSupport" elementType="Header">
-                <stringProp name="Header.name">SyncGhostLevelSupport</stringProp>
-                <stringProp name="Header.value">GhostRoot</stringProp>
               </elementProp>
               <elementProp name="X-EnumerationReason" elementType="Header">
                 <stringProp name="Header.name">X-EnumerationReason</stringProp>

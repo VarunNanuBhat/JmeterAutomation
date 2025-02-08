@@ -19,11 +19,15 @@ class CheckoutPageForDomain(ttk.Frame):
         self.preview_frame.pack(fill="both", expand=True, pady=20)
 
         # Back and Confirm Buttons
-        back_button = ttk.Button(self, text="Go Back", bootstyle="danger", command=self.go_back_to_home)
+        back_button = ttk.Button(self, text="🔙 Back", bootstyle="secondary", command=self.go_back_to_endpoint_modifier_with_domain)
         back_button.pack(side="left", padx=20, pady=10)
 
-        confirm_button = ttk.Button(self, text="Confirm Changes", bootstyle="success", command=self.confirm_changes)
+        confirm_button = ttk.Button(self, text="✔ Confirm Changes", bootstyle="success", command=self.confirm_changes)
         confirm_button.pack(side="right", padx=20, pady=10)
+
+        # 🔥 Status Label (To show success/error messages)
+        self.status_label = ttk.Label(self, text="", font=("Arial", 12, "bold"), bootstyle="info")
+        self.status_label.pack(pady=10)
 
     def display_changes(self, domains, action):
         """Display the changes queued for confirmation."""
@@ -39,29 +43,8 @@ class CheckoutPageForDomain(ttk.Frame):
         for idx, domain in enumerate(domains, start=1):
             ttk.Label(self.preview_frame, text=f"{idx}. {domain}", font=("Arial", 12)).pack(anchor="w", padx=20, pady=5)
 
-    def go_back_to_home(self):
-        """Go back to the file upload page and reset the file list."""
-        # Reset the uploaded file list in the file upload page
-        self.parent.file_upload_page.uploaded_file_paths = []
-
-        # Clear the listbox to show an empty state
-        self.parent.file_upload_page.file_listbox.delete(0, 'end')
-
-        # Reset the status label
-        self.parent.file_upload_page.status_label.config(text="")
-
-        # Hide the 'Next Page' button initially
-        self.parent.file_upload_page.next_page_button.grid_remove()
-
-        # Clear status label in HttpHeaderPage (this clears success/error message)
-        self.status_label.config(text="")
-
-        # Reset the HTTP Header fields (clear existing header rows and messages)
-        # enable this method if you want to reset header page on re-starting
-        # self.reset_http_headers()
-
-        # Show the file upload page
-        self.parent.show_page(self.parent.file_upload_page)
+    def go_back_to_endpoint_modifier_with_domain(self):
+        self.parent.show_page(self.parent.endpoint_modifier_with_domain)
 
     def confirm_changes(self):
         """Apply the changes and provide feedback."""

@@ -40,11 +40,20 @@ class ModifySelectedDomainsPage(ttk.Frame):
         self.canvas.create_window((0, 0), window=self.inner_frame, anchor="nw")
 
         # Buttons for navigation
-        apply_changes = ttk.Button(self, text="Apply Changes", bootstyle="primary", command=self.apply_changes)
+        apply_changes = ttk.Button(self, text="🔄 Apply Changes", bootstyle="primary", command=self.apply_changes)
         apply_changes.grid(row=3, column=0, pady=20, padx=10, sticky="w")
 
-        back_button = ttk.Button(self, text="Go Back", bootstyle="danger", command=self.go_back_to_list_domains)
-        back_button.grid(row=3, column=3, pady=20, padx=10, sticky="e")
+        back_button = ttk.Button(self, text="🔙 Back", bootstyle="secondary", command=self.go_back_to_list_domains)
+        back_button.grid(row=3, column=1, pady=20, padx=20, sticky="e")
+
+        # Add a status label to display success or error messages
+        self.status_label = ttk.Label(self, text="", font=("Arial", 12), anchor="w")
+        self.status_label.grid(row=4, column=0, columnspan=4, pady=10, sticky="w")
+
+        # Add a status label to display success or error messages
+        self.status_label = ttk.Label(self, text="", font=("Arial", 12, "bold"), bootstyle="info", width=50,
+                                      anchor="center")
+        self.status_label.grid(row=4, column=0, columnspan=4, pady=10, sticky="n")
 
     def populate_domain_names(self, selected_domains):
         """Populate the page with selected domains."""
