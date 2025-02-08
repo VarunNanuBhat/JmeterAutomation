@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4.1">
   <hashTree>
-    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Blazemeter test plan" enabled="true">
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Blazemeter test plan" enabled="false">
       <stringProp name="TestPlan.comments">This test plan was created by the BlazeMeter converter v.3.1.23. Please contact support@blazemeter.com for further support.</stringProp>
       <boolProp name="TestPlan.functional_mode">false</boolProp>
       <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
@@ -25,7 +25,7 @@
         <boolProp name="DNSCacheManager.isCustomResolver">false</boolProp>
       </DNSCacheManager>
       <hashTree />
-      <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager" enabled="true">
+      <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager" enabled="false">
         <collectionProp name="AuthManager.auth_list" />
         <boolProp name="AuthManager.controlledByThreadGroup">false</boolProp>
       </AuthManager>
@@ -8522,7 +8522,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">sa</stringProp>
+          <stringProp name="HTTPSampler.domain">static.ads-twitter.com</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -8852,7 +8852,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">sa</stringProp>
+          <stringProp name="HTTPSampler.domain">static.ads-twitter.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -9335,7 +9335,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">sdf</stringProp>
+          <stringProp name="HTTPSampler.domain">www.facebook.com</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -9593,7 +9593,7 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">sdf</stringProp>
+          <stringProp name="HTTPSampler.domain">www.facebook.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -10369,7 +10369,7 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">sdf</stringProp>
+          <stringProp name="HTTPSampler.domain">www.facebook.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />

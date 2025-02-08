@@ -238,6 +238,7 @@ recommended fixes:
 4. Provide clear option for all pages
 5. Add icons for every buttons. 
 6. Add a canvas frame for delete selected header from header list page, checkout page for modify endpoints based on domains (refer modify sampler).  
+7. In sampler modify, even I dont select action and click on apply changes for selected samplers, it does not throw a error message
 '''
 
 

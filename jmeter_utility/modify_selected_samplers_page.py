@@ -8,7 +8,7 @@ class ModifySelectedSamplersPage(ttk.Frame):
         super().__init__(parent, padding=20)
         self.parent = parent
         self.selected_samplers = []  # Store selected sampler names
-        self.action_var = StringVar(value="enable")  # Store common action
+        self.action_var = StringVar()  # Store common action
 
         # Title Label
         title_label = ttk.Label(self, text="Modify Selected Samplers", font=("Arial", 16, "bold"))
@@ -40,10 +40,10 @@ class ModifySelectedSamplersPage(ttk.Frame):
         self.canvas.create_window((0, 0), window=self.inner_frame, anchor="nw")
 
         # Buttons for navigation
-        apply_changes = ttk.Button(self, text="Apply Changes", bootstyle="primary", command=self.apply_changes)
+        apply_changes = ttk.Button(self, text="🔄 Apply Changes", bootstyle="primary", command=self.apply_changes)
         apply_changes.grid(row=3, column=0, pady=20, padx=10, sticky="w")
 
-        back_button = ttk.Button(self, text="Go Back", bootstyle="danger", command=self.go_back_to_list_samplers)
+        back_button = ttk.Button(self, text="🔙 Back", bootstyle="secondary", command=self.go_back_to_list_samplers)
         back_button.grid(row=3, column=3, pady=20, padx=10, sticky="e")
 
     def populate_sampler_names(self, selected_samplers):

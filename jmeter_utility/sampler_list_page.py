@@ -35,8 +35,12 @@ class ListSamplers(ttk.Frame):
 
 
         # Go Back Button
-        back_button = ttk.Button(self, text="Go Back", bootstyle="secondary", command=self.go_back_to_sampler_page)
+        back_button = ttk.Button(self, text="🔙 Back", bootstyle="secondary", command=self.go_back_to_sampler_page)
         back_button.grid(row=3, column=3, pady=20, padx=20, sticky="e")
+
+        # Status Label for error messages
+        self.status_label = ttk.Label(self, text="", font=("Arial", 12), bootstyle="danger")
+        self.status_label.grid(row=3, column=0, columnspan=3, pady=10)
 
     def populate_sampler_names(self, sampler_names):
         """Populate samplers with checkboxes."""
@@ -71,7 +75,7 @@ class ListSamplers(ttk.Frame):
         """Navigate to modify page with selected samplers."""
         selected_samplers = self.get_selected_samplers()
         if not selected_samplers:
-            print("No samplers selected for modification!")  # Debugging message
+            self.status_label.config(text = "No samplers selected for modification!", bootstyle = "danger")  # Debugging message
             return
 
         # Pass selected samplers to the modify page

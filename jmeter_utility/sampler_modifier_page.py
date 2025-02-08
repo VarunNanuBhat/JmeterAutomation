@@ -15,24 +15,27 @@ class SamplerModifierPage(ttk.Frame):
 
         # Add Sampler button
         add_button = ttk.Button(self, text="+ Add Sampler", bootstyle="success", command=self.add_sampler_row)
-        add_button.grid(row=1, column=0, pady=10, padx=20, sticky="w")
+        add_button.grid(row=1, column=0, pady=20, padx=20, sticky="ew")
 
         # List Domains button
-        list_button = ttk.Button(self, text="List Samplers", bootstyle="info",
-                                 command=self.navigate_to_list_sampler_names)
-        list_button.grid(row=1, column=1, pady=20, padx=20, sticky="e")
+        list_button = ttk.Button(self, text="📜 List Samplers", bootstyle="info", command=self.navigate_to_list_sampler_names)
+        list_button.grid(row=1, column=1, pady=20, padx=20, sticky="ew")
 
         # Preview Changes button
-        preview_button = ttk.Button(self, text="Preview Changes", bootstyle="primary",command=self.navigate_to_checkout)
-        preview_button.grid(row=1, column=3, pady=20, padx=20, sticky="e")
+        preview_button = ttk.Button(self, text="👁 Preview Changes", bootstyle="primary",command=self.navigate_to_checkout)
+        preview_button.grid(row=1, column=3, pady=20, padx=20, sticky="ew")
+
+        # Home page button
+        home_button = ttk.Button(self, text="🏠 Home", bootstyle="secondary", command=self.go_back_to_home)
+        home_button.grid(row=1, column=2, pady=20, padx=20, sticky="ew")
 
         # Action Selection
-        action_label = ttk.Label(self, text="Select Action:", font=("Arial", 14))
+        action_label = ttk.Label(self, text="⚡ Select Action:", font=("Arial", 14))
         action_label.grid(row=2, column=0, padx=20, pady=10, sticky="w")
 
-        ttk.Radiobutton(self, text="Enable", variable=self.action_var, value="enable").grid(row=2, column=1, pady=5, sticky="w")
-        ttk.Radiobutton(self, text="Disable", variable=self.action_var, value="disable").grid(row=3, column=1, pady=5, sticky="w")
-        ttk.Radiobutton(self, text="Delete", variable=self.action_var, value="delete").grid(row=4, column=1, pady=5, sticky="w")
+        ttk.Radiobutton(self, text="✔ Enable", variable=self.action_var, value="enable").grid(row=2, column=1, padx=10, pady=5, sticky="w")
+        ttk.Radiobutton(self, text="🚫 Disable", variable=self.action_var, value="disable").grid(row=2, column=2, padx=10, pady=5, sticky="w")
+        ttk.Radiobutton(self, text="🗑 Delete", variable=self.action_var, value="delete").grid(row=2, column=3, padx=10, pady=5, sticky="w")
 
         # Status Label
         self.status_label = ttk.Label(self, text="", font=("Arial", 14), anchor="center")
@@ -40,6 +43,7 @@ class SamplerModifierPage(ttk.Frame):
 
         # Configure grid row weight
         self.grid_rowconfigure(0, weight=0)
+        self.grid_rowconfigure(1, weight=0)
         self.grid_rowconfigure(999, weight=1)
 
         # Add the first sampler input row by default
@@ -96,3 +100,12 @@ class SamplerModifierPage(ttk.Frame):
             self.status_label.config(text=f"Error: {str(e)}", bootstyle="danger")
 
 
+    def go_back_to_home(self):
+        """Go back to the file upload page and reset the file list."""
+        # self.parent.file_upload_page.uploaded_file_paths = []
+        # self.parent.file_upload_page.file_listbox.delete(0, 'end')
+        self.parent.file_upload_page.status_label.config(text="")
+        # self.parent.file_upload_page.next_page_button.grid_remove()
+        self.status_label.config(text="")
+        # self.reset_domain_entries()
+        self.parent.show_page(self.parent.file_upload_page)

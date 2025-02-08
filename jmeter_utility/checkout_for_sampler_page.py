@@ -18,11 +18,11 @@ class CheckoutForSamplerPage(ttk.Frame):
         self.changes_textbox.grid(row=1, column=0, columnspan=3, padx=20, pady=10)
 
         # Apply Changes Button
-        apply_button = ttk.Button(self, text="Apply Changes", bootstyle="success", command=self.apply_changes)
-        apply_button.grid(row=2, column=0, pady=20, padx=20, sticky="w")
+        confirm_button = ttk.Button(self, text="✔ Confirm Changes", bootstyle="success", command=self.confirm_changes)
+        confirm_button.grid(row=2, column=0, pady=20, padx=20, sticky="w")
 
         # Go Back Button
-        back_button = ttk.Button(self, text="Go Back", bootstyle="danger", command=self.go_back)
+        back_button = ttk.Button(self, text="🔙 Back", bootstyle="secondary", command=self.go_back_to_sampler_modifier_page)
         back_button.grid(row=2, column=2, pady=20, padx=20, sticky="e")
 
         # Status Label
@@ -43,7 +43,7 @@ class CheckoutForSamplerPage(ttk.Frame):
 
         self.status_label.config(text="")
 
-    def apply_changes(self):
+    def confirm_changes(self):
         """Trigger the apply_action method from the sampler modifier page."""
 
         samplers = self.samplers  # Use the samplers set in display_changes()
@@ -94,7 +94,7 @@ class CheckoutForSamplerPage(ttk.Frame):
             self.status_label.config(text=f"Error: {str(e)}", bootstyle="danger")
 
 
-    def go_back(self):
+    def go_back_to_sampler_modifier_page(self):
         """Go back to the Sampler Modifier Page."""
         self.status_label.config(text="")
         self.parent.show_page(self.parent.sampler_modifier_page)
