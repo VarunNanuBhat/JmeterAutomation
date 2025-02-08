@@ -11,24 +11,24 @@ class EndpointActionPageForDomain(ttk.Frame):
         self.action_var = StringVar(value="")
 
         # Title Label
-        title_label = ttk.Label(self, text="Endpoint Modifier", font=("Arial", 16, "bold"))
+        title_label = ttk.Label(self, text="Endpoint Modifier based on Domain", font=("Arial", 16, "bold"))
         title_label.grid(row=0, column=0, columnspan=4, pady=10)
 
         # Add Domain button
         add_button = ttk.Button(self, text="+ Add Domain", bootstyle="success", command=self.add_domain_row)
-        add_button.grid(row=1, column=0, pady=20, padx=20, sticky="w")
+        add_button.grid(row=1, column=0, pady=20, padx=20, sticky="ew")
 
         # Preview Changes button
-        preview_button = ttk.Button(self, text="Preview Changes", bootstyle="primary", command=self.navigate_to_checkout)
-        preview_button.grid(row=1, column=3, pady=20, padx=20, sticky="e")
+        preview_button = ttk.Button(self, text="👁 Preview Changes", bootstyle="primary", command=self.navigate_to_checkout)
+        preview_button.grid(row=1, column=3, pady=20, padx=20, sticky="ew")
 
         # List Domains button
-        list_button = ttk.Button(self, text="List Domains", bootstyle="info", command=self.navigate_to_list_domain_names)
-        list_button.grid(row=1, column=1, pady=20, padx=20, sticky="e")
+        list_button = ttk.Button(self, text="📜 List Domains", bootstyle="info", command=self.navigate_to_list_domain_names)
+        list_button.grid(row=1, column=1, pady=20, padx=20, sticky="ew")
 
         # Go Back button
-        back_button = ttk.Button(self, text="Go Back", bootstyle="danger", command=self.go_back_to_home)
-        back_button.grid(row=1, column=2, pady=20, padx=20, sticky="e")
+        back_button = ttk.Button(self, text="🏠 Home", bootstyle="secondary", command=self.go_back_to_home)
+        back_button.grid(row=1, column=2, pady=20, padx=20, sticky="ew")
 
         # Action Selection
         action_label = ttk.Label(self, text="Select Action:", font=("Arial", 14))
