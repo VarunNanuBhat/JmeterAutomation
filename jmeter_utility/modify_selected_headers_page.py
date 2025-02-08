@@ -54,7 +54,7 @@ class ModifySelectedHeadersPage(ttk.Frame):
         uploaded_file_paths = self.parent.file_upload_page.get_uploaded_files()
 
         if not uploaded_file_paths:
-            self.status_label.config(text="No files uploaded!", bootstyle="danger")
+            self.status_label.config(text="❌ No files uploaded!", bootstyle="danger")
             return
 
         headers_to_modify = {}
@@ -64,21 +64,30 @@ class ModifySelectedHeadersPage(ttk.Frame):
                 headers_to_modify[self.selected_headers[i]] = new_value
 
         if not headers_to_modify:
-            self.status_label.config(text="Please enter at least one header value.", bootstyle="danger")
+            self.status_label.config(text="❌ Please enter at least one header value.", bootstyle="danger")
             return
 
+        # Apply changes to each file
         error_message = None
         for file_path in uploaded_file_paths:
             try:
                 self.modify_http_headers_backend(file_path, headers_to_modify)
             except ValueError as e:
                 error_message = str(e)
-                break
+                break  # Stop processing if an error occurs
 
+        # Update status with success or error message
         if error_message:
-            self.status_label.config(text=error_message, bootstyle="danger")
+            self.status_label.config(text=f"❌ {error_message}", bootstyle="danger")
+            return  # Stay on the same page to show the error message
         else:
-            self.status_label.config(text="Headers Modified Successfully!", bootstyle="success")
+            num_headers_modified = len(headers_to_modify)
+            self.status_label.config(text=f"✅ {num_headers_modified} headers modified successfully!",
+                                     bootstyle="success")
+            #self.after(2000, self.go_back_to_list_headers_page)  # Redirect after 2s
+            self.after(2000, self.go_back_to_file_upload)
+
+
 
     @staticmethod
     def modify_http_headers_backend(file_path, headers):
@@ -99,3 +108,27 @@ class ModifySelectedHeadersPage(ttk.Frame):
     def go_back_to_list_headers_page(self):
         """Navigate back to the ListHeadersPage."""
         self.parent.show_page(self.parent.http_header_list_page)
+
+
+    def go_back_to_file_upload(self):
+        # Reset the uploaded file list in the file upload page
+        #self.parent.file_upload_page.uploaded_file_paths = []
+
+        # Clear the listbox to show an empty state
+        # self.parent.file_upload_page.file_listbox.delete(0, 'end')
+
+        # Reset the status label
+        self.parent.file_upload_page.status_label.config(text="")
+
+        # Hide the 'Next Page' button initially
+        # self.parent.file_upload_page.next_page_button.grid_remove()
+
+        # Clear status label in HttpHeaderPage (this clears success/error message)
+        self.status_label.config(text="")
+
+        # Reset the HTTP Header fields (clear existing header rows and messages)
+        # enable this method if you want to reset header page on re-starting
+        # self.reset_http_headers()
+
+        # Show the file upload page
+        self.parent.show_page(self.parent.file_upload_page)

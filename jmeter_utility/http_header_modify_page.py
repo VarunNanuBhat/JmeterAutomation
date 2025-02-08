@@ -31,7 +31,7 @@ class HttpHeaderPage(ttk.Frame):
         list_button.grid(row=1, column=1, pady=20, padx=20, sticky="e")
 
         # Go Back button (navigate back to home)
-        back_button = ttk.Button(self, text="Go Back", bootstyle="danger", command=self.go_back_to_home)
+        back_button = ttk.Button(self, text="Home", bootstyle="danger", command=self.go_back_to_home)
         # Adjust the grid position and alignment
         back_button.grid(row=1, column=2, pady=20, padx=20, sticky="e")
 

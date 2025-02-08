@@ -4,102 +4,88 @@ class ListHeadersPage(ttk.Frame):
     def __init__(self, parent):
         super().__init__(parent, padding=20)
         self.parent = parent
-
-        # List to store the selected headers
         self.selected_headers = []  # Store boolean variables for checkboxes
 
-        # Title Label
-        title_label = ttk.Label(self, text="List of Headers", font=("Arial", 16, "bold"))
-        title_label.grid(row=0, column=0, columnspan=4, pady=10)
+        # Configure grid layout for responsiveness
+        self.columnconfigure(0, weight=1)
+        self.columnconfigure(1, weight=1)
+        self.columnconfigure(2, weight=1)
+
+        # Title Label (Centered)
+        title_label = ttk.Label(self, text="📜 List of Headers", font=("Arial", 16, "bold"))
+        title_label.grid(row=0, column=0, columnspan=3, pady=10, sticky="n")
 
         # Scrollable Frame
-        self.scrollable_frame = ttk.Frame(self)
-        self.scrollable_frame.grid(row=1, column=0, columnspan=4, pady=20, sticky="nsew")
+        self.scrollable_frame = ttk.Frame(self, padding=10)
+        self.scrollable_frame.grid(row=1, column=0, columnspan=3, pady=5, sticky="nsew")
 
         # Add a Canvas for Scrollable Content
-        self.canvas = ttk.Canvas(self.scrollable_frame)
-        self.canvas.grid(row=0, column=0, sticky="nsew")
+        self.canvas = ttk.Canvas(self.scrollable_frame, width=400, height=312)  # Increased height by 25%
+        self.canvas.pack(side="left", fill="both", expand=True)
 
         # Add a Vertical Scrollbar
         self.scrollbar = ttk.Scrollbar(self.scrollable_frame, orient="vertical", command=self.canvas.yview)
-        self.scrollbar.grid(row=0, column=1, sticky="ns")
+        self.scrollbar.pack(side="right", fill="y")
         self.canvas.configure(yscrollcommand=self.scrollbar.set)
 
         # Frame for the checkboxes inside the canvas
-        self.checkbox_frame = ttk.Frame(self.canvas)
+        self.checkbox_frame = ttk.Frame(self.canvas, padding=10, width=380)
         self.canvas.create_window((0, 0), window=self.checkbox_frame, anchor="nw")
 
-        # Add the Modify Headers button
-        modify_button = ttk.Button(
-            self, text="Modify Headers", bootstyle="primary", command=self.navigate_to_modify_headers
-        )
-        modify_button.grid(row=2, column=0, pady=10, padx=10, sticky="w")
+        # Buttons (Compact Layout)
+        button_frame = ttk.Frame(self)
+        button_frame.grid(row=2, column=0, columnspan=3, pady=10, sticky="ew")
 
-        # Add the Delete Headers button
-        delete_button = ttk.Button(
-            self, text="Delete Headers", bootstyle="danger", command=self.navigate_to_delete_headers
-        )
-        delete_button.grid(row=2, column=1, pady=10, padx=10, sticky="w")
+        modify_button = ttk.Button(button_frame, text="✏ Modify", bootstyle="primary", command=self.navigate_to_modify_headers)
+        modify_button.pack(side="left", fill="x", expand=True, padx=5)
 
-        # Add Go Back button to go back to the HTTP Header Page
-        back_button = ttk.Button(self, text="Go Back", bootstyle="secondary", command=self.go_back_to_http_header_page)
-        back_button.grid(row=3, column=3, pady=20, padx=20, sticky="e")
+        delete_button = ttk.Button(button_frame, text="🗑 Delete", bootstyle="danger", command=self.navigate_to_delete_headers)
+        delete_button.pack(side="left", fill="x", expand=True, padx=5)
+
+        back_button = ttk.Button(button_frame, text="🔙 Back", bootstyle="secondary", command=self.go_back_to_http_header_page)
+        back_button.pack(side="left", fill="x", expand=True, padx=5)
 
     def populate_headers(self, headers):
         """Populate headers with checkboxes for each header."""
-        self.headers = headers  # Store the headers list
-
-        # Clear previous checkboxes
+        self.headers = headers
         for widget in self.checkbox_frame.winfo_children():
-            widget.destroy()
+            widget.destroy()  # Clear previous checkboxes
 
-        self.selected_headers = []  # Reset selected headers
-
-        # Create a Checkbutton for each header in the list
+        self.selected_headers = []
         for i, header in enumerate(self.headers):
-            var = ttk.BooleanVar(value=False)  # Set initial state to False (unselected)
-            check_button = ttk.Checkbutton(self.checkbox_frame, text=header, variable=var)
-            check_button.grid(row=i, column=0, sticky="w", padx=10, pady=5)
+            var = ttk.BooleanVar(value=False)
+            check_button = ttk.Checkbutton(self.checkbox_frame, text=header, variable=var, bootstyle="info")
+            check_button.grid(row=i, column=0, sticky="w", padx=5, pady=2)
             self.selected_headers.append(var)
 
-        # Update the scroll region of the canvas after adding checkboxes
+        # Update the canvas size dynamically
         self.checkbox_frame.update_idletasks()
         self.canvas.config(scrollregion=self.canvas.bbox("all"))
 
     def get_selected_headers(self):
         """Return the list of selected headers."""
-        selected = []
-        for i, var in enumerate(self.selected_headers):
-            if var.get():  # This checks if checkbox is selected (True)
-                selected.append(self.headers[i])
-        return selected
+        return [self.headers[i] for i, var in enumerate(self.selected_headers) if var.get()]
 
     def navigate_to_modify_headers(self):
-        """Navigate to the ModifySelectedHeadersPage with the selected headers."""
+        """Navigate to ModifySelectedHeadersPage."""
         selected_headers = self.get_selected_headers()
         if not selected_headers:
-            print("No headers selected for modification!")  # Debugging message
+            print("⚠ No headers selected for modification!")
             return
 
-        # Pass selected headers to the ModifySelectedHeadersPage
         self.parent.modify_selected_headers_page.populate_headers(selected_headers)
-
-        # Show the modify headers page
         self.parent.show_page(self.parent.modify_selected_headers_page)
 
     def navigate_to_delete_headers(self):
-        """Navigate to the DeleteSelectedHeadersPage with the selected headers."""
+        """Navigate to DeleteSelectedHeadersPage."""
         selected_headers = self.get_selected_headers()
         if not selected_headers:
-            print("No headers selected for deletion!")  # Debugging message
+            print("⚠ No headers selected for deletion!")
             return
 
-        # Pass selected headers to the DeleteSelectedHeadersPage
         self.parent.delete_selected_headers.populate_headers(selected_headers)
-
-        # Show the delete headers page
         self.parent.show_page(self.parent.delete_selected_headers)
 
     def go_back_to_http_header_page(self):
-        """Navigate back to the HTTP Header Page."""
-        self.parent.show_page(self.parent.http_header_page)
+        """Navigate back to HTTP Header Page."""
+        self.parent.show_page(self.parent.http_header_modify_page)

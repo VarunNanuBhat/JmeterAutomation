@@ -22,7 +22,7 @@ class CheckoutPageForHeaderModify(ttk.Frame):
         button_frame.pack(fill="x", pady=10)
 
         # Back Button
-        back_button = ttk.Button(button_frame, text="Go Back", bootstyle="danger", command=self.go_back_to_header_modify)
+        back_button = ttk.Button(button_frame, text="Back", bootstyle="danger", command=self.go_back_to_header_modify)
         back_button.pack(side="left", padx=20, pady=10)
 
         # Confirm Button
