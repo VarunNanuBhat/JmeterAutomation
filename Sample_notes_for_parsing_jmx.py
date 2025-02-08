@@ -239,6 +239,8 @@ recommended fixes:
 5. Add icons for every buttons. 
 6. Add a canvas frame for delete selected header from header list page, checkout page for modify endpoints based on domains (refer modify sampler).  
 7. In sampler modify, even I dont select action and click on apply changes for selected samplers, it does not throw a error message
+8. Check for button order in all the pages
+9. Check if appy changes of confirm button executes only if actions are selected. 
 '''
 
 

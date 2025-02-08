@@ -31,12 +31,12 @@ class ListSamplers(ttk.Frame):
 
         # Add Modify Buttons
         modify_button = ttk.Button(self, text="Modify Samplers", bootstyle="primary", command=self.navigate_to_modify_samplers)
-        modify_button.grid(row=2, column=0, pady=10, padx=10, sticky="w")
+        modify_button.grid(row=2, column=0, pady=20, padx=20, sticky="ew")
 
 
         # Go Back Button
         back_button = ttk.Button(self, text="🔙 Back", bootstyle="secondary", command=self.go_back_to_sampler_page)
-        back_button.grid(row=3, column=3, pady=20, padx=20, sticky="e")
+        back_button.grid(row=2, column=3, pady=20, padx=20, sticky="ew")
 
         # Status Label for error messages
         self.status_label = ttk.Label(self, text="", font=("Arial", 12), bootstyle="danger")
