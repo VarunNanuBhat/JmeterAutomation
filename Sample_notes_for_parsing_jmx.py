@@ -237,6 +237,8 @@ recommended fixes:
 3. Endpoint modifer with spcific texts: Add option to add multiple endpoints at same time and make in sink with other pages 
 4. In HTTP header modify, checkout page, if the headers are not found, it does not print a error message, instead it give me error in console. 
 5. In header delete, if I am giving wrong header, the error message is displayed in console. 
+6. List headers -> delete headers -> all the headers should be preselected here.
+7. In header modify checkout, if click on go back, it should navigate to entering details page instead of home
 '''
 
 

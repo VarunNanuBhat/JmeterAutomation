@@ -22,7 +22,7 @@ class CheckoutPageForHeaderModify(ttk.Frame):
         button_frame.pack(fill="x", pady=10)
 
         # Back Button
-        back_button = ttk.Button(button_frame, text="Go Back", bootstyle="danger", command=self.go_back_to_file_upload)
+        back_button = ttk.Button(button_frame, text="Go Back", bootstyle="danger", command=self.go_back_to_header_modify)
         back_button.pack(side="left", padx=20, pady=10)
 
         # Confirm Button
@@ -81,6 +81,10 @@ class CheckoutPageForHeaderModify(ttk.Frame):
             num_headers_modified = len(headers_to_modify)
             self.status_label.config(text=f"✅ {num_headers_modified} headers modified successfully!", bootstyle="success")
             self.after(2000, self.go_back_to_file_upload)
+
+
+    def go_back_to_header_modify(self):
+        self.parent.show_page(self.parent.http_header_modify_page)
 
     def go_back_to_file_upload(self):
         # Reset the uploaded file list in the file upload page
