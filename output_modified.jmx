@@ -645,10 +645,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">empty</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://mail.google.com/</stringProp>
@@ -759,10 +755,6 @@
               <elementProp name="X-TransactionId" elementType="Header">
                 <stringProp name="Header.name">X-TransactionId</stringProp>
                 <stringProp name="Header.value">e7be01e4-05dc-4f3b-88bd-998c4ba155b7StorageUploadMetadataScenario</stringProp>
-              </elementProp>
-              <elementProp name="X-UpdateGroupId" elementType="Header">
-                <stringProp name="Header.name">X-UpdateGroupId</stringProp>
-                <stringProp name="Header.value">10</stringProp>
               </elementProp>
               <elementProp name="X-UpdateRing" elementType="Header">
                 <stringProp name="Header.name">X-UpdateRing</stringProp>
@@ -955,10 +947,6 @@
                 <stringProp name="Header.name">X-TransactionId</stringProp>
                 <stringProp name="Header.value">acb30d5d-dea0-481a-9491-4c2ac4822a61FindChangesOther</stringProp>
               </elementProp>
-              <elementProp name="X-UpdateGroupId" elementType="Header">
-                <stringProp name="Header.name">X-UpdateGroupId</stringProp>
-                <stringProp name="Header.value">10</stringProp>
-              </elementProp>
               <elementProp name="X-UpdateRing" elementType="Header">
                 <stringProp name="Header.name">X-UpdateRing</stringProp>
                 <stringProp name="Header.value">Prod</stringProp>
@@ -1070,10 +1058,6 @@
               <elementProp name="Sec-Fetch-User" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-User</stringProp>
                 <stringProp name="Header.value">?1</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">document</stringProp>
               </elementProp>
               <elementProp name="sec-ch-ua" elementType="Header">
                 <stringProp name="Header.name">sec-ch-ua</stringProp>
@@ -1236,10 +1220,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">style</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -1445,10 +1425,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">style</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -1526,10 +1502,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -1616,10 +1588,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -1697,10 +1665,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -1780,10 +1744,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -1862,10 +1822,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -1943,10 +1899,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -2033,10 +1985,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -2121,10 +2069,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -2295,10 +2239,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -2384,10 +2324,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -2470,10 +2406,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">font</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/sites/default/files/css/css_iu2Yf8untKJ_JEUyTBDDIHh3vRl9JKw1OzozwnzN19Q.css</stringProp>
@@ -2551,10 +2483,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -2634,10 +2562,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/sites/default/files/css/css_iu2Yf8untKJ_JEUyTBDDIHh3vRl9JKw1OzozwnzN19Q.css</stringProp>
@@ -2716,10 +2640,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -2797,10 +2717,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -2914,10 +2830,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/sites/default/files/css/css_iu2Yf8untKJ_JEUyTBDDIHh3vRl9JKw1OzozwnzN19Q.css</stringProp>
@@ -2996,10 +2908,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/sites/default/files/css/css_iu2Yf8untKJ_JEUyTBDDIHh3vRl9JKw1OzozwnzN19Q.css</stringProp>
@@ -3077,10 +2985,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -3167,10 +3071,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -3256,10 +3156,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -3337,10 +3233,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -3420,10 +3312,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -3501,10 +3389,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -3618,10 +3502,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -3699,10 +3579,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -3782,10 +3658,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -3863,10 +3735,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -3956,10 +3824,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -4058,10 +3922,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -4144,10 +4004,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">font</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/sites/default/files/css/css_iu2Yf8untKJ_JEUyTBDDIHh3vRl9JKw1OzozwnzN19Q.css</stringProp>
@@ -4225,10 +4081,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -4308,10 +4160,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/sites/default/files/css/css_iu2Yf8untKJ_JEUyTBDDIHh3vRl9JKw1OzozwnzN19Q.css</stringProp>
@@ -4389,10 +4237,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -4472,10 +4316,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/sites/default/files/css/css_iu2Yf8untKJ_JEUyTBDDIHh3vRl9JKw1OzozwnzN19Q.css</stringProp>
@@ -4553,10 +4393,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -4636,10 +4472,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/sites/default/files/css/css_iu2Yf8untKJ_JEUyTBDDIHh3vRl9JKw1OzozwnzN19Q.css</stringProp>
@@ -4717,10 +4549,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -4800,10 +4628,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/sites/default/files/css/css_iu2Yf8untKJ_JEUyTBDDIHh3vRl9JKw1OzozwnzN19Q.css</stringProp>
@@ -4881,10 +4705,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -4964,10 +4784,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/sites/default/files/css/css_iu2Yf8untKJ_JEUyTBDDIHh3vRl9JKw1OzozwnzN19Q.css</stringProp>
@@ -5045,10 +4861,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -5212,10 +5024,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -5313,10 +5121,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">empty</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -5394,10 +5198,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -5490,10 +5290,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -5571,10 +5367,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -5871,10 +5663,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -5995,10 +5783,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/sites/default/files/css/css_iu2Yf8untKJ_JEUyTBDDIHh3vRl9JKw1OzozwnzN19Q.css</stringProp>
@@ -6076,10 +5860,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -6159,10 +5939,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/sites/default/files/css/css_iu2Yf8untKJ_JEUyTBDDIHh3vRl9JKw1OzozwnzN19Q.css</stringProp>
@@ -6240,10 +6016,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -6407,10 +6179,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -6487,10 +6255,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">empty</stringProp>
               </elementProp>
               <elementProp name="User-Agent" elementType="Header">
                 <stringProp name="Header.name">User-Agent</stringProp>
@@ -6570,10 +6334,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -6651,10 +6411,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -6734,10 +6490,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -6814,10 +6566,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">empty</stringProp>
               </elementProp>
               <elementProp name="User-Agent" elementType="Header">
                 <stringProp name="Header.name">User-Agent</stringProp>
@@ -6897,10 +6645,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -6978,10 +6722,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -7111,10 +6851,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">empty</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -7266,10 +7002,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -7537,10 +7269,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -7604,7 +7332,7 @@
           </UniformRandomTimer>
           <hashTree />
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://cm.everesttech.net:443" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://cm.everesttech.net:443" enabled="false">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
@@ -7713,10 +7441,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">navigate</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">iframe</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -7895,10 +7619,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">empty</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -7920,7 +7640,7 @@
           </UniformRandomTimer>
           <hashTree />
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://www.googletagmanager.com:443" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://www.googletagmanager.com:443" enabled="false">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
@@ -8196,10 +7916,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -8285,10 +8001,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -8366,10 +8078,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -8659,10 +8367,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -8740,10 +8444,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -8823,10 +8523,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -8904,10 +8600,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -9126,10 +8818,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -9216,10 +8904,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">navigate</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">iframe</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -9293,10 +8977,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">navigate</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">iframe</stringProp>
               </elementProp>
               <elementProp name="sec-ch-ua" elementType="Header">
                 <stringProp name="Header.name">sec-ch-ua</stringProp>
@@ -9460,10 +9140,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -9646,10 +9322,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -9794,10 +9466,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -9986,10 +9654,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -10075,10 +9739,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">navigate</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">iframe</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -10194,10 +9854,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -10422,10 +10078,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -10595,10 +10247,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -10684,10 +10332,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">navigate</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">iframe</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -10809,10 +10453,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -10971,10 +10611,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -11096,10 +10732,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -11177,10 +10809,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -11260,10 +10888,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -11341,10 +10965,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -11424,10 +11044,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -11505,10 +11121,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -11659,10 +11271,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">navigate</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">iframe</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -11741,10 +11349,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -11822,10 +11426,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -12038,10 +11638,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -12137,10 +11733,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">navigate</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">iframe</stringProp>
-              </elementProp>
               <elementProp name="sec-ch-ua" elementType="Header">
                 <stringProp name="Header.name">sec-ch-ua</stringProp>
                 <stringProp name="Header.value">" Not A;Brand";v="99", "Chromium";v="101", "Google Chrome";v="101"</stringProp>
@@ -12231,10 +11823,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://match.adsrvr.org/</stringProp>
@@ -12316,10 +11904,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">navigate</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">iframe</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -12760,10 +12344,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -12882,10 +12462,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">navigate</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">iframe</stringProp>
               </elementProp>
               <elementProp name="sec-ch-ua" elementType="Header">
                 <stringProp name="Header.name">sec-ch-ua</stringProp>
@@ -13011,10 +12587,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">navigate</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">iframe</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -13145,10 +12717,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">navigate</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">iframe</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://match.adsrvr.org/</stringProp>
@@ -13255,10 +12823,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">navigate</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">iframe</stringProp>
               </elementProp>
               <elementProp name="sec-ch-ua" elementType="Header">
                 <stringProp name="Header.name">sec-ch-ua</stringProp>
@@ -13378,10 +12942,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">navigate</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">iframe</stringProp>
               </elementProp>
               <elementProp name="sec-ch-ua" elementType="Header">
                 <stringProp name="Header.name">sec-ch-ua</stringProp>
@@ -13531,10 +13091,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">navigate</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">iframe</stringProp>
               </elementProp>
               <elementProp name="sec-ch-ua" elementType="Header">
                 <stringProp name="Header.name">sec-ch-ua</stringProp>
@@ -13711,10 +13267,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">empty</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://mail.google.com/</stringProp>
@@ -13877,10 +13429,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -14020,10 +13568,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
                 <stringProp name="Header.value">same-site</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">empty</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://hangouts.google.com/</stringProp>
@@ -14162,10 +13706,6 @@
               <elementProp name="Sec-Fetch-Site" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
                 <stringProp name="Header.value">same-site</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">empty</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -14474,10 +14014,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">empty</stringProp>
-              </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
                 <stringProp name="Header.value">gzip, deflate, br</stringProp>
@@ -14613,10 +14149,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">empty</stringProp>
-              </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
                 <stringProp name="Header.value">gzip, deflate, br</stringProp>
@@ -14713,10 +14245,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">empty</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -14870,10 +14398,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">empty</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -15064,10 +14588,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">empty</stringProp>
-              </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
                 <stringProp name="Header.value">gzip, deflate, br</stringProp>
@@ -15110,11 +14630,7 @@
                 <stringProp name="Header.name">Host</stringProp>
                 <stringProp name="Header.value">COMMENT</stringProp>
               </elementProp>
-              <elementProp name="Date" elementType="Header">
-                <stringProp name="Header.name">Date</stringProp>
-                <stringProp name="Header.value">Mon, 06 Jun 2022 10:54:48 GMT</stringProp>
-              </elementProp>
-            </collectionProp>
+              </collectionProp>
           </HeaderManager>
           <hashTree />
           <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
@@ -15179,10 +14695,6 @@
               <elementProp name="Sec-Fetch-Site" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
                 <stringProp name="Header.value">cross-site</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">empty</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -15341,10 +14853,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">empty</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://mail.google.com/</stringProp>
@@ -15441,10 +14949,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">empty</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -15573,10 +15077,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">navigate</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">iframe</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -15704,10 +15204,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -15827,10 +15323,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -16082,10 +15574,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">empty</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -16163,10 +15651,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">style</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -16246,10 +15730,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">style</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://resources.digital-cloud.medallia.com/wdcus/177332/forms/8006/form1646684746140.html?formId=8006&amp;type=live&amp;isMobile=false&amp;referrer=https%3A%2F%2Ftest3.dms.sce.com%2F&amp;region=digital-cloud-us&amp;isWCAG=true&amp;displayType=lightbox&amp;isSeparateFormTemplateFromData=true</stringProp>
@@ -16328,10 +15808,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://resources.digital-cloud.medallia.com/wdcus/177332/forms/8006/form1646684746140.html?formId=8006&amp;type=live&amp;isMobile=false&amp;referrer=https%3A%2F%2Ftest3.dms.sce.com%2F&amp;region=digital-cloud-us&amp;isWCAG=true&amp;displayType=lightbox&amp;isSeparateFormTemplateFromData=true</stringProp>
@@ -16409,10 +15885,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">script</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -16541,10 +16013,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://test3.dms.sce.com/</stringProp>
@@ -16623,10 +16091,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">empty</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://resources.digital-cloud.medallia.com/wdcus/177332/forms/8006/form1646684746140.html?formId=8006&amp;type=live&amp;isMobile=false&amp;referrer=https%3A%2F%2Ftest3.dms.sce.com%2F&amp;region=digital-cloud-us&amp;isWCAG=true&amp;displayType=lightbox&amp;isSeparateFormTemplateFromData=true</stringProp>
@@ -16704,10 +16168,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">image</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -16860,10 +16320,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">empty</stringProp>
-              </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
                 <stringProp name="Header.value">gzip, deflate, br</stringProp>
@@ -17011,10 +16467,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">empty</stringProp>
-              </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
                 <stringProp name="Header.value">gzip, deflate, br</stringProp>
@@ -17156,10 +16608,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
                 <stringProp name="Header.value">same-site</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">empty</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://hangouts.google.com/</stringProp>
@@ -17291,10 +16739,6 @@
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">cors</stringProp>
               </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">empty</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://hangouts.google.com/</stringProp>
@@ -17413,10 +16857,6 @@
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
                 <stringProp name="Header.value">no-cors</stringProp>
-              </elementProp>
-              <elementProp name="Sec-Fetch-Dest" elementType="Header">
-                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
-                <stringProp name="Header.value">empty</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -17653,10 +17093,6 @@
                 <stringProp name="Header.name">X-TransactionId</stringProp>
                 <stringProp name="Header.value">78bce484-e42d-458e-9231-8a5a5f23b747StorageUploadMetadataScenario</stringProp>
               </elementProp>
-              <elementProp name="X-UpdateGroupId" elementType="Header">
-                <stringProp name="Header.name">X-UpdateGroupId</stringProp>
-                <stringProp name="Header.value">10</stringProp>
-              </elementProp>
               <elementProp name="X-UpdateRing" elementType="Header">
                 <stringProp name="Header.name">X-UpdateRing</stringProp>
                 <stringProp name="Header.value">Prod</stringProp>
@@ -17789,10 +17225,6 @@
               <elementProp name="X-TransactionId" elementType="Header">
                 <stringProp name="Header.name">X-TransactionId</stringProp>
                 <stringProp name="Header.value">50c37aad-6689-44aa-9095-d9a9879d3259FindChangesOther</stringProp>
-              </elementProp>
-              <elementProp name="X-UpdateGroupId" elementType="Header">
-                <stringProp name="Header.name">X-UpdateGroupId</stringProp>
-                <stringProp name="Header.value">10</stringProp>
               </elementProp>
               <elementProp name="X-UpdateRing" elementType="Header">
                 <stringProp name="Header.name">X-UpdateRing</stringProp>

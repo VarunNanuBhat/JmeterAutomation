@@ -237,7 +237,8 @@ recommended fixes:
 3. Endpoint modifier with specific texts: Add option to add multiple endpoints at same time and make in sink with other pages 
 4. In header delete, if I am giving wrong header, the error message is displayed in console. 
 5. List headers -> delete headers -> all the headers should be preselected here.
-6. Add a canvas frame for delete selected header from header list page. 
+6. Add a canvas frame for delete selected header from header list page, checkout page for modify endpoints based on domains. 
+7. At every home button, add image
 '''
 
 

@@ -31,7 +31,7 @@ class HttpHeaderDeletePage(ttk.Frame):
         list_button.grid(row=1, column=1, pady=20, padx=20, sticky="e")
 
         # Go Back button (navigate back to home)
-        back_button = ttk.Button(self, text="Go Back", bootstyle="danger", command=self.go_back_to_home)
+        back_button = ttk.Button(self, text="Home", bootstyle="danger", command=self.go_back_to_home)
         back_button.grid(row=1, column=2, pady=20, padx=20, sticky="e")
 
         # Status label at the bottom
@@ -88,15 +88,12 @@ class HttpHeaderDeletePage(ttk.Frame):
 
     def go_back_to_home(self):
         """Navigate back to the file upload page and reset the file list."""
-        self.parent.file_upload_page.uploaded_file_paths = []
-        self.parent.file_upload_page.file_listbox.delete(0, 'end')
+        # self.parent.file_upload_page.uploaded_file_paths = []
+        # self.parent.file_upload_page.file_listbox.delete(0, 'end')
         self.parent.file_upload_page.status_label.config(text="")
-        self.parent.file_upload_page.next_page_button.grid_remove()
-
-        self.status_label.config(text="")
-
-        self.reset_http_headers()
-
+        # self.parent.file_upload_page.next_page_button.grid_remove()
+        # self.status_label.config(text="")
+        # self.reset_http_headers()
         self.parent.show_page(self.parent.file_upload_page)
 
     def reset_http_headers(self):

@@ -21,7 +21,7 @@ class DeleteSelectedHeadersPage(ttk.Frame):
         delete_button.grid(row=2, column=0, columnspan=4, pady=10)
 
         # Add a "Back" button to go back to the ListHeadersPage
-        back_button = ttk.Button(self, text="Go Back", bootstyle="danger", command=self.go_back_to_list_headers_page)
+        back_button = ttk.Button(self, text="🔙 Back", bootstyle="secondary", command=self.go_back_to_list_headers_page)
         back_button.grid(row=3, column=3, pady=20, padx=20, sticky="e")
 
         # Add a status label to display success or error messages
@@ -84,4 +84,4 @@ class DeleteSelectedHeadersPage(ttk.Frame):
 
     def go_back_to_list_headers_page(self):
         """Navigate back to the ListHeadersPage."""
-        self.parent.show_page(self.parent.list_headers_page)
+        self.parent.show_page(self.parent.http_header_list_page)
