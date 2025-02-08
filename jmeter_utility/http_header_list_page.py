@@ -42,8 +42,11 @@ class ListHeadersPage(ttk.Frame):
         delete_button = ttk.Button(button_frame, text="🗑 Delete", bootstyle="danger", command=self.navigate_to_delete_headers)
         delete_button.pack(side="left", fill="x", expand=True, padx=5)
 
-        back_button = ttk.Button(button_frame, text="🔙 Back", bootstyle="secondary", command=self.go_back_to_http_header_page)
-        back_button.pack(side="left", fill="x", expand=True, padx=5)
+        # back_button = ttk.Button(button_frame, text="Home", bootstyle="secondary", command=self.go_back_to_http_header_page)
+        # back_button.pack(side="left", fill="x", expand=True, padx=5)
+
+        home_button = ttk.Button(button_frame, text="Home", bootstyle="secondary",command=self.go_back_to_home)
+        home_button.pack(side="left", fill="x", expand=True, padx=5)
 
 
     def populate_headers(self, headers):
@@ -90,3 +93,28 @@ class ListHeadersPage(ttk.Frame):
     def go_back_to_http_header_page(self):
         """Navigate back to HTTP Header Page."""
         self.parent.show_page(self.parent.http_header_modify_page)
+
+
+    def go_back_to_home(self):
+        """Go back to the file upload page and reset the file list."""
+        # Reset the uploaded file list in the file upload page
+        # self.parent.file_upload_page.uploaded_file_paths = []
+
+        # Clear the listbox to show an empty state
+        # self.parent.file_upload_page.file_listbox.delete(0, 'end')
+
+        # Reset the status label
+        # self.parent.file_upload_page.status_label.config(text="")
+
+        # Hide the 'Next Page' button initially
+        # self.parent.file_upload_page.next_page_button.grid_remove()
+
+        # Clear status label in HttpHeaderPage (this clears success/error message)
+        # self.status_label.config(text="")
+
+        # Reset the HTTP Header fields (clear existing header rows and messages)
+        # enable this method if you want to reset header page on re-starting
+        #self.reset_http_headers()
+
+        # Show the file upload page
+        self.parent.show_page(self.parent.file_upload_page)

@@ -19,7 +19,7 @@ class CheckoutPageForHeaderDelete(ttk.Frame):
         self.preview_frame.pack(fill=BOTH, expand=True, pady=20)
 
         # Back and Confirm Buttons
-        back_button = ttk.Button(self, text="Go Back", bootstyle="danger", command=self.go_back_to_delete_page)
+        back_button = ttk.Button(self, text="🔙 Back", bootstyle="secondary", command=self.go_back_to_delete_page)
         back_button.pack(side="left", padx=20, pady=10)
 
         confirm_button = ttk.Button(self, text="Confirm Deletions", bootstyle="success", command=self.confirm_deletions)
