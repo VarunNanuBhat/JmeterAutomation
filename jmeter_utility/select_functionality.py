@@ -25,7 +25,7 @@ class SelectFunctionality(ttk.Frame):
                 "Modify HTTP Header Manager Values",
                 "Delete HTTP Header Values",
                 "Enable/Disable/Delete endpoints ending with specific texts",
-                "Enable/Disable/Delete endpoints ending with specific domains",
+                "Enable/Disable/Delete endpoints with specific domains",
                 "Replace domain names",
                 "Replace contents in URL/Params & body",
                 "Enable/Disable/Delete endpoints based on Sampler Names"
@@ -50,7 +50,7 @@ class SelectFunctionality(ttk.Frame):
             self.parent.show_page(self.parent.http_header_delete_page)
         elif selected_option == "Enable/Disable/Delete endpoints ending with specific texts":
             self.parent.show_page(self.parent.endpoint_modifier_with_url)
-        elif selected_option == "Enable/Disable/Delete endpoints ending with specific domains":
+        elif selected_option == "Enable/Disable/Delete endpoints with specific domains":
             self.parent.show_page(self.parent.endpoint_modifier_with_domain)
         elif selected_option == "Replace domain names":
             self.parent.show_page(self.parent.replace_domain_name_page)
