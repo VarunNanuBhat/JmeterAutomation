@@ -48,6 +48,9 @@ class ListHeadersPage(ttk.Frame):
         home_button = ttk.Button(button_frame, text="🏠 Home", bootstyle="secondary",command=self.go_back_to_home)
         home_button.pack(side="left", fill="x", expand=True, padx=5)
 
+        # Status Label for error messages
+        self.status_label = ttk.Label(self, text="", font=("Arial", 12), bootstyle="danger")
+        self.status_label.grid(row=3, column=0, columnspan=3, pady=10)
 
     def populate_headers(self, headers):
         """Populate headers with checkboxes for each header."""
@@ -74,7 +77,7 @@ class ListHeadersPage(ttk.Frame):
         """Navigate to ModifySelectedHeadersPage."""
         selected_headers = self.get_selected_headers()
         if not selected_headers:
-            print("⚠ No headers selected for modification!")
+            self.status_label.config(text="⚠ No headers selected for modification!", bootstyle="danger")
             return
 
         self.parent.modify_selected_headers_page.populate_headers(selected_headers)
@@ -84,7 +87,7 @@ class ListHeadersPage(ttk.Frame):
         """Navigate to DeleteSelectedHeadersPage."""
         selected_headers = self.get_selected_headers()
         if not selected_headers:
-            print("⚠ No headers selected for deletion!")
+            self.status_label.config(text="⚠ No headers selected for deletion!", bootstyle = "danger")
             return
 
         self.parent.delete_selected_headers.populate_headers(selected_headers)

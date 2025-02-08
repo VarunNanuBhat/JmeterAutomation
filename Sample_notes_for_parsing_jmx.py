@@ -250,4 +250,5 @@ Things that can be considered:
 1. In HTTP header modify checkout, i have added a small delay and then landed back in file upload page. 
 2. Images are added in list header page buttons. Follow the same one. 
 3. List header button alignment is good. 
+4. In endpoint modifier with domain, I have already added reset domain entries, check that and clear button
 '''

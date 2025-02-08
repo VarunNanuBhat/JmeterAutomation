@@ -1,5 +1,4 @@
 import ttkbootstrap as ttk
-from tkinter import StringVar, ttk
 from tkinter import Frame, BOTH
 from jmeter_methods.Jmeter_Automation_Methods import JMXModifier
 
@@ -18,11 +17,16 @@ class CheckoutPageForHeaderDelete(ttk.Frame):
         self.preview_frame = ttk.Frame(self)
         self.preview_frame.pack(fill=BOTH, expand=True, pady=20)
 
-        # Back and Confirm Buttons
-        back_button = ttk.Button(self, text="🔙 Back", bootstyle="secondary", command=self.go_back_to_delete_page)
+        # Button Frame (For Back & Confirm)
+        button_frame = ttk.Frame(self)
+        button_frame.pack(fill="x", pady=10)
+
+        # Back Button
+        back_button = ttk.Button(button_frame, text="🔙 Back", bootstyle="secondary", command=self.go_back_to_delete_page)
         back_button.pack(side="left", padx=20, pady=10)
 
-        confirm_button = ttk.Button(self, text="✔ Confirm Deletions", bootstyle="success", command=self.confirm_deletions)
+        # Confirm Button
+        confirm_button = ttk.Button(button_frame, text="✔ Confirm Deletions", bootstyle="success", command=self.confirm_deletions)
         confirm_button.pack(side="right", padx=20, pady=10)
 
         # 🔥 Status Label (To show success/error messages)
@@ -48,12 +52,15 @@ class CheckoutPageForHeaderDelete(ttk.Frame):
     def confirm_deletions(self):
         """Apply the deletions and provide feedback."""
         uploaded_files = self.parent.file_upload_page.get_uploaded_files()
+
+        # Show error message if no files are uploaded
         if not uploaded_files:
-            self.parent.file_upload_page.status_label.config(text="No files uploaded!", bootstyle="danger")
+            self.status_label.config(text="❌ No JMX files uploaded!", bootstyle="danger")
             return
 
+        # Show error message if no headers are selected for deletion
         if not self.headers_to_delete:
-            self.parent.file_upload_page.status_label.config(text="No headers selected for deletion!", bootstyle="danger")
+            self.status_label.config(text="❌ No headers selected for deletion!", bootstyle="danger")
             return
 
         # Perform deletion
@@ -68,18 +75,17 @@ class CheckoutPageForHeaderDelete(ttk.Frame):
                 modifier.save_changes(output_path)
 
             num_headers_deleted = len(self.headers_to_delete)
-            self.parent.file_upload_page.status_label.config(text=f"✅ {num_headers_deleted} Headers deleted successfully!", bootstyle="success")
+            self.status_label.config(text=f"✅ {num_headers_deleted} headers deleted successfully!", bootstyle="success")
+
+            # Navigate back after 2 seconds
             self.after(2000, self.go_back_to_file_upload)
 
         except Exception as e:
-            self.parent.file_upload_page.status_label.config(text=f"Error: {str(e)}", bootstyle="danger")
-
+            self.status_label.config(text=f"❌ Error: {str(e)}", bootstyle="danger")
 
     def go_back_to_file_upload(self):
+        """Navigate back to the file upload page."""
         # Reset the status label
-        self.parent.file_upload_page.status_label.config(text="")
-
-        # Clear status label in HttpHeaderPage (this clears success/error message)
         self.status_label.config(text="")
 
         # Show the file upload page
