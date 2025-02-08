@@ -46,6 +46,10 @@ class ListDomains(ttk.Frame):
         home_button = ttk.Button(button_frame, text="🏠 Home", bootstyle="secondary", command=self.go_back_to_home)
         home_button.pack(side="left", fill="x", expand=True, padx=5)
 
+        # Status Label for error messages
+        self.status_label = ttk.Label(self, text="", font=("Arial", 12), bootstyle="danger")
+        self.status_label.grid(row=3, column=0, columnspan=3, pady=10)
+
     def populate_domain_names(self, domain_names):
         """Populate domain names with checkboxes."""
         self.domain_names = domain_names  # Store the domain names list
@@ -79,7 +83,7 @@ class ListDomains(ttk.Frame):
         """Navigate to the ModifySelectedDomainsPage with the selected domains."""
         selected_domain_names = self.get_selected_domain_names()
         if not selected_domain_names:
-            print("No domains selected for modification!")  # Debugging message
+            self.status_label.config(text = "⚠ No domains selected for modification!", bootstyle="danger")  # Debugging message
             return
 
         # Pass selected domains to the ModifySelectedDomainsPage
@@ -92,7 +96,7 @@ class ListDomains(ttk.Frame):
         """Navigate to the ReplaceSelectedDomainsPage with the selected domains."""
         selected_domain_names = self.get_selected_domain_names()
         if not selected_domain_names:
-            print("No domain names selected for replacement!")  # Debugging message
+            self.status_label.config(text = "⚠ No domain names selected for replacement!", bootstyle="danger")  # Debugging message
             return
 
         # Pass selected domains to the ReplaceSelectedDomainsPage

@@ -19,16 +19,16 @@ class EndpointActionPageForDomain(ttk.Frame):
 
         # Buttons with Icons
         add_button = ttk.Button(self, text="➕ Add Domain", bootstyle="success", command=self.add_domain_row)
-        add_button.grid(row=1, column=0, pady=20, padx=20, sticky="w")
+        add_button.grid(row=1, column=0, pady=20, padx=20, sticky="ew")
 
         preview_button = ttk.Button(self, text="👁 Preview Changes", bootstyle="primary", command=self.navigate_to_checkout)
-        preview_button.grid(row=1, column=3, pady=20, padx=20, sticky="e")
+        preview_button.grid(row=1, column=3, pady=20, padx=20, sticky="ew")
 
         list_button = ttk.Button(self, text="📜 List Domains", bootstyle="info", command=self.navigate_to_list_domain_names)
-        list_button.grid(row=1, column=1, pady=20, padx=20, sticky="e")
+        list_button.grid(row=1, column=1, pady=20, padx=20, sticky="ew")
 
         home_button = ttk.Button(self, text="🏠 Home", bootstyle="secondary", command=self.go_back_to_home)
-        home_button.grid(row=1, column=2, pady=20, padx=20, sticky="e")
+        home_button.grid(row=1, column=2, pady=20, padx=20, sticky="ew")
 
         # Action Selection
         action_label = ttk.Label(self, text="⚡ Select Action:", font=("Arial", 14))
