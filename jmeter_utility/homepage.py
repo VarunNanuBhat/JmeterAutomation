@@ -21,6 +21,7 @@ from replace_selected_domains_page import ReplaceSelectedDomainsPage
 from checkout_for_sampler_page import CheckoutForSamplerPage
 from sampler_list_page import ListSamplers
 from modify_selected_samplers_page import ModifySelectedSamplersPage
+from checkout_for_endpoint_modifier_with_url import CheckoutPageForEndpointModifierWithURL
 
 
 
@@ -57,6 +58,7 @@ class App(ttk.Window):
         self.checkout_for_sampler_page = CheckoutForSamplerPage(self)
         self.sampler_list_page = ListSamplers(self)
         self.modify_selected_samplers_page = ModifySelectedSamplersPage(self)
+        self.checkout_for_endpoint_modifier_with_url = CheckoutPageForEndpointModifierWithURL(self)
 
 
         # Start with the file upload page
