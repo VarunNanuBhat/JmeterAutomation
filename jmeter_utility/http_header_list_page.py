@@ -45,7 +45,7 @@ class ListHeadersPage(ttk.Frame):
         # back_button = ttk.Button(button_frame, text="Home", bootstyle="secondary", command=self.go_back_to_http_header_page)
         # back_button.pack(side="left", fill="x", expand=True, padx=5)
 
-        home_button = ttk.Button(button_frame, text="Home", bootstyle="secondary",command=self.go_back_to_home)
+        home_button = ttk.Button(button_frame, text="🏠 Home", bootstyle="secondary",command=self.go_back_to_home)
         home_button.pack(side="left", fill="x", expand=True, padx=5)
 
 

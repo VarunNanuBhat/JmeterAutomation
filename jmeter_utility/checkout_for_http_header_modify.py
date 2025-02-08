@@ -26,7 +26,7 @@ class CheckoutPageForHeaderModify(ttk.Frame):
         back_button.pack(side="left", padx=20, pady=10)
 
         # Confirm Button
-        confirm_button = ttk.Button(button_frame, text="Confirm Changes", bootstyle="success", command=self.confirm_changes)
+        confirm_button = ttk.Button(button_frame, text="✔ Confirm Changes", bootstyle="success", command=self.confirm_changes)
         confirm_button.pack(side="right", padx=20, pady=10)
 
         # 🔥 Status Label (To show success/error messages)

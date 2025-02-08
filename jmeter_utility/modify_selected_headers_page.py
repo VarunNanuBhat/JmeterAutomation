@@ -17,7 +17,7 @@ class ModifySelectedHeadersPage(ttk.Frame):
         self.headers_frame.grid(row=1, column=0, columnspan=4, pady=10)
 
         # Add "Apply Changes" button
-        apply_changes_button = ttk.Button(self, text="Apply Changes", bootstyle="primary", command=self.apply_changes)
+        apply_changes_button = ttk.Button(self, text="🔄 Apply Changes", bootstyle="primary", command=self.apply_changes)
         apply_changes_button.grid(row=2, column=0, columnspan=4, pady=10)
 
         # Add a "Back" button to go back to the ListHeadersPage
