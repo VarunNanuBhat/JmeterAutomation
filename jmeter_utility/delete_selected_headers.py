@@ -17,41 +17,37 @@ class DeleteSelectedHeadersPage(ttk.Frame):
         self.headers_frame.grid(row=1, column=0, columnspan=4, pady=10)
 
         # Add "Delete Selected" button
-        delete_button = ttk.Button(self, text="Delete Selected", bootstyle="danger", command=self.delete_selected_headers)
-        delete_button.grid(row=2, column=0, columnspan=4, pady=10)
+        delete_button = ttk.Button(self, text="🗑 Delete", bootstyle="danger", command=self.delete_selected_headers)
+        delete_button.grid(row=2, column=0, padx=10, pady=10, sticky="ew")
 
-        # Add a "Back" button to go back to the ListHeadersPage
+        # Add "Back" button next to "Delete"
         back_button = ttk.Button(self, text="🔙 Back", bootstyle="secondary", command=self.go_back_to_list_headers_page)
-        back_button.grid(row=3, column=3, pady=20, padx=20, sticky="e")
+        back_button.grid(row=2, column=1, padx=10, pady=10, sticky="ew")
 
-        # Add a status label to display success or error messages
-        self.status_label = ttk.Label(self, text="", font=("Arial", 12), anchor="w")
-        self.status_label.grid(row=4, column=0, columnspan=4, pady=10, sticky="w")
+        # Add a status label to display success or error messages (Use grid instead of pack)
+        self.status_label = ttk.Label(self, text="", font=("Arial", 12, "bold"), bootstyle="info")
+        self.status_label.grid(row=3, column=0, columnspan=2, pady=10, sticky="ew")
 
     def populate_headers(self, headers):
-        """Populate the headers with checkboxes to delete."""
+        """Populate the headers with checkboxes to delete (pre-selected)."""
         self.headers = headers  # Store the headers list
 
         # Clear the previous checkboxes
         for widget in self.headers_frame.winfo_children():
             widget.destroy()
 
-        self.selected_headers = []  # Reset selected headers
+        self.selected_headers = []  # Reset selected headers list
 
-        # Create a Checkbutton for each header in the list
+        # Create a Checkbutton for each header, ensuring they are pre-selected
         for i, header in enumerate(self.headers):
-            var = ttk.BooleanVar(value=False)  # Set initial state to False (unselected)
+            var = ttk.BooleanVar(value=True)  # Set initial state to True (pre-selected)
             check_button = ttk.Checkbutton(self.headers_frame, text=header, variable=var)
             check_button.grid(row=i, column=0, sticky="w", padx=10, pady=5)
             self.selected_headers.append(var)
 
     def get_selected_headers(self):
         """Return the list of selected headers for deletion."""
-        selected = []
-        for i, var in enumerate(self.selected_headers):
-            if var.get():  # This checks if checkbox is selected (True)
-                selected.append(self.headers[i])
-        return selected
+        return [self.headers[i] for i, var in enumerate(self.selected_headers) if var.get()]
 
     def delete_selected_headers(self):
         """Delete the selected headers from the JMX files."""
@@ -78,10 +74,24 @@ class DeleteSelectedHeadersPage(ttk.Frame):
                 output_path = Path(file_path).with_name(f"{Path(file_path).stem}_modified.jmx")
                 modifier.save_changes(str(output_path))
 
-            self.status_label.config(text="Headers deleted successfully!", bootstyle="success")
+            num_headers_deleted = len(selected_headers)
+            self.status_label.config(text=f"✅ {num_headers_deleted} Headers deleted successfully!", bootstyle="success")
+            self.after(2000, self.go_back_to_file_upload)
         except Exception as e:
             self.status_label.config(text=f"Error: {str(e)}", bootstyle="danger")
+            return
 
     def go_back_to_list_headers_page(self):
         """Navigate back to the ListHeadersPage."""
         self.parent.show_page(self.parent.http_header_list_page)
+
+
+    def go_back_to_file_upload(self):
+        # Reset the status label
+        self.parent.file_upload_page.status_label.config(text="")
+
+        # Clear status label in HttpHeaderPage (this clears success/error message)
+        self.status_label.config(text="")
+
+        # Show the file upload page
+        self.parent.show_page(self.parent.file_upload_page)

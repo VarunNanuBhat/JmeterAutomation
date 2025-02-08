@@ -236,8 +236,8 @@ recommended fixes:
 2. For endpoint modifier with specific texts, upon clicking on apply changes, I should be able to land in home page as that of endpoint modifier with domain
 3. Endpoint modifier with specific texts: Add option to add multiple endpoints at same time and make in sink with other pages 
 4. In header delete, if I am giving wrong header, the error message is displayed in console. 
-5. List headers -> delete headers -> all the headers should be preselected here.
-6. Add a canvas frame for delete selected header from header list page, checkout page for modify endpoints based on domains. 
+5. In checkout for delete selected headers, the final status is printed in console instead of screen. 
+6. Add a canvas frame for delete selected header from header list page, checkout page for modify endpoints based on domains (refer modify sampler). 
 7. At every home button, add icon. Add icons at header modify and header delete
 '''
 

@@ -22,8 +22,12 @@ class CheckoutPageForHeaderDelete(ttk.Frame):
         back_button = ttk.Button(self, text="🔙 Back", bootstyle="secondary", command=self.go_back_to_delete_page)
         back_button.pack(side="left", padx=20, pady=10)
 
-        confirm_button = ttk.Button(self, text="Confirm Deletions", bootstyle="success", command=self.confirm_deletions)
+        confirm_button = ttk.Button(self, text="✔ Confirm Deletions", bootstyle="success", command=self.confirm_deletions)
         confirm_button.pack(side="right", padx=20, pady=10)
+
+        # 🔥 Status Label (To show success/error messages)
+        self.status_label = ttk.Label(self, text="", font=("Arial", 12, "bold"), bootstyle="info")
+        self.status_label.pack(pady=10)
 
     def display_deletions(self, headers):
         """Display the headers queued for deletion."""
@@ -63,8 +67,20 @@ class CheckoutPageForHeaderDelete(ttk.Frame):
                 output_path = file_path.replace(".jmx", "_modified.jmx")
                 modifier.save_changes(output_path)
 
-            self.parent.file_upload_page.status_label.config(text="Headers deleted successfully!", bootstyle="success")
-            self.parent.show_page(self.parent.file_upload_page)
+            num_headers_deleted = len(self.headers_to_delete)
+            self.parent.file_upload_page.status_label.config(text=f"✅ {num_headers_deleted} Headers deleted successfully!", bootstyle="success")
+            self.after(2000, self.go_back_to_file_upload)
 
         except Exception as e:
             self.parent.file_upload_page.status_label.config(text=f"Error: {str(e)}", bootstyle="danger")
+
+
+    def go_back_to_file_upload(self):
+        # Reset the status label
+        self.parent.file_upload_page.status_label.config(text="")
+
+        # Clear status label in HttpHeaderPage (this clears success/error message)
+        self.status_label.config(text="")
+
+        # Show the file upload page
+        self.parent.show_page(self.parent.file_upload_page)
