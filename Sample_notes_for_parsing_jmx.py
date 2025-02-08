@@ -233,12 +233,11 @@ Add natural language input for tasks (e.g., "disable all endpoints with domain e
 '''
 recommended fixes: 
 1. in endpoint modifier based on domain, even if i give wrong domain, I get the output as changes applied succesfully. 
-2. For endpoint modifer with specific texts, upon clicking on apply changes, I should be able to land in home page as that of endpoint modifier with domain
-3. Endpoint modifer with spcific texts: Add option to add multiple endpoints at same time and make in sink with other pages 
-4. In HTTP header modify, checkout page, if the headers are not found, it does not print a error message, instead it give me error in console. 
-5. In header delete, if I am giving wrong header, the error message is displayed in console. 
-6. List headers -> delete headers -> all the headers should be preselected here.
-7. In header modify checkout, if click on go back, it should navigate to entering details page instead of home
+2. For endpoint modifier with specific texts, upon clicking on apply changes, I should be able to land in home page as that of endpoint modifier with domain
+3. Endpoint modifier with specific texts: Add option to add multiple endpoints at same time and make in sink with other pages 
+4. In header delete, if I am giving wrong header, the error message is displayed in console. 
+5. List headers -> delete headers -> all the headers should be preselected here.
+
 '''
 
 

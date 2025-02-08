@@ -76,7 +76,8 @@ class CheckoutPageForHeaderModify(ttk.Frame):
         # Update status with success or error message
         if error_message:
             self.status_label.config(text=f"❌ {error_message}", bootstyle="danger")
-            self.parent.show_page(self.parent.file_upload_page)
+            #self.after(2000, self.go_back_to_file_upload) # if you want to land at file upload page
+            return
         else:
             num_headers_modified = len(headers_to_modify)
             self.status_label.config(text=f"✅ {num_headers_modified} headers modified successfully!", bootstyle="success")
