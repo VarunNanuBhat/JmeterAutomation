@@ -237,7 +237,7 @@ recommended fixes:
 3. Endpoint modifier with specific texts: Add option to add multiple endpoints at same time and make in sink with other pages 
 4. In header delete, if I am giving wrong header, the error message is displayed in console. 
 5. List headers -> delete headers -> all the headers should be preselected here.
-
+6. Add a canvas frame for delete selected header from header list page. 
 '''
 
 
@@ -245,4 +245,6 @@ recommended fixes:
 '''
 Things that can be considered: 
 1. In HTTP header modify checkout, i have added a small delay and then landed back in file upload page. 
+2. Images are added in list header page buttons. Follow the same one. 
+3. List header button alignment is good. 
 '''

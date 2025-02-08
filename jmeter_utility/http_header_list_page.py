@@ -45,6 +45,7 @@ class ListHeadersPage(ttk.Frame):
         back_button = ttk.Button(button_frame, text="🔙 Back", bootstyle="secondary", command=self.go_back_to_http_header_page)
         back_button.pack(side="left", fill="x", expand=True, padx=5)
 
+
     def populate_headers(self, headers):
         """Populate headers with checkboxes for each header."""
         self.headers = headers

@@ -21,12 +21,17 @@ class ModifySelectedHeadersPage(ttk.Frame):
         apply_changes_button.grid(row=2, column=0, columnspan=4, pady=10)
 
         # Add a "Back" button to go back to the ListHeadersPage
-        back_button = ttk.Button(self, text="Go Back", bootstyle="danger", command=self.go_back_to_list_headers_page)
+        back_button = ttk.Button(self, text="🔙 Back", bootstyle="secondary", command=self.go_back_to_list_headers_page)
         back_button.grid(row=3, column=3, pady=20, padx=20, sticky="e")
 
         # Add a status label to display success or error messages
         self.status_label = ttk.Label(self, text="", font=("Arial", 12), anchor="w")
         self.status_label.grid(row=4, column=0, columnspan=4, pady=10, sticky="w")
+
+        # Add a status label to display success or error messages
+        self.status_label = ttk.Label(self, text="", font=("Arial", 12, "bold"), bootstyle="info", width=50,
+                                      anchor="center")
+        self.status_label.grid(row=4, column=0, columnspan=4, pady=10, sticky="n")
 
     def populate_headers(self, selected_headers):
         """Populate the selected headers with textboxes to modify their values."""
