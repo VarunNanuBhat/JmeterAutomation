@@ -72,7 +72,7 @@ class CheckoutPageForDomain(ttk.Frame):
                     result = modifier.update_domain_endpoints(domain, self.action)
 
                     if not result:  # If no endpoints were modified, return a warning
-                        error_messages.append(f"⚠ No endpoints ending with '{domain}' found.")
+                        error_messages.append(f"⚠ No endpoints with '{domain}' found.")
                     else:
                         success = True  # At least one modification succeeded
 

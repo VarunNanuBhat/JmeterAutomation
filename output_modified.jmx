@@ -789,7 +789,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -980,7 +980,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -1022,7 +1022,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -1184,7 +1184,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -1266,7 +1266,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -1308,7 +1308,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -1350,7 +1350,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -1392,7 +1392,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -1474,7 +1474,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -1563,7 +1563,7 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -1727,7 +1727,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -1809,7 +1809,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -1891,7 +1891,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -1980,7 +1980,7 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -2069,7 +2069,7 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -2151,7 +2151,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -2193,7 +2193,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -2242,7 +2242,7 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -2331,7 +2331,7 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -2413,7 +2413,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -2499,7 +2499,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -2581,7 +2581,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -2663,7 +2663,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -2745,7 +2745,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -2861,7 +2861,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -2943,7 +2943,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -3025,7 +3025,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -3114,7 +3114,7 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -3203,7 +3203,7 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -3285,7 +3285,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -3367,7 +3367,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -3449,7 +3449,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -3565,7 +3565,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -3647,7 +3647,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -3729,7 +3729,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -3811,7 +3811,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -3900,7 +3900,7 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -4005,7 +4005,7 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -4087,7 +4087,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -4173,7 +4173,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -4255,7 +4255,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -4337,7 +4337,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -4419,7 +4419,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -4501,7 +4501,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -4583,7 +4583,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -4665,7 +4665,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -4747,7 +4747,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -4829,7 +4829,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -4911,7 +4911,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -5248,7 +5248,7 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -5342,7 +5342,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -5437,7 +5437,7 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -5818,7 +5818,7 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -5942,7 +5942,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -6024,7 +6024,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -6106,7 +6106,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -6188,7 +6188,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -8522,7 +8522,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">ADSFDF</stringProp>
+          <stringProp name="HTTPSampler.domain">sa</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -8852,7 +8852,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">ADSFDF</stringProp>
+          <stringProp name="HTTPSampler.domain">sa</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -9335,7 +9335,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">www.facebook.com</stringProp>
+          <stringProp name="HTTPSampler.domain">sdf</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -9593,7 +9593,7 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">www.facebook.com</stringProp>
+          <stringProp name="HTTPSampler.domain">sdf</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -10369,7 +10369,7 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">www.facebook.com</stringProp>
+          <stringProp name="HTTPSampler.domain">sdf</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -11770,7 +11770,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">DASFEG</stringProp>
+          <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />

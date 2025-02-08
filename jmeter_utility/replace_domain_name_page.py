@@ -18,20 +18,20 @@ class ReplaceDomainNamePage(ttk.Frame):
 
         # Add Domain button
         add_button = ttk.Button(self, text="+ Add Domain", bootstyle="success", command=self.add_domain_row)
-        add_button.grid(row=1, column=0, pady=10, padx=10, sticky="w")
+        add_button.grid(row=1, column=0, pady=20, padx=20, sticky="ew")
 
         # Preview Changes button
-        preview_button = ttk.Button(self, text="Preview Changes", bootstyle="primary", command=self.navigate_to_checkout)
-        preview_button.grid(row=1, column=1, pady=10, padx=10, sticky="w")
+        preview_button = ttk.Button(self, text="👁 Preview Changes", bootstyle="primary", command=self.navigate_to_checkout)
+        preview_button.grid(row=1, column=3, pady=20, padx=20, sticky="ew")
 
         # List Domains button
-        list_button = ttk.Button(self, text="List Domains", bootstyle="info",
+        list_button = ttk.Button(self, text="📜 List Domains", bootstyle="info",
                                  command=self.navigate_to_list_domain_names)
-        list_button.grid(row=1, column=1, pady=20, padx=20, sticky="e")
+        list_button.grid(row=1, column=1, pady=20, padx=20, sticky="ew")
 
-        # Go Back button
-        back_button = ttk.Button(self, text="Go Back", bootstyle="danger", command=self.go_back_to_home)
-        back_button.grid(row=1, column=2, pady=20, padx=20, sticky="e")
+        # Home page button
+        home_button = ttk.Button(self, text="🏠 Home", bootstyle="secondary", command=self.go_back_to_home)
+        home_button.grid(row=1, column=2, pady=20, padx=20, sticky="ew")
 
 
         # Status Label
@@ -141,14 +141,14 @@ class ReplaceDomainNamePage(ttk.Frame):
 
     def go_back_to_home(self):
         """Go back to the file upload page and reset the file list."""
-        self.parent.file_upload_page.uploaded_file_paths = []
-        self.parent.file_upload_page.file_listbox.delete(0, 'end')
+        # self.parent.file_upload_page.uploaded_file_paths = []
+        # self.parent.file_upload_page.file_listbox.delete(0, 'end')
         self.parent.file_upload_page.status_label.config(text="")
-        self.parent.file_upload_page.next_page_button.grid_remove()
+        # self.parent.file_upload_page.next_page_button.grid_remove()
         self.status_label.config(text="")
-
-        self.reset_domain_entries()
+        # self.reset_domain_entries()
         self.parent.show_page(self.parent.file_upload_page)
+
 
     def reset_domain_entries(self):
         """Reset the domain entry fields to their initial state."""

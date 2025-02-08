@@ -232,15 +232,12 @@ Add natural language input for tasks (e.g., "disable all endpoints with domain e
 
 '''
 recommended fixes: 
-1. in endpoint modifier based on domain, even if i give wrong domain, I get the output as changes applied succesfully. 
+1. Add checkbox for list sampler -> sampler modifier checkout similar to delete header. Do the same thing for modify selected domains
 2. For endpoint modifier with specific texts, upon clicking on apply changes, I should be able to land in home page as that of endpoint modifier with domain
 3. Endpoint modifier with specific texts: Add option to add multiple endpoints at same time and make in sink with other pages 
-4. In header delete, success/error message is not printed
-5. In checkout for delete selected headers, the final status is printed in console instead of screen. 
-6. Add a canvas frame for delete selected header from header list page, checkout page for modify endpoints based on domains (refer modify sampler). 
-7. At every home button, add icon. Add icons at header modify and header delete
-8. List header -> Modify/Delete header, if no header is selected and delete header is clicked, no error message comes up. 
-9. Provide clear option for all pages
+4. Provide clear option for all pages
+5. Add icons for every buttons. 
+6. Add a canvas frame for delete selected header from header list page, checkout page for modify endpoints based on domains (refer modify sampler).  
 '''
 
 
@@ -250,5 +247,4 @@ Things that can be considered:
 1. In HTTP header modify checkout, i have added a small delay and then landed back in file upload page. 
 2. Images are added in list header page buttons. Follow the same one. 
 3. List header button alignment is good. 
-4. In endpoint modifier with domain, I have already added reset domain entries, check that and clear button
 '''
