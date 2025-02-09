@@ -1,5 +1,5 @@
 import ttkbootstrap as ttk
-from tkinter import StringVar, BooleanVar
+from tkinter import StringVar, BooleanVar, ttk
 from jmeter_methods.Jmeter_Automation_Methods import JMXModifier
 
 class ReplaceContentPage(ttk.Frame):
@@ -7,113 +7,98 @@ class ReplaceContentPage(ttk.Frame):
         super().__init__(parent, padding=20)
         self.parent = parent
 
+        # Store multiple text replacement pairs
+        self.texts_to_replace = []
+
         # Title for the page
-        title_label = ttk.Label(self, text="Replace Content", font=("Arial", 22, "bold"))
-        title_label.grid(row=0, column=0, columnspan=2, pady=20)
+        title_label = ttk.Label(self, text="Replace Content in Requests", font=("Arial", 22, "bold"))
+        title_label.grid(row=0, column=0, columnspan=4, pady=20)
 
-        # Text to Replace
-        text_replace_label = ttk.Label(self, text="Text to Replace:", font=("Arial", 14))
-        text_replace_label.grid(row=1, column=0, padx=20, pady=10, sticky="w")
+        # Add Text button
+        add_button = ttk.Button(self, text="+ Add Text", bootstyle="success", command=self.add_text_row)
+        add_button.grid(row=1, column=0, pady=20, padx=20, sticky="ew")
 
-        self.text_to_replace_var = StringVar()
-        text_replace_entry = ttk.Entry(self, textvariable=self.text_to_replace_var, width=50)
-        text_replace_entry.grid(row=1, column=1, padx=20, pady=10, sticky="w")
+        # Preview Changes button
+        preview_button = ttk.Button(self, text="👁 Preview Changes", bootstyle="primary",
+                                    command=self.navigate_to_checkout)
+        preview_button.grid(row=1, column=2, pady=20, padx=20, sticky="ew")
 
-        # Replacement Text
-        replacement_text_label = ttk.Label(self, text="Replacement Text:", font=("Arial", 14))
-        replacement_text_label.grid(row=2, column=0, padx=20, pady=10, sticky="w")
-
-        self.replacement_text_var = StringVar()
-        replacement_text_entry = ttk.Entry(self, textvariable=self.replacement_text_var, width=50)
-        replacement_text_entry.grid(row=2, column=1, padx=20, pady=10, sticky="w")
+        # Home page button
+        home_button = ttk.Button(self, text="🏠 Home", bootstyle="secondary", command=self.go_back_to_home)
+        home_button.grid(row=1, column=1, pady=20, padx=20, sticky="ew")
 
         # Checkboxes for Replacement Scope
         self.replace_in_url_var = BooleanVar(value=False)
         replace_in_url_checkbox = ttk.Checkbutton(self, text="Replace in URL Path", variable=self.replace_in_url_var)
-        replace_in_url_checkbox.grid(row=3, column=0, padx=20, pady=10, sticky="w")
+        replace_in_url_checkbox.grid(row=2, column=0, padx=20, pady=10, sticky="w")
 
         self.replace_in_body_params_var = BooleanVar(value=False)
         replace_in_body_params_checkbox = ttk.Checkbutton(
             self, text="Replace in Params and Body", variable=self.replace_in_body_params_var
         )
-        replace_in_body_params_checkbox.grid(row=3, column=1, padx=20, pady=10, sticky="w")
+        replace_in_body_params_checkbox.grid(row=2, column=1, padx=20, pady=10, sticky="w")
 
-        # Replace Button
-        replace_button = ttk.Button(self, text="Replace Content", bootstyle="success", command=self.replace_content)
-        replace_button.grid(row=4, column=0, columnspan=2, pady=20)
+        # Add the first input row by default
+        self.add_text_row()
 
         # Status Label
         self.status_label = ttk.Label(self, text="", font=("Arial", 14), anchor="center")
-        self.status_label.grid(row=5, column=0, columnspan=2, pady=10)
+        self.status_label.grid(row=999, column=0, columnspan=4, pady=10)
 
-    def replace_content(self):
-        text_to_replace = self.text_to_replace_var.get()
-        replacement_text = self.replacement_text_var.get()
+    def add_text_row(self):
+        """Dynamically add a new row for entering a text replacement pair."""
+        row_index = len(self.texts_to_replace) + 3  # Adjusted to accommodate checkboxes
+
+        old_text_var = StringVar()
+        new_text_var = StringVar()
+
+        # Old Text Entry
+        old_text_label = ttk.Label(self, text=f"Text to Replace {row_index - 2}:", font=("Arial", 12))
+        old_text_label.grid(row=row_index, column=0, padx=10, pady=5, sticky="w")
+
+        old_text_entry = ttk.Entry(self, textvariable=old_text_var, width=30)
+        old_text_entry.grid(row=row_index, column=1, padx=10, pady=5)
+
+        # New Text Entry
+        new_text_label = ttk.Label(self, text="Replacement Text:", font=("Arial", 12))
+        new_text_label.grid(row=row_index, column=2, padx=10, pady=5, sticky="w")
+
+        new_text_entry = ttk.Entry(self, textvariable=new_text_var, width=30)
+        new_text_entry.grid(row=row_index, column=3, padx=10, pady=5)
+
+        # Store the entry variables
+        self.texts_to_replace.append((old_text_var, new_text_var))
+
+    def navigate_to_checkout(self):
+        """Navigate to the checkout page to preview text replacements."""
+        text_pairs = [(old_var.get().strip(), new_var.get().strip()) for old_var, new_var in self.texts_to_replace]
+        text_pairs = [(old, new) for old, new in text_pairs if old and new]  # Remove empty fields
+
+        if not text_pairs:
+            self.status_label.config(text="Please enter at least one text pair.", bootstyle="danger")
+            return
+
         replace_in_url = self.replace_in_url_var.get()
         replace_in_body_params = self.replace_in_body_params_var.get()
-
-        # Validation
-        if not text_to_replace:
-            self.status_label.config(text="Please enter the text to replace.", bootstyle="danger")
-            return
-
-        if not replacement_text:
-            self.status_label.config(text="Please enter the replacement text.", bootstyle="danger")
-            return
 
         if not (replace_in_url or replace_in_body_params):
             self.status_label.config(text="Please select at least one replacement scope.", bootstyle="danger")
             return
 
-        # Replace logic
-        try:
-            error_message = None
-            for file_path in self.parent.file_upload_page.uploaded_file_paths:
-                error_message = self.replace_content_backend(
-                    file_path, text_to_replace, replacement_text, replace_in_url, replace_in_body_params
-                )
-                if error_message:
-                    break  # Stop processing if there's an error
+        self.parent.checkout_for_replace_contents_page.display_changes(text_pairs, replace_in_url, replace_in_body_params)
+        self.parent.show_page(self.parent.checkout_for_replace_contents_page)
 
-            # Show success or failure message
-            if error_message:
-                self.status_label.config(text=error_message, bootstyle="danger")
-            else:
-                self.status_label.config(
-                    text=f"'{text_to_replace}' replaced with '{replacement_text}' successfully!", bootstyle="success"
-                )
-        except Exception as e:
-            self.status_label.config(text=f"Error: {str(e)}", bootstyle="danger")
+    def go_back_to_home(self):
+        """Go back to the file upload page and reset the file list."""
+        self.parent.file_upload_page.status_label.config(text="")
+        self.status_label.config(text="")
+        self.parent.show_page(self.parent.file_upload_page)
 
-    def replace_content_backend(self, file_path, text_to_replace, replacement_text, replace_in_url, replace_in_body_params):
-        """
-        Replace content logic in the backend.
+    def reset_text_entries(self):
+        """Reset the text entry fields to their initial state."""
+        for widget in self.grid_slaves():
+            if isinstance(widget, ttk.Entry) or isinstance(widget, ttk.Label):
+                widget.grid_forget()
 
-        :param file_path: Path of the JMX file to modify.
-        :param text_to_replace: Text to be replaced.
-        :param replacement_text: Text to replace with.
-        :param replace_in_url: Boolean indicating replacement in URL path.
-        :param replace_in_body_params: Boolean indicating replacement in params and body.
-        :return: None if successful, or an error message if there is a failure.
-        """
-        try:
-            # Initialize JMXModifier with the uploaded file path
-            modifier = JMXModifier(file_path)
-
-            # Perform replacements based on selected options
-            if replace_in_url:
-                modifier.replace_string_in_url(text_to_replace, replacement_text)
-
-            if replace_in_body_params:
-                modifier.replace_string_in_body_and_params(text_to_replace, replacement_text)
-
-            # Save the modified file with a new name
-            output_path = file_path.replace(".jmx", "_modified.jmx")
-            modifier.save_changes(output_path)
-
-            return None  # No errors, replacement successful
-
-        except ValueError as e:
-            return f"Error: {str(e)}"
-        except Exception as e:
-            return f"Error modifying file {file_path}: {str(e)}"
+        self.texts_to_replace = []
+        self.add_text_row()

@@ -233,14 +233,14 @@ Add natural language input for tasks (e.g., "disable all endpoints with domain e
 '''
 recommended fixes: 
 1. Add checkbox for list sampler -> sampler modifier checkout similar to delete header. Do the same thing for modify selected domains
-2. For endpoint modifier with specific texts, upon clicking on apply changes, I should be able to land in home page as that of endpoint modifier with domain
-3. Endpoint modifier with specific texts: Add option to add multiple endpoints at same time and make in sink with other pages 
-4. Provide clear option for all pages
+2. Provide clear option for all pages
+3. Rebuild/structure string replace in url/body
 5. Add icons for every buttons. 
 6. Add a canvas frame for delete selected header from header list page, checkout page for modify endpoints based on domains (refer modify sampler).  
 7. In sampler modify, even I dont select action and click on apply changes for selected samplers, it does not throw a error message
 8. Check for button order in all the pages
 9. Check if appy changes of confirm button executes only if actions are selected. 
+10. Checkout for header modify and replace domain page needs to updated to support multiple files. 
 '''
 
 
