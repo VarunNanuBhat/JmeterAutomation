@@ -78,7 +78,7 @@ class ReplaceDomainNamePage(ttk.Frame):
                 modifier = JMXModifier(file_path)
                 unique_domain_names.update(modifier.list_unique_domain_names())
 
-            self.parent.domain_list_page.populate_domain_names(list(unique_domain_names))
+            self.parent.domain_list_page.populate_domain_names(list(sorted(unique_domain_names)))
             self.parent.show_page(self.parent.domain_list_page)
 
         except Exception as e:
