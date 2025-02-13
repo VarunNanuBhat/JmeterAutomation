@@ -226,7 +226,7 @@ class JMXModifier:
             for sub_child_element in child_element.iter("stringProp"):
                 if sub_child_element.get("name") == "HTTPSampler.domain":
                     domain_array.add(sub_child_element.text)
-
+        # print(list(sorted(domain_array)))
         return list(domain_array)  # Convert set back to list for consistency
 
 
