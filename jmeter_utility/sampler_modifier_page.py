@@ -93,7 +93,7 @@ class SamplerModifierPage(ttk.Frame):
                 modifier = JMXModifier(file_path)
                 unique_sampler_names.update(modifier.list_unique_sampler_names())
 
-            self.parent.sampler_list_page.populate_sampler_names(list(unique_sampler_names))
+            self.parent.sampler_list_page.populate_sampler_names(list(sorted(unique_sampler_names)))
             self.parent.show_page(self.parent.sampler_list_page)
 
         except Exception as e:
