@@ -67,7 +67,7 @@ class HttpHeaderDeletePage(ttk.Frame):
                 modifier = JMXModifier(file_path)
                 unique_headers.update(modifier.list_header_names())
 
-            self.parent.http_header_list_page.populate_headers(list(unique_headers))
+            self.parent.http_header_list_page.populate_headers(list(sorted(unique_headers)))
             self.parent.show_page(self.parent.http_header_list_page)
 
         except Exception as e:
