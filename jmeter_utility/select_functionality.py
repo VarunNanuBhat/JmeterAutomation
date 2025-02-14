@@ -48,11 +48,14 @@ class SelectFunctionality(ttk.Frame):
             command=self.handle_option_selection
         ).grid(row=3, column=0, pady=30, ipadx=30, ipady=12, sticky="ew")
 
+        self.status_label = ttk.Label(self, text="", font=("Arial", 14), bootstyle="danger")
+        self.status_label.grid(row=4, column=0, pady=15)
+
     def handle_option_selection(self):
         selected_option = self.selected_option.get()
 
         if not selected_option:
-            ttk.Messagebox.show_warning("Selection Required", "⚠ Please select an option before proceeding.")
+            self.status_label.config(text="⚠ Please select an option before proceeding!")
             return
 
         # Page Redirection Logic

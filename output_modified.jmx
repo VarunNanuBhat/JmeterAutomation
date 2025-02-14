@@ -1142,7 +1142,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">assets.adobedtm.com</stringProp>
+          <stringProp name="HTTPSampler.domain">ASD</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -1645,7 +1645,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">assets.adobedtm.com</stringProp>
+          <stringProp name="HTTPSampler.domain">ASD</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -4993,7 +4993,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">assets.adobedtm.com</stringProp>
+          <stringProp name="HTTPSampler.domain">ASD</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -5117,7 +5117,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">assets.adobedtm.com</stringProp>
+          <stringProp name="HTTPSampler.domain">ASD</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -5159,7 +5159,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">assets.adobedtm.com</stringProp>
+          <stringProp name="HTTPSampler.domain">ASD</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -5519,7 +5519,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">assets.adobedtm.com</stringProp>
+          <stringProp name="HTTPSampler.domain">ASD</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -5601,7 +5601,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">assets.adobedtm.com</stringProp>
+          <stringProp name="HTTPSampler.domain">ASD</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -5643,7 +5643,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">assets.adobedtm.com</stringProp>
+          <stringProp name="HTTPSampler.domain">ASD</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -5727,7 +5727,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">assets.adobedtm.com</stringProp>
+          <stringProp name="HTTPSampler.domain">ASD</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -5769,7 +5769,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">assets.adobedtm.com</stringProp>
+          <stringProp name="HTTPSampler.domain">ASD</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -6354,7 +6354,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">assets.adobedtm.com</stringProp>
+          <stringProp name="HTTPSampler.domain">ASD</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -6517,7 +6517,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">assets.adobedtm.com</stringProp>
+          <stringProp name="HTTPSampler.domain">ASD</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -6599,7 +6599,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">assets.adobedtm.com</stringProp>
+          <stringProp name="HTTPSampler.domain">ASD</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -6681,7 +6681,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">assets.adobedtm.com</stringProp>
+          <stringProp name="HTTPSampler.domain">ASD</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -6844,7 +6844,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">assets.adobedtm.com</stringProp>
+          <stringProp name="HTTPSampler.domain">ASD</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -7214,7 +7214,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">assets.adobedtm.com</stringProp>
+          <stringProp name="HTTPSampler.domain">ASD</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -7484,7 +7484,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">assets.adobedtm.com</stringProp>
+          <stringProp name="HTTPSampler.domain">ASD</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -8396,7 +8396,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">q2e3rwe4</stringProp>
+          <stringProp name="HTTPSampler.domain">10903391.fls.doubleclick.net</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -8522,7 +8522,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">esrt</stringProp>
+          <stringProp name="HTTPSampler.domain">static.ads-twitter.com</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -8852,7 +8852,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">esrt</stringProp>
+          <stringProp name="HTTPSampler.domain">static.ads-twitter.com</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -9155,7 +9155,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">q2e3rwe4</stringProp>
+          <stringProp name="HTTPSampler.domain">10903391.fls.doubleclick.net</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -9245,7 +9245,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">q2e3rwe4</stringProp>
+          <stringProp name="HTTPSampler.domain">10903391.fls.doubleclick.net</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -11125,7 +11125,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">assets.adobedtm.com</stringProp>
+          <stringProp name="HTTPSampler.domain">ASD</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -11207,7 +11207,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">assets.adobedtm.com</stringProp>
+          <stringProp name="HTTPSampler.domain">ASD</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -11289,7 +11289,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">assets.adobedtm.com</stringProp>
+          <stringProp name="HTTPSampler.domain">ASD</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -11371,7 +11371,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">assets.adobedtm.com</stringProp>
+          <stringProp name="HTTPSampler.domain">ASD</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -11453,7 +11453,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">assets.adobedtm.com</stringProp>
+          <stringProp name="HTTPSampler.domain">ASD</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -13740,7 +13740,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">wegrtgh</stringProp>
+          <stringProp name="HTTPSampler.domain">as</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
@@ -13824,7 +13824,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments" />
           </elementProp>
-          <stringProp name="HTTPSampler.domain">wegrtgh</stringProp>
+          <stringProp name="HTTPSampler.domain">as</stringProp>
           <stringProp name="HTTPSampler.port" />
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding" />
