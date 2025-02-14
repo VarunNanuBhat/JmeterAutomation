@@ -23,6 +23,7 @@ from sampler_list_page import ListSamplers
 from modify_selected_samplers_page import ModifySelectedSamplersPage
 from checkout_for_endpoint_modifier_with_url import CheckoutPageForEndpointModifierWithURL
 from checkout_for_replace_contents_page import CheckoutPageForReplaceText
+from homepage import HomePage
 
 
 
@@ -60,10 +61,12 @@ class App(ttk.Window):
         self.modify_selected_samplers_page = ModifySelectedSamplersPage(self)
         self.checkout_for_endpoint_modifier_with_url = CheckoutPageForEndpointModifierWithURL(self)
         self.checkout_for_replace_contents_page = CheckoutPageForReplaceText(self)
+        self.homepage = HomePage(self)
 
 
         # Start with the file upload page
-        self.show_page(self.file_upload_page)
+        #self.show_page(self.file_upload_page)
+        self.show_page(self.homepage)
 
     def show_page(self, page):
         """Hide all pages and show the specified one."""
