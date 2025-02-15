@@ -129,8 +129,9 @@ class ReplaceDomainNamePage(ttk.Frame):
             for old_domain, new_domain in domain_pairs:
                 modifier.replace_domain_name(old_domain, new_domain)
 
-            output_path = file_path.replace(".jmx", "_modified.jmx")
-            modifier.save_changes(output_path)
+            #output_path = file_path.replace(".jmx", "_modified.jmx")
+            #modifier.save_changes(output_path)
+            modifier.save_changes(file_path)
 
             return None  # No errors
 

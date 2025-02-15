@@ -122,8 +122,10 @@ class CheckoutPageForHeaderModify(ttk.Frame):
             modifier.modify_http_headers(headers)
 
             # Save the modified file with a new name
-            output_path = file_path.replace(".jmx", "_modified.jmx")
-            modifier.save_changes(output_path)
+            #output_path = file_path.replace(".jmx", "_modified.jmx")
+            #modifier.save_changes(output_path)
+            modifier.save_changes(file_path)
+
 
         except Exception as e:
             raise ValueError(f"Error modifying file {file_path}: {str(e)}")

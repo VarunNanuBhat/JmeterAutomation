@@ -71,8 +71,9 @@ class CheckoutPageForHeaderDelete(ttk.Frame):
                     modifier.delete_http_header(header)
 
                 # Save changes
-                output_path = file_path.replace(".jmx", "_modified.jmx")
-                modifier.save_changes(output_path)
+                #output_path = file_path.replace(".jmx", "_modified.jmx")
+                #modifier.save_changes(output_path)
+                modifier.save_changes(file_path)
 
             num_headers_deleted = len(self.headers_to_delete)
             self.status_label.config(text=f"✅ {num_headers_deleted} headers deleted successfully!", bootstyle="success")

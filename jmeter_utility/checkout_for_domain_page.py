@@ -78,8 +78,8 @@ class CheckoutPageForDomain(ttk.Frame):
 
                 # Save changes if any modification was successful
                 if success:
-                    output_path = file_path.replace(".jmx", "_modified.jmx")
-                    modifier.save_changes(output_path)
+                    #output_path = file_path.replace(".jmx", "_modified.jmx")
+                    modifier.save_changes(file_path)
 
             except Exception as e:
                 error_messages.append(f"❌ Error in {file_path}: {str(e)}")

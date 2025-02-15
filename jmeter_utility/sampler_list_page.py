@@ -35,7 +35,7 @@ class ListSamplers(ttk.Frame):
 
 
         # Go Back Button
-        back_button = ttk.Button(self, text="🔙 Back", bootstyle="secondary", command=self.go_back_to_sampler_page)
+        back_button = ttk.Button(self, text="_modified", bootstyle="secondary", command=self.go_back_to_sampler_page)
         back_button.grid(row=2, column=3, pady=20, padx=20, sticky="ew")
 
         # Status Label for error messages

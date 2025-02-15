@@ -101,8 +101,10 @@ class ModifySelectedSamplersPage(ttk.Frame):
                         elif selected_action == "delete":
                             modifier.delete_samplers_by_name(sampler)
 
-                    output_path = file_path.replace(".jmx", "_modified.jmx")
-                    modifier.save_changes(output_path)
+                    #output_path = file_path.replace(".jmx", "_modified.jmx")
+                    #modifier.save_changes(output_path)
+                    modifier.save_changes(file_path)
+
 
                 except Exception as e:
                     error_message = str(e)

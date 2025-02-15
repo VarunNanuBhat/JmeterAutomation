@@ -109,8 +109,9 @@ class ReplaceSelectedDomainsPage(ttk.Frame):
             for old_domain, new_domain in domains.items():
                 modifier.replace_domain_name(old_domain, new_domain)
 
-            output_path = file_path.replace(".jmx", "_modified.jmx")
-            modifier.save_changes(output_path)
+            #output_path = file_path.replace(".jmx", "_modified.jmx")
+            #modifier.save_changes(output_path)
+            modifier.save_changes(file_path)
 
         except Exception as e:
             raise ValueError(f"Error modifying file {file_path}: {str(e)}")

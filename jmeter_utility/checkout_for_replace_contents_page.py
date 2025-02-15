@@ -149,8 +149,9 @@ class CheckoutPageForReplaceText(ttk.Frame):
                 return False
 
             # Save the modified file with a new name
-            output_path = file_path.replace(".jmx", "_modified.jmx")
-            modifier.save_changes(output_path)
+            #output_path = file_path.replace(".jmx", "_modified.jmx")
+            #modifier.save_changes(output_path)
+            modifier.save_changes(file_path)
             return True  # Indicate success
 
         except Exception as e:
