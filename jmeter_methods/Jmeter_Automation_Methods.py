@@ -11,7 +11,7 @@ class JMXModifier:
             self.tree = ET.parse(file_path)
             self.root = self.tree.getroot()
         except ET.ParseError as e:
-            print(f"Error parsing XML file {file_path}: {e}")
+            #print(f"Error parsing XML file {file_path}: {e}")
             raise
 
     def modify_http_headers(self, headers):
@@ -33,7 +33,7 @@ class JMXModifier:
         # Check for any headers that weren't found in the file
         not_found_headers = set(headers.keys()) - modified_headers
         if not_found_headers:
-            print(f"Headers not found in the file: {', '.join(not_found_headers)}")
+            #print(f"Headers not found in the file: {', '.join(not_found_headers)}")
             raise ValueError(f"Headers not found in the file: {', '.join(not_found_headers)}")
 
     def list_header_names(self):
@@ -65,7 +65,7 @@ class JMXModifier:
                         deleted = True
 
         if not deleted:
-            print(f"Header '{header_name}' not found or not deleted.")
+            #print(f"Header '{header_name}' not found or not deleted.")
             raise ValueError(f"Header '{header_name}' not found or not deleted.")
 
 
@@ -87,7 +87,8 @@ class JMXModifier:
                         modified = True
 
         if not modified:
-            print(f"No endpoints ending with '{text}' were found to enable.")
+            #print(f"No endpoints ending with '{text}' were found to enable.")
+            pass
         return modified
 
     def disable_endpoints(self, text):
@@ -107,7 +108,8 @@ class JMXModifier:
                         modified = True
 
         if not modified:
-            print(f"No endpoints ending with '{text}' were found to disable.")
+            #print(f"No endpoints ending with '{text}' were found to disable.")
+            pass
         return modified
 
     def delete_endpoints(self, text):
@@ -160,7 +162,8 @@ class JMXModifier:
                         modified = True
 
         if not modified:
-            print(f"No endpoints ending with '{text}' were found to enable.")
+            #print(f"No endpoints ending with '{text}' were found to enable.")
+            pass
         return modified
 
     def disable_domain_endpoints(self, text):
@@ -180,7 +183,8 @@ class JMXModifier:
                         modified = True
 
         if not modified:
-            print(f"No endpoints ending with '{text}' were found to disable.")
+            #print(f"No endpoints ending with '{text}' were found to disable.")
+            pass
         return modified
 
     def delete_domain_endpoints(self, text):
@@ -244,7 +248,8 @@ class JMXModifier:
                 modified = True
 
         if not modified:
-            print(f"No samplers with testname '{name}' were found to enable.")
+            #print(f"No samplers with testname '{name}' were found to enable.")
+            pass
         return modified
 
 
@@ -262,7 +267,8 @@ class JMXModifier:
                 modified = True
 
         if not modified:
-            print(f"No samplers with testname '{name}' were found to disable.")
+            #print(f"No samplers with testname '{name}' were found to disable.")
+            pass
         return modified
 
     def delete_samplers_by_name(self, name):
@@ -291,7 +297,8 @@ class JMXModifier:
                     modified = True
 
         if not modified:
-            print(f"No samplers with testname '{name}' were found to delete.")
+            #print(f"No samplers with testname '{name}' were found to delete.")
+            pass
         return modified
 
     def list_unique_sampler_names(self):
@@ -419,4 +426,4 @@ class JMXModifier:
         :param output_path: Path to save the modified XML.
         """
         self.tree.write(output_path, encoding="utf-8", xml_declaration=True)
-        print(f"Changes saved to {output_path}")
+        #print(f"Changes saved to {output_path}")
