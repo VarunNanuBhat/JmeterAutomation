@@ -19,8 +19,8 @@ class ListHeadersPage(ttk.Frame):
         self.scrollable_frame = ttk.Frame(self, padding=10)
         self.scrollable_frame.grid(row=1, column=0, columnspan=3, pady=5, sticky="nsew")
 
-        # Add a Canvas for Scrollable Content
-        self.canvas = ttk.Canvas(self.scrollable_frame, width=400, height=312)  # Increased height by 25%
+        # Increased Canvas Height for better visibility
+        self.canvas = ttk.Canvas(self.scrollable_frame, width=500, height=450)  # Adjusted height
         self.canvas.pack(side="left", fill="both", expand=True)
 
         # Add a Vertical Scrollbar
@@ -29,7 +29,7 @@ class ListHeadersPage(ttk.Frame):
         self.canvas.configure(yscrollcommand=self.scrollbar.set)
 
         # Frame for the checkboxes inside the canvas
-        self.checkbox_frame = ttk.Frame(self.canvas, padding=10, width=380)
+        self.checkbox_frame = ttk.Frame(self.canvas, padding=10, width=480)
         self.canvas.create_window((0, 0), window=self.checkbox_frame, anchor="nw")
 
         # Buttons (Compact Layout)
@@ -42,10 +42,7 @@ class ListHeadersPage(ttk.Frame):
         delete_button = ttk.Button(button_frame, text="🗑 Delete", bootstyle="danger", command=self.navigate_to_delete_headers)
         delete_button.pack(side="left", fill="x", expand=True, padx=5)
 
-        # back_button = ttk.Button(button_frame, text="Home", bootstyle="secondary", command=self.go_back_to_http_header_page)
-        # back_button.pack(side="left", fill="x", expand=True, padx=5)
-
-        home_button = ttk.Button(button_frame, text="🏠 Home", bootstyle="secondary",command=self.go_back_to_home)
+        home_button = ttk.Button(button_frame, text="🏠 Home", bootstyle="secondary", command=self.go_back_to_home)
         home_button.pack(side="left", fill="x", expand=True, padx=5)
 
         # Status Label for error messages
@@ -87,37 +84,12 @@ class ListHeadersPage(ttk.Frame):
         """Navigate to DeleteSelectedHeadersPage."""
         selected_headers = self.get_selected_headers()
         if not selected_headers:
-            self.status_label.config(text="⚠ No headers selected for deletion!", bootstyle = "danger")
+            self.status_label.config(text="⚠ No headers selected for deletion!", bootstyle="danger")
             return
 
         self.parent.delete_selected_headers.populate_headers(selected_headers)
         self.parent.show_page(self.parent.delete_selected_headers)
 
-    def go_back_to_http_header_page(self):
-        """Navigate back to HTTP Header Page."""
-        self.parent.show_page(self.parent.http_header_modify_page)
-
-
     def go_back_to_home(self):
-        """Go back to the file upload page and reset the file list."""
-        # Reset the uploaded file list in the file upload page
-        # self.parent.file_upload_page.uploaded_file_paths = []
-
-        # Clear the listbox to show an empty state
-        # self.parent.file_upload_page.file_listbox.delete(0, 'end')
-
-        # Reset the status label
-        # self.parent.file_upload_page.status_label.config(text="")
-
-        # Hide the 'Next Page' button initially
-        # self.parent.file_upload_page.next_page_button.grid_remove()
-
-        # Clear status label in HttpHeaderPage (this clears success/error message)
-        # self.status_label.config(text="")
-
-        # Reset the HTTP Header fields (clear existing header rows and messages)
-        # enable this method if you want to reset header page on re-starting
-        #self.reset_http_headers()
-
-        # Show the file upload page
+        """Go back to the file upload page."""
         self.parent.show_page(self.parent.file_upload_page)
