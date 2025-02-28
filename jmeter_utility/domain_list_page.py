@@ -20,7 +20,7 @@ class ListDomains(ttk.Frame):
         self.scrollable_frame.grid(row=1, column=0, columnspan=3, pady=5, sticky="nsew")
 
         # Add a Canvas for Scrollable Content
-        self.canvas = ttk.Canvas(self.scrollable_frame, width=400, height=312)
+        self.canvas = ttk.Canvas(self.scrollable_frame, width=500, height=600)
         self.canvas.pack(side="left", fill="both", expand=True)
 
         # Add a Vertical Scrollbar
