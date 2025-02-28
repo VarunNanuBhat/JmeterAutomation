@@ -17,23 +17,33 @@ class JMXModifier:
     def modify_http_headers(self, headers):
         """
         Modifies the values of multiple specified HTTP headers.
+        Handles case-insensitive header name matching.
 
         :param headers: A dictionary where keys are header names and values are the new values for the headers.
         """
         modified_headers = set()
-        for element_prop in self.root.iter('elementProp'):
-            attrib_value = element_prop.get('name')
-            if attrib_value in headers:
-                for string_prop in element_prop.iter('stringProp'):
-                    attrib_value2 = string_prop.get('name')
-                    if attrib_value2 == 'Header.value':
-                        string_prop.text = headers[attrib_value]
-                        modified_headers.add(attrib_value)
+        header_keys_lower = {key.lower(): value for key, value in headers.items()}  # Normalize input keys
 
-        # Check for any headers that weren't found in the file
-        not_found_headers = set(headers.keys()) - modified_headers
+        for element_prop in self.root.iter("elementProp"):
+            header_name = None  # Store header name found in elementProp
+
+            # Extract header name inside <stringProp>
+            for string_prop in element_prop.iter("stringProp"):
+                if string_prop.get("name", "").strip().lower() == "header.name":
+                    header_name = string_prop.text.strip().lower() if string_prop.text else None
+                    break
+
+            if header_name and header_name in header_keys_lower:
+                # Modify only if the header name matches
+                for string_prop in element_prop.iter("stringProp"):
+                    if string_prop.get("name", "").strip().lower() == "header.value":
+                        string_prop.text = header_keys_lower[header_name]
+                        modified_headers.add(header_name)
+                        break  # Stop modifying once found
+
+        # Identify headers that were not found and modified
+        not_found_headers = set(header_keys_lower.keys()) - modified_headers
         if not_found_headers:
-            #print(f"Headers not found in the file: {', '.join(not_found_headers)}")
             raise ValueError(f"Headers not found in the file: {', '.join(not_found_headers)}")
 
     def list_header_names(self):
@@ -46,29 +56,37 @@ class JMXModifier:
             for sub_child_element in child_element.iter("stringProp"):
                 if sub_child_element.get("name") == "Header.name":
                     header_name_array.add(sub_child_element.text)
+                    #print(sub_child_element.text)
 
         return list(header_name_array)
-
 
     def delete_http_header(self, header_name):
         """
         Deletes a specific key-value pair from the HTTP Header Manager.
+        Handles case-insensitive matching.
 
         :param header_name: Name of the HTTP header to delete.
         """
         deleted = False
+        header_name_lower = header_name.lower()
+
         for header_manager in self.root.iter("HeaderManager"):
             for collection_prop in header_manager.iter("collectionProp"):
-                for element_prop in list(collection_prop):  # Use list() to avoid runtime modification issues
-                    if element_prop.get("name") == header_name:
-                        collection_prop.remove(element_prop)
-                        deleted = True
+                elements_to_remove = []
+
+                for element_prop in collection_prop.findall("elementProp"):
+                    for sub_prop in element_prop.findall("stringProp"):
+                        if sub_prop.get("name", "").lower() == "header.name" and (
+                                sub_prop.text or "").strip().lower() == header_name_lower:
+                            elements_to_remove.append(element_prop)
+                            break
+
+                for element in elements_to_remove:
+                    collection_prop.remove(element)
+                    deleted = True
 
         if not deleted:
-            #print(f"Header '{header_name}' not found or not deleted.")
             raise ValueError(f"Header '{header_name}' not found or not deleted.")
-
-
 
     def enable_endpoints(self, text):
         """
