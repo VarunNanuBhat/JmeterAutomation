@@ -20,7 +20,7 @@ class ListHeadersPage(ttk.Frame):
         self.scrollable_frame.grid(row=1, column=0, columnspan=3, pady=5, sticky="nsew")
 
         # Increased Canvas Height for better visibility
-        self.canvas = ttk.Canvas(self.scrollable_frame, width=500, height=450)  # Adjusted height
+        self.canvas = ttk.Canvas(self.scrollable_frame, width=500, height=600)  # Adjusted height
         self.canvas.pack(side="left", fill="both", expand=True)
 
         # Add a Vertical Scrollbar
