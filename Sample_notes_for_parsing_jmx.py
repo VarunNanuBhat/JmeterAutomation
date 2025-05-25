@@ -202,6 +202,7 @@ Let users define custom actions through the UI, such as combining multiple modif
 d. Version Control
 Save backup copies of the original JMX file before applying changes.
 Implement a "Revert to Last State" feature.
+e. Save/load action templates for reusability
 
 4. Advanced UI Features
 Preview Changes: Add a button that shows a diff of changes before saving.
