@@ -420,12 +420,11 @@ def analyze_jmeter_script(root_element):
     while idx < len(children_of_top_level_controllers_hashTree):
         top_level_elem = children_of_top_level_controllers_hashTree[idx]
 
-        if top_level_elem.tag == 'ThreadGroup' or top_level_elem.tag == 'TestFragmentController':
+        # Now includes SetupThreadGroup and PostThreadGroup (Tear Down)
+        if top_level_elem.tag in ['ThreadGroup', 'SetupThreadGroup', 'PostThreadGroup', 'TestFragmentController']:
             tg_name = top_level_elem.get('testname')
             if tg_name is None:
                 tg_name = f"Unnamed {top_level_elem.tag}"
-
-            # Removed: print(f"Validating sequence for Thread Group/Test Fragment: '{tg_name}'")
 
             thread_groups_data[tg_name] = []
             visited_elements_in_tg = set()
@@ -457,19 +456,42 @@ def analyze_jmeter_script(root_element):
 
 def display_issues():
     """
-    Displays all collected issues.
+    Displays all collected issues, grouped by Thread Group.
     """
-    if issues:
-        print("\n--- JMeter Script Validation Issues ---")
-        for issue in issues:
+    if not issues:
+        print("\n--- JMeter Script Validation: No issues found. ---")
+        print(f"\nTotal issues found: {len(issues)}")
+        return
+
+    # Group issues by thread_group
+    issues_by_thread_group = {}
+    for issue in issues:
+        tg_name = issue.get('thread_group', 'N/A')
+        if tg_name not in issues_by_thread_group:
+            issues_by_thread_group[tg_name] = []
+        issues_by_thread_group[tg_name].append(issue)
+
+    print("\n--- JMeter Script Validation Issues ---")
+
+    # Sort thread groups for consistent output
+    sorted_thread_groups = sorted(issues_by_thread_group.keys())
+
+    for tg_name in sorted_thread_groups:
+        print(f"\n====================================================")
+        print(f"Issues for Thread Group/Test Fragment: '{tg_name}'")
+        print(f"====================================================")
+
+        tg_issues = issues_by_thread_group[tg_name]
+        # Optionally, sort issues within a thread group by severity or type if desired
+        # For now, let's keep them in the order they were collected for a given TG.
+
+        for issue in tg_issues:
+            # We already have the Thread Group name in the header, no need to repeat it per issue
             print(f"Severity: {issue['severity']}")
             print(f"Type: {issue['type']}")
             print(f"Location: {issue['location']}")
             print(f"Description: {issue['description']}")
-            print(f"Thread Group: {issue['thread_group']}")
-            print("--------------------")
-    else:
-        print("\n--- JMeter Script Validation: No issues found. ---")
+            print("--------------------")  # Separator for individual issues
 
     print(f"\nTotal issues found: {len(issues)}")
 
