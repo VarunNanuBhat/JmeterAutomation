@@ -253,6 +253,9 @@ def collect_logical_txns(element_or_hashtree, tg_name_for_report, collected_list
     visited_elements set is used to prevent infinite loops in case of circular references.
     """
 
+    # Define the pattern here for easier use within the function
+    txn_naming_pattern = r"^TXN_(\d{2})_.*"
+
     if element_or_hashtree.tag == 'hashTree':
         children_of_current_hashtree = list(element_or_hashtree)
         idx = 0
@@ -270,11 +273,13 @@ def collect_logical_txns(element_or_hashtree, tg_name_for_report, collected_list
             is_module_controller = (current_elem.tag == 'ModuleController' or \
                                     (current_elem.get('testclass') == 'org.apache.jmeter.control.ModuleController'))
 
+            # Removed 'TransactionController' from here, as it's handled specifically
+            # Any other controller type that can contain children
             container_controller_tags = ['TestFragmentController', 'ThreadGroup', 'LoopController', 'SimpleController',
                                          'IfController', 'WhileController', 'OnceOnlyController',
                                          'ThroughputController', 'RandomController', 'SwitchController',
                                          'CriticalSectionController', 'InterleaveController', 'RandomOrderController',
-                                         'ForEachController', 'TransactionController']
+                                         'ForEachController']
 
             if is_transaction_controller:
                 txn_name = current_elem.get('testname')
@@ -289,6 +294,7 @@ def collect_logical_txns(element_or_hashtree, tg_name_for_report, collected_list
                     })
                     visited_elements.add(current_elem)
 
+                # Always process children of a Transaction Controller
                 if idx + 1 < len(children_of_current_hashtree) and children_of_current_hashtree[
                     idx + 1].tag == 'hashTree':
                     collect_logical_txns(children_of_current_hashtree[idx + 1], tg_name_for_report, collected_list,
@@ -301,11 +307,24 @@ def collect_logical_txns(element_or_hashtree, tg_name_for_report, collected_list
                 if resolved_target_info is not None:
                     resolved_target_elem, parent_of_resolved_target, idx_of_resolved_target = resolved_target_info
 
-                    visited_elements.add(current_elem)
+                    visited_elements.add(current_elem) # Mark module controller itself as visited
 
                     is_resolved_txn_controller = (resolved_target_elem.tag == 'TransactionController' or \
                                                   (resolved_target_elem.get(
                                                       'testclass') == 'org.apache.jmeter.control.TransactionController'))
+
+                    # Check naming convention for the resolved target if it's NOT a TransactionController
+                    if not is_resolved_txn_controller:
+                        resolved_target_name = resolved_target_elem.get('testname')
+                        if resolved_target_name and re.match(txn_naming_pattern, resolved_target_name):
+                            issues.append({
+                                'severity': 'WARNING',
+                                'validation_option_name': THIS_VALIDATION_OPTION_NAME,
+                                'type': 'Naming Convention',
+                                'location': f"Module Controller '{current_elem.get('testname')}' resolves to non-Transaction Controller '{resolved_target_name}' ({resolved_target_elem.tag})",
+                                'description': f"Non-Transaction Controller names (e.g., Loop, Simple, While, If) should not follow the 'TXN_NN_Description' format. This format is reserved exclusively for Transaction Controllers.",
+                                'thread_group': tg_name_for_report
+                            })
 
                     children_hashtree_of_resolved_target = None
                     if idx_of_resolved_target != -1 and \
@@ -315,6 +334,7 @@ def collect_logical_txns(element_or_hashtree, tg_name_for_report, collected_list
                             idx_of_resolved_target + 1]
 
                     if is_resolved_txn_controller:
+                        # Only add to collected_list if it's a TransactionController
                         if resolved_target_elem not in [tc['element'] for tc in collected_list]:
                             txn_name = resolved_target_elem.get('testname')
                             step_number = validate_transaction_name(txn_name, tg_name_for_report)
@@ -324,19 +344,22 @@ def collect_logical_txns(element_or_hashtree, tg_name_for_report, collected_list
                                                    'name': txn_name,
                                                    'step_number': step_number,
                                                    'original_name_for_duplicate': txn_name})
-                            visited_elements.add(resolved_target_elem)
+                            visited_elements.add(resolved_target_elem) # Mark the resolved transaction controller as visited
 
+                        # Recursively collect from its children if it has a hashTree
                         if children_hashtree_of_resolved_target is not None:
                             collect_logical_txns(children_hashtree_of_resolved_target, tg_name_for_report,
                                                  collected_list, visited_elements)
 
                     elif resolved_target_elem.tag in container_controller_tags:
+                        # If it's another type of container controller, just traverse its children
                         if children_hashtree_of_resolved_target is not None:
-                            temp_collected_from_module = []
+                            # Note: No need to extend temp_collected_from_module here as we're only
+                            # collecting Transaction Controllers for sequence validation.
+                            # The naming validation for non-TXN controllers happens on current_elem.
                             collect_logical_txns(children_hashtree_of_resolved_target, tg_name_for_report,
-                                                 temp_collected_from_module, visited_elements)
-                            collected_list.extend(temp_collected_from_module)
-                            visited_elements.add(resolved_target_elem)
+                                                 collected_list, visited_elements)
+                            visited_elements.add(resolved_target_elem) # Mark the resolved container as visited
                         else:
                             issues.append({
                                 'severity': 'WARNING',
@@ -346,8 +369,8 @@ def collect_logical_txns(element_or_hashtree, tg_name_for_report, collected_list
                                 'description': f"Module Controller points to a container element '{resolved_target_elem.get('testname')}' ({resolved_target_elem.tag}) which has no inner elements (no sibling hashTree). No transactions collected from this target.",
                                 'thread_group': tg_name_for_report
                             })
-
                     else:
+                        # This covers samplers, listeners, etc., that a Module Controller might point to
                         issues.append({
                             'severity': 'WARNING',
                             'validation_option_name': THIS_VALIDATION_OPTION_NAME,
@@ -367,17 +390,38 @@ def collect_logical_txns(element_or_hashtree, tg_name_for_report, collected_list
                     })
                 idx += 1
 
+            # Handle other container controllers (Loop, If, Simple, etc.)
             elif current_elem.tag in container_controller_tags and current_elem not in visited_elements:
+                controller_name = current_elem.get('testname')
+                if controller_name and re.match(txn_naming_pattern, controller_name):
+                    issues.append({
+                        'severity': 'WARNING',
+                        'validation_option_name': THIS_VALIDATION_OPTION_NAME,
+                        'type': 'Naming Convention',
+                        'location': f"Controller '{controller_name}' ({current_elem.tag})",
+                        'description': f"Non-Transaction Controller names (e.g., Loop, Simple, While, If) should not follow the 'TXN_NN_Description' format. This format is reserved exclusively for Transaction Controllers.",
+                        'thread_group': tg_name_for_report
+                    })
+
                 visited_elements.add(current_elem)
+                # Recurse into children of this container controller
                 if idx + 1 < len(children_of_current_hashtree) and children_of_current_hashtree[
                     idx + 1].tag == 'hashTree':
                     collect_logical_txns(children_of_current_hashtree[idx + 1], tg_name_for_report, collected_list,
                                          visited_elements)
-                    idx += 1
-                idx += 1
+                    idx += 1 # Advance past the hashTree
+                idx += 1 # Advance past the current element
+
             else:
+                # If it's not a transaction controller, module controller, or known container,
+                # we don't need to specifically process its children for *transaction* related validations.
+                # However, it might still have its own hashTree, which we should skip over.
+                if idx + 1 < len(children_of_current_hashtree) and children_of_current_hashtree[idx+1].tag == 'hashTree':
+                    idx += 1 # Skip over the hashTree if present
                 idx += 1
     else:
+        # This case handles when an element_or_hashtree is a single element, not a hashTree
+        # (e.g., direct target of a Module Controller that is not a hashTree)
         pass
 
 
@@ -459,6 +503,7 @@ def analyze_jmeter_script(root_element, selected_validations_list):
             if idx + 1 < len(children_of_top_level_controllers_hashTree) and children_of_top_level_controllers_hashTree[
                 idx + 1].tag == 'hashTree':
                 tg_children_hashtree = children_of_top_level_controllers_hashTree[idx + 1]
+                # Pass the collected_list for the specific thread group
                 collect_logical_txns(tg_children_hashtree, tg_name, thread_groups_data[tg_name], visited_elements_in_tg)
                 idx += 1
             else:
@@ -471,45 +516,25 @@ def analyze_jmeter_script(root_element, selected_validations_list):
                     'thread_group': tg_name
                 })
         else:
-            # For other top-level elements that are not Thread Groups/Test Fragments,
-            # we still want to ensure they are processed for naming if they are controllers
-            # and their children are recursively validated.
+            # The logic for top-level non-TG controllers now needs to be simplified
+            # because `collect_logical_txns` will handle the actual naming validation.
+            # We just need to make sure we traverse their children if they have a hashTree.
+            # We can remove the redundant `txn_naming_pattern` and `other_container_controller_tags`
+            # definitions here, as well as the explicit `re.match` check for top-level.
+            # `collect_logical_txns` will now do this for any controller it encounters.
 
-            # Re-using the logic from collect_logical_txns for non-Transaction Controllers
-            # that might appear at the top level (e.g. a LoopController directly under Test Plan hashTree)
-            txn_naming_pattern = r"^TXN_(\d{2})_.*"
-            # List of tags for other common container controllers (excluding TransactionController itself)
-            other_container_controller_tags = ['LoopController', 'SimpleController', 'IfController', 'WhileController',
-                                               'OnceOnlyController', 'ThroughputController', 'RandomController',
-                                               'SwitchController', 'CriticalSectionController', 'InterleaveController',
-                                               'RandomOrderController', 'ForEachController']
-
-            if top_level_elem.tag in other_container_controller_tags:
-                controller_name = top_level_elem.get('testname')
-                if controller_name and re.match(txn_naming_pattern, controller_name):
-                    issues.append({
-                        'severity': 'WARNING',
-                        'validation_option_name': THIS_VALIDATION_OPTION_NAME,
-                        'type': 'Naming Convention',
-                        'location': f"Top-level Controller '{controller_name}' ({top_level_elem.tag})",
-                        'description': f"Non-Transaction Controller names (e.g., Loop, Simple, While) should not follow the 'TXN_NN_Description' format. This format is reserved exclusively for Transaction Controllers.",
-                        'thread_group': 'N/A'  # Top-level controllers might not have an immediate TG
-                    })
-                # Recursively process children of top-level non-TG controllers
-                if idx + 1 < len(children_of_top_level_controllers_hashTree) and \
-                        children_of_top_level_controllers_hashTree[idx + 1].tag == 'hashTree':
-                    # Need a placeholder thread group name for reporting if this is not within a TG
-                    temp_tg_name = top_level_elem.get('testname') or f"Top-Level {top_level_elem.tag}"
-                    temp_collected_list = []  # Don't need to add to thread_groups_data, just collect errors
-                    temp_visited_elements = set()
-                    collect_logical_txns(children_of_top_level_controllers_hashTree[idx + 1], temp_tg_name,
-                                         temp_collected_list, temp_visited_elements)
-                    idx += 1  # Advance past the hashTree
-
-            # Advance for all other elements not specifically handled above
-            if idx + 1 < len(children_of_top_level_controllers_hashTree) and children_of_top_level_controllers_hashTree[
-                idx + 1].tag == 'hashTree':
-                idx += 1  # Advance past hashTree if present for the current element
+            # We still need to advance 'idx' correctly.
+            if idx + 1 < len(children_of_top_level_controllers_hashTree) and \
+                    children_of_top_level_controllers_hashTree[idx + 1].tag == 'hashTree':
+                # For non-Thread Group top-level elements that have children,
+                # we call collect_logical_txns to validate their children recursively.
+                # We use 'N/A' or a placeholder for thread_group_name as these are not within a specific TG context yet.
+                temp_tg_name = top_level_elem.get('testname') or f"Top-Level {top_level_elem.tag}"
+                temp_collected_list = [] # Don't need to add to thread_groups_data, just collect errors
+                temp_visited_elements = set()
+                collect_logical_txns(children_of_top_level_controllers_hashTree[idx + 1], temp_tg_name,
+                                     temp_collected_list, temp_visited_elements)
+                idx += 1 # Advance past the hashTree
         idx += 1
 
     for tg_name, transactions in thread_groups_data.items():
