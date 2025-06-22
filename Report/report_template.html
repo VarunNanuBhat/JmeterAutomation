@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JMeter Script Validation Report - {{ file_name }}</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #0056b3;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        .header-info {
+            background-color: #e9f5ff;
+            border-left: 5px solid #007bff;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+        }
+        .header-info p {
+            margin: 5px 0;
+            font-size: 1.1em;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px 15px;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #e8f0fe;
+        }
+        .issue-severity-ERROR {
+            background-color: #ffe0e0; /* Light red */
+            color: #d32f2f; /* Darker red text */
+            font-weight: bold;
+        }
+        .issue-severity-WARNING {
+            background-color: #fffbe0; /* Light yellow */
+            color: #fbc02d; /* Darker yellow/orange text */
+            font-weight: bold;
+        }
+        .no-issues {
+            padding: 20px;
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+        .summary-box {
+            background-color: #f0f8ff;
+            border: 1px solid #b3d9ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .summary-box p {
+            margin: 0 0 8px 0;
+        }
+        ul.validations {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        ul.validations li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>JMeter Script Validation Report</h1>
+
+        <div class="header-info">
+            <p><strong>JMX File:</strong> {{ file_name }}</p>
+            <p><strong>Generated On:</strong> {{ timestamp }}</p>
+        </div>
+
+        <div class="summary-box">
+            <p><strong>Total Issues Found:</strong> {{ total_issues }}</p>
+            <p><strong>Validations Performed:</strong></p>
+            {% if selected_validations %}
+            <ul class="validations">
+                {% for validation in selected_validations %}
+                <li>{{ validation }}</li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p>No specific validation options were selected or recorded.</p>
+            {% endif %}
+        </div>
+
+        {% if issues_by_tg %}
+            {% for thread_group, issues in issues_by_tg.items() %}
+                <h2>Thread Group / Test Fragment: <em>{{ thread_group }}</em></h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Severity</th>
+                            <th>Type</th>
+                            <th>Location</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for issue in issues %}
+                        <tr class="issue-severity-{{ issue.severity }}">
+                            <td>{{ issue.severity }}</td>
+                            <td>{{ issue.type }}</td>
+                            <td>{{ issue.location }}</td>
+                            <td>{{ issue.description }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% endfor %}
+        {% else %}
+            <div class="no-issues">
+                <p>🎉 No issues found for this JMeter script! Well done!</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

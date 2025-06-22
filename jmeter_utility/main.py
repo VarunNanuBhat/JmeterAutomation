@@ -26,6 +26,13 @@ from checkout_for_replace_contents_page import CheckoutPageForReplaceText
 from homepage import HomePage
 
 
+# Script validator
+from validator_file_upload_page import ValidatorFileUploadPage
+from validator_options_page import ValidatorOptionsPage
+from validator_report_page import ValidatorReportPage
+
+
+
 
 class App(ttk.Window):
     def __init__(self):
@@ -35,6 +42,9 @@ class App(ttk.Window):
         # Set full screen dynamically
         self.geometry(f"{self.winfo_screenwidth()}x{self.winfo_screenheight()}")
         self.state("zoomed")  # Maximize window
+
+        # Store a reference to the selected JMX files for validation, accessible across pages
+        self.validator_jmx_files = []
 
         # Initialize frames
         self.file_upload_page = FileUploadPage(self)
@@ -63,6 +73,13 @@ class App(ttk.Window):
         self.checkout_for_replace_contents_page = CheckoutPageForReplaceText(self)
         self.homepage = HomePage(self)
 
+        # --- NEW: Initialize Script Validator frames ---
+        self.validator_file_upload_page = ValidatorFileUploadPage(self)
+        self.validator_file_upload_page = ValidatorFileUploadPage(self)
+        self.validator_options_page = ValidatorOptionsPage(self)
+        self.validator_report_page = ValidatorReportPage(self)
+
+
 
         # Start with the file upload page
         #self.show_page(self.file_upload_page)
@@ -72,7 +89,13 @@ class App(ttk.Window):
         """Hide all pages and show the specified one."""
         for child in self.winfo_children():
             child.pack_forget()
-        page.pack(pady=20)
+        page.pack(pady=20, fill="both", expand=True)
+
+    def set_validator_jmx_files(self, files):
+        self.validator_jmx_files = files
+
+    def get_validator_jmx_files(self):
+        return self.validator_jmx_files
 
 
 if __name__ == "__main__":
