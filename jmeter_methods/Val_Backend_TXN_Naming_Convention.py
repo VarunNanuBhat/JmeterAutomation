@@ -129,45 +129,20 @@ def validate_transaction_sequence(transactions, thread_group_name):
 
 def resolve_module_controller_target(module_controller_elem, root_element):
     """
-    Resolves the target element of a Module Controller.
-    Appends Module Controller related issues.
-    Returns (resolved_element, its_parent_hashtree, its_index_in_parent) if found, otherwise None.
+    Resolves the target element of a Module Controller by traversing the JMX structure.
+    Returns (resolved_element, its_parent_hashtree, its_index_in_parent) or None.
     """
     collection_prop = module_controller_elem.find(".//collectionProp[@name='ModuleController.node_path']")
     if collection_prop is None:
-        issues.append({
-            'severity': 'ERROR',
-            'validation_option_name': THIS_VALIDATION_OPTION_NAME,
-            'type': 'Module Controller',
-            'location': f"Module Controller '{module_controller_elem.get('testname')}'",
-            'description': "Module Controller has no 'ModuleController.node_path' defined, target cannot be resolved.",
-            'thread_group': 'N/A'
-        })
         return None
 
     node_path_elements = collection_prop.findall('stringProp')
     if not node_path_elements:
-        issues.append({
-            'severity': 'ERROR',
-            'validation_option_name': THIS_VALIDATION_OPTION_NAME,
-            'type': 'Module Controller',
-            'location': f"Module Controller '{module_controller_elem.get('testname')}'",
-            'description': "Module Controller 'node_path' is empty, target cannot be resolved.",
-            'thread_group': 'N/A'
-        })
         return None
 
     path_parts = [s.text for s in node_path_elements if s.text]
 
     if not path_parts:
-        issues.append({
-            'severity': 'ERROR',
-            'validation_option_name': THIS_VALIDATION_OPTION_NAME,
-            'type': 'Module Controller',
-            'location': f"Module Controller '{module_controller_elem.get('testname')}'",
-            'description': "Module Controller 'node_path' contains only empty strings, target cannot be resolved.",
-            'thread_group': 'N/A'
-        })
         return None
 
     cleaned_path_parts = [part.strip() for part in path_parts]
@@ -175,6 +150,7 @@ def resolve_module_controller_target(module_controller_elem, root_element):
     current_container_ht = None
     start_index_for_traversal = 0
 
+    # Step 1: Find the Test Plan and its top-level hashTree if specified in path
     if cleaned_path_parts[0] == 'Test Plan':
         test_plan_name_in_path = cleaned_path_parts[1] if len(cleaned_path_parts) > 1 else None
 
@@ -185,7 +161,7 @@ def resolve_module_controller_target(module_controller_elem, root_element):
                 'validation_option_name': THIS_VALIDATION_OPTION_NAME,
                 'type': 'Structure',
                 'location': 'JMeter Test Plan',
-                'description': "Root 'jmeterTestPlan' has no 'hashTree' child. Invalid JMX structure for Module Controller resolution.",
+                'description': "Root element has no hashTree child. Invalid JMX.",
                 'thread_group': 'N/A'
             })
             return None
@@ -207,29 +183,20 @@ def resolve_module_controller_target(module_controller_elem, root_element):
                         'validation_option_name': THIS_VALIDATION_OPTION_NAME,
                         'type': 'Structure',
                         'location': 'JMeter Test Plan',
-                        'description': "TestPlan element found but not followed by a hashTree for its children (Thread Groups, Test Fragments). Invalid JMX structure for Module Controller resolution.",
+                        'description': "TestPlan element found but not followed by a hashTree for its children (Thread Groups, Test Fragments). Invalid JMX structure.",
                         'thread_group': 'N/A'
                     })
                     return None
         if test_plan_elem is None:
-            issues.append({
-                'severity': 'WARNING',
-                'validation_option_name': THIS_VALIDATION_OPTION_NAME,
-                'type': 'Module Controller',
-                'location': f"Module Controller '{module_controller_elem.get('testname')}'",
-                'description': f"Module Controller target path '{'/'.join(path_parts)}': Test Plan not found or name mismatch.",
-                'thread_group': 'N/A'
-            })
             return None
     else:
         jmeter_test_plan_direct_hashtree = root_element.find('hashTree')
         if jmeter_test_plan_direct_hashtree is None:
             issues.append({
                 'severity': 'ERROR',
-                'validation_option_name': THIS_VALIDATION_OPTION_NAME,
                 'type': 'Structure',
                 'location': 'JMeter Test Plan',
-                'description': "Root 'jmeterTestPlan' has no hashTree. Cannot start traversal for Module Controller.",
+                'description': "Root element has no hashTree. Cannot start traversal for Module Controller.",
                 'thread_group': 'N/A'
             })
             return None
@@ -245,14 +212,6 @@ def resolve_module_controller_target(module_controller_elem, root_element):
         current_container_ht = temp_top_level_controllers_hashTree
 
     if current_container_ht is None:
-        issues.append({
-            'severity': 'ERROR',
-            'validation_option_name': THIS_VALIDATION_OPTION_NAME,
-            'type': 'Module Controller',
-            'location': f"Module Controller '{module_controller_elem.get('testname')}'",
-            'description': f"Module Controller target path '{'/'.join(path_parts)}': Could not find starting hashTree for traversal.",
-            'thread_group': 'N/A'
-        })
         return None
 
     target_elem_at_current_level = None
@@ -261,8 +220,10 @@ def resolve_module_controller_target(module_controller_elem, root_element):
 
     remaining_path_parts = cleaned_path_parts[start_index_for_traversal:]
 
+    # Step 2: Traverse the remaining path parts
     for i, part_name in enumerate(remaining_path_parts):
         found_part = False
+
         children_of_current_container = list(current_container_ht)
         for j, elem in enumerate(children_of_current_container):
             if elem.get('testname') == part_name:
@@ -276,38 +237,11 @@ def resolve_module_controller_target(module_controller_elem, root_element):
                         j + 1].tag == 'hashTree':
                         current_container_ht = children_of_current_container[j + 1]
                     else:
-                        issues.append({
-                            'severity': 'ERROR',
-                            'validation_option_name': THIS_VALIDATION_OPTION_NAME,
-                            'type': 'Module Controller',
-                            'location': f"Module Controller '{module_controller_elem.get('testname')}'",
-                            'description': f"Module Controller target path '{'/'.join(path_parts)}': Element '{part_name}' found, but it has no hashTree child for further traversal.",
-                            'thread_group': 'N/A'
-                        })
                         return None
                 break
 
         if not found_part:
-            issues.append({
-                'severity': 'ERROR',
-                'validation_option_name': THIS_VALIDATION_OPTION_NAME,
-                'type': 'Module Controller',
-                'location': f"Module Controller '{module_controller_elem.get('testname')}'",
-                'description': f"Module Controller target path '{'/'.join(path_parts)}': Element '{part_name}' not found.",
-                'thread_group': 'N/A'
-            })
             return None
-
-    if target_elem_at_current_level is None:
-        issues.append({
-            'severity': 'ERROR',
-            'validation_option_name': THIS_VALIDATION_OPTION_NAME,
-            'type': 'Module Controller',
-            'location': f"Module Controller '{module_controller_elem.get('testname')}'",
-            'description': f"Module Controller target path '{'/'.join(path_parts)}': Final target element could not be resolved.",
-            'thread_group': 'N/A'
-        })
-        return None
 
     return (target_elem_at_current_level, parent_of_target, index_of_target_in_parent)
 
@@ -315,12 +249,9 @@ def resolve_module_controller_target(module_controller_elem, root_element):
 def collect_logical_txns(element_or_hashtree, tg_name_for_report, collected_list, visited_elements):
     """
     Recursively collects Transaction Controllers and their nested children for validation.
-    Handles Module Controllers by resolving their targets.
-    'visited_elements' set prevents infinite loops.
-    Also validates naming for non-Transaction Controllers.
+    Also handles Module Controllers by resolving their targets.
+    visited_elements set is used to prevent infinite loops in case of circular references.
     """
-    # Regex for the TXN_NN_Description naming convention
-    txn_naming_pattern = r"^TXN_(\d{2})_.*"
 
     if element_or_hashtree.tag == 'hashTree':
         children_of_current_hashtree = list(element_or_hashtree)
@@ -339,11 +270,11 @@ def collect_logical_txns(element_or_hashtree, tg_name_for_report, collected_list
             is_module_controller = (current_elem.tag == 'ModuleController' or \
                                     (current_elem.get('testclass') == 'org.apache.jmeter.control.ModuleController'))
 
-            # List of tags for other common container controllers (excluding TransactionController itself)
-            other_container_controller_tags = ['LoopController', 'SimpleController', 'IfController', 'WhileController',
-                                               'OnceOnlyController', 'ThroughputController', 'RandomController',
-                                               'SwitchController', 'CriticalSectionController', 'InterleaveController',
-                                               'RandomOrderController', 'ForEachController']
+            container_controller_tags = ['TestFragmentController', 'ThreadGroup', 'LoopController', 'SimpleController',
+                                         'IfController', 'WhileController', 'OnceOnlyController',
+                                         'ThroughputController', 'RandomController', 'SwitchController',
+                                         'CriticalSectionController', 'InterleaveController', 'RandomOrderController',
+                                         'ForEachController', 'TransactionController']
 
             if is_transaction_controller:
                 txn_name = current_elem.get('testname')
@@ -354,8 +285,7 @@ def collect_logical_txns(element_or_hashtree, tg_name_for_report, collected_list
                         'element': current_elem,
                         'step_number': step_number,
                         'source_type': 'direct',
-                        'original_name_for_duplicate': txn_name,
-                        'validation_option_name': THIS_VALIDATION_OPTION_NAME
+                        'original_name_for_duplicate': txn_name
                     })
                     visited_elements.add(current_elem)
 
@@ -364,7 +294,6 @@ def collect_logical_txns(element_or_hashtree, tg_name_for_report, collected_list
                     collect_logical_txns(children_of_current_hashtree[idx + 1], tg_name_for_report, collected_list,
                                          visited_elements)
                     idx += 1
-                idx += 1
 
             elif is_module_controller:
                 resolved_target_info = resolve_module_controller_target(current_elem, globals()['root'])
@@ -372,24 +301,11 @@ def collect_logical_txns(element_or_hashtree, tg_name_for_report, collected_list
                 if resolved_target_info is not None:
                     resolved_target_elem, parent_of_resolved_target, idx_of_resolved_target = resolved_target_info
 
-                    visited_elements.add(current_elem)  # Mark the ModuleController itself as visited
+                    visited_elements.add(current_elem)
 
                     is_resolved_txn_controller = (resolved_target_elem.tag == 'TransactionController' or \
                                                   (resolved_target_elem.get(
                                                       'testclass') == 'org.apache.jmeter.control.TransactionController'))
-
-                    # Check naming for Module Controllers that resolve to NON-Transaction Controllers
-                    if not is_resolved_txn_controller:
-                        resolved_controller_name = resolved_target_elem.get('testname')
-                        if resolved_controller_name and re.match(txn_naming_pattern, resolved_controller_name):
-                            issues.append({
-                                'severity': 'WARNING',  # Use WARNING for naming style recommendations
-                                'validation_option_name': THIS_VALIDATION_OPTION_NAME,
-                                'type': 'Naming Convention',
-                                'location': f"Module Controller '{current_elem.get('testname')}' resolves to Controller '{resolved_controller_name}' ({resolved_target_elem.tag})",
-                                'description': f"Non-Transaction Controller names (e.g., Loop, Simple, While) should not follow the 'TXN_NN_Description' format. This format is reserved exclusively for Transaction Controllers.",
-                                'thread_group': tg_name_for_report
-                            })
 
                     children_hashtree_of_resolved_target = None
                     if idx_of_resolved_target != -1 and \
@@ -399,32 +315,28 @@ def collect_logical_txns(element_or_hashtree, tg_name_for_report, collected_list
                             idx_of_resolved_target + 1]
 
                     if is_resolved_txn_controller:
-                        # Existing logic for resolved Transaction Controller (collects it)
                         if resolved_target_elem not in [tc['element'] for tc in collected_list]:
                             txn_name = resolved_target_elem.get('testname')
                             step_number = validate_transaction_name(txn_name, tg_name_for_report)
-                            collected_list.append({
-                                'element': resolved_target_elem,
-                                'source_type': 'module',
-                                'module_name': current_elem.get('testname'),
-                                'source_name': tg_name_for_report,
-                                'name': txn_name,
-                                'step_number': step_number,
-                                'original_name_for_duplicate': txn_name,
-                                'validation_option_name': THIS_VALIDATION_OPTION_NAME
-                            })
+                            collected_list.append({'element': resolved_target_elem, 'source_type': 'module',
+                                                   'module_name': current_elem.get('testname'),
+                                                   'source_name': tg_name_for_report,
+                                                   'name': txn_name,
+                                                   'step_number': step_number,
+                                                   'original_name_for_duplicate': txn_name})
                             visited_elements.add(resolved_target_elem)
 
                         if children_hashtree_of_resolved_target is not None:
-                            # Pass original collected_list to allow collected_list.extend
                             collect_logical_txns(children_hashtree_of_resolved_target, tg_name_for_report,
                                                  collected_list, visited_elements)
 
-                    elif resolved_target_elem.tag in other_container_controller_tags:  # If it resolves to another container (non-TXN)
+                    elif resolved_target_elem.tag in container_controller_tags:
                         if children_hashtree_of_resolved_target is not None:
+                            temp_collected_from_module = []
                             collect_logical_txns(children_hashtree_of_resolved_target, tg_name_for_report,
-                                                 collected_list, visited_elements)
-                            visited_elements.add(resolved_target_elem)  # Mark the resolved container as visited
+                                                 temp_collected_from_module, visited_elements)
+                            collected_list.extend(temp_collected_from_module)
+                            visited_elements.add(resolved_target_elem)
                         else:
                             issues.append({
                                 'severity': 'WARNING',
@@ -435,31 +347,28 @@ def collect_logical_txns(element_or_hashtree, tg_name_for_report, collected_list
                                 'thread_group': tg_name_for_report
                             })
 
-                    else:  # If it resolves to something else entirely (e.g., a sampler not within a Transaction Controller)
+                    else:
                         issues.append({
                             'severity': 'WARNING',
                             'validation_option_name': THIS_VALIDATION_OPTION_NAME,
                             'type': 'Module Controller',
                             'location': f"Module Controller '{current_elem.get('testname')}' in Thread Group '{tg_name_for_report}'",
-                            'description': f"Module Controller points to an element '{resolved_target_elem.get('testname')}' ({resolved_target_elem.tag}) that is not a Transaction Controller or a container. It will not be included in transaction sequence validation, and its name may be incorrect if it matches TXN format.",
+                            'description': f"Module Controller points to an element '{resolved_target_elem.get('testname')}' ({resolved_target_elem.tag}) that is not a Transaction Controller and does not contain transaction elements. It will not be included in transaction sequence validation.",
                             'thread_group': tg_name_for_report
                         })
-                idx += 1
-
-            # NEW: Validate direct non-Transaction Controllers
-            elif current_elem.tag in other_container_controller_tags and current_elem not in visited_elements:
-                controller_name = current_elem.get('testname')
-                if controller_name and re.match(txn_naming_pattern, controller_name):
+                else:
                     issues.append({
-                        'severity': 'WARNING',  # Use WARNING for naming style recommendations
+                        'severity': 'WARNING',
                         'validation_option_name': THIS_VALIDATION_OPTION_NAME,
-                        'type': 'Naming Convention',
-                        'location': f"Controller '{controller_name}' ({current_elem.tag})",
-                        'description': f"Non-Transaction Controller names (e.g., Loop, Simple, While) should not follow the 'TXN_NN_Description' format. This format is reserved exclusively for Transaction Controllers.",
+                        'type': 'Module Controller',
+                        'location': f"Module Controller '{current_elem.get('testname')}' in Thread Group '{tg_name_for_report}'",
+                        'description': "Could not resolve target for Module Controller. Sequence validation for this TG might be incomplete (Target not found).",
                         'thread_group': tg_name_for_report
                     })
+                idx += 1
 
-                visited_elements.add(current_elem)  # Mark the direct non-TXN controller as visited
+            elif current_elem.tag in container_controller_tags and current_elem not in visited_elements:
+                visited_elements.add(current_elem)
                 if idx + 1 < len(children_of_current_hashtree) and children_of_current_hashtree[
                     idx + 1].tag == 'hashTree':
                     collect_logical_txns(children_of_current_hashtree[idx + 1], tg_name_for_report, collected_list,
@@ -468,6 +377,8 @@ def collect_logical_txns(element_or_hashtree, tg_name_for_report, collected_list
                 idx += 1
             else:
                 idx += 1
+    else:
+        pass
 
 
 def analyze_jmeter_script(root_element, selected_validations_list):

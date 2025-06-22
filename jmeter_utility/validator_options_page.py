@@ -1,4 +1,4 @@
-# script_validator/validator_options_page.py
+# Validator_options_page.py
 import ttkbootstrap as ttk
 from tkinter import messagebox
 
@@ -63,5 +63,6 @@ class ValidatorOptionsPage(ttk.Frame):
             self.parent.show_page(self.parent.validator_file_upload_page)
             return
 
+        # Delegate the report generation process to the ValidatorReportPage
         self.parent.validator_report_page.start_report_generation(selected_files, selected_validations)
         self.parent.show_page(self.parent.validator_report_page)
