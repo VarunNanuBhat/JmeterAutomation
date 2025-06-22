@@ -95,6 +95,53 @@
         ul.validations li {
             margin-bottom: 5px;
         }
+        .validation-category-section {
+            margin-top: 40px;
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fcfcfc;
+        }
+        .validation-category-section h2 {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-top: 0;
+            color: #007bff;
+        }
+
+        /* Styles for the new High-Level Summary section */
+        .category-summary-list {
+            list-style-type: none; /* Remove default bullets */
+            padding-left: 0;
+            margin-top: 15px;
+        }
+        .category-summary-list li {
+            background-color: #f8f8f8;
+            border: 1px solid #eee;
+            padding: 10px 15px;
+            margin-bottom: 8px;
+            border-radius: 5px;
+            display: flex; /* Use flexbox for spacing between name and count */
+            justify-content: space-between; /* Pushes content to ends */
+            align-items: center;
+            font-size: 1.1em;
+        }
+        .category-summary-list li.has-issues {
+            background-color: #ffe0e0; /* Light red for categories with issues */
+            border-left: 5px solid #d32f2f; /* Red border */
+        }
+        .category-summary-list li.no-issues-summary {
+            background-color: #e6ffe6; /* Light green for categories with no issues */
+            border-left: 5px solid #28a745; /* Green border */
+        }
+        .category-summary-list .issue-count {
+            font-weight: bold;
+            color: #d32f2f; /* Red text for issue count */
+        }
+        .category-summary-list .issue-count-zero {
+            font-weight: bold;
+            color: #28a745; /* Green text for zero issue count */
+        }
     </style>
 </head>
 <body>
@@ -120,35 +167,70 @@
             {% endif %}
         </div>
 
-        {% if issues_by_tg %}
-            {% for thread_group, issues in issues_by_tg.items() %}
-                <h2>Thread Group / Test Fragment: <em>{{ thread_group }}</em></h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Severity</th>
-                            <th>Type</th>
-                            <th>Location</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for issue in issues %}
-                        <tr class="issue-severity-{{ issue.severity }}">
-                            <td>{{ issue.severity }}</td>
-                            <td>{{ issue.type }}</td>
-                            <td>{{ issue.location }}</td>
-                            <td>{{ issue.description }}</td>
-                        </tr>
+        <section id="category-summary" class="section">
+            <h2>Summary of Issues by Category</h2>
+            {% if selected_validations %}
+            <ul class="category-summary-list">
+                {% for validation_name in selected_validations %}
+                    {% set issues_for_this_validation = issues_by_validation_option.get(validation_name, []) %}
+                    <li class="{% if issues_for_this_validation|length > 0 %}has-issues{% else %}no-issues-summary{% endif %}">
+                        <strong>{{ validation_name }}:</strong>
+                        {% if issues_for_this_validation|length > 0 %}
+                            <span class="issue-count">{{ issues_for_this_validation|length }} Issue(s)</span>
+                        {% else %}
+                            <span class="issue-count-zero">No issues found</span>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p>No validation options were selected to provide a category summary.</p>
+            {% endif %}
+        </section>
+        <h1>Detailed Issues by Validation Category</h1>
+        {% if selected_validations %}
+            {% for validation_name in selected_validations %}
+                <div class="validation-category-section">
+                    {% set issues_for_this_validation = issues_by_validation_option.get(validation_name, []) %}
+                    <h2>{{ validation_name }}: {{ issues_for_this_validation | length }} Issue(s)</h2>
+
+                    {% if issues_for_this_validation %}
+                        {% set issues_by_tg = _group_issues_by_thread_group(issues_for_this_validation) %}
+                        {% for thread_group, tg_issues in issues_by_tg.items() %}
+                            <h3>Thread Group / Test Fragment: <em>{{ thread_group }}</em></h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Type</th>
+                                        <th>Location</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for issue in tg_issues %}
+                                    <tr class="issue-severity-{{ issue.severity }}">
+                                        <td>{{ issue.severity }}</td>
+                                        <td>{{ issue.type }}</td>
+                                        <td>{{ issue.location }}</td>
+                                        <td>{{ issue.description }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
                         {% endfor %}
-                    </tbody>
-                </table>
-            {% endfor %}
+                    {% else %}
+                        <div class="no-issues">
+                            <p>🎉 No issues found for this JMeter script w.r.t. {{ validation_name }}. Well done!</p>
+                        </div>
+                    {% endif %}
+                </div> {% endfor %}
         {% else %}
             <div class="no-issues">
-                <p>🎉 No issues found for this JMeter script! Well done!</p>
+                <p>No validation options were selected, so no detailed issues are available.</p>
             </div>
         {% endif %}
+
     </div>
 </body>
 </html>
