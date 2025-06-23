@@ -17,7 +17,7 @@ class ValidatorOptionsPage(ttk.Frame):
         # Updated to include only the three specified options
         return {
             "Naming Convention (TXN_NN_Desc)": {"var": ttk.BooleanVar(value=True), "category": "Naming"},
-            "KPI / Sub-KPI Naming Standards": {"var": ttk.BooleanVar(value=False), "category": "Naming"},
+            "HTTP Request Naming (KPI_method_urlPath)": {"var": ttk.BooleanVar(value=False), "category": "Naming"},
             "Server Name (Domain) Hygiene": {"var": ttk.BooleanVar(value=False), "category": "Network"},
         }
 
