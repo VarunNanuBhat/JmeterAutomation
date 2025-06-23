@@ -4,18 +4,32 @@ from tkinter import messagebox
 import os
 import threading
 import webbrowser
-import xml.etree.ElementTree as ET # Added for local XML parsing in _generate_reports_threaded
+import xml.etree.ElementTree as ET
+from datetime import datetime # Added for report generation timestamp
 
 # Import core validation logic for TXN Naming
 from jmeter_methods.Val_Backend_TXN_Naming_Convention import analyze_jmeter_script as analyze_txn_naming_script, \
-    THIS_VALIDATION_OPTION_NAME as TXN_VALIDATION_OPTION_NAME # Renamed for clarity and consistency
+    THIS_VALIDATION_OPTION_NAME as TXN_VALIDATION_OPTION_NAME
 
 # Import core validation logic for KPI Naming
 from jmeter_methods.Val_Backend_HTTPRequest_Naming_Standard import analyze_jmeter_script as analyze_kpi_naming_script, \
-    THIS_VALIDATION_OPTION_NAME as KPI_VALIDATION_OPTION_NAME # Renamed for clarity and consistency
+    THIS_VALIDATION_OPTION_NAME as KPI_VALIDATION_OPTION_NAME
+
+# Import core validation logic for Server Name/Domain Hygiene
+from jmeter_methods.Val_Backend_Server_Name_Hygiene import analyze_jmeter_script as analyze_server_hygiene_script, \
+    THIS_VALIDATION_OPTION_NAME as SERVER_HYGIENE_VALIDATION_OPTION_NAME
 
 # Import report generation functions
 from Report.report_generator import generate_html_report
+
+
+# --- IMPORTANT: Update this list with all your validation option names ---
+ALL_VALIDATION_OPTIONS = [
+    TXN_VALIDATION_OPTION_NAME,          # "Transaction Controller Naming"
+    KPI_VALIDATION_OPTION_NAME,          # "HTTP Request Naming (KPI_method_urlPath)"
+    SERVER_HYGIENE_VALIDATION_OPTION_NAME, # "Server Name/Domain Hygiene"
+    # Add any future validation module names here
+]
 
 
 class ValidatorReportPage(ttk.Frame):
@@ -116,7 +130,7 @@ class ValidatorReportPage(ttk.Frame):
                         if txn_issues is not None:
                             all_issues_for_current_file.extend(txn_issues)
                         else:
-                            print(f"WARNING: {TXN_VALIDATION_OPTION_NAME} in {file_name} returned None. It should return an empty list or issues. Adding internal error issue.")
+                            # print(f"WARNING: {TXN_VALIDATION_OPTION_NAME} in {file_name} returned None. It should return an empty list or issues. Adding internal error issue.") # Removed print
                             all_issues_for_current_file.append({
                                 'severity': 'ERROR',
                                 'validation_option_name': TXN_VALIDATION_OPTION_NAME,
@@ -135,7 +149,7 @@ class ValidatorReportPage(ttk.Frame):
                         if kpi_issues is not None:
                             all_issues_for_current_file.extend(kpi_issues)
                         else:
-                            print(f"WARNING: {KPI_VALIDATION_OPTION_NAME} in {file_name} returned None. It should return an empty list or issues. Adding internal error issue.")
+                            # print(f"WARNING: {KPI_VALIDATION_OPTION_NAME} in {file_name} returned None. It should return an empty list or issues. Adding internal error issue.") # Removed print
                             all_issues_for_current_file.append({
                                 'severity': 'ERROR',
                                 'validation_option_name': KPI_VALIDATION_OPTION_NAME,
@@ -145,15 +159,24 @@ class ValidatorReportPage(ttk.Frame):
                                 'thread_group': 'N/A'
                             })
 
-                    # Add other validations here following the same pattern
-                    # e.g., Server Name (Domain) Hygiene if it's implemented:
-                    # if "Server Name (Domain) Hygiene" in validations:
-                    #     server_issues = analyze_server_naming_script(root_element, validations)
-                    #     if server_issues is not None:
-                    #         all_issues_for_current_file.extend(server_issues)
-                    #     else:
-                    #         # Add an internal error message for this module too
-                    #         pass
+                    # Execute Server Name/Domain Hygiene validation if selected
+                    if SERVER_HYGIENE_VALIDATION_OPTION_NAME in validations:
+                        self.status_label.config(text=f"Processing {file_name}: Validating {SERVER_HYGIENE_VALIDATION_OPTION_NAME}...", bootstyle="info")
+                        self.update_idletasks()
+                        server_hygiene_issues = analyze_server_hygiene_script(root_element, validations)
+                        # --- Defensive check for NoneType ---
+                        if server_hygiene_issues is not None:
+                            all_issues_for_current_file.extend(server_hygiene_issues)
+                        else:
+                            # print(f"WARNING: {SERVER_HYGIENE_VALIDATION_OPTION_NAME} in {file_name} returned None. It should return an empty list or issues. Adding internal error issue.") # Removed print
+                            all_issues_for_current_file.append({
+                                'severity': 'ERROR',
+                                'validation_option_name': SERVER_HYGIENE_VALIDATION_OPTION_NAME,
+                                'type': 'Internal Module Error',
+                                'location': 'JMeter Script Analysis',
+                                'description': f"The '{SERVER_HYGIENE_VALIDATION_OPTION_NAME}' validation module returned None instead of a list of issues. Please check its implementation.",
+                                'thread_group': 'N/A'
+                            })
 
 
                 report_data = {
