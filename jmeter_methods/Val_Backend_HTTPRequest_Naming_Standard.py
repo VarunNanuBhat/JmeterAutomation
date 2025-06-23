@@ -1,11 +1,27 @@
 import xml.etree.ElementTree as ET
 import re
-import os # Import os for path checking
 
 THIS_VALIDATION_OPTION_NAME = "HTTP Request Naming (KPI_method_urlPath)"
 
+
 def clean_url_path_for_naming(raw_path):
+    """
+    Cleans the raw URL path for use in naming conventions.
+    Replaces JMeter variables/functions and standardizes slashes.
+    """
     cleaned_path = raw_path.strip()
+
+    # Replace JMeter variables like ${userID} with <VAR_NAME>
+    # Capture the variable name itself for better readability in the cleaned path
+    # Example: /users/${userID} -> /users/<userID>
+    cleaned_path = re.sub(r'\$\{(\w+)\}', r'<\1>', cleaned_path)
+
+    # Replace JMeter functions like __Random(1,100,)__ with <FUNC_NAME>
+    # Capture the function name itself
+    # Example: /data/${__time(YMD)} -> /data/<time>
+    cleaned_path = re.sub(r'__(\w+)\(.*?\)', r'<\1>', cleaned_path)
+
+    # Further clean common path issues
     if cleaned_path.startswith('/'):
         cleaned_path = cleaned_path[1:]
     if '?' in cleaned_path:
@@ -14,9 +30,9 @@ def clean_url_path_for_naming(raw_path):
         cleaned_path = cleaned_path.split('#')[0]
     if cleaned_path.endswith('/'):
         cleaned_path = cleaned_path.rstrip('/')
-    cleaned_path = re.sub(r'\$\{.*?\}', '_VAR_', cleaned_path)
-    cleaned_path = re.sub(r'__\w+\(.*?\)__', '_FUNC_', cleaned_path)
+
     return cleaned_path
+
 
 def analyze_jmeter_script(root_element, selected_validations_list):
     module_issues = []
@@ -65,7 +81,8 @@ def analyze_jmeter_script(root_element, selected_validations_list):
             current_tg_name = top_level_elem.get('testname') or f"Unnamed {top_level_elem.tag}"
 
             tg_children_hashtree = None
-            if idx + 1 < len(children_of_top_level_controllers_hashtree) and children_of_top_level_controllers_hashtree[idx + 1].tag == 'hashTree':
+            if idx + 1 < len(children_of_top_level_controllers_hashtree) and children_of_top_level_controllers_hashtree[
+                idx + 1].tag == 'hashTree':
                 tg_children_hashtree = children_of_top_level_controllers_hashtree[idx + 1]
 
             if tg_children_hashtree is not None:
@@ -77,103 +94,59 @@ def analyze_jmeter_script(root_element, selected_validations_list):
                         path_elem = element.find(".//stringProp[@name='HTTPSampler.path']")
                         raw_http_path = path_elem.text.strip() if path_elem is not None and path_elem.text else 'UNKNOWN_PATH'
 
+                        # Check if raw path contained variables/functions
+                        contains_correlation_pattern = bool(
+                            re.search(r'\$\{(\w+)\}', raw_http_path) or
+                            re.search(r'__\w+\(.*?\)', raw_http_path)
+                        )
+
+                        # Cleaned path for the expected name calculation
                         http_path_for_name = clean_url_path_for_naming(raw_http_path)
                         expected_name = f"KPI_{http_method}_{http_path_for_name}"
 
                         if http_request_name:
+                            # Rule 1: Check for KPI_method_urlPath format
                             if http_request_name != expected_name:
                                 module_issues.append({
                                     'severity': 'ERROR',
                                     'validation_option_name': THIS_VALIDATION_OPTION_NAME,
-                                    'type': 'HTTP Request Naming',
+                                    'type': 'HTTP Request Naming Format',
                                     'location': f"HTTP Request '{http_request_name}'",
                                     'description': f"HTTP Request name '{http_request_name}' does not follow 'KPI_method_urlPath' format. Expected: '{expected_name}'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.",
                                     'thread_group': current_tg_name
                                 })
+
+                            # Rule 2: Check for correlation patterns in the *actual* http_request_name
+                            if contains_correlation_pattern and (
+                                    re.search(r'\$\{\w+\}', http_request_name) or
+                                    re.search(r'__\w+\(.*?\)', http_request_name)
+                            ):
+                                module_issues.append({
+                                    'severity': 'ERROR',
+                                    'validation_option_name': THIS_VALIDATION_OPTION_NAME,
+                                    'type': 'URL Path Correlation in Name',
+                                    'location': f"HTTP Request '{http_request_name}'",
+                                    'description': f"HTTP Request name '{http_request_name}' contains uncleaned correlation patterns (e.g., '${{var}}' or '__func()__') in its URL path portion. For clarity and aggregation in reports, correlated parts of the URL path **must** be generalized to '<variableName>' (e.g., '/users/${{userID}}' should become 'KPI_GET_users_<userID>'). Expected cleaned format: '{http_path_for_name}'.",
+                                    'thread_group': current_tg_name
+                                })
+
                         else:
+                            # If no name, issue error for missing name AND provide expected name with cleaned path
                             module_issues.append({
                                 'severity': 'ERROR',
                                 'validation_option_name': THIS_VALIDATION_OPTION_NAME,
-                                'type': 'HTTP Request Naming',
+                                'type': 'Missing HTTP Request Name',
                                 'location': f"Unnamed HTTP Request (Method: {http_method}, Path: {raw_http_path})",
                                 'description': f"HTTP Request has no name. It must follow 'KPI_method_urlPath' format. Expected: '{expected_name}'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.",
                                 'thread_group': current_tg_name
                             })
                 idx += 1
             else:
-                pass
+                pass  # No hashTree for Thread Group, skip
         else:
-            if idx + 1 < len(children_of_top_level_controllers_hashtree) and children_of_top_level_controllers_hashtree[idx + 1].tag == 'hashTree':
-                idx += 1
+            # Handle other top-level elements that might have their own hashTrees but aren't Thread Groups
+            if idx + 1 < len(children_of_top_level_controllers_hashtree) and children_of_top_level_controllers_hashtree[
+                idx + 1].tag == 'hashTree':
+                idx += 1  # Advance past the hashTree
         idx += 1
     return module_issues
-
-# --- Self-testing / Main block for local execution ---
-if __name__ == "__main__":
-    # Define the path to your JMX file for local testing
-    jmx_file_to_test = r"D:\Projects\Python\JmeterAutomation\output.jmx"
-
-    print(f"--- Running KPI Naming Convention Validation for: {jmx_file_to_test} ---")
-
-    # List of validations to enable for this run (just the KPI one for now)
-    # THIS_VALIDATION_OPTION_NAME refers to the string defined at the top of this file
-    selected_validations = [THIS_VALIDATION_OPTION_NAME]
-
-    root_element = None
-    parsing_issues = []
-
-    # Step 1: Parse the JMX file
-    try:
-        tree = ET.parse(jmx_file_to_test)
-        root_element = tree.getroot()
-        print("JMX file parsed successfully.")
-    except ET.ParseError as e:
-        parsing_issues.append({
-            'severity': 'ERROR',
-            'validation_option_name': "JMX File Parsing",
-            'type': 'XML Parsing',
-            'location': 'JMX File',
-            'description': f"Failed to parse JMX file: {e}. Ensure it's a valid XML.",
-            'thread_group': 'N/A'
-        })
-        print(f"ERROR: Failed to parse JMX file: {e}")
-    except FileNotFoundError:
-        parsing_issues.append({
-            'severity': 'ERROR',
-            'validation_option_name': "JMX File Parsing",
-            'type': 'File Not Found',
-            'location': 'JMX File',
-            'description': f"JMX file not found at: {jmx_file_to_test}",
-            'thread_group': 'N/A'
-        })
-        print(f"ERROR: JMX file not found: {jmx_file_to_test}")
-
-    all_validation_issues = []
-    all_validation_issues.extend(parsing_issues) # Add any parsing issues first
-
-    # Step 2: Run the validation if parsing was successful
-    if root_element is not None:
-        print(f"Applying validation: '{THIS_VALIDATION_OPTION_NAME}'...")
-        # Call the analyze_jmeter_script function within this same file
-        kpi_issues = analyze_jmeter_script(root_element, selected_validations)
-        all_validation_issues.extend(kpi_issues)
-        print("Validation complete.")
-    else:
-        print("Skipping validation due to JMX parsing errors.")
-
-    # Step 3: Print the results
-    if all_validation_issues:
-        print("\n--- Validation Results ---")
-        for issue in all_validation_issues:
-            print(f"Severity: {issue.get('severity', 'N/A')}")
-            print(f"  Validation: {issue.get('validation_option_name', 'N/A')}")
-            print(f"  Type: {issue.get('type', 'N/A')}")
-            print(f"  Location: {issue.get('location', 'N/A')}")
-            print(f"  Description: {issue.get('description', 'N/A')}")
-            print(f"  Thread Group: {issue.get('thread_group', 'N/A')}")
-            print("-" * 20)
-    else:
-        print("\n--- Validation Results ---")
-        print(f"🥳 No issues found for '{THIS_VALIDATION_OPTION_NAME}' in {jmx_file_to_test}!")
-
-    print(f"\n--- End of Validation for {jmx_file_to_test} ---")
