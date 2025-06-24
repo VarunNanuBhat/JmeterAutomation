@@ -5,7 +5,7 @@ import os
 import threading
 import webbrowser
 import xml.etree.ElementTree as ET
-from datetime import datetime # Added for report generation timestamp
+from datetime import datetime  # Added for report generation timestamp
 
 # Import core validation logic for TXN Naming
 from jmeter_methods.Val_Backend_TXN_Naming_Convention import analyze_jmeter_script as analyze_txn_naming_script, \
@@ -19,15 +19,20 @@ from jmeter_methods.Val_Backend_HTTPRequest_Naming_Standard import analyze_jmete
 from jmeter_methods.Val_Backend_Server_Name_Hygiene import analyze_jmeter_script as analyze_server_hygiene_script, \
     THIS_VALIDATION_OPTION_NAME as SERVER_HYGIENE_VALIDATION_OPTION_NAME
 
+# Import core validation logic for Extractor and Variable Naming Standards (NEW IMPORT)
+from jmeter_methods.Val_Backend_Extractor_Variable_Standards import \
+    analyze_jmeter_script as analyze_extractor_standards_script, \
+    THIS_VALIDATION_OPTION_NAME as EXTRACTOR_STANDARDS_VALIDATION_OPTION_NAME  # <-- NEW IMPORT
+
 # Import report generation functions
 from Report.report_generator import generate_html_report
 
-
 # --- IMPORTANT: Update this list with all your validation option names ---
 ALL_VALIDATION_OPTIONS = [
-    TXN_VALIDATION_OPTION_NAME,          # "Transaction Controller Naming"
-    KPI_VALIDATION_OPTION_NAME,          # "HTTP Request Naming (KPI_method_urlPath)"
-    SERVER_HYGIENE_VALIDATION_OPTION_NAME, # "Server Name/Domain Hygiene"
+    TXN_VALIDATION_OPTION_NAME,  # "Transaction Controller Naming"
+    KPI_VALIDATION_OPTION_NAME,  # "HTTP Request Naming (KPI_method_urlPath)"
+    SERVER_HYGIENE_VALIDATION_OPTION_NAME,  # "Server Name/Domain Hygiene"
+    EXTRACTOR_STANDARDS_VALIDATION_OPTION_NAME,  # "Extractor & Variable Naming Standards" <-- ADDED THIS LINE
     # Add any future validation module names here
 ]
 
@@ -81,7 +86,7 @@ class ValidatorReportPage(ttk.Frame):
             for i, file_path in enumerate(files):
                 file_name = os.path.basename(file_path)
                 self.status_label.config(text=f"Processing: {file_name} ({i + 1}/{total_files})")
-                self.update_idletasks() # Update UI immediately
+                self.update_idletasks()  # Update UI immediately
 
                 jmx_file_directory = os.path.dirname(file_path)
                 current_file_output_dir = os.path.join(jmx_file_directory, "JMeter_Validation_Reports")
@@ -90,7 +95,7 @@ class ValidatorReportPage(ttk.Frame):
                     os.makedirs(current_file_output_dir)
 
                 root_element = None
-                all_issues_for_current_file = [] # This will collect all issues for the current JMX file
+                all_issues_for_current_file = []  # This will collect all issues for the current JMX file
 
                 # --- Centralized JMX Parsing ---
                 try:
@@ -105,7 +110,9 @@ class ValidatorReportPage(ttk.Frame):
                         'description': f"Failed to parse JMX file: {e}. Ensure it's a valid XML.",
                         'thread_group': 'N/A'
                     })
-                    self.status_label.config(text=f"Skipped {file_name}: Failed to parse JMX. Report generated with parsing error.", bootstyle="danger")
+                    self.status_label.config(
+                        text=f"Skipped {file_name}: Failed to parse JMX. Report generated with parsing error.",
+                        bootstyle="danger")
                     self.update_idletasks()
                 except FileNotFoundError:
                     all_issues_for_current_file.append({
@@ -116,14 +123,18 @@ class ValidatorReportPage(ttk.Frame):
                         'description': f"JMX file not found at: {file_path}",
                         'thread_group': 'N/A'
                     })
-                    self.status_label.config(text=f"Skipped {file_name}: JMX file not found. Report generated with error.", bootstyle="danger")
+                    self.status_label.config(
+                        text=f"Skipped {file_name}: JMX file not found. Report generated with error.",
+                        bootstyle="danger")
                     self.update_idletasks()
 
                 # --- ONLY proceed with validation if root_element was successfully parsed ---
                 if root_element is not None:
                     # Execute TXN Naming Convention Validation if selected
                     if TXN_VALIDATION_OPTION_NAME in validations:
-                        self.status_label.config(text=f"Processing {file_name}: Validating {TXN_VALIDATION_OPTION_NAME}...", bootstyle="info")
+                        self.status_label.config(
+                            text=f"Processing {file_name}: Validating {TXN_VALIDATION_OPTION_NAME}...",
+                            bootstyle="info")
                         self.update_idletasks()
                         txn_issues = analyze_txn_naming_script(root_element, validations)
                         # --- Defensive check for NoneType ---
@@ -142,7 +153,9 @@ class ValidatorReportPage(ttk.Frame):
 
                     # Execute KPI Naming Standards Validation if selected
                     if KPI_VALIDATION_OPTION_NAME in validations:
-                        self.status_label.config(text=f"Processing {file_name}: Validating {KPI_VALIDATION_OPTION_NAME}...", bootstyle="info")
+                        self.status_label.config(
+                            text=f"Processing {file_name}: Validating {KPI_VALIDATION_OPTION_NAME}...",
+                            bootstyle="info")
                         self.update_idletasks()
                         kpi_issues = analyze_kpi_naming_script(root_element, validations)
                         # --- Defensive check for NoneType ---
@@ -161,7 +174,9 @@ class ValidatorReportPage(ttk.Frame):
 
                     # Execute Server Name/Domain Hygiene validation if selected
                     if SERVER_HYGIENE_VALIDATION_OPTION_NAME in validations:
-                        self.status_label.config(text=f"Processing {file_name}: Validating {SERVER_HYGIENE_VALIDATION_OPTION_NAME}...", bootstyle="info")
+                        self.status_label.config(
+                            text=f"Processing {file_name}: Validating {SERVER_HYGIENE_VALIDATION_OPTION_NAME}...",
+                            bootstyle="info")
                         self.update_idletasks()
                         server_hygiene_issues = analyze_server_hygiene_script(root_element, validations)
                         # --- Defensive check for NoneType ---
@@ -178,16 +193,36 @@ class ValidatorReportPage(ttk.Frame):
                                 'thread_group': 'N/A'
                             })
 
+                    # Execute Extractor and Variable Naming & Configuration Standards if selected (NEW BLOCK)
+                    if EXTRACTOR_STANDARDS_VALIDATION_OPTION_NAME in validations:
+                        self.status_label.config(
+                            text=f"Processing {file_name}: Validating {EXTRACTOR_STANDARDS_VALIDATION_OPTION_NAME}...",
+                            bootstyle="info")
+                        self.update_idletasks()
+                        extractor_issues = analyze_extractor_standards_script(root_element, validations)
+                        if extractor_issues is not None:
+                            all_issues_for_current_file.extend(extractor_issues)
+                        else:
+                            all_issues_for_current_file.append({
+                                'severity': 'ERROR',
+                                'validation_option_name': EXTRACTOR_STANDARDS_VALIDATION_OPTION_NAME,
+                                'type': 'Internal Module Error',
+                                'location': 'JMeter Script Analysis',
+                                'description': f"The '{EXTRACTOR_STANDARDS_VALIDATION_OPTION_NAME}' validation module returned None instead of a list of issues. Please check its implementation.",
+                                'thread_group': 'N/A'
+                            })
+                        # END NEW BLOCK
 
                 report_data = {
                     "file_path": file_path,
-                    "issues": all_issues_for_current_file # This will contain parsing error or validation issues
+                    "issues": all_issues_for_current_file  # This will contain parsing error or validation issues
                 }
 
                 # Generate HTML report
                 report_html_path = os.path.join(current_file_output_dir,
                                                 f"{os.path.splitext(file_name)[0]}_validation_report.html")
-                generate_html_report(report_data, report_html_path, validations) # Pass all selected validations for the report
+                generate_html_report(report_data, report_html_path,
+                                     validations)  # Pass all selected validations for the report
                 self.reports_generated_paths.append(report_html_path)
 
                 progress_value = ((i + 1) / total_files) * 100
@@ -214,7 +249,7 @@ class ValidatorReportPage(ttk.Frame):
                                  parent=self.parent)
         finally:
             self.progress_bar["value"] = 100
-            self.update_idletasks() # Ensure final UI update
+            self.update_idletasks()  # Ensure final UI update
 
     def open_reports_folder(self):
         """

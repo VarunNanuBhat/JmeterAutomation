@@ -19,7 +19,7 @@ class ValidatorOptionsPage(ttk.Frame):
             "Naming Convention (TXN_NN_Desc)": {"var": ttk.BooleanVar(value=True), "category": "Naming"},
             "HTTP Request Naming (KPI_method_urlPath)": {"var": ttk.BooleanVar(value=False), "category": "Naming"},
             "Server Name/Domain Hygiene": {"var": ttk.BooleanVar(value=True), "category": "Network"},
-            "Server Name/Domain Hygiene1": {"var": ttk.BooleanVar(value=True), "category": "Network"},
+            "Extractor Variable Naming Standards": {"var": ttk.BooleanVar(value=True), "category": "Network"},
             "Server Name/Domain Hygiene2": {"var": ttk.BooleanVar(value=True), "category": "Network"},
             "Server Name/Domain Hygiene3": {"var": ttk.BooleanVar(value=True), "category": "Network"},
         }
