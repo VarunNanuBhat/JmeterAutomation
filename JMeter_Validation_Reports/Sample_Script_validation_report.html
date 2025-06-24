@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JMeter Script Validation Report - Sample_Script.jmx</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #0056b3;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        .header-info {
+            background-color: #e9f5ff;
+            border-left: 5px solid #007bff;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+        }
+        .header-info p {
+            margin: 5px 0;
+            font-size: 1.1em;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px 15px;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #e8f0fe;
+        }
+        .issue-severity-ERROR {
+            background-color: #ffe0e0; /* Light red */
+            color: #d32f2f; /* Darker red text */
+            font-weight: bold;
+        }
+        .issue-severity-WARNING {
+            background-color: #fffbe0; /* Light yellow */
+            color: #fbc02d; /* Darker yellow/orange text */
+            font-weight: bold;
+        }
+        .no-issues {
+            padding: 20px;
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+        .summary-box {
+            background-color: #f0f8ff;
+            border: 1px solid #b3d9ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .summary-box p {
+            margin: 0 0 8px 0;
+        }
+        ul.validations {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        ul.validations li {
+            margin-bottom: 5px;
+        }
+        .validation-category-section {
+            margin-top: 40px;
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fcfcfc;
+        }
+        .validation-category-section h2 {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-top: 0;
+            color: #007bff;
+        }
+
+        /* Styles for the new High-Level Summary section */
+        .category-summary-list {
+            list-style-type: none; /* Remove default bullets */
+            padding-left: 0;
+            margin-top: 15px;
+        }
+        .category-summary-list li {
+            background-color: #f8f8f8;
+            border: 1px solid #eee;
+            padding: 10px 15px;
+            margin-bottom: 8px;
+            border-radius: 5px;
+            display: flex; /* Use flexbox for spacing between name and count */
+            justify-content: space-between; /* Pushes content to ends */
+            align-items: center;
+            font-size: 1.1em;
+        }
+        .category-summary-list li.has-issues {
+            background-color: #ffe0e0; /* Light red for categories with issues */
+            border-left: 5px solid #d32f2f; /* Red border */
+        }
+        .category-summary-list li.no-issues-summary {
+            background-color: #e6ffe6; /* Light green for categories with no issues */
+            border-left: 5px solid #28a745; /* Green border */
+        }
+        .category-summary-list .issue-count {
+            font-weight: bold;
+            color: #d32f2f; /* Red text for issue count */
+        }
+        .category-summary-list .issue-count-zero {
+            font-weight: bold;
+            color: #28a745; /* Green text for zero issue count */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>JMeter Script Validation Report</h1>
+
+        <div class="header-info">
+            <p><strong>JMX File:</strong> Sample_Script.jmx</p>
+            <p><strong>Generated On:</strong> 2025-06-24 00:53:57</p>
+        </div>
+
+        <div class="summary-box">
+            <p><strong>Total Issues Found:</strong> 86</p>
+            <p><strong>Validations Performed:</strong></p>
+            
+            <ul class="validations">
+                
+                <li>Naming Convention (TXN_NN_Desc)</li>
+                
+                <li>HTTP Request Naming (KPI_method_urlPath)</li>
+                
+                <li>Server Name/Domain Hygiene</li>
+                
+            </ul>
+            
+        </div>
+
+        <section id="category-summary" class="section">
+            <h2>Summary of Issues by Category</h2>
+            
+            <ul class="category-summary-list">
+                
+                    
+                    <li class="has-issues">
+                        <strong>Naming Convention (TXN_NN_Desc):</strong>
+                        
+                            <span class="issue-count">14 Issue(s)</span>
+                        
+                    </li>
+                
+                    
+                    <li class="has-issues">
+                        <strong>HTTP Request Naming (KPI_method_urlPath):</strong>
+                        
+                            <span class="issue-count">38 Issue(s)</span>
+                        
+                    </li>
+                
+                    
+                    <li class="has-issues">
+                        <strong>Server Name/Domain Hygiene:</strong>
+                        
+                            <span class="issue-count">34 Issue(s)</span>
+                        
+                    </li>
+                
+            </ul>
+            
+        </section>
+        <h1>Detailed Issues by Validation Category</h1>
+        
+            
+                <div class="validation-category-section">
+                    
+                    <h2>Naming Convention (TXN_NN_Desc): 14 Issue(s)</h2>
+
+                    
+                        
+                        
+                            <h3>Thread Group / Test Fragment: <em>Thread Group 1</em></h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Type</th>
+                                        <th>Location</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Naming Convention</td>
+                                        <td>Transaction Controller 'TXN_abcde'</td>
+                                        <td>Transaction Controller name must strictly follow 'TXN_NN_Description' format (NN=exactly two digits, Description must be present).</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Naming Convention</td>
+                                        <td>Transaction Controller '05_abcde'</td>
+                                        <td>Transaction Controller name must start with 'TXN_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Naming Convention</td>
+                                        <td>Controller 'TXN_06_sdfg' (LoopController)</td>
+                                        <td>Non-Transaction Controller names (e.g., Loop, Simple, While, If) should not follow the 'TXN_NN_Description' format. This format is reserved exclusively for Transaction Controllers.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Sequence Validation</td>
+                                        <td>Thread Group 'Thread Group 1'</td>
+                                        <td>Missing transaction step 'TXN_02'. Steps must be contiguous.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Sequence Validation</td>
+                                        <td>Transaction Controller 'TXN_04_abce'</td>
+                                        <td>Duplicate transaction step number 'TXN_04' found. Already seen as 'TXN_04_abc'. Each transaction step number within a Thread Group must be unique.</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h3>Thread Group / Test Fragment: <em>Thread Group</em></h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Type</th>
+                                        <th>Location</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Naming Convention</td>
+                                        <td>Transaction Controller 'TXN_abc'</td>
+                                        <td>Transaction Controller name must strictly follow 'TXN_NN_Description' format (NN=exactly two digits, Description must be present).</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Module Controller</td>
+                                        <td>Module Controller 'Module Controller' in Thread Group 'Thread Group'</td>
+                                        <td>Could not resolve target for Module Controller. Sequence validation for this TG might be incomplete (Target not found).</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Naming Convention</td>
+                                        <td>Controller 'TXN_04_asdfg' (LoopController)</td>
+                                        <td>Non-Transaction Controller names (e.g., Loop, Simple, While, If) should not follow the 'TXN_NN_Description' format. This format is reserved exclusively for Transaction Controllers.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Sequence Validation</td>
+                                        <td>Transaction Controller 'TXN_02_abc'</td>
+                                        <td>Duplicate transaction step number 'TXN_02' found. Already seen as 'TXN_02_abc'. Each transaction step number within a Thread Group must be unique.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Sequence Validation</td>
+                                        <td>Thread Group 'Thread Group'</td>
+                                        <td>Missing transaction step 'TXN_03'. Steps must be contiguous.</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h3>Thread Group / Test Fragment: <em>Test Fragment 2</em></h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Type</th>
+                                        <th>Location</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Naming Convention</td>
+                                        <td>Transaction Controller 'TXN_abc'</td>
+                                        <td>Transaction Controller name must strictly follow 'TXN_NN_Description' format (NN=exactly two digits, Description must be present).</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h3>Thread Group / Test Fragment: <em>tearDown Thread Group</em></h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Type</th>
+                                        <th>Location</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Naming Convention</td>
+                                        <td>Transaction Controller 'TXN_abc'</td>
+                                        <td>Transaction Controller name must strictly follow 'TXN_NN_Description' format (NN=exactly two digits, Description must be present).</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Naming Convention</td>
+                                        <td>Transaction Controller '04_abc'</td>
+                                        <td>Transaction Controller name must start with 'TXN_'.</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h3>Thread Group / Test Fragment: <em>setUp Thread Group</em></h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Type</th>
+                                        <th>Location</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Sequence Validation</td>
+                                        <td>Thread Group 'setUp Thread Group'</td>
+                                        <td>Missing transaction step 'TXN_02'. Steps must be contiguous.</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                    
+                </div> 
+                <div class="validation-category-section">
+                    
+                    <h2>HTTP Request Naming (KPI_method_urlPath): 38 Issue(s)</h2>
+
+                    
+                        
+                        
+                            <h3>Thread Group / Test Fragment: <em>Thread Group 1</em></h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Type</th>
+                                        <th>Location</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming Format</td>
+                                        <td>HTTP Request 'KPI_GET_/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'</td>
+                                        <td>HTTP Request name 'KPI_GET_/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming Format</td>
+                                        <td>HTTP Request 'KPI_POST_sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js'</td>
+                                        <td>HTTP Request name 'KPI_POST_sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming Format</td>
+                                        <td>HTTP Request 'GET_modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js'</td>
+                                        <td>HTTP Request name 'GET_modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming Format</td>
+                                        <td>HTTP Request 'KPI_modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js'</td>
+                                        <td>HTTP Request name 'KPI_modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming Format</td>
+                                        <td>HTTP Request 'KPI_GETsites/default/files/2020-09/content-rebates.svg'</td>
+                                        <td>HTTP Request name 'KPI_GETsites/default/files/2020-09/content-rebates.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-09/content-rebates.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming Format</td>
+                                        <td>HTTP Request 'KPI_GET_sites/default/files/2020-09/content-compare-rates.svg?abc=something'</td>
+                                        <td>HTTP Request name 'KPI_GET_sites/default/files/2020-09/content-compare-rates.svg?abc=something' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-09/content-compare-rates.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming Format</td>
+                                        <td>HTTP Request 'KPI_GET_sites/default/files/${date}/content-energy-advisor.svg'</td>
+                                        <td>HTTP Request name 'KPI_GET_sites/default/files/${date}/content-energy-advisor.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/<date>/content-energy-advisor.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>URL Path Correlation in Name</td>
+                                        <td>HTTP Request 'KPI_GET_sites/default/files/${date}/content-energy-advisor.svg'</td>
+                                        <td>HTTP Request name 'KPI_GET_sites/default/files/${date}/content-energy-advisor.svg' contains uncleaned correlation patterns (e.g., '${var}' or '__func()__') in its URL path portion. For clarity and aggregation in reports, correlated parts of the URL path **must** be generalized to '<variableName>' (e.g., '/users/${userID}' should become 'KPI_GET_users_<userID>'). Expected cleaned format: 'sites/default/files/<date>/content-energy-advisor.svg'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming Format</td>
+                                        <td>HTTP Request 'KPI_GET_sites/default/files/{date}/content-energy-advisor.svg'</td>
+                                        <td>HTTP Request name 'KPI_GET_sites/default/files/{date}/content-energy-advisor.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/<date>/content-energy-advisor.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming Format</td>
+                                        <td>HTTP Request 'KPI_GET_sites/default/files/date>/content-rebates.svg'</td>
+                                        <td>HTTP Request name 'KPI_GET_sites/default/files/date>/content-rebates.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/<date>/content-rebates.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h3>Thread Group / Test Fragment: <em>Thread Group</em></h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Type</th>
+                                        <th>Location</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming Format</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming Format</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming Format</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-09/content-rebates.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming Format</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming Format</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-09/content-rebates.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h3>Thread Group / Test Fragment: <em>setUp Thread Group</em></h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Type</th>
+                                        <th>Location</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming Format</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming Format</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming Format</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming Format</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-09/content-rebates.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming Format</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming Format</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-09/content-rebates.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming Format</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/content-compare-rates.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2020-09/content-compare-rates.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-09/content-compare-rates.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h3>Thread Group / Test Fragment: <em>Test Fragment 1</em></h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Type</th>
+                                        <th>Location</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming Format</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming Format</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming Format</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming Format</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming Format</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h3>Thread Group / Test Fragment: <em>Test Fragment 2</em></h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Type</th>
+                                        <th>Location</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming Format</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming Format</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h3>Thread Group / Test Fragment: <em>Test Fragment 3</em></h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Type</th>
+                                        <th>Location</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming Format</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming Format</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming Format</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h3>Thread Group / Test Fragment: <em>tearDown Thread Group</em></h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Type</th>
+                                        <th>Location</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming Format</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming Format</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming Format</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming Format</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-09/content-rebates.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming Format</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming Format</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-09/content-rebates.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                    
+                </div> 
+                <div class="validation-category-section">
+                    
+                    <h2>Server Name/Domain Hygiene: 34 Issue(s)</h2>
+
+                    
+                        
+                        
+                            <h3>Thread Group / Test Fragment: <em>Thread Group 1</em></h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Type</th>
+                                        <th>Location</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Server Hostname</td>
+                                        <td>HTTP Request 'KPI_GET_sites/default/files/<date>/content-rebates.svg'</td>
+                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Server Hostname</td>
+                                        <td>HTTP Request 'KPI_GET_sites/default/files/2020-09/content-rebates.svg'</td>
+                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded IP Address</td>
+                                        <td>HTTP Request 'KPI_GET_sites/default/files/2020-09/content-compare-rates.svg'</td>
+                                        <td>Server Name/IP '192.168.1.1' is a hardcoded IP address. It should ideally be replaced with a parameterized hostname (e.g., '${HOSTNAME}') for flexibility.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Server Hostname</td>
+                                        <td>HTTP Request 'KPI_GET_sites/default/files/2020-09/content-rebates.svg'</td>
+                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Malformed Server Name</td>
+                                        <td>HTTP Request 'KPI_GET_sites/default/files/2020-09/content-rebates.svg'</td>
+                                        <td>Server Name/IP '${BaseURL}/dummy_content' contains path segments, query parameters, or URL fragments. These should be in the 'Path' field, not the 'Server Name or IP' field. Expected format: 'domain.com', 'sub.domain.com', or an IP address (e.g., 192.168.1.1).</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h3>Thread Group / Test Fragment: <em>Thread Group</em></h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Type</th>
+                                        <th>Location</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Server Hostname</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj'</td>
+                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Malformed Server Name</td>
+                                        <td>HTTP Request 'KPI_GET_sites/default/files/2020-09/content-rebates.svg'</td>
+                                        <td>Server Name/IP 'test3.dms.sce.com/dummy_content' contains path segments, query parameters, or URL fragments. These should be in the 'Path' field, not the 'Server Name or IP' field. Expected format: 'domain.com', 'sub.domain.com', or an IP address (e.g., 192.168.1.1).</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Server Hostname</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj'</td>
+                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Server Hostname</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg'</td>
+                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Server Hostname</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj'</td>
+                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Server Hostname</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg'</td>
+                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h3>Thread Group / Test Fragment: <em>setUp Thread Group</em></h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Type</th>
+                                        <th>Location</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Server Hostname</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'</td>
+                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Server Hostname</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'</td>
+                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Server Hostname</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj'</td>
+                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Server Hostname</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg'</td>
+                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Server Hostname</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj'</td>
+                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Server Hostname</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg'</td>
+                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Server Hostname</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/content-compare-rates.svg'</td>
+                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h3>Thread Group / Test Fragment: <em>Test Fragment 1</em></h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Type</th>
+                                        <th>Location</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Server Hostname</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'</td>
+                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Server Hostname</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'</td>
+                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Server Hostname</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js'</td>
+                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Server Hostname</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'</td>
+                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Server Hostname</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'</td>
+                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h3>Thread Group / Test Fragment: <em>Test Fragment 2</em></h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Type</th>
+                                        <th>Location</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Server Hostname</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'</td>
+                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Server Hostname</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'</td>
+                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h3>Thread Group / Test Fragment: <em>Test Fragment 3</em></h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Type</th>
+                                        <th>Location</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Server Hostname</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'</td>
+                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Server Hostname</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'</td>
+                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Server Hostname</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js'</td>
+                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h3>Thread Group / Test Fragment: <em>tearDown Thread Group</em></h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Type</th>
+                                        <th>Location</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Server Hostname</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'</td>
+                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Server Hostname</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'</td>
+                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Server Hostname</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj'</td>
+                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Server Hostname</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg'</td>
+                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Server Hostname</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj'</td>
+                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Server Hostname</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg'</td>
+                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                    
+                </div> 
+        
+
+    </div>
+</body>
+</html>

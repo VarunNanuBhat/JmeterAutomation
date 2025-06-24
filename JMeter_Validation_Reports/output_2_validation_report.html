@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JMeter Script Validation Report - output_2.jmx</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #0056b3;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        .header-info {
+            background-color: #e9f5ff;
+            border-left: 5px solid #007bff;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+        }
+        .header-info p {
+            margin: 5px 0;
+            font-size: 1.1em;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px 15px;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #e8f0fe;
+        }
+        .issue-severity-ERROR {
+            background-color: #ffe0e0; /* Light red */
+            color: #d32f2f; /* Darker red text */
+            font-weight: bold;
+        }
+        .issue-severity-WARNING {
+            background-color: #fffbe0; /* Light yellow */
+            color: #fbc02d; /* Darker yellow/orange text */
+            font-weight: bold;
+        }
+        .no-issues {
+            padding: 20px;
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+        .summary-box {
+            background-color: #f0f8ff;
+            border: 1px solid #b3d9ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .summary-box p {
+            margin: 0 0 8px 0;
+        }
+        ul.validations {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        ul.validations li {
+            margin-bottom: 5px;
+        }
+        .validation-category-section {
+            margin-top: 40px;
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fcfcfc;
+        }
+        .validation-category-section h2 {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-top: 0;
+            color: #007bff;
+        }
+
+        /* Styles for the new High-Level Summary section */
+        .category-summary-list {
+            list-style-type: none; /* Remove default bullets */
+            padding-left: 0;
+            margin-top: 15px;
+        }
+        .category-summary-list li {
+            background-color: #f8f8f8;
+            border: 1px solid #eee;
+            padding: 10px 15px;
+            margin-bottom: 8px;
+            border-radius: 5px;
+            display: flex; /* Use flexbox for spacing between name and count */
+            justify-content: space-between; /* Pushes content to ends */
+            align-items: center;
+            font-size: 1.1em;
+        }
+        .category-summary-list li.has-issues {
+            background-color: #ffe0e0; /* Light red for categories with issues */
+            border-left: 5px solid #d32f2f; /* Red border */
+        }
+        .category-summary-list li.no-issues-summary {
+            background-color: #e6ffe6; /* Light green for categories with no issues */
+            border-left: 5px solid #28a745; /* Green border */
+        }
+        .category-summary-list .issue-count {
+            font-weight: bold;
+            color: #d32f2f; /* Red text for issue count */
+        }
+        .category-summary-list .issue-count-zero {
+            font-weight: bold;
+            color: #28a745; /* Green text for zero issue count */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>JMeter Script Validation Report</h1>
+
+        <div class="header-info">
+            <p><strong>JMX File:</strong> output_2.jmx</p>
+            <p><strong>Generated On:</strong> 2025-06-23 22:55:53</p>
+        </div>
+
+        <div class="summary-box">
+            <p><strong>Total Issues Found:</strong> 167</p>
+            <p><strong>Validations Performed:</strong></p>
+            
+            <ul class="validations">
+                
+                <li>Naming Convention (TXN_NN_Desc)</li>
+                
+                <li>HTTP Request Naming (KPI_method_urlPath)</li>
+                
+            </ul>
+            
+        </div>
+
+        <section id="category-summary" class="section">
+            <h2>Summary of Issues by Category</h2>
+            
+            <ul class="category-summary-list">
+                
+                    
+                    <li class="has-issues">
+                        <strong>Naming Convention (TXN_NN_Desc):</strong>
+                        
+                            <span class="issue-count">5 Issue(s)</span>
+                        
+                    </li>
+                
+                    
+                    <li class="has-issues">
+                        <strong>HTTP Request Naming (KPI_method_urlPath):</strong>
+                        
+                            <span class="issue-count">162 Issue(s)</span>
+                        
+                    </li>
+                
+            </ul>
+            
+        </section>
+        <h1>Detailed Issues by Validation Category</h1>
+        
+            
+                <div class="validation-category-section">
+                    
+                    <h2>Naming Convention (TXN_NN_Desc): 5 Issue(s)</h2>
+
+                    
+                        
+                        
+                            <h3>Thread Group / Test Fragment: <em>Thread Group</em></h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Type</th>
+                                        <th>Location</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Naming Convention</td>
+                                        <td>Transaction Controller 'TXN_abcde'</td>
+                                        <td>Transaction Controller name must strictly follow 'TXN_NN_Description' format (NN=exactly two digits, Description must be present).</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Naming Convention</td>
+                                        <td>Transaction Controller '05_abcde'</td>
+                                        <td>Transaction Controller name must start with 'TXN_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Module Controller</td>
+                                        <td>Module Controller 'Module Controller' in Thread Group 'Thread Group'</td>
+                                        <td>Could not resolve target for Module Controller. Sequence validation for this TG might be incomplete (Target not found).</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Module Controller</td>
+                                        <td>Module Controller 'Module Controller' in Thread Group 'Thread Group'</td>
+                                        <td>Could not resolve target for Module Controller. Sequence validation for this TG might be incomplete (Target not found).</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Module Controller</td>
+                                        <td>Module Controller 'Module Controller' in Thread Group 'Thread Group'</td>
+                                        <td>Could not resolve target for Module Controller. Sequence validation for this TG might be incomplete (Target not found).</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                    
+                </div> 
+                <div class="validation-category-section">
+                    
+                    <h2>HTTP Request Naming (KPI_method_urlPath): 162 Issue(s)</h2>
+
+                    
+                        
+                        
+                            <h3>Thread Group / Test Fragment: <em>Thread Group</em></h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Type</th>
+                                        <th>Location</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/framework/polyfills.script.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/framework/polyfills.script.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/framework/polyfills.script.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/framework/app.script.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/framework/app.script.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/framework/app.script.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'http://test3.dms.sce.com:443'</td>
+                                        <td>HTTP Request name 'http://test3.dms.sce.com:443' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_CONNECT_UNKNOWN_PATH'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'http://test3.dms.sce.com:443'</td>
+                                        <td>HTTP Request name 'http://test3.dms.sce.com:443' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_CONNECT_UNKNOWN_PATH'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_spinner/react_login_spinner.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_spinner/react_login_spinner.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_login_spinner/react_login_spinner.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_centralized_guest/react_centralized_guest.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_centralized_guest/react_centralized_guest.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_centralized_guest/react_centralized_guest.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/fonts/OpenSans-Regular.ttf'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/fonts/OpenSans-Regular.ttf' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/fonts/OpenSans-Regular.ttf'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-menu-bars.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-menu-bars.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/images/nav-menu-bars.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-search.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-search.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/images/nav-search.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-logo-sce.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-logo-sce.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/images/nav-logo-sce.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/homepage/hero-image.jpg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/homepage/hero-image.jpg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/homepage/hero-image.jpg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'http://api.onedrive.com:443'</td>
+                                        <td>HTTP Request name 'http://api.onedrive.com:443' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_CONNECT_UNKNOWN_PATH'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-for-your-home.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-for-your-home.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/images/menus-for-your-home.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-for-your-biz.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-for-your-biz.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/images/menus-for-your-biz.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-collapse.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-collapse.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/images/menus-collapse.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_header_login/react_header_login.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_header_login/react_header_login.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_header_login/react_header_login.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/framework/polyfills.script.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/framework/polyfills.script.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/framework/polyfills.script.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/framework/app.script.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/framework/app.script.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/framework/app.script.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'http://test3.dms.sce.com:443'</td>
+                                        <td>HTTP Request name 'http://test3.dms.sce.com:443' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_CONNECT_UNKNOWN_PATH'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'http://test3.dms.sce.com:443'</td>
+                                        <td>HTTP Request name 'http://test3.dms.sce.com:443' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_CONNECT_UNKNOWN_PATH'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_spinner/react_login_spinner.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_spinner/react_login_spinner.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_login_spinner/react_login_spinner.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_centralized_guest/react_centralized_guest.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_centralized_guest/react_centralized_guest.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_centralized_guest/react_centralized_guest.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/fonts/OpenSans-Regular.ttf'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/fonts/OpenSans-Regular.ttf' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/fonts/OpenSans-Regular.ttf'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-menu-bars.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-menu-bars.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/images/nav-menu-bars.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-search.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-search.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/images/nav-search.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-logo-sce.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-logo-sce.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/images/nav-logo-sce.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/homepage/hero-image.jpg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/homepage/hero-image.jpg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/homepage/hero-image.jpg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'http://api.onedrive.com:443'</td>
+                                        <td>HTTP Request name 'http://api.onedrive.com:443' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_CONNECT_UNKNOWN_PATH'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-for-your-home.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-for-your-home.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/images/menus-for-your-home.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-for-your-biz.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-for-your-biz.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/images/menus-for-your-biz.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-collapse.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-collapse.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/images/menus-collapse.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_header_login/react_header_login.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_header_login/react_header_login.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_header_login/react_header_login.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/framework/polyfills.script.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/framework/polyfills.script.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/framework/polyfills.script.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/framework/app.script.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/framework/app.script.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/framework/app.script.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'http://test3.dms.sce.com:443'</td>
+                                        <td>HTTP Request name 'http://test3.dms.sce.com:443' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_CONNECT_UNKNOWN_PATH'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'http://test3.dms.sce.com:443'</td>
+                                        <td>HTTP Request name 'http://test3.dms.sce.com:443' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_CONNECT_UNKNOWN_PATH'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_spinner/react_login_spinner.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_spinner/react_login_spinner.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_login_spinner/react_login_spinner.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_centralized_guest/react_centralized_guest.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_centralized_guest/react_centralized_guest.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_centralized_guest/react_centralized_guest.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/fonts/OpenSans-Regular.ttf'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/fonts/OpenSans-Regular.ttf' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/fonts/OpenSans-Regular.ttf'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-menu-bars.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-menu-bars.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/images/nav-menu-bars.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-search.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-search.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/images/nav-search.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-logo-sce.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-logo-sce.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/images/nav-logo-sce.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/homepage/hero-image.jpg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/homepage/hero-image.jpg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/homepage/hero-image.jpg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'http://api.onedrive.com:443'</td>
+                                        <td>HTTP Request name 'http://api.onedrive.com:443' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_CONNECT_UNKNOWN_PATH'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-for-your-home.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-for-your-home.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/images/menus-for-your-home.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-for-your-biz.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-for-your-biz.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/images/menus-for-your-biz.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-collapse.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-collapse.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/images/menus-collapse.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_header_login/react_header_login.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_header_login/react_header_login.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_header_login/react_header_login.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/framework/polyfills.script.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/framework/polyfills.script.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/framework/polyfills.script.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/framework/app.script.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/framework/app.script.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/framework/app.script.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'http://test3.dms.sce.com:443'</td>
+                                        <td>HTTP Request name 'http://test3.dms.sce.com:443' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_CONNECT_UNKNOWN_PATH'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'http://test3.dms.sce.com:443'</td>
+                                        <td>HTTP Request name 'http://test3.dms.sce.com:443' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_CONNECT_UNKNOWN_PATH'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_spinner/react_login_spinner.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_spinner/react_login_spinner.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_login_spinner/react_login_spinner.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_centralized_guest/react_centralized_guest.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_centralized_guest/react_centralized_guest.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_centralized_guest/react_centralized_guest.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/fonts/OpenSans-Regular.ttf'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/fonts/OpenSans-Regular.ttf' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/fonts/OpenSans-Regular.ttf'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-menu-bars.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-menu-bars.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/images/nav-menu-bars.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-search.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-search.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/images/nav-search.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-logo-sce.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-logo-sce.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/images/nav-logo-sce.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/homepage/hero-image.jpg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/homepage/hero-image.jpg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/homepage/hero-image.jpg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'http://api.onedrive.com:443'</td>
+                                        <td>HTTP Request name 'http://api.onedrive.com:443' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_CONNECT_UNKNOWN_PATH'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-for-your-home.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-for-your-home.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/images/menus-for-your-home.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-for-your-biz.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-for-your-biz.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/images/menus-for-your-biz.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-collapse.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-collapse.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/images/menus-collapse.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_header_login/react_header_login.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_header_login/react_header_login.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_header_login/react_header_login.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/framework/polyfills.script.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/framework/polyfills.script.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/framework/polyfills.script.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/framework/app.script.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/framework/app.script.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/framework/app.script.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'http://test3.dms.sce.com:443'</td>
+                                        <td>HTTP Request name 'http://test3.dms.sce.com:443' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_CONNECT_UNKNOWN_PATH'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'http://test3.dms.sce.com:443'</td>
+                                        <td>HTTP Request name 'http://test3.dms.sce.com:443' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_CONNECT_UNKNOWN_PATH'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_spinner/react_login_spinner.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_spinner/react_login_spinner.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_login_spinner/react_login_spinner.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_centralized_guest/react_centralized_guest.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_centralized_guest/react_centralized_guest.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_centralized_guest/react_centralized_guest.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/fonts/OpenSans-Regular.ttf'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/fonts/OpenSans-Regular.ttf' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/fonts/OpenSans-Regular.ttf'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-menu-bars.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-menu-bars.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/images/nav-menu-bars.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-search.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-search.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/images/nav-search.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-logo-sce.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-logo-sce.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/images/nav-logo-sce.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/homepage/hero-image.jpg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/homepage/hero-image.jpg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/homepage/hero-image.jpg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'http://api.onedrive.com:443'</td>
+                                        <td>HTTP Request name 'http://api.onedrive.com:443' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_CONNECT_UNKNOWN_PATH'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-for-your-home.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-for-your-home.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/images/menus-for-your-home.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-for-your-biz.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-for-your-biz.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/images/menus-for-your-biz.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-collapse.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-collapse.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/images/menus-collapse.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_header_login/react_header_login.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_header_login/react_header_login.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_header_login/react_header_login.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/framework/polyfills.script.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/framework/polyfills.script.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/framework/polyfills.script.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/framework/app.script.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/framework/app.script.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/framework/app.script.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'http://test3.dms.sce.com:443'</td>
+                                        <td>HTTP Request name 'http://test3.dms.sce.com:443' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_CONNECT_UNKNOWN_PATH'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'http://test3.dms.sce.com:443'</td>
+                                        <td>HTTP Request name 'http://test3.dms.sce.com:443' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_CONNECT_UNKNOWN_PATH'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_spinner/react_login_spinner.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_spinner/react_login_spinner.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_login_spinner/react_login_spinner.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_centralized_guest/react_centralized_guest.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_centralized_guest/react_centralized_guest.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_centralized_guest/react_centralized_guest.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/fonts/OpenSans-Regular.ttf'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/fonts/OpenSans-Regular.ttf' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/fonts/OpenSans-Regular.ttf'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-menu-bars.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-menu-bars.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/images/nav-menu-bars.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-search.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-search.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/images/nav-search.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-logo-sce.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/nav-logo-sce.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/images/nav-logo-sce.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/homepage/hero-image.jpg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/homepage/hero-image.jpg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/homepage/hero-image.jpg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'http://api.onedrive.com:443'</td>
+                                        <td>HTTP Request name 'http://api.onedrive.com:443' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_CONNECT_UNKNOWN_PATH'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-for-your-home.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-for-your-home.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/images/menus-for-your-home.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-for-your-biz.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-for-your-biz.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/images/menus-for-your-biz.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-collapse.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/images/menus-collapse.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/images/menus-collapse.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_header_login/react_header_login.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_header_login/react_header_login.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_header_login/react_header_login.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-09/content-rebates.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/content-compare-rates.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2020-09/content-compare-rates.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-09/content-compare-rates.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/content-energy-advisor.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2020-09/content-energy-advisor.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'http://api.onedrive.com:443'</td>
+                                        <td>HTTP Request name 'http://api.onedrive.com:443' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_CONNECT_UNKNOWN_PATH'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/content-paperless-bill.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2020-09/content-paperless-bill.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-09/content-paperless-bill.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-11/clean-energy.jpg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2020-11/clean-energy.jpg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-11/clean-energy.jpg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/wildfire-safety.jpg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2020-09/wildfire-safety.jpg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-09/wildfire-safety.jpg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2021-10/latestNews.png'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2021-10/latestNews.png' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2021-10/latestNews.png'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/js/all.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/js/all.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/js/all.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1504756954'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1504756954' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET__Incapsula_Resource'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/fonts/webfonts/fa-solid-900.woff2'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/fonts/webfonts/fa-solid-900.woff2' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/fonts/webfonts/fa-solid-900.woff2'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-09/content-rebates.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/content-compare-rates.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2020-09/content-compare-rates.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-09/content-compare-rates.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/content-energy-advisor.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2020-09/content-energy-advisor.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'http://api.onedrive.com:443'</td>
+                                        <td>HTTP Request name 'http://api.onedrive.com:443' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_CONNECT_UNKNOWN_PATH'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/content-paperless-bill.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2020-09/content-paperless-bill.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-09/content-paperless-bill.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-11/clean-energy.jpg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2020-11/clean-energy.jpg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-11/clean-energy.jpg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/wildfire-safety.jpg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2020-09/wildfire-safety.jpg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-09/wildfire-safety.jpg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2021-10/latestNews.png'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2021-10/latestNews.png' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2021-10/latestNews.png'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/js/all.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/js/all.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/js/all.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1504756954'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1504756954' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET__Incapsula_Resource'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/fonts/webfonts/fa-solid-900.woff2'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/fonts/webfonts/fa-solid-900.woff2' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/fonts/webfonts/fa-solid-900.woff2'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h3>Thread Group / Test Fragment: <em>Test Fragment</em></h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Type</th>
+                                        <th>Location</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-09/content-rebates.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/content-compare-rates.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2020-09/content-compare-rates.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-09/content-compare-rates.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/content-energy-advisor.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2020-09/content-energy-advisor.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'http://api.onedrive.com:443'</td>
+                                        <td>HTTP Request name 'http://api.onedrive.com:443' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_CONNECT_UNKNOWN_PATH'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/content-paperless-bill.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2020-09/content-paperless-bill.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-09/content-paperless-bill.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-11/clean-energy.jpg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2020-11/clean-energy.jpg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-11/clean-energy.jpg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/wildfire-safety.jpg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2020-09/wildfire-safety.jpg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-09/wildfire-safety.jpg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2021-10/latestNews.png'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2021-10/latestNews.png' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2021-10/latestNews.png'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/js/all.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/js/all.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/js/all.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1504756954'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1504756954' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET__Incapsula_Resource'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/fonts/webfonts/fa-solid-900.woff2'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/fonts/webfonts/fa-solid-900.woff2' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/fonts/webfonts/fa-solid-900.woff2'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-09/content-rebates.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/content-compare-rates.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2020-09/content-compare-rates.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-09/content-compare-rates.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/content-energy-advisor.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2020-09/content-energy-advisor.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'http://api.onedrive.com:443'</td>
+                                        <td>HTTP Request name 'http://api.onedrive.com:443' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_CONNECT_UNKNOWN_PATH'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/content-paperless-bill.svg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2020-09/content-paperless-bill.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-09/content-paperless-bill.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-11/clean-energy.jpg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2020-11/clean-energy.jpg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-11/clean-energy.jpg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/wildfire-safety.jpg'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2020-09/wildfire-safety.jpg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-09/wildfire-safety.jpg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2021-10/latestNews.png'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2021-10/latestNews.png' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2021-10/latestNews.png'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/js/all.js?rd1hjj'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/js/all.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/js/all.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1504756954'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1504756954' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET__Incapsula_Resource'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>HTTP Request Naming</td>
+                                        <td>HTTP Request 'https://test3.dms.sce.com/themes/custom/sce_responsive/fonts/webfonts/fa-solid-900.woff2'</td>
+                                        <td>HTTP Request name 'https://test3.dms.sce.com/themes/custom/sce_responsive/fonts/webfonts/fa-solid-900.woff2' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_themes/custom/sce_responsive/fonts/webfonts/fa-solid-900.woff2'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                    
+                </div> 
+        
+
+    </div>
+</body>
+</html>
