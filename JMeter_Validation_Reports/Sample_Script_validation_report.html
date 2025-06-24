@@ -150,11 +150,11 @@
 
         <div class="header-info">
             <p><strong>JMX File:</strong> Sample_Script.jmx</p>
-            <p><strong>Generated On:</strong> 2025-06-24 00:53:57</p>
+            <p><strong>Generated On:</strong> 2025-06-25 00:18:07</p>
         </div>
 
         <div class="summary-box">
-            <p><strong>Total Issues Found:</strong> 86</p>
+            <p><strong>Total Issues Found:</strong> 102</p>
             <p><strong>Validations Performed:</strong></p>
             
             <ul class="validations">
@@ -164,6 +164,12 @@
                 <li>HTTP Request Naming (KPI_method_urlPath)</li>
                 
                 <li>Server Name/Domain Hygiene</li>
+                
+                <li>Extractor Variable Naming Standards</li>
+                
+                <li>Server Name/Domain Hygiene2</li>
+                
+                <li>Server Name/Domain Hygiene3</li>
                 
             </ul>
             
@@ -186,7 +192,7 @@
                     <li class="has-issues">
                         <strong>HTTP Request Naming (KPI_method_urlPath):</strong>
                         
-                            <span class="issue-count">38 Issue(s)</span>
+                            <span class="issue-count">37 Issue(s)</span>
                         
                     </li>
                 
@@ -194,7 +200,31 @@
                     <li class="has-issues">
                         <strong>Server Name/Domain Hygiene:</strong>
                         
-                            <span class="issue-count">34 Issue(s)</span>
+                            <span class="issue-count">32 Issue(s)</span>
+                        
+                    </li>
+                
+                    
+                    <li class="has-issues">
+                        <strong>Extractor Variable Naming Standards:</strong>
+                        
+                            <span class="issue-count">19 Issue(s)</span>
+                        
+                    </li>
+                
+                    
+                    <li class="no-issues-summary">
+                        <strong>Server Name/Domain Hygiene2:</strong>
+                        
+                            <span class="issue-count-zero">No issues found</span>
+                        
+                    </li>
+                
+                    
+                    <li class="no-issues-summary">
+                        <strong>Server Name/Domain Hygiene3:</strong>
+                        
+                            <span class="issue-count-zero">No issues found</span>
                         
                     </li>
                 
@@ -290,7 +320,7 @@
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
                                         <td>Naming Convention</td>
-                                        <td>Controller 'TXN_04_asdfg' (LoopController)</td>
+                                        <td>Controller 'TXN_04_Extractors' (LoopController)</td>
                                         <td>Non-Transaction Controller names (e.g., Loop, Simple, While, If) should not follow the 'TXN_NN_Description' format. This format is reserved exclusively for Transaction Controllers.</td>
                                     </tr>
                                     
@@ -388,7 +418,7 @@
                 </div> 
                 <div class="validation-category-section">
                     
-                    <h2>HTTP Request Naming (KPI_method_urlPath): 38 Issue(s)</h2>
+                    <h2>HTTP Request Naming (KPI_method_urlPath): 37 Issue(s)</h2>
 
                     
                         
@@ -500,15 +530,8 @@
                                     <tr class="issue-severity-ERROR">
                                         <td>ERROR</td>
                                         <td>HTTP Request Naming Format</td>
-                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj'</td>
-                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>HTTP Request Naming Format</td>
-                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg'</td>
-                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-09/content-rebates.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
+                                        <td>HTTP Request 'KPI_GET_sites/default/files/2020-09/content-rebates.svg'</td>
+                                        <td>HTTP Request name 'KPI_GET_sites/default/files/2020-09/content-rebates.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-ERROR">
@@ -768,7 +791,7 @@
                 </div> 
                 <div class="validation-category-section">
                     
-                    <h2>Server Name/Domain Hygiene: 34 Issue(s)</h2>
+                    <h2>Server Name/Domain Hygiene: 32 Issue(s)</h2>
 
                     
                         
@@ -847,20 +870,6 @@
                                         <td>Malformed Server Name</td>
                                         <td>HTTP Request 'KPI_GET_sites/default/files/2020-09/content-rebates.svg'</td>
                                         <td>Server Name/IP 'test3.dms.sce.com/dummy_content' contains path segments, query parameters, or URL fragments. These should be in the 'Path' field, not the 'Server Name or IP' field. Expected format: 'domain.com', 'sub.domain.com', or an IP address (e.g., 192.168.1.1).</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-WARNING">
-                                        <td>WARNING</td>
-                                        <td>Hardcoded Server Hostname</td>
-                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj'</td>
-                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-WARNING">
-                                        <td>WARNING</td>
-                                        <td>Hardcoded Server Hostname</td>
-                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg'</td>
-                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
@@ -1116,6 +1125,183 @@
                                 </tbody>
                             </table>
                         
+                    
+                </div> 
+                <div class="validation-category-section">
+                    
+                    <h2>Extractor Variable Naming Standards: 19 Issue(s)</h2>
+
+                    
+                        
+                        
+                            <h3>Thread Group / Test Fragment: <em>Thread Group</em></h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Type</th>
+                                        <th>Location</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>JMeter Variable Naming</td>
+                                        <td>JSON_userToken</td>
+                                        <td>Variable name 'userToken' does not start with 'c_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>JMeter Variable Naming</td>
+                                        <td>JSON_c_user_ID</td>
+                                        <td>Variable name 'c_user_ID' does not follow camelCase after 'c_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Required Default Value</td>
+                                        <td>JSON_c_emptyDefault</td>
+                                        <td>Default Value for extractor 'JSON_c_emptyDefault' is empty.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Malformed Extractor Expression</td>
+                                        <td>JSON_c_badPath</td>
+                                        <td>JSON Path expression 'data.userId' does not start with '$.'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Malformed Extractor Expression</td>
+                                        <td>JSON_c_emptyPath</td>
+                                        <td>JSON Path expression for 'JSON_c_emptyPath' is empty.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Match No. Type</td>
+                                        <td>JSON_c_matchText</td>
+                                        <td>Match No. 'abc' is not a valid integer for 'JSON_c_matchText'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Extractor Element Naming</td>
+                                        <td>Session ID Extractor</td>
+                                        <td>Extractor 'Session ID Extractor' does not start with a recognized type prefix (e.g., JSON_).</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Extractor Element Naming</td>
+                                        <td>Session ID Extractor</td>
+                                        <td>Extractor 'Session ID Extractor' should contain its exact variable name 'c_sessionIdFromBadName'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Match No. Value Convention</td>
+                                        <td>JSON_c_secondRole</td>
+                                        <td>Match No. '2' is a specific positive integer (>1), which can make scripts brittle.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>JMeter Variable Naming</td>
+                                        <td>JSON_c_token_SubSampleScope</td>
+                                        <td>Variable name 'c_token_SubSampleScope' does not follow camelCase after 'c_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>JMeter Variable Naming</td>
+                                        <td>JSON_c_allRoles_ConcatTrue</td>
+                                        <td>Variable name 'c_allRoles_ConcatTrue' does not follow camelCase after 'c_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Compute Concat Var</td>
+                                        <td>JSON_c_allRoles_ConcatTrue</td>
+                                        <td>'Compute concatenation var' is enabled for 'JSON_c_allRoles_ConcatTrue' with Match No. -1.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Malformed Extractor Expression</td>
+                                        <td>REGEXP_c_emptyRegex</td>
+                                        <td>Regular Expression for 'REGEXP_c_emptyRegex' is empty.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>RegEx Template '$0$' Usage</td>
+                                        <td>REGEXP_c_userId_Template0</td>
+                                        <td>Template for 'REGEXP_c_userId_Template0' uses '$0$', which matches the entire string and may not be intended.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Malformed Extractor Expression</td>
+                                        <td>REGEXP_c_emptyTemplate</td>
+                                        <td>Template field for 'REGEXP_c_emptyTemplate' is empty.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Required Default Value</td>
+                                        <td>REGEXP_c_emptyDefaultValue</td>
+                                        <td>Default Value for extractor 'REGEXP_c_emptyDefaultValue' is empty.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Malformed Extractor Expression</td>
+                                        <td>XPATH_c_emptyXPath</td>
+                                        <td>XPath query for 'XPATH_c_emptyXPath' is empty.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Malformed Extractor Expression</td>
+                                        <td>BOUNDARY_c_emptyLeft</td>
+                                        <td>Left Boundary for 'BOUNDARY_c_emptyLeft' is empty.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Malformed Extractor Expression</td>
+                                        <td>BOUNDARY_c_emptyRight</td>
+                                        <td>Right Boundary for 'BOUNDARY_c_emptyRight' is empty.</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                    
+                </div> 
+                <div class="validation-category-section">
+                    
+                    <h2>Server Name/Domain Hygiene2: 0 Issue(s)</h2>
+
+                    
+                        <div class="no-issues">
+                            <p>🎉 No issues found for this JMeter script w.r.t. Server Name/Domain Hygiene2. Well done!</p>
+                        </div>
+                    
+                </div> 
+                <div class="validation-category-section">
+                    
+                    <h2>Server Name/Domain Hygiene3: 0 Issue(s)</h2>
+
+                    
+                        <div class="no-issues">
+                            <p>🎉 No issues found for this JMeter script w.r.t. Server Name/Domain Hygiene3. Well done!</p>
+                        </div>
                     
                 </div> 
         

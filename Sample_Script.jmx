@@ -1389,10 +1389,19 @@
             <hashTree/>
             <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="REGEXP_c_emptyTemplate" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname">c_someValue</stringProp>
+              <stringProp name="RegexExtractor.refname">c_emptyTemplate</stringProp>
               <stringProp name="RegexExtractor.regex">&lt;span&gt;(.+?)&lt;/span&gt;</stringProp>
               <stringProp name="RegexExtractor.template"></stringProp>
               <stringProp name="RegexExtractor.default">NOT_FOUND</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="REGEXP_c_emptyDefaultValue" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">c_emptyDefaultValue</stringProp>
+              <stringProp name="RegexExtractor.regex">&lt;span&gt;(.+?)&lt;/span&gt;</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default"></stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
