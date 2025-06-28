@@ -16,8 +16,21 @@
         <collectionProp name="HeaderManager.headers"/>
       </HeaderManager>
       <hashTree/>
-      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
-        <collectionProp name="Arguments.arguments"/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables 1" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="u_baseUrl" elementType="Argument">
+            <stringProp name="Argument.name">u_baseUrl</stringProp>
+            <stringProp name="Argument.value">test3.dms.sce.com</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Base URL</stringProp>
+          </elementProp>
+          <elementProp name="loginTimeout" elementType="Argument">
+            <stringProp name="Argument.name">loginTimeout</stringProp>
+            <stringProp name="Argument.value">1000</stringProp>
+            <stringProp name="Argument.desc">User Defined Variable &apos;loginTimeout&apos; does not start with &apos;u_&apos;.</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
       </Arguments>
       <hashTree/>
       <DNSCacheManager guiclass="DNSCachePanel" testclass="DNSCacheManager" testname="DNS Cache Manager" enabled="true">
@@ -1544,16 +1557,74 @@
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </SetupThreadGroup>
       <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TXN_01_abc" enabled="true">
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables 2" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="U_apiPath" elementType="Argument">
+              <stringProp name="Argument.name">U_apiPath</stringProp>
+              <stringProp name="Argument.value">/some_dummy_path</stringProp>
+              <stringProp name="Argument.desc">User Defined Variable &apos;U_apiPath&apos; does not start with &apos;u_&apos;.</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="u_user_id" elementType="Argument">
+              <stringProp name="Argument.name">u_user_id</stringProp>
+              <stringProp name="Argument.value">abc@123</stringProp>
+              <stringProp name="Argument.desc">User Defined Variable &apos;u_user_id&apos; does not follow camelCase after &apos;u_&apos;.</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="u_product-name" elementType="Argument">
+              <stringProp name="Argument.name">u_product-name</stringProp>
+              <stringProp name="Argument.value">Iphone</stringProp>
+              <stringProp name="Argument.desc">User Defined Variable &apos;u_product-name&apos; does not follow camelCase after &apos;u_&apos;.</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding">UTF-8</stringProp>
+          <stringProp name="filename">csv_dataset.csv</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">p_username, password, P_Email, p_login_id, p_session-token, p_2ndAttempt</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TXN_01_variables" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js" enabled="false">
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables 3" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="u_1stRequest" elementType="Argument">
+                <stringProp name="Argument.name">u_1stRequest</stringProp>
+                <stringProp name="Argument.value">my1stRequest.com</stringProp>
+                <stringProp name="Argument.desc">User Defined Variable &apos;u_1stRequest&apos; does not follow camelCase after &apos;u_&apos;.</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="u_TenantId" elementType="Argument">
+                <stringProp name="Argument.name">u_TenantId</stringProp>
+                <stringProp name="Argument.value">10123</stringProp>
+                <stringProp name="Argument.desc">User Defined Variable &apos;u_TenantId&apos; does not follow camelCase after &apos;u_&apos;.</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="p_userDefinedVariable" elementType="Argument">
+                <stringProp name="Argument.name">p_userDefinedVariable</stringProp>
+                <stringProp name="Argument.value">UserDefinedVariable</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <stringProp name="Argument.desc">User Defined Variable must begin with &apos;u&apos;</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="KPI_GET_sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js" enabled="false">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
-            <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -1577,12 +1648,26 @@
               <stringProp name="ConstantTimer.delay">235.20000000000002</stringProp>
             </UniformRandomTimer>
             <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON_c_sessionId" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">c_sessionId</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.sessionId</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON_userToken" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">userToken</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.token</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="KPI_GET_sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js" enabled="false">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
-            <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -1605,6 +1690,15 @@
               <stringProp name="RandomTimer.range">3.6</stringProp>
               <stringProp name="ConstantTimer.delay">7.2</stringProp>
             </UniformRandomTimer>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="REGEXP_c_user_ID" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">c_user_ID</stringProp>
+              <stringProp name="RegexExtractor.regex">$.data.ID</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">NOT_FOUND</stringProp>
+              <stringProp name="RegexExtractor.match_number">0</stringProp>
+            </RegexExtractor>
             <hashTree/>
           </hashTree>
         </hashTree>
