@@ -19,10 +19,14 @@ from jmeter_methods.Val_Backend_HTTPRequest_Naming_Standard import analyze_jmete
 from jmeter_methods.Val_Backend_Server_Name_Hygiene import analyze_jmeter_script as analyze_server_hygiene_script, \
     THIS_VALIDATION_OPTION_NAME as SERVER_HYGIENE_VALIDATION_OPTION_NAME
 
-# Import core validation logic for Extractor and Variable Naming Standards (NEW IMPORT)
+# Import core validation logic for Extractor and Variable Naming Standards
 from jmeter_methods.Val_Backend_Extractor_Variable_Standards import \
     analyze_jmeter_script as analyze_extractor_standards_script, \
-    THIS_VALIDATION_OPTION_NAME as EXTRACTOR_STANDARDS_VALIDATION_OPTION_NAME  # <-- NEW IMPORT
+    THIS_VALIDATION_OPTION_NAME as EXTRACTOR_STANDARDS_VALIDATION_OPTION_NAME
+
+# Import core validation logic for Variable Naming Convention
+from jmeter_methods.Val_Backend_Variable_Naming_Conventions import analyze_jmeter_script as analyze_variable_standards, \
+    THIS_VALIDATION_OPTION_NAME as VARIABLE_NAMING_CONVENTION_OPTION_NAME
 
 # Import report generation functions
 from Report.report_generator import generate_html_report
@@ -33,6 +37,7 @@ ALL_VALIDATION_OPTIONS = [
     KPI_VALIDATION_OPTION_NAME,  # "HTTP Request Naming (KPI_method_urlPath)"
     SERVER_HYGIENE_VALIDATION_OPTION_NAME,  # "Server Name/Domain Hygiene"
     EXTRACTOR_STANDARDS_VALIDATION_OPTION_NAME,  # "Extractor & Variable Naming Standards" <-- ADDED THIS LINE
+    VARIABLE_NAMING_CONVENTION_OPTION_NAME  # "Variable Naming Conventions"
     # Add any future validation module names here
 ]
 
@@ -212,6 +217,28 @@ class ValidatorReportPage(ttk.Frame):
                                 'thread_group': 'N/A'
                             })
                         # END NEW BLOCK
+
+                    # Execute Server Name/Domain Hygiene validation if selected
+                    if VARIABLE_NAMING_CONVENTION_OPTION_NAME in validations:
+                        self.status_label.config(
+                            text=f"Processing {file_name}: Validating {VARIABLE_NAMING_CONVENTION_OPTION_NAME}...",
+                            bootstyle="info")
+                        self.update_idletasks()
+                        variable_naming_convention_issues = analyze_variable_standards(root_element,
+                                                                                       validations)
+                        # --- Defensive check for NoneType ---
+                        if variable_naming_convention_issues is not None:
+                            all_issues_for_current_file.extend(variable_naming_convention_issues)
+                        else:
+                            # print(f"WARNING: {SERVER_HYGIENE_VALIDATION_OPTION_NAME} in {file_name} returned None. It should return an empty list or issues. Adding internal error issue.") # Removed print
+                            all_issues_for_current_file.append({
+                                'severity': 'ERROR',
+                                'validation_option_name': VARIABLE_NAMING_CONVENTION_OPTION_NAME,
+                                'type': 'Internal Module Error',
+                                'location': 'JMeter Script Analysis',
+                                'description': f"The '{VARIABLE_NAMING_CONVENTION_OPTION_NAME}' validation module returned None instead of a list of issues. Please check its implementation.",
+                                'thread_group': 'N/A'
+                            })
 
                 report_data = {
                     "file_path": file_path,
