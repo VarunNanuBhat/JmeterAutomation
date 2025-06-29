@@ -3,6 +3,15 @@ import re
 
 THIS_VALIDATION_OPTION_NAME = "Variable Naming Conventions"
 
+# --- Configuration for Serenity Domain Exception ---
+# IMPORTANT: Replace "your-serenity-domain.com" with the actual domain of your Serenity API.
+# Example: SERENITY_DATA_DOMAIN = "api.myserenitytool.com"
+# Use the exact domain as it appears in your JMeter HTTP Request's "Server Name or IP" field.
+SERENITY_DATA_DOMAIN = "wdprapps.serenity.com"  # Configured for Serenity domain
+
+
+# ----------------------------------------------------
+
 
 def _add_issue(issues_list, severity, issue_type, location, description, thread_group="N/A", element_name="N/A"):
     """Helper function to add a consistent issue dictionary to the list."""
@@ -50,18 +59,18 @@ def _validate_user_defined_variable_name(variable_name, udv_element_name, contai
                        container_context, udv_element_name)
 
 
-def _validate_parameterization_variable_name(variable_name, csv_element_name, container_context, issues_list):
+def _validate_parameterization_variable_name(variable_name, source_element_name, container_context, issues_list):
     """Validates the naming convention for a Parameterization Variable (p_camelCase)."""
     if not variable_name.startswith('p_'):
-        _add_issue(issues_list, 'ERROR', 'Parameterization Naming Convention', csv_element_name,
+        _add_issue(issues_list, 'ERROR', 'Parameterization Naming Convention', source_element_name,
                    f"Parameterization Variable '{variable_name}' does not start with 'p_'.",
-                   container_context, csv_element_name)
+                   container_context, source_element_name)
     else:
         camel_case_part = variable_name[2:]  # Part after 'p_'
         if not _is_camel_case(camel_case_part):
-            _add_issue(issues_list, 'ERROR', 'Parameterization Naming Convention', csv_element_name,
+            _add_issue(issues_list, 'ERROR', 'Parameterization Naming Convention', source_element_name,
                        f"Parameterization Variable '{variable_name}' does not follow camelCase after 'p_'.",
-                       container_context, csv_element_name)
+                       container_context, source_element_name)
 
 
 def _validate_correlation_variable_name(variable_name, extractor_element_name, container_context, issues_list):
@@ -93,14 +102,25 @@ def analyze_jmeter_script(root_element, enabled_validations):
         return module_issues
 
     current_thread_group_context = "Global/Unassigned"
+    # Tracks the domain of the most recently encountered HTTP Sampler
+    current_http_sampler_domain = None
 
     for element in root_element.iter():
         element_tag = element.tag
         element_name = _get_element_name(element)
 
-        # Update current thread group/context
+        # Update current thread group/context and reset sampler context for new major containers
         if element_tag in ['ThreadGroup', 'SetupThreadGroup', 'PostThreadGroup', 'TestFragment']:
             current_thread_group_context = element_name
+            current_http_sampler_domain = None  # Reset sampler domain for new major logical blocks
+
+        # Update current HTTP Sampler domain
+        if element_tag == 'HTTPSamplerProxy':
+            domain_prop = element.find("./stringProp[@name='HTTPSampler.domain']")
+            if domain_prop is not None and domain_prop.text:
+                current_http_sampler_domain = domain_prop.text.strip()
+            else:
+                current_http_sampler_domain = None  # Clear domain if not found or empty for this sampler
 
         # --- Validate User Defined Variables ---
         if element_tag == 'Arguments' and element.get('testclass') == 'Arguments':
@@ -122,42 +142,43 @@ def analyze_jmeter_script(root_element, enabled_validations):
                     _validate_parameterization_variable_name(variable_name, element_name, current_thread_group_context,
                                                              module_issues)
 
-        # --- Validate Correlated Variables (Extractors) ---
-        elif element_tag == 'JSONPostProcessor' and element.get('testclass') == 'JSONPostProcessor':
-            ref_names_prop = element.find("./stringProp[@name='JSONPostProcessor.referenceNames']")
-            if ref_names_prop is not None and ref_names_prop.text:
-                json_variables = [v.strip() for v in ref_names_prop.text.split(',') if v.strip()]
-                for variable_name in json_variables:
-                    _validate_correlation_variable_name(variable_name, element_name, current_thread_group_context, module_issues)
+        # --- Validate Variables from Extractors (Conditional p_ or c_) ---
+        extractor_ref_name_prop = None
+        is_json_post_processor = False
 
+        if element_tag == 'JSONPostProcessor' and element.get('testclass') == 'JSONPostProcessor':
+            extractor_ref_name_prop = element.find("./stringProp[@name='JSONPostProcessor.referenceNames']")
+            is_json_post_processor = True
         elif element_tag == 'RegexExtractor' and element.get('testclass') == 'RegexExtractor':
-            ref_name_prop = element.find("./stringProp[@name='RegexExtractor.refname']")
-            if ref_name_prop is not None and ref_name_prop.text:
-                variable_name = ref_name_prop.text.strip()
-                _validate_correlation_variable_name(variable_name, element_name, current_thread_group_context, module_issues)
-
+            extractor_ref_name_prop = element.find("./stringProp[@name='RegexExtractor.refname']")
         elif element_tag == 'XPathExtractor' and element.get('testclass') == 'XPathExtractor':
-            ref_name_prop = element.find("./stringProp[@name='XPathExtractor.refname']")
-            if ref_name_prop is not None and ref_name_prop.text:
-                variable_name = ref_name_prop.text.strip()
-                _validate_correlation_variable_name(variable_name, element_name, current_thread_group_context, module_issues)
-
+            extractor_ref_name_prop = element.find("./stringProp[@name='XPathExtractor.refname']")
         elif element_tag == 'BoundaryExtractor' and element.get('testclass') == 'BoundaryExtractor':
-            ref_name_prop = element.find("./stringProp[@name='BoundaryExtractor.refname']")
-            if ref_name_prop is not None and ref_name_prop.text:
-                variable_name = ref_name_prop.text.strip()
-                _validate_correlation_variable_name(variable_name, element_name, current_thread_group_context, module_issues)
-
+            extractor_ref_name_prop = element.find("./stringProp[@name='BoundaryExtractor.refname']")
         elif element_tag == 'CssSelectorExtractor' and element.get('testclass') == 'CssSelectorExtractor':
-            ref_name_prop = element.find("./stringProp[@name='CssSelectorExtractor.refname']")
-            if ref_name_prop is not None and ref_name_prop.text:
-                variable_name = ref_name_prop.text.strip()
-                _validate_correlation_variable_name(variable_name, element_name, current_thread_group_context, module_issues)
-
+            extractor_ref_name_prop = element.find("./stringProp[@name='CssSelectorExtractor.refname']")
         elif element_tag == 'JMSPathExtractor' and element.get('testclass') == 'JMSPathExtractor':
-            ref_name_prop = element.find("./stringProp[@name='JMESPathExtractor.referenceName']")
-            if ref_name_prop is not None and ref_name_prop.text:
-                variable_name = ref_name_prop.text.strip()
-                _validate_correlation_variable_name(variable_name, element_name, current_thread_group_context, module_issues)
+            extractor_ref_name_prop = element.find("./stringProp[@name='JMESPathExtractor.referenceName']")
+
+        if extractor_ref_name_prop is not None and extractor_ref_name_prop.text:
+            variable_names_to_check = []
+            if is_json_post_processor:
+                variable_names_to_check = [v.strip() for v in extractor_ref_name_prop.text.split(',') if v.strip()]
+            else:
+                variable_names_to_check.append(extractor_ref_name_prop.text.strip())
+
+            # Determine if this extractor is under a "Serenity" data retrieval request
+            is_serenity_extractor_source = False
+            # Check if the current_http_sampler_domain exists and matches the SERENITY_DATA_DOMAIN
+            if current_http_sampler_domain and current_http_sampler_domain == SERENITY_DATA_DOMAIN:
+                is_serenity_extractor_source = True
+
+            for variable_name in variable_names_to_check:
+                if is_serenity_extractor_source:
+                    _validate_parameterization_variable_name(variable_name, element_name, current_thread_group_context,
+                                                             module_issues)
+                else:
+                    _validate_correlation_variable_name(variable_name, element_name, current_thread_group_context,
+                                                        module_issues)
 
     return module_issues

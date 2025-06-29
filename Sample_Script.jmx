@@ -1662,12 +1662,21 @@
               <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND</stringProp>
             </JSONPostProcessor>
             <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="REGEXP_c_user_ID" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">c_user_ID</stringProp>
+              <stringProp name="RegexExtractor.regex">$.data.ID</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">NOT_FOUND</stringProp>
+              <stringProp name="RegexExtractor.match_number">0</stringProp>
+            </RegexExtractor>
+            <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="KPI_GET_sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js" enabled="false">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
-            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.domain">wdprapps.serenity.com</stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -1691,13 +1700,36 @@
               <stringProp name="ConstantTimer.delay">7.2</stringProp>
             </UniformRandomTimer>
             <hashTree/>
-            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="REGEXP_c_user_ID" enabled="true">
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON_p_username" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">p_username</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$..username</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">Not_found</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="REGEXP_p_password" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname">c_user_ID</stringProp>
-              <stringProp name="RegexExtractor.regex">$.data.ID</stringProp>
+              <stringProp name="RegexExtractor.refname">p_password</stringProp>
+              <stringProp name="RegexExtractor.regex">password:(.*?)</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">NOT_FOUND</stringProp>
-              <stringProp name="RegexExtractor.match_number">0</stringProp>
+              <stringProp name="RegexExtractor.default">Not_found</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON_c_userId" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">c_userID</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$..UserID</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">Not_found</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="REGEXP_c_token" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">c_token</stringProp>
+              <stringProp name="RegexExtractor.regex">token:(.*?)</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">Not_Found</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
           </hashTree>
