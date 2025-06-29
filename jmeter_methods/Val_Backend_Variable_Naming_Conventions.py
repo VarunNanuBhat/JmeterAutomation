@@ -4,10 +4,8 @@ import re
 THIS_VALIDATION_OPTION_NAME = "Variable Naming Conventions"
 
 # --- Configuration for Serenity Domain Exception ---
-# IMPORTANT: Replace "your-serenity-domain.com" with the actual domain of your Serenity API.
-# Example: SERENITY_DATA_DOMAIN = "api.myserenitytool.com"
-# Use the exact domain as it appears in your JMeter HTTP Request's "Server Name or IP" field.
-SERENITY_DATA_DOMAIN = "wdprapps.serenity.com"  # Configured for Serenity domain
+# The exact domain of your Serenity API.
+SERENITY_DATA_DOMAIN = "wdprapps.serenity.com"
 
 
 # ----------------------------------------------------
@@ -43,6 +41,29 @@ def _is_camel_case(s):
 def _get_element_name(element):
     """Helper to safely get the 'testname' attribute of an element."""
     return element.get('testname', 'Unnamed Element')
+
+
+def _resolve_udv_value(variable_name, root_element):
+    """
+    Attempts to find the literal value of a User Defined Variable (UDV)
+    by searching through Arguments elements in the JMX.
+
+    IMPORTANT CAVEAT: This is a simplistic lookup for static values only.
+    It does NOT fully replicate JMeter's complex variable scoping rules
+    (e.g., Test Plan vs. Thread Group scope). It will find the first literal
+    definition encountered. It CANNOT resolve variables set by JMeter functions
+    (__P, __V, etc.), dynamic scripting elements (JSR223), or other extractors.
+    """
+    for element in root_element.iter('Arguments'):
+        if element.get('testclass') == 'Arguments':
+            args_prop = element.find("./collectionProp[@name='Arguments.arguments']")
+            if args_prop is not None:
+                for arg_element in args_prop.findall("./elementProp[@elementType='Argument']"):
+                    if arg_element.get('name') == variable_name:
+                        value_prop = arg_element.find("./stringProp[@name='Argument.value']")
+                        if value_prop is not None and value_prop.text:
+                            return value_prop.text.strip()
+    return None
 
 
 def _validate_user_defined_variable_name(variable_name, udv_element_name, container_context, issues_list):
@@ -102,8 +123,8 @@ def analyze_jmeter_script(root_element, enabled_validations):
         return module_issues
 
     current_thread_group_context = "Global/Unassigned"
-    # Tracks the domain of the most recently encountered HTTP Sampler
-    current_http_sampler_domain = None
+    # Flag to indicate if the current HTTP Sampler's domain (literal or via UDV) is a Serenity source
+    current_http_sampler_is_serenity_source = False
 
     for element in root_element.iter():
         element_tag = element.tag
@@ -112,15 +133,32 @@ def analyze_jmeter_script(root_element, enabled_validations):
         # Update current thread group/context and reset sampler context for new major containers
         if element_tag in ['ThreadGroup', 'SetupThreadGroup', 'PostThreadGroup', 'TestFragment']:
             current_thread_group_context = element_name
-            current_http_sampler_domain = None  # Reset sampler domain for new major logical blocks
+            current_http_sampler_is_serenity_source = False  # Reset flag for new logical blocks
 
-        # Update current HTTP Sampler domain
+        # Determine if the current HTTP Sampler is a Serenity data source
         if element_tag == 'HTTPSamplerProxy':
+            current_http_sampler_is_serenity_source = False  # Reset flag for new sampler
             domain_prop = element.find("./stringProp[@name='HTTPSampler.domain']")
             if domain_prop is not None and domain_prop.text:
-                current_http_sampler_domain = domain_prop.text.strip()
-            else:
-                current_http_sampler_domain = None  # Clear domain if not found or empty for this sampler
+                domain_value = domain_prop.text.strip()
+
+                # 1. Check for direct domain match
+                if domain_value == SERENITY_DATA_DOMAIN:
+                    current_http_sampler_is_serenity_source = True
+
+                # 2. Check if it's a variable reference and attempt to resolve its value
+                else:
+                    # Check if it's a variable reference like ${variableName}
+                    match_var_syntax = re.fullmatch(r'\$\{(\w+)\}', domain_value)
+                    if match_var_syntax:
+                        variable_name_in_domain = match_var_syntax.group(1)
+                        # Attempt to resolve the variable's value from UDVs
+                        resolved_domain = _resolve_udv_value(variable_name_in_domain, root_element)
+
+                        # If the value is resolved and matches the Serenity domain
+                        if resolved_domain and resolved_domain == SERENITY_DATA_DOMAIN:
+                            current_http_sampler_is_serenity_source = True
+            # else: current_http_sampler_is_serenity_source remains False if no domain or empty
 
         # --- Validate User Defined Variables ---
         if element_tag == 'Arguments' and element.get('testclass') == 'Arguments':
@@ -167,14 +205,9 @@ def analyze_jmeter_script(root_element, enabled_validations):
             else:
                 variable_names_to_check.append(extractor_ref_name_prop.text.strip())
 
-            # Determine if this extractor is under a "Serenity" data retrieval request
-            is_serenity_extractor_source = False
-            # Check if the current_http_sampler_domain exists and matches the SERENITY_DATA_DOMAIN
-            if current_http_sampler_domain and current_http_sampler_domain == SERENITY_DATA_DOMAIN:
-                is_serenity_extractor_source = True
-
+            # Apply validation based on whether the current sampler is a Serenity data source
             for variable_name in variable_names_to_check:
-                if is_serenity_extractor_source:
+                if current_http_sampler_is_serenity_source:
                     _validate_parameterization_variable_name(variable_name, element_name, current_thread_group_context,
                                                              module_issues)
                 else:

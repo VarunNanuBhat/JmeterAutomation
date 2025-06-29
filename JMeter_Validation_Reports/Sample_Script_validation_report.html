@@ -150,11 +150,11 @@
 
         <div class="header-info">
             <p><strong>JMX File:</strong> Sample_Script.jmx</p>
-            <p><strong>Generated On:</strong> 2025-06-29 13:23:27</p>
+            <p><strong>Generated On:</strong> 2025-06-29 14:00:01</p>
         </div>
 
         <div class="summary-box">
-            <p><strong>Total Issues Found:</strong> 89</p>
+            <p><strong>Total Issues Found:</strong> 96</p>
             <p><strong>Validations Performed:</strong></p>
             
             <ul class="validations">
@@ -190,7 +190,7 @@
                     <li class="has-issues">
                         <strong>Server Name/Domain Hygiene:</strong>
                         
-                            <span class="issue-count">31 Issue(s)</span>
+                            <span class="issue-count">29 Issue(s)</span>
                         
                     </li>
                 
@@ -198,7 +198,7 @@
                     <li class="has-issues">
                         <strong>Extractor Variable Naming Standards:</strong>
                         
-                            <span class="issue-count">24 Issue(s)</span>
+                            <span class="issue-count">28 Issue(s)</span>
                         
                     </li>
                 
@@ -206,7 +206,7 @@
                     <li class="has-issues">
                         <strong>Variable Naming Conventions:</strong>
                         
-                            <span class="issue-count">20 Issue(s)</span>
+                            <span class="issue-count">25 Issue(s)</span>
                         
                     </li>
                 
@@ -408,7 +408,7 @@
                 </div> 
                 <div class="validation-category-section">
                     
-                    <h2>Server Name/Domain Hygiene: 31 Issue(s)</h2>
+                    <h2>Server Name/Domain Hygiene: 29 Issue(s)</h2>
 
                     
                         
@@ -523,20 +523,6 @@
                                         <td>Hardcoded Server Hostname</td>
                                         <td>HTTP Request 'KPI_GET_sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'</td>
                                         <td>Server Name/IP 'wdprapps.serenity.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-WARNING">
-                                        <td>WARNING</td>
-                                        <td>Hardcoded Server Hostname</td>
-                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj'</td>
-                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-WARNING">
-                                        <td>WARNING</td>
-                                        <td>Hardcoded Server Hostname</td>
-                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg'</td>
-                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
@@ -739,7 +725,7 @@
                 </div> 
                 <div class="validation-category-section">
                     
-                    <h2>Extractor Variable Naming Standards: 24 Issue(s)</h2>
+                    <h2>Extractor Variable Naming Standards: 28 Issue(s)</h2>
 
                     
                         
@@ -939,6 +925,34 @@
                                         <td>Extractor 'JSON_c_userId' should contain its exact variable name 'c_userID'.</td>
                                     </tr>
                                     
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>JMeter Variable Naming</td>
+                                        <td>JSON_p_sessionname</td>
+                                        <td>Variable name 'p_sessionname' does not start with 'c_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>JMeter Variable Naming</td>
+                                        <td>REGEXP_p_sessionPassword</td>
+                                        <td>Variable name 'p_sessionPassword' does not start with 'c_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>JMeter Variable Naming</td>
+                                        <td>JSON_p_session</td>
+                                        <td>Variable name 'p_session' does not start with 'c_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>JMeter Variable Naming</td>
+                                        <td>REGEXP_p_sessionExpiry</td>
+                                        <td>Variable name 'p_sessionExpiry' does not start with 'c_'.</td>
+                                    </tr>
+                                    
                                 </tbody>
                             </table>
                         
@@ -946,7 +960,7 @@
                 </div> 
                 <div class="validation-category-section">
                     
-                    <h2>Variable Naming Conventions: 20 Issue(s)</h2>
+                    <h2>Variable Naming Conventions: 25 Issue(s)</h2>
 
                     
                         
@@ -1051,6 +1065,13 @@
                                     
                                     <tr class="issue-severity-ERROR">
                                         <td>ERROR</td>
+                                        <td>UDV Naming Convention</td>
+                                        <td>User Defined Variables 2</td>
+                                        <td>User Defined Variable 'baseURL' does not start with 'u_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
                                         <td>Parameterization Naming Convention</td>
                                         <td>CSV Data Set Config</td>
                                         <td>Parameterization Variable 'password' does not start with 'p_'.</td>
@@ -1131,6 +1152,34 @@
                                         <td>Parameterization Naming Convention</td>
                                         <td>REGEXP_c_token</td>
                                         <td>Parameterization Variable 'c_token' does not start with 'p_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Parameterization Naming Convention</td>
+                                        <td>JSON_c_sessionId</td>
+                                        <td>Parameterization Variable 'c_sessionId' does not start with 'p_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Parameterization Naming Convention</td>
+                                        <td>REGEXP_c_sessionToken</td>
+                                        <td>Parameterization Variable 'c_sessionToken' does not start with 'p_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Correlation Naming Convention</td>
+                                        <td>JSON_p_session</td>
+                                        <td>Correlated Variable 'p_session' does not start with 'c_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Correlation Naming Convention</td>
+                                        <td>REGEXP_p_sessionExpiry</td>
+                                        <td>Correlated Variable 'p_sessionExpiry' does not start with 'c_'.</td>
                                     </tr>
                                     
                                 </tbody>
