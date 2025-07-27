@@ -28,6 +28,10 @@ from jmeter_methods.Val_Backend_Extractor_Variable_Standards import \
 from jmeter_methods.Val_Backend_Variable_Naming_Conventions import analyze_jmeter_script as analyze_variable_standards, \
     THIS_VALIDATION_OPTION_NAME as VARIABLE_NAMING_CONVENTION_OPTION_NAME
 
+# Import core validation logic for Hard coded value detection
+from jmeter_methods.Val_Hardcoded_Value_Detection import analyze_jmeter_script as analyze_hardcoded_value_detection, \
+    THIS_VALIDATION_OPTION_NAME as HARDCODED_VALUE_DETECTION_OPTION_NAME
+
 # Import report generation functions
 from Report.report_generator import generate_html_report
 
@@ -37,7 +41,8 @@ ALL_VALIDATION_OPTIONS = [
     KPI_VALIDATION_OPTION_NAME,  # "HTTP Request Naming (KPI_method_urlPath)"
     SERVER_HYGIENE_VALIDATION_OPTION_NAME,  # "Server Name/Domain Hygiene"
     EXTRACTOR_STANDARDS_VALIDATION_OPTION_NAME,  # "Extractor & Variable Naming Standards" <-- ADDED THIS LINE
-    VARIABLE_NAMING_CONVENTION_OPTION_NAME  # "Variable Naming Conventions"
+    VARIABLE_NAMING_CONVENTION_OPTION_NAME,  # "Variable Naming Conventions"
+    HARDCODED_VALUE_DETECTION_OPTION_NAME   # Hard coded value detection
     # Add any future validation module names here
 ]
 
@@ -239,6 +244,29 @@ class ValidatorReportPage(ttk.Frame):
                                 'description': f"The '{VARIABLE_NAMING_CONVENTION_OPTION_NAME}' validation module returned None instead of a list of issues. Please check its implementation.",
                                 'thread_group': 'N/A'
                             })
+
+                    # Execute Server Name/Domain Hygiene validation if selected
+                    if HARDCODED_VALUE_DETECTION_OPTION_NAME in validations:
+                        self.status_label.config(
+                            text=f"Processing {file_name}: Validating {HARDCODED_VALUE_DETECTION_OPTION_NAME}...",
+                            bootstyle="info")
+                        self.update_idletasks()
+                        hardcoded_value_detecion_issues = analyze_hardcoded_value_detection(root_element,
+                                                                                       validations)
+                        # --- Defensive check for NoneType ---
+                        if hardcoded_value_detecion_issues is not None:
+                            all_issues_for_current_file.extend(hardcoded_value_detecion_issues)
+                        else:
+                            # print(f"WARNING: {SERVER_HYGIENE_VALIDATION_OPTION_NAME} in {file_name} returned None. It should return an empty list or issues. Adding internal error issue.") # Removed print
+                            all_issues_for_current_file.append({
+                                'severity': 'ERROR',
+                                'validation_option_name': HARDCODED_VALUE_DETECTION_OPTION_NAME,
+                                'type': 'Internal Module Error',
+                                'location': 'JMeter Script Analysis',
+                                'description': f"The '{HARDCODED_VALUE_DETECTION_OPTION_NAME}' validation module returned None instead of a list of issues. Please check its implementation.",
+                                'thread_group': 'N/A'
+                            })
+
 
                 report_data = {
                     "file_path": file_path,
