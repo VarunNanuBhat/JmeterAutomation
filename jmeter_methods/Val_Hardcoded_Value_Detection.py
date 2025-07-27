@@ -196,20 +196,14 @@ def analyze_jmeter_script(root_element, enabled_validations):
     """
     module_issues = []
 
-    print(f"DEBUG: Starting validation for '{THIS_VALIDATION_OPTION_NAME}'.")
-
     if THIS_VALIDATION_OPTION_NAME not in enabled_validations:
-        print(f"DEBUG: Validation '{THIS_VALIDATION_OPTION_NAME}' is not enabled. Skipping.")
         return module_issues
-
-    print(f"DEBUG: Validation '{THIS_VALIDATION_OPTION_NAME}' is enabled.")
 
     current_thread_group_context = "Global/Unassigned"
 
     for element in root_element.iter():
         element_tag = element.tag
         element_name = _get_element_name(element)
-        print(f"DEBUG: Checking element '{element_tag}' with name '{element_name}'")
 
         # Update current thread group/context
         if element_tag in ['ThreadGroup', 'SetupThreadGroup', 'PostThreadGroup', 'TestFragment']:
