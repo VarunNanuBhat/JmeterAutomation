@@ -21,7 +21,7 @@ class ValidatorOptionsPage(ttk.Frame):
             "Server Name/Domain Hygiene": {"var": ttk.BooleanVar(value=True), "category": "Network"},
             "Extractor Variable Naming Standards": {"var": ttk.BooleanVar(value=True), "category": "Network"},
             "Variable Naming Conventions": {"var": ttk.BooleanVar(value=True), "category": "Network"},
-            "Server Name/Domain Hygiene3": {"var": ttk.BooleanVar(value=True), "category": "Network"},
+            "Hardcoded Value Detection": {"var": ttk.BooleanVar(value=True), "category": "Network"},
         }
 
     def _create_widgets(self):
