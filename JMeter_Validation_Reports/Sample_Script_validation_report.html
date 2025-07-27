@@ -150,11 +150,11 @@
 
         <div class="header-info">
             <p><strong>JMX File:</strong> Sample_Script.jmx</p>
-            <p><strong>Generated On:</strong> 2025-06-29 14:00:01</p>
+            <p><strong>Generated On:</strong> 2025-07-27 12:04:47</p>
         </div>
 
         <div class="summary-box">
-            <p><strong>Total Issues Found:</strong> 96</p>
+            <p><strong>Total Issues Found:</strong> 236</p>
             <p><strong>Validations Performed:</strong></p>
             
             <ul class="validations">
@@ -167,7 +167,7 @@
                 
                 <li>Variable Naming Conventions</li>
                 
-                <li>Server Name/Domain Hygiene3</li>
+                <li>Hardcoded Value Detection</li>
                 
             </ul>
             
@@ -190,7 +190,7 @@
                     <li class="has-issues">
                         <strong>Server Name/Domain Hygiene:</strong>
                         
-                            <span class="issue-count">29 Issue(s)</span>
+                            <span class="issue-count">27 Issue(s)</span>
                         
                     </li>
                 
@@ -211,10 +211,10 @@
                     </li>
                 
                     
-                    <li class="no-issues-summary">
-                        <strong>Server Name/Domain Hygiene3:</strong>
+                    <li class="has-issues">
+                        <strong>Hardcoded Value Detection:</strong>
                         
-                            <span class="issue-count-zero">No issues found</span>
+                            <span class="issue-count">142 Issue(s)</span>
                         
                     </li>
                 
@@ -408,7 +408,7 @@
                 </div> 
                 <div class="validation-category-section">
                     
-                    <h2>Server Name/Domain Hygiene: 29 Issue(s)</h2>
+                    <h2>Server Name/Domain Hygiene: 27 Issue(s)</h2>
 
                     
                         
@@ -523,20 +523,6 @@
                                         <td>Hardcoded Server Hostname</td>
                                         <td>HTTP Request 'KPI_GET_sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'</td>
                                         <td>Server Name/IP 'wdprapps.serenity.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-WARNING">
-                                        <td>WARNING</td>
-                                        <td>Hardcoded Server Hostname</td>
-                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj'</td>
-                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-WARNING">
-                                        <td>WARNING</td>
-                                        <td>Hardcoded Server Hostname</td>
-                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg'</td>
-                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
@@ -1189,12 +1175,1065 @@
                 </div> 
                 <div class="validation-category-section">
                     
-                    <h2>Server Name/Domain Hygiene3: 0 Issue(s)</h2>
+                    <h2>Hardcoded Value Detection: 142 Issue(s)</h2>
 
                     
-                        <div class="no-issues">
-                            <p>🎉 No issues found for this JMeter script w.r.t. Server Name/Domain Hygiene3. Well done!</p>
-                        </div>
+                        
+                        
+                            <h3>Thread Group / Test Fragment: <em>Thread Group 1</em></h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Type</th>
+                                        <th>Location</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '117.60000000000001' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '235.20000000000002' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '3.6' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '7.2' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '6.800000000000001' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '13.600000000000001' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '395.20000000000005' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '790.4000000000001' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '395.20000000000005' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '790.4000000000001' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Date (Correlation)</td>
+                                        <td>KPI_GETsites/default/files/2020-09/content-rebates.svg</td>
+                                        <td>The value 'sites/default/files/2020-09/content-rebates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '8.8' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '17.6' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Date (Correlation)</td>
+                                        <td>KPI_GET_sites/default/files/2020-09/content-compare-rates.svg?abc=something</td>
+                                        <td>The value 'sites/default/files/2020-09/content-compare-rates.svg?abc=something' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '6.4' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '12.8' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '0.4' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '0.8' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '395.20000000000005' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '790.4000000000001' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '8.8' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '17.6' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded String</td>
+                                        <td>KPI_GET_sites/default/files/<date>/content-rebates.svg</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '395.20000000000005' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '790.4000000000001' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded String</td>
+                                        <td>KPI_GET_sites/default/files/2020-09/content-rebates.svg</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Date (Correlation)</td>
+                                        <td>KPI_GET_sites/default/files/2020-09/content-rebates.svg</td>
+                                        <td>The value 'sites/default/files/2020-09/content-rebates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '8.8' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '17.6' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number (Correlation)</td>
+                                        <td>KPI_GET_sites/default/files/2020-09/content-compare-rates.svg</td>
+                                        <td>The value '192.168.1.1' in 'HTTPSampler.domain' contains a hardcoded number. This is a potential correlation value and should be a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Date (Correlation)</td>
+                                        <td>KPI_GET_sites/default/files/2020-09/content-compare-rates.svg</td>
+                                        <td>The value 'sites/default/files/2020-09/content-compare-rates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '6.4' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '12.8' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Date (Correlation)</td>
+                                        <td>KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg</td>
+                                        <td>The value 'sites/default/files/2020-09/content-energy-advisor.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '0.4' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '0.8' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Date (Correlation)</td>
+                                        <td>KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg</td>
+                                        <td>The value 'sites/default/files/2020-09/content-energy-advisor.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '395.20000000000005' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '790.4000000000001' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded String</td>
+                                        <td>KPI_GET_sites/default/files/2020-09/content-rebates.svg</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Date (Correlation)</td>
+                                        <td>KPI_GET_sites/default/files/2020-09/content-rebates.svg</td>
+                                        <td>The value 'sites/default/files/2020-09/content-rebates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '8.8' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '17.6' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Loop Count</td>
+                                        <td>TXN_06_sdfg</td>
+                                        <td>Fixed loop count '1' found. Consider using a variable for flexibility.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Date (Correlation)</td>
+                                        <td>KPI_GET_sites/default/files/2020-09/content-rebates.svg</td>
+                                        <td>The value 'sites/default/files/2020-09/content-rebates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '8.8' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '17.6' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h3>Thread Group / Test Fragment: <em>Thread Group</em></h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Type</th>
+                                        <th>Location</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded String</td>
+                                        <td>https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '395.20000000000005' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '790.4000000000001' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Date (Correlation)</td>
+                                        <td>KPI_GET_sites/default/files/2020-09/content-rebates.svg</td>
+                                        <td>The value 'sites/default/files/2020-09/content-rebates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '8.8' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '17.6' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '395.20000000000005' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '790.4000000000001' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Date (Correlation)</td>
+                                        <td>KPI_GET_sites/default/files/2020-09/content-rebates.svg</td>
+                                        <td>The value 'sites/default/files/2020-09/content-rebates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '8.8' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '17.6' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Loop Count</td>
+                                        <td>TXN_04_Extractors</td>
+                                        <td>Fixed loop count '1' found. Consider using a variable for flexibility.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded String</td>
+                                        <td>https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '395.20000000000005' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '790.4000000000001' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded String</td>
+                                        <td>https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Date (Correlation)</td>
+                                        <td>https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg</td>
+                                        <td>The value 'sites/default/files/2020-09/content-rebates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '8.8' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '17.6' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h3>Thread Group / Test Fragment: <em>setUp Thread Group</em></h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Type</th>
+                                        <th>Location</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '117.60000000000001' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '235.20000000000002' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded String</td>
+                                        <td>KPI_GET_sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js</td>
+                                        <td>The value 'wdprapps.serenity.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '3.6' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '7.2' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '395.20000000000005' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '790.4000000000001' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Date (Correlation)</td>
+                                        <td>KPI_GET_sites/default/files/2020-09/content-rebates.svg</td>
+                                        <td>The value 'sites/default/files/2020-09/content-rebates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '8.8' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '17.6' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Loop Count</td>
+                                        <td>Loop Controller</td>
+                                        <td>Fixed loop count '10' found. Consider using a variable for flexibility.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Date (Correlation)</td>
+                                        <td>KPI_GET_sites/default/files/2020-09/content-rebates.svg</td>
+                                        <td>The value 'sites/default/files/2020-09/123/content-rebates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Hardcoded Credential</td>
+                                        <td>KPI_GET_sites/default/files/2020-09/content-rebates.svg</td>
+                                        <td>A hardcoded sensitive key or value for '"password"' was found in the raw body data.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Hardcoded Credential/Token</td>
+                                        <td>HTTP Header manager</td>
+                                        <td>Hardcoded value found for sensitive header 'Authorization '.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Hardcoded Credential/Token</td>
+                                        <td>HTTP Header manager</td>
+                                        <td>Hardcoded value found for sensitive header 'X-API-Key'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '395.20000000000005' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '790.4000000000001' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Constant Timer</td>
+                                        <td>The delay '300' in ConstantTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Date (Correlation)</td>
+                                        <td>KPI_GET_sites/default/files/2020-09/content-rebates.svg</td>
+                                        <td>The value 'sites/default/files/2020-09/content-rebates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number (Correlation)</td>
+                                        <td>KPI_GET_sites/default/files/2020-09/content-rebates.svg</td>
+                                        <td>A hardcoded number '12345' was found in the raw body data. This is a potential correlation value and should be a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '8.8' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '17.6' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded String</td>
+                                        <td>https://test3.dms.sce.com/sites/default/files/2020-09/content-compare-rates.svg</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Date (Correlation)</td>
+                                        <td>https://test3.dms.sce.com/sites/default/files/2020-09/content-compare-rates.svg</td>
+                                        <td>The value 'sites/default/files/2020-09/content-compare-rates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '6.4' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '12.8' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded String</td>
+                                        <td>https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '117.60000000000001' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '235.20000000000002' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded String</td>
+                                        <td>https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '3.6' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '7.2' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded String</td>
+                                        <td>https://test3.dms.sce.com/sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '6.800000000000001' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '13.600000000000001' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded String</td>
+                                        <td>https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '117.60000000000001' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '235.20000000000002' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded String</td>
+                                        <td>https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '3.6' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '7.2' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded String</td>
+                                        <td>https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '117.60000000000001' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '235.20000000000002' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded String</td>
+                                        <td>https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '3.6' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '7.2' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded String</td>
+                                        <td>https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '117.60000000000001' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '235.20000000000002' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded String</td>
+                                        <td>https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '3.6' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '7.2' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded String</td>
+                                        <td>https://test3.dms.sce.com/sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '6.800000000000001' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '13.600000000000001' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h3>Thread Group / Test Fragment: <em>tearDown Thread Group</em></h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Type</th>
+                                        <th>Location</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded String</td>
+                                        <td>https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '117.60000000000001' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '235.20000000000002' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded String</td>
+                                        <td>https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '3.6' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '7.2' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded String</td>
+                                        <td>https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '395.20000000000005' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '790.4000000000001' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded String</td>
+                                        <td>https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Date (Correlation)</td>
+                                        <td>https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg</td>
+                                        <td>The value 'sites/default/files/2020-09/content-rebates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '8.8' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '17.6' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded String</td>
+                                        <td>https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '395.20000000000005' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '790.4000000000001' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded String</td>
+                                        <td>https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Date (Correlation)</td>
+                                        <td>https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg</td>
+                                        <td>The value 'sites/default/files/2020-09/content-rebates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The range '8.8' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded Number</td>
+                                        <td>Uniform Random Timer</td>
+                                        <td>The delay '17.6' in UniformRandomTimer is hardcoded. Consider using a variable.</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
                     
                 </div> 
         
