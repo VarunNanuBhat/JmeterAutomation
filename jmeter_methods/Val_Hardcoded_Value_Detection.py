@@ -184,8 +184,20 @@ def _find_similar_correlated_value(root_element, issue, parent_map):
     hardcoded_value = issue.get('hardcoded_value')
     hardcoded_segment = issue.get('hardcoded_segment')
 
-    if not hardcoded_value or not hardcoded_segment or not issue.get('key_name'):
+    if not hardcoded_value or not issue.get('key_name'):
         return None
+
+    # URL domain correlation check
+    if issue['key_name'] == 'URL_domain':
+        issue_path = issue['element_obj'].findtext("./stringProp[@name='HTTPSampler.path']")
+        for element in root_element.iter('HTTPSamplerProxy'):
+            element_name = _get_element_name(element)
+            url_domain = element.findtext("./stringProp[@name='HTTPSampler.domain']")
+            url_path = element.findtext("./stringProp[@name='HTTPSampler.path']")
+
+            # Check for a variable and a similar path
+            if _is_jmeter_variable(url_domain) and url_path == issue_path:
+                return f"A correlated URL domain ('{url_domain}') was found in element '{element_name}' with a similar URL path."
 
     # URL path correlation check
     if issue['key_name'] == 'URL_path':
@@ -222,17 +234,17 @@ def _find_similar_correlated_value(root_element, issue, parent_map):
         if element.tag == 'HTTPSamplerProxy':
             args_prop = element.find("./elementProp[@name='HTTPsampler.Arguments']")
             if args_prop is not None:
-                for arg_entry in args_prop.findall("./collectionProp[@name='Arguments.arguments']/elementProp"):
-                    param_name = arg_entry.findtext("./stringProp[@name='Argument.name']")
-                    param_value = arg_entry.findtext("./stringProp[@name='Argument.value']")
-                    if param_name == issue['key_name'] and _is_jmeter_variable(param_value):
-                        return f"A correlated value ('{param_value}') was found for parameter '{param_name}' in element '{element_name}'{url_message}."
-
                 if element.findtext("./boolProp[@name='HTTPSampler.postBodyRaw']") == 'true':
                     raw_body = args_prop.findtext("./collectionProp/elementProp/stringProp[@name='Argument.value']")
                     if raw_body and f'"{issue["key_name"]}"' in raw_body and re.search(
                             fr'"{re.escape(issue["key_name"])}"\s*:\s*(?:".*?\${{.*?\}}.*?"|\${{.*?\}})', raw_body):
                         return f"A correlated value was found for key '{issue['key_name']}' in a raw body of element '{element_name}'{url_message}."
+                else:
+                    for arg_entry in args_prop.findall("./collectionProp[@name='Arguments.arguments']/elementProp"):
+                        param_name = arg_entry.findtext("./stringProp[@name='Argument.name']")
+                        param_value = arg_entry.findtext("./stringProp[@name='Argument.value']")
+                        if param_name == issue['key_name'] and _is_jmeter_variable(param_value):
+                            return f"A correlated value ('{param_value}') was found for parameter '{param_name}' in element '{element_name}'{url_message}."
     return None
 
 
