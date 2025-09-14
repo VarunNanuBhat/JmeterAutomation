@@ -150,11 +150,11 @@
 
         <div class="header-info">
             <p><strong>JMX File:</strong> Sample_Script.jmx</p>
-            <p><strong>Generated On:</strong> 2025-09-14 10:40:59</p>
+            <p><strong>Generated On:</strong> 2025-09-14 12:35:54</p>
         </div>
 
         <div class="summary-box">
-            <p><strong>Total Issues Found:</strong> 146</p>
+            <p><strong>Total Issues Found:</strong> 148</p>
             <p><strong>Validations Performed:</strong></p>
             
             <ul class="validations">
@@ -190,7 +190,7 @@
                     <li class="has-issues">
                         <strong>Server Name/Domain Hygiene:</strong>
                         
-                            <span class="issue-count">27 Issue(s)</span>
+                            <span class="issue-count">26 Issue(s)</span>
                         
                     </li>
                 
@@ -214,7 +214,7 @@
                     <li class="has-issues">
                         <strong>Hardcoded Value Detection:</strong>
                         
-                            <span class="issue-count">52 Issue(s)</span>
+                            <span class="issue-count">55 Issue(s)</span>
                         
                     </li>
                 
@@ -408,7 +408,7 @@
                 </div> 
                 <div class="validation-category-section">
                     
-                    <h2>Server Name/Domain Hygiene: 27 Issue(s)</h2>
+                    <h2>Server Name/Domain Hygiene: 26 Issue(s)</h2>
 
                     
                         
@@ -546,13 +546,6 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    
-                                    <tr class="issue-severity-WARNING">
-                                        <td>WARNING</td>
-                                        <td>Hardcoded Server Hostname</td>
-                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'</td>
-                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
-                                    </tr>
                                     
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
@@ -1175,7 +1168,7 @@
                 </div> 
                 <div class="validation-category-section">
                     
-                    <h2>Hardcoded Value Detection: 52 Issue(s)</h2>
+                    <h2>Hardcoded Value Detection: 55 Issue(s)</h2>
 
                     
                         
@@ -1196,77 +1189,87 @@
                                         <td>WARNING</td>
                                         <td>Hardcoded Date (Correlation)</td>
                                         <td>KPI_GETsites/default/files/2020-09/content-rebates.svg</td>
-                                        <td>The value 'sites/default/files/2020-09/content-rebates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.</td>
+                                        <td>The value 'sites/default/files/2020-09/content-rebates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
                                         <td>Hardcoded Date (Correlation)</td>
                                         <td>KPI_GET_sites/default/files/2020-09/content-compare-rates.svg?abc=something</td>
-                                        <td>The value 'sites/default/files/2020-09/content-compare-rates.svg?abc=something' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.</td>
+                                        <td>The value 'sites/default/files/2020-09/content-compare-rates.svg?abc=something' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
                                         <td>Hardcoded String</td>
                                         <td>KPI_GET_sites/default/files/<date>/content-rebates.svg</td>
-                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
                                         <td>Hardcoded String</td>
                                         <td>KPI_GET_sites/default/files/2020-09/content-rebates.svg</td>
-                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
                                         <td>Hardcoded Date (Correlation)</td>
                                         <td>KPI_GET_sites/default/files/2020-09/content-rebates.svg</td>
-                                        <td>The value 'sites/default/files/2020-09/content-rebates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.</td>
+                                        <td>The value 'sites/default/files/2020-09/content-rebates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
-                                        <td>Hardcoded Number (Correlation)</td>
-                                        <td>KPI_GET_sites/default/files/2020-09/content-compare-rates.svg</td>
-                                        <td>The value '192.168.1.1' in 'HTTPSampler.domain' contains a hardcoded number. This is a potential correlation value and should be a variable.</td>
+                                        <td>Hardcoded IP Address</td>
+                                        <td>HTTP Request 'KPI_GET_sites/default/files/2020-09/content-compare-rates.svg'</td>
+                                        <td>Server Name/IP '192.168.1.1' is a hardcoded IP address.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
                                         <td>Hardcoded Date (Correlation)</td>
                                         <td>KPI_GET_sites/default/files/2020-09/content-compare-rates.svg</td>
-                                        <td>The value 'sites/default/files/2020-09/content-compare-rates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.</td>
+                                        <td>The value 'sites/default/files/2020-09/content-compare-rates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
                                         <td>Hardcoded Date (Correlation)</td>
                                         <td>KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg</td>
-                                        <td>The value 'sites/default/files/2020-09/content-energy-advisor.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.</td>
+                                        <td>The value 'sites/default/files/2020-09/content-energy-advisor.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
                                         <td>Hardcoded Date (Correlation)</td>
                                         <td>KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg</td>
-                                        <td>The value 'sites/default/files/2020-09/content-energy-advisor.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.</td>
+                                        <td>The value 'sites/default/files/2020-09/content-energy-advisor.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
                                         <td>Hardcoded String</td>
                                         <td>KPI_GET_sites/default/files/2020-09/content-rebates.svg</td>
-                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
                                         <td>Hardcoded Date (Correlation)</td>
                                         <td>KPI_GET_sites/default/files/2020-09/content-rebates.svg</td>
-                                        <td>The value 'sites/default/files/2020-09/content-rebates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.</td>
+                                        <td>The value 'sites/default/files/2020-09/content-rebates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
@@ -1276,11 +1279,19 @@
                                         <td>Fixed loop count '1' found. Consider using a variable for flexibility.</td>
                                     </tr>
                                     
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Malformed Server Name</td>
+                                        <td>HTTP Request 'KPI_GET_sites/default/files/2020-09/content-rebates.svg'</td>
+                                        <td>Server Name/IP '${BaseURL}/dummy_content' contains path segments, query parameters, or URL fragments.</td>
+                                    </tr>
+                                    
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
                                         <td>Hardcoded Date (Correlation)</td>
                                         <td>KPI_GET_sites/default/files/2020-09/content-rebates.svg</td>
-                                        <td>The value 'sites/default/files/2020-09/content-rebates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.</td>
+                                        <td>The value 'sites/default/files/2020-09/content-rebates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                 </tbody>
@@ -1302,21 +1313,31 @@
                                         <td>WARNING</td>
                                         <td>Hardcoded String</td>
                                         <td>https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj</td>
-                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Malformed Server Name</td>
+                                        <td>HTTP Request 'KPI_GET_sites/default/files/2020-09/content-rebates.svg'</td>
+                                        <td>Server Name/IP 'test3.dms.sce.com/dummy_content' contains path segments, query parameters, or URL fragments.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
                                         <td>Hardcoded Date (Correlation)</td>
                                         <td>KPI_GET_sites/default/files/2020-09/content-rebates.svg</td>
-                                        <td>The value 'sites/default/files/2020-09/content-rebates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.</td>
+                                        <td>The value 'sites/default/files/2020-09/content-rebates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
                                         <td>Hardcoded Date (Correlation)</td>
                                         <td>KPI_GET_sites/default/files/2020-09/content-rebates.svg</td>
-                                        <td>The value 'sites/default/files/2020-09/content-rebates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.</td>
+                                        <td>The value 'sites/default/files/2020-09/content-rebates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
@@ -1330,21 +1351,24 @@
                                         <td>WARNING</td>
                                         <td>Hardcoded String</td>
                                         <td>https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj</td>
-                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
                                         <td>Hardcoded String</td>
                                         <td>https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg</td>
-                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
                                         <td>Hardcoded Date (Correlation)</td>
                                         <td>https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg</td>
-                                        <td>The value 'sites/default/files/2020-09/content-rebates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.</td>
+                                        <td>The value 'sites/default/files/2020-09/content-rebates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                 </tbody>
@@ -1366,14 +1390,16 @@
                                         <td>WARNING</td>
                                         <td>Hardcoded String</td>
                                         <td>KPI_GET_sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js</td>
-                                        <td>The value 'wdprapps.serenity.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                        <td>The value 'wdprapps.serenity.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
                                         <td>Hardcoded Date (Correlation)</td>
                                         <td>KPI_GET_sites/default/files/2020-09/content-rebates.svg</td>
-                                        <td>The value 'sites/default/files/2020-09/content-rebates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.</td>
+                                        <td>The value 'sites/default/files/2020-09/content-rebates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
@@ -1387,7 +1413,8 @@
                                         <td>WARNING</td>
                                         <td>Hardcoded Date (Correlation)</td>
                                         <td>KPI_GET_sites/default/files/2020-09/content-rebates.svg</td>
-                                        <td>The value 'sites/default/files/2020-09/123/content-rebates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.</td>
+                                        <td>The value 'sites/default/files/2020-09/123/content-rebates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-ERROR">
@@ -1409,6 +1436,13 @@
                                         <td>Hardcoded Credential/Token</td>
                                         <td>HTTP Header manager</td>
                                         <td>Hardcoded value found for sensitive header 'X-API-Key'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Hardcoded String</td>
+                                        <td>HTTP Header manager</td>
+                                        <td>The value 'sfdfh52fgkdfgnb' in 'header 'X-Request-ID'' is a hardcoded string. Consider using a variable for dynamic values.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
@@ -1436,7 +1470,8 @@
                                         <td>WARNING</td>
                                         <td>Hardcoded Date (Correlation)</td>
                                         <td>KPI_GET_sites/default/files/2020-09/content-rebates.svg</td>
-                                        <td>The value 'sites/default/files/2020-09/content-rebates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.</td>
+                                        <td>The value 'sites/default/files/2020-09/content-rebates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
@@ -1450,84 +1485,96 @@
                                         <td>WARNING</td>
                                         <td>Hardcoded String</td>
                                         <td>https://test3.dms.sce.com/sites/default/files/2020-09/content-compare-rates.svg</td>
-                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
                                         <td>Hardcoded Date (Correlation)</td>
                                         <td>https://test3.dms.sce.com/sites/default/files/2020-09/content-compare-rates.svg</td>
-                                        <td>The value 'sites/default/files/2020-09/content-compare-rates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.</td>
+                                        <td>The value 'sites/default/files/2020-09/content-compare-rates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
                                         <td>Hardcoded String</td>
-                                        <td>https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js</td>
-                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                        <td>HTTP Header manager</td>
+                                        <td>The value 'adsfegdrfh345yghng35sdvfgnh6' in 'header 'request-id'' is a hardcoded string. Consider using a variable for dynamic values.
+[Found Correlation] A correlated value ('${c_requestID}') was found in header 'request-id' of element 'HTTP Header manager'.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
                                         <td>Hardcoded String</td>
                                         <td>https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js</td>
-                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
                                         <td>Hardcoded String</td>
                                         <td>https://test3.dms.sce.com/sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js</td>
-                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
                                         <td>Hardcoded String</td>
                                         <td>https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js</td>
-                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
                                         <td>Hardcoded String</td>
                                         <td>https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js</td>
-                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
                                         <td>Hardcoded String</td>
                                         <td>https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js</td>
-                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
                                         <td>Hardcoded String</td>
                                         <td>https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js</td>
-                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
                                         <td>Hardcoded String</td>
                                         <td>https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js</td>
-                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
                                         <td>Hardcoded String</td>
                                         <td>https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js</td>
-                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
                                         <td>Hardcoded String</td>
                                         <td>https://test3.dms.sce.com/sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js</td>
-                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                 </tbody>
@@ -1549,56 +1596,64 @@
                                         <td>WARNING</td>
                                         <td>Hardcoded String</td>
                                         <td>https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js</td>
-                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
                                         <td>Hardcoded String</td>
                                         <td>https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js</td>
-                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
                                         <td>Hardcoded String</td>
                                         <td>https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj</td>
-                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
                                         <td>Hardcoded String</td>
                                         <td>https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg</td>
-                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
                                         <td>Hardcoded Date (Correlation)</td>
                                         <td>https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg</td>
-                                        <td>The value 'sites/default/files/2020-09/content-rebates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.</td>
+                                        <td>The value 'sites/default/files/2020-09/content-rebates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
                                         <td>Hardcoded String</td>
                                         <td>https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj</td>
-                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
                                         <td>Hardcoded String</td>
                                         <td>https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg</td>
-                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
+                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
                                         <td>Hardcoded Date (Correlation)</td>
                                         <td>https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg</td>
-                                        <td>The value 'sites/default/files/2020-09/content-rebates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.</td>
+                                        <td>The value 'sites/default/files/2020-09/content-rebates.svg' in 'HTTPSampler.path' contains a hardcoded date. This is a potential correlation value and should be a variable.
+[Found Correlation] A correlated URL domain ('${BaseURL}') was found in element 'KPI_GET_sites/default/files/2020-09/content-energy-advisor.svg'.</td>
                                     </tr>
                                     
                                 </tbody>

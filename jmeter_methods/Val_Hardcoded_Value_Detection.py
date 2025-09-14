@@ -46,6 +46,22 @@ EXCLUSION_LIST = {
     'en-US', 'en-GB'  # Example language headers
 }
 
+# NEW: A list of specific headers to ignore when checking for general hardcoded values.
+HEADER_EXCLUSION_LIST = {
+    'Content-Type',
+    'Accept',
+    'Accept-Encoding',
+    'Accept-Language',
+    'Cache-Control',
+    'Connection',
+    'Content-Length',
+    'Host',
+    'Origin',
+    'Referer',
+    'Upgrade-Insecure-Requests',
+    'User-Agent',
+}
+
 # --- Configuration for environment-specific hostnames (now in this module) ---
 ENVIRONMENT_HOST_PATTERNS = [
     r'^dev\.',
@@ -63,9 +79,11 @@ ENVIRONMENT_HOST_PATTERNS = [
 
 # ---------------------------------------------------
 
-
-def _add_issue(issues_list, severity, issue_type, location, description, thread_group="N/A", element_name="N/A"):
-    """Helper function to add a consistent issue dictionary to the list."""
+def _add_issue(issues_list, severity, issue_type, location, description, thread_group="N/A", element_name="N/A",
+               key_name="", hardcoded_value=""):
+    """
+    Helper function to add a consistent issue dictionary to the list, with a key_name for correlation.
+    """
     issues_list.append({
         'severity': severity,
         'validation_option_name': THIS_VALIDATION_OPTION_NAME,
@@ -73,7 +91,9 @@ def _add_issue(issues_list, severity, issue_type, location, description, thread_
         'location': location,
         'description': description,
         'thread_group': thread_group,
-        'element_name': element_name
+        'element_name': element_name,
+        'key_name': key_name,
+        'hardcoded_value': hardcoded_value
     })
 
 
@@ -84,7 +104,9 @@ def _get_element_name(element):
 
 def _is_jmeter_variable(s):
     """Checks if a string is a JMeter variable reference, e.g., "${my_variable}"."""
-    return s and s.strip().startswith('${') and s.strip().endswith('}')
+    if not isinstance(s, str):
+        return False
+    return s.strip().startswith('${') and s.strip().endswith('}')
 
 
 def _is_hardcoded(value):
@@ -121,15 +143,16 @@ def _contains_env_specific_pattern(hostname):
 
 def _get_thread_group_context(element):
     """Finds the name of the parent Thread Group or Test Fragment."""
-    ancestor = element.getparent()
-    while ancestor is not None:
+    ancestor = element
+    while ancestor is not None and ancestor.tag != 'TestPlan':
         if ancestor.tag in ['ThreadGroup', 'SetupThreadGroup', 'PostThreadGroup', 'TestFragmentController']:
             return _get_element_name(ancestor)
         ancestor = ancestor.getparent()
     return "Global/Unassigned"
 
 
-def _check_general_value(value, element_name, container_context, property_name, issues_list):
+def _check_general_value(value, element_name, container_context, property_name, issues_list, key_name="",
+                         hardcoded_value=""):
     """
     Checks a hardcoded value based on Category 2 criteria.
     - Flags dates and numbers regardless of length.
@@ -143,7 +166,7 @@ def _check_general_value(value, element_name, container_context, property_name, 
         if re.search(pattern, value):
             _add_issue(issues_list, 'WARNING', 'Hardcoded Date (Correlation)', element_name,
                        f"The value '{value}' in '{property_name}' contains a hardcoded date. This is a potential correlation value and should be a variable.",
-                       container_context, element_name)
+                       container_context, element_name, key_name, value)
             return
 
     # NEW RULE: Check for numbers regardless of length
@@ -151,14 +174,14 @@ def _check_general_value(value, element_name, container_context, property_name, 
     if re.search(HARDCODED_NUMBER_PATTERN, value):
         _add_issue(issues_list, 'WARNING', 'Hardcoded Number (Correlation)', element_name,
                    f"The value '{value}' in '{property_name}' contains a hardcoded number. This is a potential correlation value and should be a variable.",
-                   container_context, element_name)
+                   container_context, element_name, key_name, value)
         return
 
     # OLD RULE: Check for non-numeric strings based on length and pattern
     if len(value) > MIN_STRING_LENGTH and re.fullmatch(ALPHA_NUMERIC_PATTERN, value):
         _add_issue(issues_list, 'WARNING', 'Hardcoded String', element_name,
                    f"The value '{value}' in '{property_name}' is a hardcoded string. Consider using a variable for dynamic values.",
-                   container_context, element_name)
+                   container_context, element_name, key_name, value)
 
 
 def _check_raw_body_for_patterns(body_string, element_name, container_context, issues_list):
@@ -168,11 +191,10 @@ def _check_raw_body_for_patterns(body_string, element_name, container_context, i
 
     # NEW RULE: Check for sensitive JSON keys (Category 1 - ERROR)
     for sensitive_key in SENSITIVE_JSON_KEYS:
-        # We need to use re.search here to check for the key within the full body string.
         if re.search(sensitive_key, body_string):
             _add_issue(issues_list, 'ERROR', 'Hardcoded Credential', element_name,
                        f"A hardcoded sensitive key or value for '{sensitive_key}' was found in the raw body data.",
-                       container_context, element_name)
+                       container_context, element_name, sensitive_key, body_string)
             return
 
     # Check for hardcoded numbers (Category 2 - WARNING)
@@ -182,7 +204,7 @@ def _check_raw_body_for_patterns(body_string, element_name, container_context, i
         for number in unique_numbers:
             _add_issue(issues_list, 'WARNING', 'Hardcoded Number (Correlation)', element_name,
                        f"A hardcoded number '{number}' was found in the raw body data. This is a potential correlation value and should be a variable.",
-                       container_context, element_name)
+                       container_context, element_name, 'Body_Number', number)
 
     # Check for hardcoded dates (Category 2 - WARNING)
     for pattern in HARDCODED_DATE_PATTERNS:
@@ -192,7 +214,7 @@ def _check_raw_body_for_patterns(body_string, element_name, container_context, i
             for date in unique_dates:
                 _add_issue(issues_list, 'WARNING', 'Hardcoded Date (Correlation)', element_name,
                            f"A hardcoded date '{date}' was found in the raw body data. This is a potential correlation value and should be a variable.",
-                           container_context, element_name)
+                           container_context, element_name, 'Body_Date', date)
 
 
 def _check_timer_value(element, element_name, container_context, issues_list):
@@ -202,44 +224,94 @@ def _check_timer_value(element, element_name, container_context, issues_list):
         if _is_hardcoded(delay) and re.match(NUMERIC_PATTERN, delay):
             _add_issue(issues_list, 'WARNING', 'Hardcoded Number', element_name,
                        f"The delay '{delay}' in ConstantTimer is hardcoded. Consider using a variable.",
-                       container_context, element_name)
+                       container_context, element_name, 'ConstantTimer.delay', delay)
     elif element.tag == 'GaussianRandomTimer':
         offset = element.findtext("./stringProp[@name='RandomTimer.offset']")
         range_val = element.findtext("./stringProp[@name='RandomTimer.range']")
         if _is_hardcoded(offset) and re.match(NUMERIC_PATTERN, offset):
             _add_issue(issues_list, 'WARNING', 'Hardcoded Number', element_name,
                        f"The offset '{offset}' in GaussianRandomTimer is hardcoded. Consider using a variable.",
-                       container_context, element_name)
+                       container_context, element_name, 'RandomTimer.offset', offset)
         if _is_hardcoded(range_val) and re.match(NUMERIC_PATTERN, range_val):
             _add_issue(issues_list, 'WARNING', 'Hardcoded Number', element_name,
                        f"The range '{range_val}' in GaussianRandomTimer is hardcoded. Consider using a variable.",
-                       container_context, element_name)
+                       container_context, element_name, 'RandomTimer.range', range_val)
     elif element.tag == 'UniformRandomTimer':
         range_val = element.findtext("./stringProp[@name='RandomTimer.range']")
         delay = element.findtext("./stringProp[@name='ConstantTimer.delay']")
         if _is_hardcoded(range_val) and re.match(NUMERIC_PATTERN, range_val):
             _add_issue(issues_list, 'WARNING', 'Hardcoded Number', element_name,
                        f"The range '{range_val}' in UniformRandomTimer is hardcoded. Consider using a variable.",
-                       container_context, element_name)
+                       container_context, element_name, 'RandomTimer.range', range_val)
         if _is_hardcoded(delay) and re.match(NUMERIC_PATTERN, delay):
             _add_issue(issues_list, 'WARNING', 'Hardcoded Number', element_name,
                        f"The delay '{delay}' in UniformRandomTimer is hardcoded. Consider using a variable.",
-                       container_context, element_name)
+                       container_context, element_name, 'ConstantTimer.delay', delay)
+
+
+def _find_similar_correlated_value(root_element, issue):
+    """
+    Searches the entire script for a correlated (parameterized) value matching the hardcoded issue.
+    """
+    # This check is for general values that are potential correlations
+    if issue['type'] in ['Hardcoded Date (Correlation)', 'Hardcoded Number (Correlation)', 'Hardcoded String']:
+        key_name = issue.get('key_name')
+
+        # Rule 1 & 3: Payloads and Headers
+        if key_name and not key_name.startswith('URL_'):
+            for element in root_element.iter():
+                element_name = _get_element_name(element)
+                # Check for a matching header
+                if element.tag == 'HeaderManager':
+                    for header_entry in element.findall("./collectionProp[@name='HeaderManager.headers']/elementProp"):
+                        header_name = header_entry.findtext("./stringProp[@name='Header.name']")
+                        header_value = header_entry.findtext("./stringProp[@name='Header.value']")
+                        if header_name == key_name and _is_jmeter_variable(header_value):
+                            return f"A correlated value ('{header_value}') was found in header '{header_name}' of element '{element_name}'."
+
+                # Check for a matching payload argument
+                if element.tag == 'HTTPSamplerProxy':
+                    args_prop = element.find("./elementProp[@name='HTTPsampler.Arguments']")
+                    if args_prop is not None:
+                        # Check for regular parameters
+                        for arg_entry in args_prop.findall("./collectionProp[@name='Arguments.arguments']/elementProp"):
+                            param_name = arg_entry.findtext("./stringProp[@name='Argument.name']")
+                            param_value = arg_entry.findtext("./stringProp[@name='Argument.value']")
+                            if param_name == key_name and _is_jmeter_variable(param_value):
+                                return f"A correlated value ('{param_value}') was found for parameter '{param_name}' in element '{element_name}'."
+
+                        # Check for a matching key in raw JSON body
+                        if element.findtext("./boolProp[@name='HTTPSampler.postBodyRaw']") == 'true':
+                            raw_body = args_prop.findtext(
+                                "./collectionProp/elementProp/stringProp[@name='Argument.value']")
+                            # This check is more complex, we'll look for a key and a variable value nearby
+                            if f'"{key_name}"' in raw_body and re.search(fr'"{re.escape(key_name)}"\s*:\s*".*?\$',
+                                                                         raw_body):
+                                return f"A correlated value was found for key '{key_name}' in a raw body of element '{element_name}'."
+
+        # Rule 2: URLs and Query Params
+        elif key_name and key_name.startswith('URL_'):
+            # This is a simpler check, we just look for any other parameterized URLs
+            for element in root_element.iter('HTTPSamplerProxy'):
+                element_name = _get_element_name(element)
+                url_path = element.findtext("./stringProp[@name='HTTPSampler.path']")
+                url_domain = element.findtext("./stringProp[@name='HTTPSampler.domain']")
+                if _is_jmeter_variable(url_path):
+                    return f"A correlated URL path ('{url_path}') was found in element '{element_name}'."
+                if _is_jmeter_variable(url_domain):
+                    return f"A correlated URL domain ('{url_domain}') was found in element '{element_name}'."
+
+    return None
 
 
 def analyze_jmeter_script(root_element, enabled_validations):
-    """
-    Analyzes the JMeter script for hardcoded values based on a hybrid strategy.
-    Args:
-        root_element (ET.Element): The root element of the JMeter JMX XML.
-        enabled_validations (list): A list of validation option names enabled by the user.
-    Returns:
-        list: A list of dictionaries, each representing an issue found.
-    """
     module_issues = []
 
     if THIS_VALIDATION_OPTION_NAME not in enabled_validations:
         return module_issues
+
+    # --- Pass 1: Find all hardcoded issues and collect them ---
+    initial_issues = []
 
     current_thread_group_context = "Global/Unassigned"
 
@@ -252,31 +324,33 @@ def analyze_jmeter_script(root_element, enabled_validations):
             current_thread_group_context = element_name
 
         # --- Category 1: High-Confidence Hardcoded Values (ERROR) ---
-        # 1. Check AuthManager for hardcoded username/password
         if element_tag == 'AuthManager':
             for auth_entry in element.findall("./collectionProp[@name='AuthManager.auths']/elementProp"):
                 username = auth_entry.findtext("./stringProp[@name='Authorization.username']")
                 password = auth_entry.findtext("./stringProp[@name='Authorization.password']")
                 if _is_hardcoded(username):
-                    _add_issue(module_issues, 'ERROR', 'Hardcoded Credential', element_name,
+                    _add_issue(initial_issues, 'ERROR', 'Hardcoded Credential', element_name,
                                f"Hardcoded username '{username}' found in AuthManager.",
-                               current_thread_group_context, element_name)
+                               current_thread_group_context, element_name, 'username', username)
                 if _is_hardcoded(password):
-                    _add_issue(module_issues, 'ERROR', 'Hardcoded Credential', element_name,
+                    _add_issue(initial_issues, 'ERROR', 'Hardcoded Credential', element_name,
                                f"Hardcoded password found in AuthManager.",
-                               current_thread_group_context, element_name)
+                               current_thread_group_context, element_name, 'password', password)
 
-        # 2. Check HeaderManager for sensitive headers
         if element_tag == 'HeaderManager':
             for header_entry in element.findall("./collectionProp[@name='HeaderManager.headers']/elementProp"):
                 header_name = header_entry.findtext("./stringProp[@name='Header.name']")
                 header_value = header_entry.findtext("./stringProp[@name='Header.value']")
                 if header_name and header_name.strip() in SENSITIVE_HEADERS and _is_hardcoded(header_value):
-                    _add_issue(module_issues, 'ERROR', 'Hardcoded Credential/Token', element_name,
+                    _add_issue(initial_issues, 'ERROR', 'Hardcoded Credential/Token', element_name,
                                f"Hardcoded value found for sensitive header '{header_name}'.",
-                               current_thread_group_context, element_name)
+                               current_thread_group_context, element_name, header_name, header_value)
+                # NEW LOGIC: Check all other headers for hardcoded values, unless they are in the exclusion list.
+                elif header_name and header_name.strip() not in SENSITIVE_HEADERS and header_name.strip() not in HEADER_EXCLUSION_LIST:
+                    _check_general_value(header_value, element_name, current_thread_group_context,
+                                         f"header '{header_name}'", initial_issues, key_name=header_name,
+                                         hardcoded_value=header_value)
 
-        # 3. Check HTTP Sampler body for sensitive parameters
         if element_tag == 'HTTPSamplerProxy':
             args_prop = element.find("./elementProp[@name='HTTPsampler.Arguments']")
             if args_prop is not None:
@@ -284,51 +358,89 @@ def analyze_jmeter_script(root_element, enabled_validations):
                     param_name = arg_entry.findtext("./stringProp[@name='Argument.name']")
                     param_value = arg_entry.findtext("./stringProp[@name='Argument.value']")
                     if param_name and param_name.strip() in SENSITIVE_PARAM_NAMES and _is_hardcoded(param_value):
-                        _add_issue(module_issues, 'ERROR', 'Hardcoded Credential', element_name,
+                        _add_issue(initial_issues, 'ERROR', 'Hardcoded Credential', element_name,
                                    f"Hardcoded value found for sensitive parameter '{param_name}'.",
-                                   current_thread_group_context, element_name)
+                                   current_thread_group_context, element_name, param_name, param_value)
 
         # --- Category 2: General Hardcoded Values (WARNING) ---
-        # Exclude assertion elements as per user request
         if 'Assertion' in element_tag or element_tag.endswith('Assertion'):
             continue
 
-        # 1. Check HTTP Sampler properties
         if element_tag == 'HTTPSamplerProxy':
-            # Check domain and path
             domain = element.findtext("./stringProp[@name='HTTPSampler.domain']")
             path = element.findtext("./stringProp[@name='HTTPSampler.path']")
+            port = element.findtext("./stringProp[@name='HTTPSampler.port']")
 
-            _check_general_value(domain, element_name, current_thread_group_context, 'HTTPSampler.domain',
-                                 module_issues)
-            _check_general_value(path, element_name, current_thread_group_context, 'HTTPSampler.path', module_issues)
+            if domain and ('/' in domain or '?' in domain or '#' in domain):
+                _add_issue(initial_issues, 'ERROR', 'Malformed Server Name',
+                           f"HTTP Request '{element_name}'",
+                           f"Server Name/IP '{domain}' contains path segments, query parameters, or URL fragments.",
+                           current_thread_group_context, element_name)
 
-            # Check for generic hardcoded values in parameters and raw body
+            if _is_ipv4(domain):
+                _add_issue(initial_issues, 'WARNING', 'Hardcoded IP Address',
+                           f"HTTP Request '{element_name}'",
+                           f"Server Name/IP '{domain}' is a hardcoded IP address.",
+                           current_thread_group_context, element_name, hardcoded_value=domain)
+
+            elif _contains_env_specific_pattern(domain):
+                _add_issue(initial_issues, 'ERROR', 'Hardcoded Environment Hostname',
+                           f"HTTP Request '{element_name}'",
+                           f"Server Name/IP '{domain}' appears to be a hardcoded environment-specific hostname.",
+                           current_thread_group_context, element_name, hardcoded_value=domain)
+
+            if port and _is_hardcoded(port) and re.match(NUMERIC_PATTERN, port):
+                _add_issue(initial_issues, 'WARNING', 'Hardcoded Port Number',
+                           f"HTTP Request '{element_name}'",
+                           f"The port number '{port}' is hardcoded. It should be parameterized.",
+                           current_thread_group_context, element_name, hardcoded_value=port)
+
+            if domain and _is_hardcoded(domain) and not _is_ipv4(domain) and not _contains_env_specific_pattern(domain):
+                _check_general_value(domain, element_name, current_thread_group_context, 'HTTPSampler.domain',
+                                     initial_issues, key_name='URL_domain', hardcoded_value=domain)
+
+            _check_general_value(path, element_name, current_thread_group_context, 'HTTPSampler.path', initial_issues,
+                                 key_name='URL_path', hardcoded_value=path)
+
             args_prop = element.find("./elementProp[@name='HTTPsampler.Arguments']")
             if args_prop is not None:
-                # Check for raw body data
                 if element.findtext("./boolProp[@name='HTTPSampler.postBodyRaw']") == 'true':
                     raw_body = args_prop.findtext("./collectionProp/elementProp/stringProp[@name='Argument.value']")
-                    _check_raw_body_for_patterns(raw_body, element_name, current_thread_group_context, module_issues)
-                else:  # Check regular URL or form-data parameters
+                    _check_raw_body_for_patterns(raw_body, element_name, current_thread_group_context, initial_issues)
+                else:
                     for arg_entry in args_prop.findall("./collectionProp[@name='Arguments.arguments']/elementProp"):
                         param_name = arg_entry.findtext("./stringProp[@name='Argument.name']")
                         param_value = arg_entry.findtext("./stringProp[@name='Argument.value']")
-                        # Only check if param_name is not a sensitive one
                         if param_name and param_name not in SENSITIVE_PARAM_NAMES:
                             _check_general_value(param_value, element_name, current_thread_group_context,
-                                                 f"parameter '{param_name}'", module_issues)
+                                                 f"parameter '{param_name}'", initial_issues, key_name=param_name,
+                                                 hardcoded_value=param_value)
 
-        # 2. Check Timers for hardcoded delays/ranges
         if element_tag in ['ConstantTimer', 'GaussianRandomTimer', 'UniformRandomTimer']:
-            _check_timer_value(element, element_name, current_thread_group_context, module_issues)
+            _check_timer_value(element, element_name, current_thread_group_context, initial_issues)
 
-        # 3. Check Loop Controller for fixed loop counts
         if element_tag == 'LoopController':
             loops = element.findtext("./stringProp[@name='LoopController.loops']")
             if _is_hardcoded(loops) and re.match(NUMERIC_PATTERN, loops) and int(float(loops)) > -1:
-                _add_issue(module_issues, 'WARNING', 'Hardcoded Loop Count', element_name,
+                _add_issue(initial_issues, 'WARNING', 'Hardcoded Loop Count', element_name,
                            f"Fixed loop count '{loops}' found. Consider using a variable for flexibility.",
-                           current_thread_group_context, element_name)
+                           current_thread_group_context, element_name, hardcoded_value=loops)
 
-    return module_issues
+    # --- Pass 2: Process collected issues and check for correlations ---
+    final_issues = []
+    for issue in initial_issues:
+        # Don't check for correlations on high-severity or credential issues
+        if issue['severity'] == 'ERROR' or 'Credential' in issue['type'] or 'Malformed' in issue['type']:
+            final_issues.append(issue)
+            continue
+
+        # Search for a correlated value in the entire script
+        correlated_info = _find_similar_correlated_value(root_element, issue)
+
+        # If a correlated value is found, update the issue description
+        if correlated_info:
+            issue['description'] = f"{issue['description']}\n[Found Correlation] {correlated_info}"
+
+        final_issues.append(issue)
+
+    return final_issues
