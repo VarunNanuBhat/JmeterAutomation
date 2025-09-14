@@ -46,6 +46,20 @@ EXCLUSION_LIST = {
     'en-US', 'en-GB'  # Example language headers
 }
 
+# --- Configuration for environment-specific hostnames (now in this module) ---
+ENVIRONMENT_HOST_PATTERNS = [
+    r'^dev\.',
+    r'^qa\.',
+    r'^uat\.',
+    r'\.internal$',
+    r'\.local$',
+    r'staging',
+    r'preprod',
+    r'-test\d*$',
+    r'test\.org$',
+    r'myapp-prod\d*',
+]
+
 
 # ---------------------------------------------------
 
@@ -85,6 +99,34 @@ def _is_hardcoded(value):
         return False
     # All other non-empty strings are considered hardcoded for this check
     return bool(value.strip())
+
+
+def _is_ipv4(ip_string):
+    """Checks if a string is a valid IPv4 address."""
+    if not isinstance(ip_string, str):
+        return False
+    pattern = r"^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+    return re.match(pattern, ip_string) is not None
+
+
+def _contains_env_specific_pattern(hostname):
+    """Checks if a hostname matches any defined environment-specific patterns."""
+    if not isinstance(hostname, str):
+        return False
+    for pattern in ENVIRONMENT_HOST_PATTERNS:
+        if re.search(pattern, hostname, re.IGNORECASE):
+            return True
+    return False
+
+
+def _get_thread_group_context(element):
+    """Finds the name of the parent Thread Group or Test Fragment."""
+    ancestor = element.getparent()
+    while ancestor is not None:
+        if ancestor.tag in ['ThreadGroup', 'SetupThreadGroup', 'PostThreadGroup', 'TestFragmentController']:
+            return _get_element_name(ancestor)
+        ancestor = ancestor.getparent()
+    return "Global/Unassigned"
 
 
 def _check_general_value(value, element_name, container_context, property_name, issues_list):
