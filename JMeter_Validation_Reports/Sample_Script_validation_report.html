@@ -150,7 +150,7 @@
 
         <div class="header-info">
             <p><strong>JMX File:</strong> Sample_Script.jmx</p>
-            <p><strong>Generated On:</strong> 2025-09-14 15:25:12</p>
+            <p><strong>Generated On:</strong> 2025-09-14 16:27:53</p>
         </div>
 
         <div class="summary-box">
@@ -192,7 +192,7 @@
                     <li class="has-issues">
                         <strong>Server Name/Domain Hygiene:</strong>
                         
-                            <span class="issue-count">26 Issue(s)</span>
+                            <span class="issue-count">25 Issue(s)</span>
                         
                     </li>
                 
@@ -200,7 +200,7 @@
                     <li class="has-issues">
                         <strong>Extractor Variable Naming Standards:</strong>
                         
-                            <span class="issue-count">29 Issue(s)</span>
+                            <span class="issue-count">30 Issue(s)</span>
                         
                     </li>
                 
@@ -208,7 +208,7 @@
                     <li class="has-issues">
                         <strong>Variable Naming Conventions:</strong>
                         
-                            <span class="issue-count">26 Issue(s)</span>
+                            <span class="issue-count">27 Issue(s)</span>
                         
                     </li>
                 
@@ -216,7 +216,7 @@
                     <li class="has-issues">
                         <strong>Hardcoded Value Detection:</strong>
                         
-                            <span class="issue-count">55 Issue(s)</span>
+                            <span class="issue-count">54 Issue(s)</span>
                         
                     </li>
                 
@@ -418,7 +418,7 @@
                 </div> 
                 <div class="validation-category-section">
                     
-                    <h2>Server Name/Domain Hygiene: 26 Issue(s)</h2>
+                    <h2>Server Name/Domain Hygiene: 25 Issue(s)</h2>
 
                     
                         
@@ -574,13 +574,6 @@
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
                                         <td>Hardcoded Server Hostname</td>
-                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'</td>
-                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-WARNING">
-                                        <td>WARNING</td>
-                                        <td>Hardcoded Server Hostname</td>
                                         <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'</td>
                                         <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
                                     </tr>
@@ -714,7 +707,7 @@
                 </div> 
                 <div class="validation-category-section">
                     
-                    <h2>Extractor Variable Naming Standards: 29 Issue(s)</h2>
+                    <h2>Extractor Variable Naming Standards: 30 Issue(s)</h2>
 
                     
                         
@@ -949,6 +942,13 @@
                                         <td>Variable name 'c_UnusedExtractor' does not follow camelCase after 'c_'.</td>
                                     </tr>
                                     
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>JMeter Variable Naming</td>
+                                        <td>JSON_c_UsedExtractor</td>
+                                        <td>Variable name 'c_UsedExtractor' does not follow camelCase after 'c_'.</td>
+                                    </tr>
+                                    
                                 </tbody>
                             </table>
                         
@@ -956,7 +956,7 @@
                 </div> 
                 <div class="validation-category-section">
                     
-                    <h2>Variable Naming Conventions: 26 Issue(s)</h2>
+                    <h2>Variable Naming Conventions: 27 Issue(s)</h2>
 
                     
                         
@@ -1185,6 +1185,13 @@
                                         <td>Correlated Variable 'c_UnusedExtractor' does not follow camelCase after 'c_'.</td>
                                     </tr>
                                     
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Correlation Naming Convention</td>
+                                        <td>JSON_c_UsedExtractor</td>
+                                        <td>Correlated Variable 'c_UsedExtractor' does not follow camelCase after 'c_'.</td>
+                                    </tr>
+                                    
                                 </tbody>
                             </table>
                         
@@ -1192,7 +1199,7 @@
                 </div> 
                 <div class="validation-category-section">
                     
-                    <h2>Hardcoded Value Detection: 55 Issue(s)</h2>
+                    <h2>Hardcoded Value Detection: 54 Issue(s)</h2>
 
                     
                         
@@ -1510,13 +1517,6 @@
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
                                         <td>Hardcoded String</td>
-                                        <td>https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js</td>
-                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-WARNING">
-                                        <td>WARNING</td>
-                                        <td>Hardcoded String</td>
                                         <td>https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js</td>
                                         <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.
 [Found Correlation] A correlated URL domain ('${baseURL}') was found in element 'KPI_GET_sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js' with a similar URL path.</td>
@@ -1646,268 +1646,283 @@
                                     
                                     <tr class="issue-severity-INFO">
                                         <td>INFO</td>
-                                        <td>Unused User-Defined Variable</td>
+                                        <td>Unused Variable</td>
                                         <td>User Defined Variables 1</td>
                                         <td>The variable 'u_baseUrl' defined by a 'User-Defined Variable' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-INFO">
                                         <td>INFO</td>
-                                        <td>Unused User-Defined Variable</td>
+                                        <td>Unused Variable</td>
                                         <td>User Defined Variables 1</td>
                                         <td>The variable 'loginTimeout' defined by a 'User-Defined Variable' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-INFO">
                                         <td>INFO</td>
-                                        <td>Unused JSON Extractor</td>
-                                        <td>JSON_c_sessionId</td>
-                                        <td>The variable 'c_sessionId' defined by a 'JSON Extractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-INFO">
-                                        <td>INFO</td>
-                                        <td>Unused JSON Extractor</td>
-                                        <td>JSON_userToken</td>
-                                        <td>The variable 'userToken' defined by a 'JSON Extractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-INFO">
-                                        <td>INFO</td>
-                                        <td>Unused Regex Extractor</td>
-                                        <td>REGEXP_c_user_ID</td>
-                                        <td>The variable 'c_user_ID' defined by a 'Regex Extractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-INFO">
-                                        <td>INFO</td>
-                                        <td>Unused JSON Extractor</td>
+                                        <td>Unused JSONPostProcessor</td>
                                         <td>JSON_c_emptyDefault</td>
-                                        <td>The variable 'c_emptyDefault' defined by a 'JSON Extractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
+                                        <td>The variable 'c_emptyDefault' defined by a 'JSONPostProcessor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-INFO">
                                         <td>INFO</td>
-                                        <td>Unused JSON Extractor</td>
+                                        <td>Unused JSONPostProcessor</td>
                                         <td>JSON_c_badPath</td>
-                                        <td>The variable 'c_badPath' defined by a 'JSON Extractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
+                                        <td>The variable 'c_badPath' defined by a 'JSONPostProcessor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-INFO">
                                         <td>INFO</td>
-                                        <td>Unused JSON Extractor</td>
+                                        <td>Unused JSONPostProcessor</td>
                                         <td>JSON_c_emptyPath</td>
-                                        <td>The variable 'c_emptyPath' defined by a 'JSON Extractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
+                                        <td>The variable 'c_emptyPath' defined by a 'JSONPostProcessor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-INFO">
                                         <td>INFO</td>
-                                        <td>Unused JSON Extractor</td>
+                                        <td>Unused JSONPostProcessor</td>
                                         <td>JSON_c_matchText</td>
-                                        <td>The variable 'c_matchText' defined by a 'JSON Extractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
+                                        <td>The variable 'c_matchText' defined by a 'JSONPostProcessor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-INFO">
                                         <td>INFO</td>
-                                        <td>Unused JSON Extractor</td>
+                                        <td>Unused JSONPostProcessor</td>
                                         <td>Session ID Extractor</td>
-                                        <td>The variable 'c_sessionIdFromBadName' defined by a 'JSON Extractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
+                                        <td>The variable 'c_sessionIdFromBadName' defined by a 'JSONPostProcessor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-INFO">
                                         <td>INFO</td>
-                                        <td>Unused JSON Extractor</td>
+                                        <td>Unused JSONPostProcessor</td>
                                         <td>JSON_c_secondRole</td>
-                                        <td>The variable 'c_secondRole' defined by a 'JSON Extractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
+                                        <td>The variable 'c_secondRole' defined by a 'JSONPostProcessor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-INFO">
                                         <td>INFO</td>
-                                        <td>Unused JSON Extractor</td>
+                                        <td>Unused JSONPostProcessor</td>
                                         <td>JSON_c_token_SubSampleScope</td>
-                                        <td>The variable 'c_token_SubSampleScope' defined by a 'JSON Extractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
+                                        <td>The variable 'c_token_SubSampleScope' defined by a 'JSONPostProcessor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-INFO">
                                         <td>INFO</td>
-                                        <td>Unused JSON Extractor</td>
+                                        <td>Unused JSONPostProcessor</td>
                                         <td>JSON_c_allRoles_ConcatTrue</td>
-                                        <td>The variable 'c_allRoles_ConcatTrue' defined by a 'JSON Extractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
+                                        <td>The variable 'c_allRoles_ConcatTrue' defined by a 'JSONPostProcessor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-INFO">
                                         <td>INFO</td>
-                                        <td>Unused Regex Extractor</td>
+                                        <td>Unused RegexExtractor</td>
                                         <td>REGEXP_c_profileLink</td>
-                                        <td>The variable 'c_profileLink' defined by a 'Regex Extractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
+                                        <td>The variable 'c_profileLink' defined by a 'RegexExtractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-INFO">
                                         <td>INFO</td>
-                                        <td>Unused Regex Extractor</td>
+                                        <td>Unused RegexExtractor</td>
                                         <td>REGEXP_c_emptyRegex</td>
-                                        <td>The variable 'c_emptyRegex' defined by a 'Regex Extractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
+                                        <td>The variable 'c_emptyRegex' defined by a 'RegexExtractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-INFO">
                                         <td>INFO</td>
-                                        <td>Unused Regex Extractor</td>
+                                        <td>Unused RegexExtractor</td>
                                         <td>REGEXP_c_userId_Template0</td>
-                                        <td>The variable 'c_userId' defined by a 'Regex Extractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
+                                        <td>The variable 'c_userId' defined by a 'RegexExtractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-INFO">
                                         <td>INFO</td>
-                                        <td>Unused Regex Extractor</td>
+                                        <td>Unused RegexExtractor</td>
                                         <td>REGEXP_c_emptyTemplate</td>
-                                        <td>The variable 'c_emptyTemplate' defined by a 'Regex Extractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
+                                        <td>The variable 'c_emptyTemplate' defined by a 'RegexExtractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-INFO">
                                         <td>INFO</td>
-                                        <td>Unused Regex Extractor</td>
+                                        <td>Unused RegexExtractor</td>
                                         <td>REGEXP_c_emptyDefaultValue</td>
-                                        <td>The variable 'c_emptyDefaultValue' defined by a 'Regex Extractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
+                                        <td>The variable 'c_emptyDefaultValue' defined by a 'RegexExtractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-INFO">
                                         <td>INFO</td>
-                                        <td>Unused XPath Extractor</td>
+                                        <td>Unused XPathExtractor</td>
                                         <td>XPATH_c_productName</td>
-                                        <td>The variable 'c_productName' defined by a 'XPath Extractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
+                                        <td>The variable 'c_productName' defined by a 'XPathExtractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-INFO">
                                         <td>INFO</td>
-                                        <td>Unused XPath Extractor</td>
+                                        <td>Unused XPathExtractor</td>
                                         <td>XPATH_c_emptyXPath</td>
-                                        <td>The variable 'c_emptyXPath' defined by a 'XPath Extractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
+                                        <td>The variable 'c_emptyXPath' defined by a 'XPathExtractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-INFO">
                                         <td>INFO</td>
-                                        <td>Unused User-Defined Variable</td>
+                                        <td>Unused Variable</td>
                                         <td>User Defined Variables 2</td>
                                         <td>The variable 'U_apiPath' defined by a 'User-Defined Variable' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-INFO">
                                         <td>INFO</td>
-                                        <td>Unused User-Defined Variable</td>
+                                        <td>Unused Variable</td>
                                         <td>User Defined Variables 2</td>
                                         <td>The variable 'u_user_id' defined by a 'User-Defined Variable' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-INFO">
                                         <td>INFO</td>
-                                        <td>Unused User-Defined Variable</td>
+                                        <td>Unused Variable</td>
                                         <td>User Defined Variables 2</td>
                                         <td>The variable 'u_product-name' defined by a 'User-Defined Variable' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-INFO">
                                         <td>INFO</td>
-                                        <td>Unused User-Defined Variable</td>
+                                        <td>Unused Variable</td>
                                         <td>User Defined Variables 3</td>
                                         <td>The variable 'u_1stRequest' defined by a 'User-Defined Variable' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-INFO">
                                         <td>INFO</td>
-                                        <td>Unused User-Defined Variable</td>
+                                        <td>Unused Variable</td>
                                         <td>User Defined Variables 3</td>
                                         <td>The variable 'u_TenantId' defined by a 'User-Defined Variable' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-INFO">
                                         <td>INFO</td>
-                                        <td>Unused User-Defined Variable</td>
+                                        <td>Unused Variable</td>
                                         <td>User Defined Variables 3</td>
                                         <td>The variable 'p_userDefinedVariable' defined by a 'User-Defined Variable' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-INFO">
                                         <td>INFO</td>
-                                        <td>Unused JSON Extractor</td>
+                                        <td>Unused JSONPostProcessor</td>
                                         <td>JSON_p_username</td>
-                                        <td>The variable 'p_username' defined by a 'JSON Extractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
+                                        <td>The variable 'p_username' defined by a 'JSONPostProcessor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-INFO">
                                         <td>INFO</td>
-                                        <td>Unused Regex Extractor</td>
+                                        <td>Unused RegexExtractor</td>
                                         <td>REGEXP_p_password</td>
-                                        <td>The variable 'p_password' defined by a 'Regex Extractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
+                                        <td>The variable 'p_password' defined by a 'RegexExtractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-INFO">
                                         <td>INFO</td>
-                                        <td>Unused JSON Extractor</td>
+                                        <td>Unused JSONPostProcessor</td>
                                         <td>JSON_c_userId</td>
-                                        <td>The variable 'c_userID' defined by a 'JSON Extractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
+                                        <td>The variable 'c_userID' defined by a 'JSONPostProcessor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-INFO">
                                         <td>INFO</td>
-                                        <td>Unused Regex Extractor</td>
+                                        <td>Unused RegexExtractor</td>
                                         <td>REGEXP_c_token</td>
-                                        <td>The variable 'c_token' defined by a 'Regex Extractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
+                                        <td>The variable 'c_token' defined by a 'RegexExtractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-INFO">
                                         <td>INFO</td>
-                                        <td>Unused JSON Extractor</td>
+                                        <td>Unused JSONPostProcessor</td>
                                         <td>JSON_p_sessionname</td>
-                                        <td>The variable 'p_sessionname' defined by a 'JSON Extractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
+                                        <td>The variable 'p_sessionname' defined by a 'JSONPostProcessor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-INFO">
                                         <td>INFO</td>
-                                        <td>Unused Regex Extractor</td>
+                                        <td>Unused RegexExtractor</td>
                                         <td>REGEXP_p_sessionPassword</td>
-                                        <td>The variable 'p_sessionPassword' defined by a 'Regex Extractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
+                                        <td>The variable 'p_sessionPassword' defined by a 'RegexExtractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-INFO">
                                         <td>INFO</td>
-                                        <td>Unused Regex Extractor</td>
+                                        <td>Unused RegexExtractor</td>
                                         <td>REGEXP_c_sessionToken</td>
-                                        <td>The variable 'c_sessionToken' defined by a 'Regex Extractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
+                                        <td>The variable 'c_sessionToken' defined by a 'RegexExtractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-INFO">
                                         <td>INFO</td>
-                                        <td>Unused JSON Extractor</td>
+                                        <td>Unused JSONPostProcessor</td>
                                         <td>JSON_p_session</td>
-                                        <td>The variable 'p_session' defined by a 'JSON Extractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
+                                        <td>The variable 'p_session' defined by a 'JSONPostProcessor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-INFO">
                                         <td>INFO</td>
-                                        <td>Unused Regex Extractor</td>
+                                        <td>Unused RegexExtractor</td>
                                         <td>REGEXP_p_sessionExpiry</td>
-                                        <td>The variable 'p_sessionExpiry' defined by a 'Regex Extractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
+                                        <td>The variable 'p_sessionExpiry' defined by a 'RegexExtractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-INFO">
                                         <td>INFO</td>
-                                        <td>Unused JSON Extractor</td>
+                                        <td>Unused JSONPostProcessor</td>
                                         <td>JSON_c_sessionStartTime</td>
-                                        <td>The variable 'c_sessionStartTime' defined by a 'JSON Extractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
+                                        <td>The variable 'c_sessionStartTime' defined by a 'JSONPostProcessor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-INFO">
                                         <td>INFO</td>
-                                        <td>Unused Regex Extractor</td>
+                                        <td>Unused RegexExtractor</td>
                                         <td>REGEXP_c_sessionNo</td>
-                                        <td>The variable 'c_sessionNo' defined by a 'Regex Extractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
+                                        <td>The variable 'c_sessionNo' defined by a 'RegexExtractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-INFO">
                                         <td>INFO</td>
-                                        <td>Unused JSON Extractor</td>
+                                        <td>Unused JSONPostProcessor</td>
                                         <td>JSON_c_UnusedExtractor</td>
-                                        <td>The variable 'c_UnusedExtractor' defined by a 'JSON Extractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
+                                        <td>The variable 'c_UnusedExtractor' defined by a 'JSONPostProcessor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h3>Thread Group / Test Fragment: <em>Multiple Locations</em></h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Type</th>
+                                        <th>Location</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Duplicate Variable</td>
+                                        <td>c_sessionId</td>
+                                        <td>The variable 'c_sessionId' is defined in multiple places. This can lead to unexpected behavior and is a violation of best practices.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Duplicate Variable</td>
+                                        <td>c_user_ID</td>
+                                        <td>The variable 'c_user_ID' is defined in multiple places. This can lead to unexpected behavior and is a violation of best practices.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Duplicate Variable</td>
+                                        <td>userToken</td>
+                                        <td>The variable 'userToken' is defined in multiple places. This can lead to unexpected behavior and is a violation of best practices.</td>
                                     </tr>
                                     
                                 </tbody>

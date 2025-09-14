@@ -2001,10 +2001,17 @@
         </TransactionController>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js" enabled="false">
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
-              <collectionProp name="Arguments.arguments"/>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;dummy_data&quot;: &quot;${c_UsedExtractor_1}&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
             </elementProp>
-            <stringProp name="HTTPSampler.domain">test3.dms.sce.com</stringProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -2027,6 +2034,13 @@
               <stringProp name="JSONPostProcessor.referenceNames">c_UnusedExtractor</stringProp>
               <stringProp name="JSONPostProcessor.jsonPathExprs">$.Unusedextractor</stringProp>
               <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">Not_Found</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON_c_UsedExtractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">c_UsedExtractor</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.Usedextractor</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">-1</stringProp>
               <stringProp name="JSONPostProcessor.defaultValues">Not_Found</stringProp>
             </JSONPostProcessor>
             <hashTree/>
@@ -2055,6 +2069,14 @@
             </HeaderManager>
             <hashTree/>
           </hashTree>
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script"></stringProp>
+            <stringProp name="scriptLanguage">groovy</stringProp>
+          </JSR223PostProcessor>
+          <hashTree/>
         </hashTree>
       </hashTree>
       <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="Test Fragment 2" enabled="true"/>
