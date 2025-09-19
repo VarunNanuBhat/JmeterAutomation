@@ -23,8 +23,11 @@ class ValidatorOptionsPage(ttk.Frame):
             "Variable Naming Conventions": {"var": ttk.BooleanVar(value=True), "category": "Network"},
             "Hardcoded Value Detection": {"var": ttk.BooleanVar(value=True), "category": "Network"},
             "Unused Extractors/Variables Detection": {"var": ttk.BooleanVar(value=True), "category": "Network"},
-            "Unextracted Variables Detection": {"var": ttk.BooleanVar(value=True), "category": "Network"}
+            "Unextracted Variables Detection": {"var": ttk.BooleanVar(value=True), "category": "Network"},
+            "Duplicate Extractors/Variable Conflicts": {"var": ttk.BooleanVar(value=True), "category": "Network"}
+
         }
+
 
     def _create_widgets(self):
         options_frame = ttk.Frame(self)
