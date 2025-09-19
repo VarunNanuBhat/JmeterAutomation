@@ -350,4 +350,4 @@ def analyze_jmeter_script(root_element, enabled_validations):
             issue['description'] = f"{issue['description']}\n[Found Correlation] {correlated_info}"
         final_issues.append(issue)
 
-    return final_issues
+    return final_issues, []

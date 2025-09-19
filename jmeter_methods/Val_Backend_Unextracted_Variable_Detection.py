@@ -3,17 +3,23 @@ import re
 
 THIS_VALIDATION_OPTION_NAME = "Unextracted Variables Detection"
 
-
 def _get_element_name(element):
+    """
+    Retrieves the 'testname' attribute of a JMeter element, or returns 'Unnamed Element'.
+    """
     return element.get('testname', 'Unnamed Element')
 
-
 def _create_parent_map(root_element):
+    """
+    Creates a dictionary mapping each child element to its parent for easy traversal.
+    """
     parent_map = {c: p for p in root_element.iter() for c in p}
     return parent_map
 
-
 def _get_thread_group_context(element, parent_map):
+    """
+    Traverses up the XML tree to find the name of the parent Thread Group.
+    """
     ancestor = element
     while ancestor is not None and ancestor.tag != 'TestPlan':
         if ancestor.tag in ['ThreadGroup', 'SetupThreadGroup', 'PostThreadGroup', 'TestFragmentController']:
@@ -21,12 +27,16 @@ def _get_thread_group_context(element, parent_map):
         ancestor = parent_map.get(ancestor)
     return "Global/Unassigned"
 
-
 def analyze_jmeter_script(root_element, enabled_validations):
+    """
+    Analyzes a JMX script to find variables that are referenced but not extracted or defined.
+    Returns a list of issues found.
+    """
     module_issues = []
 
+    # If this validation is not enabled, return an empty list immediately.
     if THIS_VALIDATION_OPTION_NAME not in enabled_validations:
-        return module_issues, []
+        return module_issues
 
     parent_map = _create_parent_map(root_element)
 
@@ -34,9 +44,6 @@ def analyze_jmeter_script(root_element, enabled_validations):
     defined_variables = set()
 
     for element in root_element.iter():
-        element_name = _get_element_name(element)
-        thread_group_context = _get_thread_group_context(element, parent_map)
-
         # Variables from User-Defined Variables (UDVs)
         if element.tag == 'Arguments' and element.get('testclass') == 'Arguments':
             for arg in element.findall("./collectionProp[@name='Arguments.arguments']/elementProp"):
@@ -69,7 +76,6 @@ def analyze_jmeter_script(root_element, enabled_validations):
                     var_name = var_name.strip()
                     if var_name:
                         defined_variables.add(var_name)
-
                         match_no_val = match_no_prop.text if match_no_prop is not None else '1'
                         if match_no_val == '-1':
                             defined_variables.add(f'{var_name}_1')
@@ -84,7 +90,7 @@ def analyze_jmeter_script(root_element, enabled_validations):
                     if var_name:
                         defined_variables.add(var_name.strip())
 
-        # Variables from other elements
+        # Variables from other elements (e.g., Counters, Random Variables)
         elif element.tag == 'CounterConfig':
             var_name_prop = element.find("./stringProp[@name='CounterConfig.VarName']")
             if var_name_prop is not None and var_name_prop.text:
@@ -99,52 +105,38 @@ def analyze_jmeter_script(root_element, enabled_validations):
     variable_pattern = re.compile(r'\${([^}]+)}')
 
     for element in root_element.iter():
-        if element.tag == 'HTTPSamplerProxy':
-            url_prop = element.find("./stringProp[@name='HTTPSampler.path']")
-            if url_prop is not None and url_prop.text:
-                referenced_variables.update(variable_pattern.findall(url_prop.text))
-            payload_prop = element.find("./stringProp[@name='RequestBody.content']")
-            if payload_prop is not None and payload_prop.text:
-                referenced_variables.update(variable_pattern.findall(payload_prop.text))
+        # Check element attributes for variable references
+        for key, value in element.attrib.items():
+            referenced_variables.update(variable_pattern.findall(value))
 
-        for header in element.findall(
-                "./elementProp[@name='HTTPHeaders']/collectionProp[@name='HeaderManager.headers']/elementProp"):
-            header_value_prop = header.find("./stringProp[@name='Header.value']")
-            if header_value_prop is not None and header_value_prop.text:
-                referenced_variables.update(variable_pattern.findall(header_value_prop.text))
-
+        # Check all string properties for variable references
         for prop in element.findall(".//stringProp"):
             if prop.text and '${' in prop.text:
                 referenced_variables.update(variable_pattern.findall(prop.text))
 
-        for key, value in element.attrib.items():
-            matches = variable_pattern.findall(value)
-            referenced_variables.update(matches)
-
     # Step 3: Compare and report issues
     unextracted_variables = referenced_variables - defined_variables
 
-    # Heuristic to filter out references to numbered variables that are part of a defined multiple-match variable
+    # Filter out references to numbered variables (e.g., `myVar_1`) if their base variable (`myVar`) is defined.
     filtered_unextracted = set()
     for var in unextracted_variables:
         if re.match(r'.*_\d+$', var) and re.sub(r'_\d+$', '', var) in defined_variables:
             continue
         filtered_unextracted.add(var)
 
-    for var in filtered_unextracted:
+    for var in sorted(list(filtered_unextracted)): # Sorting for consistent output
         issue_description = f"The variable '{var}' is used in the script but has not been defined or extracted. This could cause a runtime error."
 
-        # Find the element where the variable is used for a more specific location
+        # Find the first element where the variable is used for a more specific location in the report.
         element_where_used = None
         for element in root_element.iter():
-            text_content = ET.tostring(element, encoding='unicode')
-            if f'${{{var}}}' in text_content:
+            # Use ET.tostring for a comprehensive check of the element's content
+            if f'${{{var}}}'.encode('utf-8') in ET.tostring(element, encoding='utf-8', method='xml'):
                 element_where_used = element
                 break
 
         element_name = _get_element_name(element_where_used) if element_where_used is not None else "Unknown"
-        thread_group = _get_thread_group_context(element_where_used,
-                                                 parent_map) if element_where_used is not None else "Unknown"
+        thread_group = _get_thread_group_context(element_where_used, parent_map) if element_where_used is not None else "Unknown"
 
         module_issues.append({
             'severity': 'ERROR',
@@ -153,7 +145,12 @@ def analyze_jmeter_script(root_element, enabled_validations):
             'location': element_name,
             'description': issue_description,
             'thread_group': thread_group,
-            'element_name': element_name
+            'element_name': element_name,
+            'key_name': '',  # No specific key name for this issue type
+            'hardcoded_value': var,
+            'hardcoded_segment': var,
+            'element_obj': element_where_used
         })
 
+    # The function now returns a list of issues directly, without a debug log.
     return module_issues, []

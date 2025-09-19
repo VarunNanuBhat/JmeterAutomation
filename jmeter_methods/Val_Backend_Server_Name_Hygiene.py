@@ -160,7 +160,8 @@ def analyze_jmeter_script(root_element, selected_validations_list):
             if idx + 1 < len(children_of_top_level_controllers_hashtree) and children_of_top_level_controllers_hashtree[idx + 1].tag == 'hashTree':
                 idx += 1 # Advance past the hashTree
         idx += 1
-    return module_issues
+    return module_issues, []
+
 
 # --- Self-testing / Main block for local execution (Optional, for development) ---
 if __name__ == "__main__":

@@ -296,4 +296,4 @@ def analyze_jmeter_script(root_element, enabled_validations):
                 _validate_boundary_extractor(element, module_issues, current_thread_group_context)
 
     # print(f"--- DEBUG: analyze_jmeter_script for {THIS_VALIDATION_OPTION_NAME} finished. Found {len(module_issues)} issues. ---\n")
-    return module_issues
+    return module_issues, []

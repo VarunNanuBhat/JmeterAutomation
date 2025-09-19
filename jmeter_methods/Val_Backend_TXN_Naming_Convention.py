@@ -504,7 +504,7 @@ def analyze_jmeter_script(root_element, selected_validations_list):
         if transactions:
             validate_transaction_sequence(transactions, tg_name, module_issues)
 
-    return module_issues
+    return module_issues, []
 
 
 # --- Local testing block for this module ---

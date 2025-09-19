@@ -149,4 +149,4 @@ def analyze_jmeter_script(root_element, selected_validations_list):
                 idx + 1].tag == 'hashTree':
                 idx += 1  # Advance past the hashTree
         idx += 1
-    return module_issues
+    return module_issues, []

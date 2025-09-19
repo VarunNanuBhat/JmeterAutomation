@@ -214,4 +214,4 @@ def analyze_jmeter_script(root_element, enabled_validations):
                     _validate_correlation_variable_name(variable_name, element_name, current_thread_group_context,
                                                         module_issues)
 
-    return module_issues
+    return module_issues, []
