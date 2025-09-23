@@ -42,6 +42,10 @@ from jmeter_methods.Val_Backend_Unextracted_Variable_Detection import \
     analyze_jmeter_script as analyze_unextracted_variable_detection, \
     THIS_VALIDATION_OPTION_NAME as UNEXTRACTED_VARIABLE_DETECTION
 
+# Import core validation logic for Duplicate extractors
+from jmeter_methods.Val_Backend_Duplicate_Extractors import analyze_jmeter_script as analyze_duplicate_extractor_detection, \
+    THIS_VALIDATION_OPTION_NAME as DUPLICATE_EXTRACTOR_DETECTION_OPTION_NAME
+
 # Import report generation functions
 from Report.report_generator import generate_html_report
 
@@ -54,7 +58,9 @@ ALL_VALIDATION_OPTIONS = [
     VARIABLE_NAMING_CONVENTION_OPTION_NAME,
     HARDCODED_VALUE_DETECTION_OPTION_NAME,
     UNUSED_EXTRACTOR_AND_VARIABLE_DETECTION,
-    UNEXTRACTED_VARIABLE_DETECTION  # ADDED THIS LINE
+    UNEXTRACTED_VARIABLE_DETECTION,
+    DUPLICATE_EXTRACTOR_DETECTION_OPTION_NAME
+    # ADDED THIS LINE
 ]
 
 
@@ -275,6 +281,23 @@ class ValidatorReportPage(ttk.Frame):
                                  'type': 'Internal Module Error', 'location': 'JMeter Script Analysis',
                                  'description': f"The '{UNEXTRACTED_VARIABLE_DETECTION}' validation module returned None.",
                                  'thread_group': 'N/A'})
+
+                    if DUPLICATE_EXTRACTOR_DETECTION_OPTION_NAME in validations:
+                        self.status_label.config(
+                            text=f"Processing {file_name}: Validating {DUPLICATE_EXTRACTOR_DETECTION_OPTION_NAME}...",
+                            bootstyle="info")
+                        self.update_idletasks()
+                        duplicate_extractor_issues, _ = analyze_duplicate_extractor_detection(root_element,
+                                                                                                validations)
+                        if duplicate_extractor_issues is not None:
+                            all_issues_for_current_file.extend(duplicate_extractor_issues)
+                        else:
+                            all_issues_for_current_file.append(
+                                {'severity': 'ERROR', 'validation_option_name': DUPLICATE_EXTRACTOR_DETECTION_OPTION_NAME,
+                                 'type': 'Internal Module Error', 'location': 'JMeter Script Analysis',
+                                 'description': f"The '{DUPLICATE_EXTRACTOR_DETECTION_OPTION_NAME}' validation module returned None.",
+                                 'thread_group': 'N/A'})
+
 
                 report_data = {
                     "file_path": file_path,

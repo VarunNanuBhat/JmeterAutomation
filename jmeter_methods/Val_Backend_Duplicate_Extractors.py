@@ -36,21 +36,16 @@ def analyze_jmeter_script(root_element, enabled_validations):
 
     parent_map = _create_parent_map(root_element)
 
-    # Dictionary to track all variable definitions
     defined_variables = {}
-
-    # Dictionary to track unique extractor signatures (for duplicate extractor check)
     extractor_signatures = {}
 
     for element in root_element.iter():
         element_name = _get_element_name(element)
         thread_group_context = _get_thread_group_context(element, parent_map)
 
-        # --- Check for all variable definitions across the script ---
         variable_names = []
         element_type = element.tag
 
-        # User Defined Variables
         if element.tag == 'Arguments' and element.get('testclass') == 'Arguments':
             element_type = 'User Defined Variables'
             for arg in element.findall("./collectionProp[@name='Arguments.arguments']/elementProp"):
@@ -58,8 +53,8 @@ def analyze_jmeter_script(root_element, enabled_validations):
                 if var_name_prop is not None and var_name_prop.text:
                     variable_names.append(var_name_prop.text.strip())
 
-        # Extractors (Post-Processors)
         elif element.tag in ['RegexExtractor', 'JSONPostProcessor', 'XPathExtractor', 'CssSelectorExtractor']:
+            element_type = element.tag
             var_name_prop = None
             if element.tag == 'RegexExtractor':
                 var_name_prop = element.find("./stringProp[@name='RegexExtractor.refname']")
@@ -75,7 +70,6 @@ def analyze_jmeter_script(root_element, enabled_validations):
                     if var_name:
                         variable_names.append(var_name.strip())
 
-        # CSV Data Set Config
         elif element.tag == 'CSVDataSet':
             element_type = 'CSV Data Set Config'
             var_names_str_prop = element.find("./stringProp[@name='CSVDataSet.variableNames']")
@@ -84,7 +78,6 @@ def analyze_jmeter_script(root_element, enabled_validations):
                     if var_name:
                         variable_names.append(var_name.strip())
 
-        # Counter and Random Variable
         elif element.tag == 'CounterConfig':
             element_type = 'Counter'
             var_name_prop = element.find("./stringProp[@name='CounterConfig.VarName']")
@@ -96,7 +89,6 @@ def analyze_jmeter_script(root_element, enabled_validations):
             if var_name_prop is not None and var_name_prop.text:
                 variable_names.append(var_name_prop.text.strip())
 
-        # Store all found variable definitions
         for var_name in variable_names:
             if var_name not in defined_variables:
                 defined_variables[var_name] = []
@@ -106,7 +98,6 @@ def analyze_jmeter_script(root_element, enabled_validations):
                 'thread_group': thread_group_context
             })
 
-        # --- Check for duplicate extractors (same path/pattern) ---
         if element.tag in ['RegexExtractor', 'JSONPostProcessor', 'XPathExtractor', 'CssSelectorExtractor']:
             extractor_path = None
             if element.tag == 'RegexExtractor':
@@ -119,17 +110,15 @@ def analyze_jmeter_script(root_element, enabled_validations):
                 extractor_path = element.findtext("./stringProp[@name='CssSelectorExtractor.selector']")
 
             if extractor_path:
-                # Get parent sampler/controller for more specific context
-                parent_element = _get_thread_group_context(element, parent_map)
-
-                # Create a unique signature for the extractor
-                signature = f"{element.tag}_{extractor_path}_{parent_element}"
+                parent_element_name = _get_element_name(parent_map.get(element, None))
+                signature = f"{element.tag}_{extractor_path}_{parent_element_name}"
 
                 if signature not in extractor_signatures:
                     extractor_signatures[signature] = []
-                extractor_signatures[signature].append(element_name)
-
-    # --- Generate Issues from the collected data ---
+                extractor_signatures[signature].append({
+                    'element_name': element_name,
+                    'thread_group': thread_group_context
+                })
 
     # 1. Report duplicate variable name conflicts
     for var_name, sources in defined_variables.items():
@@ -154,20 +143,29 @@ def analyze_jmeter_script(root_element, enabled_validations):
     # 2. Report duplicate extractor paths/signatures
     for signature, elements in extractor_signatures.items():
         if len(elements) > 1:
-            extractor_type, extractor_path, _ = signature.split('_', 2)
+            thread_group_for_issue = elements[0]['thread_group']
+
+            try:
+                extractor_type, extractor_path, parent_name = signature.split('_', 2)
+            except ValueError:
+                parts = signature.split('_')
+                extractor_type = parts[0]
+                parent_name = parts[-1]
+                extractor_path = '_'.join(parts[1:-1])
+
             issue_description = (
                 f"Multiple identical `{extractor_type}` extractors were found. "
                 f"They all use the same path/pattern: `{extractor_path}`. "
                 f"This is redundant and may indicate a copy-paste error. "
-                f"Found in elements: {', '.join(elements)}"
+                f"Found in elements: {', '.join([e['element_name'] for e in elements])}"
             )
             module_issues.append({
                 'severity': 'WARNING',
                 'validation_option_name': THIS_VALIDATION_OPTION_NAME,
                 'type': 'Duplicate Extractor',
-                'location': ', '.join(elements),
+                'location': ', '.join([e['element_name'] for e in elements]),
                 'description': issue_description,
-                'thread_group': 'N/A',
+                'thread_group': thread_group_for_issue,
                 'element_name': f"Duplicate {extractor_type}"
             })
 

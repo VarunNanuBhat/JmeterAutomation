@@ -150,18 +150,16 @@
 
         <div class="header-info">
             <p><strong>JMX File:</strong> Sample_Script.jmx</p>
-            <p><strong>Generated On:</strong> 2025-09-19 22:51:48</p>
+            <p><strong>Generated On:</strong> 2025-09-23 09:46:05</p>
         </div>
 
         <div class="summary-box">
-            <p><strong>Total Issues Found:</strong> 230</p>
+            <p><strong>Total Issues Found:</strong> 197</p>
             <p><strong>Validations Performed:</strong></p>
             
             <ul class="validations">
                 
                 <li>Naming Convention (TXN_NN_Desc)</li>
-                
-                <li>HTTP Request Naming (KPI_method_urlPath)</li>
                 
                 <li>Server Name/Domain Hygiene</li>
                 
@@ -174,6 +172,8 @@
                 <li>Unused Extractors/Variables Detection</li>
                 
                 <li>Unextracted Variables Detection</li>
+                
+                <li>Duplicate Extractors/Variable Conflicts</li>
                 
             </ul>
             
@@ -194,17 +194,9 @@
                 
                     
                     <li class="has-issues">
-                        <strong>HTTP Request Naming (KPI_method_urlPath):</strong>
-                        
-                            <span class="issue-count">33 Issue(s)</span>
-                        
-                    </li>
-                
-                    
-                    <li class="has-issues">
                         <strong>Server Name/Domain Hygiene:</strong>
                         
-                            <span class="issue-count">25 Issue(s)</span>
+                            <span class="issue-count">23 Issue(s)</span>
                         
                     </li>
                 
@@ -212,15 +204,15 @@
                     <li class="has-issues">
                         <strong>Extractor Variable Naming Standards:</strong>
                         
-                            <span class="issue-count">30 Issue(s)</span>
+                            <span class="issue-count">38 Issue(s)</span>
                         
                     </li>
                 
                     
-                    <li class="has-issues">
+                    <li class="no-issues-summary">
                         <strong>Variable Naming Conventions:</strong>
                         
-                            <span class="issue-count">27 Issue(s)</span>
+                            <span class="issue-count-zero">No issues found</span>
                         
                     </li>
                 
@@ -228,7 +220,7 @@
                     <li class="has-issues">
                         <strong>Hardcoded Value Detection:</strong>
                         
-                            <span class="issue-count">54 Issue(s)</span>
+                            <span class="issue-count">52 Issue(s)</span>
                         
                     </li>
                 
@@ -236,7 +228,7 @@
                     <li class="has-issues">
                         <strong>Unused Extractors/Variables Detection:</strong>
                         
-                            <span class="issue-count">40 Issue(s)</span>
+                            <span class="issue-count">43 Issue(s)</span>
                         
                     </li>
                 
@@ -245,6 +237,14 @@
                         <strong>Unextracted Variables Detection:</strong>
                         
                             <span class="issue-count">7 Issue(s)</span>
+                        
+                    </li>
+                
+                    
+                    <li class="has-issues">
+                        <strong>Duplicate Extractors/Variable Conflicts:</strong>
+                        
+                            <span class="issue-count">20 Issue(s)</span>
                         
                     </li>
                 
@@ -326,7 +326,7 @@
                                     <tr class="issue-severity-ERROR">
                                         <td>ERROR</td>
                                         <td>Naming Convention</td>
-                                        <td>Transaction Controller 'TXN_abc'</td>
+                                        <td>Transaction Controller 'TXN_Duplicate_Extractor_Detection'</td>
                                         <td>Transaction Controller name must strictly follow 'TXN_NN_Description' format (NN=exactly two digits, Description must be present).</td>
                                     </tr>
                                     
@@ -376,7 +376,7 @@
                                     <tr class="issue-severity-ERROR">
                                         <td>ERROR</td>
                                         <td>Naming Convention</td>
-                                        <td>Transaction Controller 'TXN_abc'</td>
+                                        <td>Transaction Controller 'TXN_Duplicate_Extractor_Detection'</td>
                                         <td>Transaction Controller name must strictly follow 'TXN_NN_Description' format (NN=exactly two digits, Description must be present).</td>
                                     </tr>
                                     
@@ -438,352 +438,7 @@
                 </div> 
                 <div class="validation-category-section">
                     
-                    <h2>HTTP Request Naming (KPI_method_urlPath): 33 Issue(s)</h2>
-
-                    
-                        
-                        
-                            <h3>Thread Group / Test Fragment: <em>Thread Group 1</em></h3>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Severity</th>
-                                        <th>Type</th>
-                                        <th>Location</th>
-                                        <th>Description</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>HTTP Request Naming Format</td>
-                                        <td>HTTP Request 'KPI_GET_/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'</td>
-                                        <td>HTTP Request name 'KPI_GET_/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>HTTP Request Naming Format</td>
-                                        <td>HTTP Request 'KPI_POST_sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js'</td>
-                                        <td>HTTP Request name 'KPI_POST_sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>HTTP Request Naming Format</td>
-                                        <td>HTTP Request 'GET_modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js'</td>
-                                        <td>HTTP Request name 'GET_modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>HTTP Request Naming Format</td>
-                                        <td>HTTP Request 'KPI_modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js'</td>
-                                        <td>HTTP Request name 'KPI_modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>HTTP Request Naming Format</td>
-                                        <td>HTTP Request 'KPI_GETsites/default/files/2020-09/content-rebates.svg'</td>
-                                        <td>HTTP Request name 'KPI_GETsites/default/files/2020-09/content-rebates.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-09/content-rebates.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>HTTP Request Naming Format</td>
-                                        <td>HTTP Request 'KPI_GET_sites/default/files/2020-09/content-compare-rates.svg?abc=something'</td>
-                                        <td>HTTP Request name 'KPI_GET_sites/default/files/2020-09/content-compare-rates.svg?abc=something' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-09/content-compare-rates.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>HTTP Request Naming Format</td>
-                                        <td>HTTP Request 'KPI_GET_sites/default/files/${date}/content-energy-advisor.svg'</td>
-                                        <td>HTTP Request name 'KPI_GET_sites/default/files/${date}/content-energy-advisor.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/<date>/content-energy-advisor.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>URL Path Correlation in Name</td>
-                                        <td>HTTP Request 'KPI_GET_sites/default/files/${date}/content-energy-advisor.svg'</td>
-                                        <td>HTTP Request name 'KPI_GET_sites/default/files/${date}/content-energy-advisor.svg' contains uncleaned correlation patterns (e.g., '${var}' or '__func()__') in its URL path portion. For clarity and aggregation in reports, correlated parts of the URL path **must** be generalized to '<variableName>' (e.g., '/users/${userID}' should become 'KPI_GET_users_<userID>'). Expected cleaned format: 'sites/default/files/<date>/content-energy-advisor.svg'.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>HTTP Request Naming Format</td>
-                                        <td>HTTP Request 'KPI_GET_sites/default/files/{date}/content-energy-advisor.svg'</td>
-                                        <td>HTTP Request name 'KPI_GET_sites/default/files/{date}/content-energy-advisor.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/<date>/content-energy-advisor.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>HTTP Request Naming Format</td>
-                                        <td>HTTP Request 'KPI_GET_sites/default/files/date>/content-rebates.svg'</td>
-                                        <td>HTTP Request name 'KPI_GET_sites/default/files/date>/content-rebates.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/<date>/content-rebates.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
-                                    </tr>
-                                    
-                                </tbody>
-                            </table>
-                        
-                            <h3>Thread Group / Test Fragment: <em>Thread Group</em></h3>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Severity</th>
-                                        <th>Type</th>
-                                        <th>Location</th>
-                                        <th>Description</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>HTTP Request Naming Format</td>
-                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj'</td>
-                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>HTTP Request Naming Format</td>
-                                        <td>HTTP Request 'KPI_GET_sites/default/files/2020-09/content-rebates.svg'</td>
-                                        <td>HTTP Request name 'KPI_GET_sites/default/files/2020-09/content-rebates.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>HTTP Request Naming Format</td>
-                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj'</td>
-                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>HTTP Request Naming Format</td>
-                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg'</td>
-                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-09/content-rebates.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
-                                    </tr>
-                                    
-                                </tbody>
-                            </table>
-                        
-                            <h3>Thread Group / Test Fragment: <em>setUp Thread Group</em></h3>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Severity</th>
-                                        <th>Type</th>
-                                        <th>Location</th>
-                                        <th>Description</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>HTTP Request Naming Format</td>
-                                        <td>HTTP Request 'KPI_GET_sites/default/files/2020-09/content-rebates.svg'</td>
-                                        <td>HTTP Request name 'KPI_GET_sites/default/files/2020-09/content-rebates.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-09/123/content-rebates.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>HTTP Request Naming Format</td>
-                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/content-compare-rates.svg'</td>
-                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2020-09/content-compare-rates.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-09/content-compare-rates.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
-                                    </tr>
-                                    
-                                </tbody>
-                            </table>
-                        
-                            <h3>Thread Group / Test Fragment: <em>Test Fragment 1</em></h3>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Severity</th>
-                                        <th>Type</th>
-                                        <th>Location</th>
-                                        <th>Description</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>HTTP Request Naming Format</td>
-                                        <td>HTTP Request 'KPI_GET_sites/default/files/{c_date}/content-rebates.svg'</td>
-                                        <td>HTTP Request name 'KPI_GET_sites/default/files/{c_date}/content-rebates.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/<c_date>/content-rebates.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>HTTP Request Naming Format</td>
-                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'</td>
-                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>HTTP Request Naming Format</td>
-                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'</td>
-                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>HTTP Request Naming Format</td>
-                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js'</td>
-                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>HTTP Request Naming Format</td>
-                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'</td>
-                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>HTTP Request Naming Format</td>
-                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'</td>
-                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
-                                    </tr>
-                                    
-                                </tbody>
-                            </table>
-                        
-                            <h3>Thread Group / Test Fragment: <em>Test Fragment 2</em></h3>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Severity</th>
-                                        <th>Type</th>
-                                        <th>Location</th>
-                                        <th>Description</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>HTTP Request Naming Format</td>
-                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'</td>
-                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>HTTP Request Naming Format</td>
-                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'</td>
-                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
-                                    </tr>
-                                    
-                                </tbody>
-                            </table>
-                        
-                            <h3>Thread Group / Test Fragment: <em>Test Fragment 3</em></h3>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Severity</th>
-                                        <th>Type</th>
-                                        <th>Location</th>
-                                        <th>Description</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>HTTP Request Naming Format</td>
-                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'</td>
-                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>HTTP Request Naming Format</td>
-                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'</td>
-                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>HTTP Request Naming Format</td>
-                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js'</td>
-                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
-                                    </tr>
-                                    
-                                </tbody>
-                            </table>
-                        
-                            <h3>Thread Group / Test Fragment: <em>tearDown Thread Group</em></h3>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Severity</th>
-                                        <th>Type</th>
-                                        <th>Location</th>
-                                        <th>Description</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>HTTP Request Naming Format</td>
-                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'</td>
-                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>HTTP Request Naming Format</td>
-                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'</td>
-                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>HTTP Request Naming Format</td>
-                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj'</td>
-                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>HTTP Request Naming Format</td>
-                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg'</td>
-                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-09/content-rebates.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>HTTP Request Naming Format</td>
-                                        <td>HTTP Request 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj'</td>
-                                        <td>HTTP Request name 'https://test3.dms.sce.com/modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js?rd1hjj' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_modules/contrib/pdb/modules/pdb_react/build/components/react_login_register_button/react_login_register_button.js'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>HTTP Request Naming Format</td>
-                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg'</td>
-                                        <td>HTTP Request name 'https://test3.dms.sce.com/sites/default/files/2020-09/content-rebates.svg' does not follow 'KPI_method_urlPath' format. Expected: 'KPI_GET_sites/default/files/2020-09/content-rebates.svg'. Ensure correct method, and a cleaned URL path (no leading/trailing slashes, query params, or fragments). Consider variable standardization for path consistency.</td>
-                                    </tr>
-                                    
-                                </tbody>
-                            </table>
-                        
-                    
-                </div> 
-                <div class="validation-category-section">
-                    
-                    <h2>Server Name/Domain Hygiene: 25 Issue(s)</h2>
+                    <h2>Server Name/Domain Hygiene: 23 Issue(s)</h2>
 
                     
                         
@@ -946,35 +601,6 @@
                                 </tbody>
                             </table>
                         
-                            <h3>Thread Group / Test Fragment: <em>Test Fragment 2</em></h3>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Severity</th>
-                                        <th>Type</th>
-                                        <th>Location</th>
-                                        <th>Description</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    
-                                    <tr class="issue-severity-WARNING">
-                                        <td>WARNING</td>
-                                        <td>Hardcoded Server Hostname</td>
-                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js'</td>
-                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-WARNING">
-                                        <td>WARNING</td>
-                                        <td>Hardcoded Server Hostname</td>
-                                        <td>HTTP Request 'https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js'</td>
-                                        <td>Server Name/IP 'test3.dms.sce.com' is a hardcoded hostname. It should be parameterized (e.g., '${baseURL}' or '${HOSTNAME}') to ensure environment independence and easier management.</td>
-                                    </tr>
-                                    
-                                </tbody>
-                            </table>
-                        
                             <h3>Thread Group / Test Fragment: <em>Test Fragment 3</em></h3>
                             <table>
                                 <thead>
@@ -1072,7 +698,7 @@
                 </div> 
                 <div class="validation-category-section">
                     
-                    <h2>Extractor Variable Naming Standards: 30 Issue(s)</h2>
+                    <h2>Extractor Variable Naming Standards: 38 Issue(s)</h2>
 
                     
                         
@@ -1314,6 +940,62 @@
                                         <td>Variable name 'c_UsedExtractor' does not follow camelCase after 'c_'.</td>
                                     </tr>
                                     
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>JMeter Variable Naming</td>
+                                        <td>Regex_c_duplicateExtractorName</td>
+                                        <td>Variable name 'duplicateExtractorName' does not start with 'c_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Extractor Element Naming</td>
+                                        <td>Regex_c_duplicateExtractorName</td>
+                                        <td>Extractor 'Regex_c_duplicateExtractorName' does not start with a recognized type prefix (e.g., REGEXP_).</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>JMeter Variable Naming</td>
+                                        <td>Regex_c_duplicateExtractorName</td>
+                                        <td>Variable name 'duplicateExtractorName' does not start with 'c_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Extractor Element Naming</td>
+                                        <td>Regex_c_duplicateExtractorName</td>
+                                        <td>Extractor 'Regex_c_duplicateExtractorName' does not start with a recognized type prefix (e.g., REGEXP_).</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>JMeter Variable Naming</td>
+                                        <td>Regex_c_duplicateExtractorPath1</td>
+                                        <td>Variable name 'duplicateExtractorPath' does not start with 'c_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Extractor Element Naming</td>
+                                        <td>Regex_c_duplicateExtractorPath1</td>
+                                        <td>Extractor 'Regex_c_duplicateExtractorPath1' does not start with a recognized type prefix (e.g., REGEXP_).</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>JMeter Variable Naming</td>
+                                        <td>Regex_c_duplicateExtractorPath2</td>
+                                        <td>Variable name 'duplicateExtractorPath' does not start with 'c_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Extractor Element Naming</td>
+                                        <td>Regex_c_duplicateExtractorPath2</td>
+                                        <td>Extractor 'Regex_c_duplicateExtractorPath2' does not start with a recognized type prefix (e.g., REGEXP_).</td>
+                                    </tr>
+                                    
                                 </tbody>
                             </table>
                         
@@ -1321,250 +1003,17 @@
                 </div> 
                 <div class="validation-category-section">
                     
-                    <h2>Variable Naming Conventions: 27 Issue(s)</h2>
+                    <h2>Variable Naming Conventions: 0 Issue(s)</h2>
 
                     
-                        
-                        
-                            <h3>Thread Group / Test Fragment: <em>Global/Unassigned</em></h3>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Severity</th>
-                                        <th>Type</th>
-                                        <th>Location</th>
-                                        <th>Description</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>UDV Naming Convention</td>
-                                        <td>User Defined Variables 1</td>
-                                        <td>User Defined Variable 'loginTimeout' does not start with 'u_'.</td>
-                                    </tr>
-                                    
-                                </tbody>
-                            </table>
-                        
-                            <h3>Thread Group / Test Fragment: <em>Thread Group</em></h3>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Severity</th>
-                                        <th>Type</th>
-                                        <th>Location</th>
-                                        <th>Description</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>Correlation Naming Convention</td>
-                                        <td>JSON_userToken</td>
-                                        <td>Correlated Variable 'userToken' does not start with 'c_'.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>Correlation Naming Convention</td>
-                                        <td>JSON_c_user_ID</td>
-                                        <td>Correlated Variable 'c_user_ID' does not follow camelCase after 'c_'.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>Correlation Naming Convention</td>
-                                        <td>JSON_c_token_SubSampleScope</td>
-                                        <td>Correlated Variable 'c_token_SubSampleScope' does not follow camelCase after 'c_'.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>Correlation Naming Convention</td>
-                                        <td>JSON_c_allRoles_ConcatTrue</td>
-                                        <td>Correlated Variable 'c_allRoles_ConcatTrue' does not follow camelCase after 'c_'.</td>
-                                    </tr>
-                                    
-                                </tbody>
-                            </table>
-                        
-                            <h3>Thread Group / Test Fragment: <em>setUp Thread Group</em></h3>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Severity</th>
-                                        <th>Type</th>
-                                        <th>Location</th>
-                                        <th>Description</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>UDV Naming Convention</td>
-                                        <td>User Defined Variables 2</td>
-                                        <td>User Defined Variable 'U_apiPath' does not start with 'u_'.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>UDV Naming Convention</td>
-                                        <td>User Defined Variables 2</td>
-                                        <td>User Defined Variable 'u_user_id' does not follow camelCase after 'u_'.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>UDV Naming Convention</td>
-                                        <td>User Defined Variables 2</td>
-                                        <td>User Defined Variable 'u_product-name' does not follow camelCase after 'u_'.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>UDV Naming Convention</td>
-                                        <td>User Defined Variables 2</td>
-                                        <td>User Defined Variable 'baseURL' does not start with 'u_'.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>Parameterization Naming Convention</td>
-                                        <td>CSV Data Set Config</td>
-                                        <td>Parameterization Variable 'password' does not start with 'p_'.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>Parameterization Naming Convention</td>
-                                        <td>CSV Data Set Config</td>
-                                        <td>Parameterization Variable 'P_Email' does not start with 'p_'.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>Parameterization Naming Convention</td>
-                                        <td>CSV Data Set Config</td>
-                                        <td>Parameterization Variable 'p_login_id' does not follow camelCase after 'p_'.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>Parameterization Naming Convention</td>
-                                        <td>CSV Data Set Config</td>
-                                        <td>Parameterization Variable 'p_session-token' does not follow camelCase after 'p_'.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>Parameterization Naming Convention</td>
-                                        <td>CSV Data Set Config</td>
-                                        <td>Parameterization Variable 'p_2ndAttempt' does not follow camelCase after 'p_'.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>UDV Naming Convention</td>
-                                        <td>User Defined Variables 3</td>
-                                        <td>User Defined Variable 'u_1stRequest' does not follow camelCase after 'u_'.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>UDV Naming Convention</td>
-                                        <td>User Defined Variables 3</td>
-                                        <td>User Defined Variable 'u_TenantId' does not follow camelCase after 'u_'.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>UDV Naming Convention</td>
-                                        <td>User Defined Variables 3</td>
-                                        <td>User Defined Variable 'p_userDefinedVariable' does not start with 'u_'.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>Correlation Naming Convention</td>
-                                        <td>JSON_userToken</td>
-                                        <td>Correlated Variable 'userToken' does not start with 'c_'.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>Correlation Naming Convention</td>
-                                        <td>REGEXP_c_user_ID</td>
-                                        <td>Correlated Variable 'c_user_ID' does not follow camelCase after 'c_'.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>Parameterization Naming Convention</td>
-                                        <td>JSON_c_userId</td>
-                                        <td>Parameterization Variable 'c_userID' does not start with 'p_'.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>Parameterization Naming Convention</td>
-                                        <td>REGEXP_c_token</td>
-                                        <td>Parameterization Variable 'c_token' does not start with 'p_'.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>Parameterization Naming Convention</td>
-                                        <td>JSON_c_sessionId</td>
-                                        <td>Parameterization Variable 'c_sessionId' does not start with 'p_'.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>Parameterization Naming Convention</td>
-                                        <td>REGEXP_c_sessionToken</td>
-                                        <td>Parameterization Variable 'c_sessionToken' does not start with 'p_'.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>Correlation Naming Convention</td>
-                                        <td>JSON_p_session</td>
-                                        <td>Correlated Variable 'p_session' does not start with 'c_'.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>Correlation Naming Convention</td>
-                                        <td>REGEXP_p_sessionExpiry</td>
-                                        <td>Correlated Variable 'p_sessionExpiry' does not start with 'c_'.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>Correlation Naming Convention</td>
-                                        <td>JSON_c_UnusedExtractor</td>
-                                        <td>Correlated Variable 'c_UnusedExtractor' does not follow camelCase after 'c_'.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>Correlation Naming Convention</td>
-                                        <td>JSON_c_UsedExtractor</td>
-                                        <td>Correlated Variable 'c_UsedExtractor' does not follow camelCase after 'c_'.</td>
-                                    </tr>
-                                    
-                                </tbody>
-                            </table>
-                        
+                        <div class="no-issues">
+                            <p>🎉 No issues found for this JMeter script w.r.t. Variable Naming Conventions. Well done!</p>
+                        </div>
                     
                 </div> 
                 <div class="validation-category-section">
                     
-                    <h2>Hardcoded Value Detection: 54 Issue(s)</h2>
+                    <h2>Hardcoded Value Detection: 52 Issue(s)</h2>
 
                     
                         
@@ -1905,21 +1354,6 @@
                                     <tr class="issue-severity-WARNING">
                                         <td>WARNING</td>
                                         <td>Hardcoded String</td>
-                                        <td>https://test3.dms.sce.com/sites/default/files/js/js_dENrPc4AuWl3Ip5R3rrojuMesBkkMG276qckGbaXqeg.js</td>
-                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-WARNING">
-                                        <td>WARNING</td>
-                                        <td>Hardcoded String</td>
-                                        <td>https://test3.dms.sce.com/sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js</td>
-                                        <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.
-[Found Correlation] A correlated URL domain ('${baseURL}') was found in element 'KPI_GET_sites/default/files/js/js_Ju2kv0be9nSaC75_tCJQ0lcqX-1yP9ybB5Jv7MIucz8.js' with a similar URL path.</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-WARNING">
-                                        <td>WARNING</td>
-                                        <td>Hardcoded String</td>
                                         <td>https://test3.dms.sce.com/sites/default/files/js/js_NI211zdi8fVXAktT9KP420EeiHCO84FaY_2ontsPG0c.js</td>
                                         <td>The value 'test3.dms.sce.com' in 'HTTPSampler.domain' is a hardcoded string. Consider using a variable for dynamic values.</td>
                                     </tr>
@@ -1992,7 +1426,7 @@
                 </div> 
                 <div class="validation-category-section">
                     
-                    <h2>Unused Extractors/Variables Detection: 40 Issue(s)</h2>
+                    <h2>Unused Extractors/Variables Detection: 43 Issue(s)</h2>
 
                     
                         
@@ -2186,6 +1620,13 @@
                                     
                                     <tr class="issue-severity-INFO">
                                         <td>INFO</td>
+                                        <td>Unused JSONPostProcessor</td>
+                                        <td>JSON_c_userDefinedVariable</td>
+                                        <td>The variable 'c_userDefinedVariable' defined by a 'JSONPostProcessor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-INFO">
+                                        <td>INFO</td>
                                         <td>Unused Variable</td>
                                         <td>User Defined Variables 3</td>
                                         <td>The variable 'u_1stRequest' defined by a 'User-Defined Variable' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
@@ -2289,6 +1730,20 @@
                                         <td>The variable 'c_UnusedExtractor' defined by a 'JSONPostProcessor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
                                     </tr>
                                     
+                                    <tr class="issue-severity-INFO">
+                                        <td>INFO</td>
+                                        <td>Unused RegexExtractor</td>
+                                        <td>Regex_c_duplicateExtractorName</td>
+                                        <td>The variable 'duplicateExtractorName' defined by a 'RegexExtractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-INFO">
+                                        <td>INFO</td>
+                                        <td>Unused RegexExtractor</td>
+                                        <td>Regex_c_duplicateExtractorPath2</td>
+                                        <td>The variable 'duplicateExtractorPath' defined by a 'RegexExtractor' is not referenced anywhere else in the script. Consider removing this unused variable.</td>
+                                    </tr>
+                                    
                                 </tbody>
                             </table>
                         
@@ -2360,6 +1815,241 @@
                                         <td>Unextracted Variable</td>
                                         <td>Unnamed Element</td>
                                         <td>The variable 'dummyBaseURL' is used in the script but has not been defined or extracted. This could cause a runtime error.</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                    
+                </div> 
+                <div class="validation-category-section">
+                    
+                    <h2>Duplicate Extractors/Variable Conflicts: 20 Issue(s)</h2>
+
+                    
+                        
+                        
+                            <h3>Thread Group / Test Fragment: <em>Thread Group</em></h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Type</th>
+                                        <th>Location</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Duplicate Variable Definition</td>
+                                        <td>JSON_c_sessionId, JSON_c_sessionId, JSON_c_sessionId</td>
+                                        <td>The variable **'c_sessionId'** is defined multiple times. This can lead to values being overwritten and cause runtime errors. Sources found:
+- 'JSON_c_sessionId' (JSONPostProcessor) in 'Thread Group'
+- 'JSON_c_sessionId' (JSONPostProcessor) in 'setUp Thread Group'
+- 'JSON_c_sessionId' (JSONPostProcessor) in 'setUp Thread Group'</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Duplicate Variable Definition</td>
+                                        <td>JSON_userToken, JSON_userToken</td>
+                                        <td>The variable **'userToken'** is defined multiple times. This can lead to values being overwritten and cause runtime errors. Sources found:
+- 'JSON_userToken' (JSONPostProcessor) in 'Thread Group'
+- 'JSON_userToken' (JSONPostProcessor) in 'setUp Thread Group'</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Duplicate Variable Definition</td>
+                                        <td>JSON_c_user_ID, REGEXP_c_user_ID</td>
+                                        <td>The variable **'c_user_ID'** is defined multiple times. This can lead to values being overwritten and cause runtime errors. Sources found:
+- 'JSON_c_user_ID' (JSONPostProcessor) in 'Thread Group'
+- 'REGEXP_c_user_ID' (RegexExtractor) in 'setUp Thread Group'</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Duplicate Extractor</td>
+                                        <td>REGEXP_c_userId_Template0, REGEXP_c_emptyTemplate, REGEXP_c_emptyDefaultValue</td>
+                                        <td>Multiple identical `RegexExtractor` extractors were found. They all use the same path/pattern: `<span>(.+?)</span>`. This is redundant and may indicate a copy-paste error. Found in elements: REGEXP_c_userId_Template0, REGEXP_c_emptyTemplate, REGEXP_c_emptyDefaultValue</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h3>Thread Group / Test Fragment: <em>setUp Thread Group</em></h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Type</th>
+                                        <th>Location</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Duplicate Variable Definition</td>
+                                        <td>User Defined Variables 2, JSON_c_userDefinedVariable</td>
+                                        <td>The variable **'c_userDefinedVariable'** is defined multiple times. This can lead to values being overwritten and cause runtime errors. Sources found:
+- 'User Defined Variables 2' (User Defined Variables) in 'setUp Thread Group'
+- 'JSON_c_userDefinedVariable' (JSONPostProcessor) in 'setUp Thread Group'</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Duplicate Extractor</td>
+                                        <td>REGEXP_p_password, REGEXP_p_sessionPassword, REGEXP_p_sessionExpiry</td>
+                                        <td>Multiple identical `RegexExtractor` extractors were found. They all use the same path/pattern: `password:(.*?)`. This is redundant and may indicate a copy-paste error. Found in elements: REGEXP_p_password, REGEXP_p_sessionPassword, REGEXP_p_sessionExpiry</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Duplicate Extractor</td>
+                                        <td>REGEXP_c_token, REGEXP_c_sessionToken, REGEXP_c_sessionNo</td>
+                                        <td>Multiple identical `RegexExtractor` extractors were found. They all use the same path/pattern: `token:(.*?)`. This is redundant and may indicate a copy-paste error. Found in elements: REGEXP_c_token, REGEXP_c_sessionToken, REGEXP_c_sessionNo</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h3>Thread Group / Test Fragment: <em>Test Fragment 2</em></h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Type</th>
+                                        <th>Location</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Duplicate Variable Definition</td>
+                                        <td>Regex_c_duplicateExtractorName, Regex_c_duplicateExtractorName</td>
+                                        <td>The variable **'duplicateExtractorName'** is defined multiple times. This can lead to values being overwritten and cause runtime errors. Sources found:
+- 'Regex_c_duplicateExtractorName' (RegexExtractor) in 'Test Fragment 2'
+- 'Regex_c_duplicateExtractorName' (RegexExtractor) in 'Test Fragment 2'</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Duplicate Variable Definition</td>
+                                        <td>Regex_c_duplicateExtractorPath1, Regex_c_duplicateExtractorPath2</td>
+                                        <td>The variable **'duplicateExtractorPath'** is defined multiple times. This can lead to values being overwritten and cause runtime errors. Sources found:
+- 'Regex_c_duplicateExtractorPath1' (RegexExtractor) in 'Test Fragment 2'
+- 'Regex_c_duplicateExtractorPath2' (RegexExtractor) in 'Test Fragment 2'</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Duplicate Extractor</td>
+                                        <td>Regex_c_duplicateExtractorPath1, Regex_c_duplicateExtractorPath2</td>
+                                        <td>Multiple identical `RegexExtractor` extractors were found. They all use the same path/pattern: `Path(.*?)Path`. This is redundant and may indicate a copy-paste error. Found in elements: Regex_c_duplicateExtractorPath1, Regex_c_duplicateExtractorPath2</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h3>Thread Group / Test Fragment: <em>Global/Unassigned</em></h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Type</th>
+                                        <th>Location</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Duplicate Variable Definition</td>
+                                        <td>JSON_c_sessionId, JSON_c_sessionId, JSON_c_sessionId</td>
+                                        <td>The variable **'c_sessionId'** is defined multiple times. This can lead to values being overwritten and cause runtime errors. Sources found:
+- 'JSON_c_sessionId' (JSONPostProcessor) in 'Global/Unassigned'
+- 'JSON_c_sessionId' (JSONPostProcessor) in 'Global/Unassigned'
+- 'JSON_c_sessionId' (JSONPostProcessor) in 'Global/Unassigned'</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Duplicate Variable Definition</td>
+                                        <td>JSON_userToken, JSON_userToken</td>
+                                        <td>The variable **'userToken'** is defined multiple times. This can lead to values being overwritten and cause runtime errors. Sources found:
+- 'JSON_userToken' (JSONPostProcessor) in 'Global/Unassigned'
+- 'JSON_userToken' (JSONPostProcessor) in 'Global/Unassigned'</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Duplicate Variable Definition</td>
+                                        <td>JSON_c_user_ID, REGEXP_c_user_ID</td>
+                                        <td>The variable **'c_user_ID'** is defined multiple times. This can lead to values being overwritten and cause runtime errors. Sources found:
+- 'JSON_c_user_ID' (JSONPostProcessor) in 'Global/Unassigned'
+- 'REGEXP_c_user_ID' (RegexExtractor) in 'Global/Unassigned'</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Duplicate Variable Definition</td>
+                                        <td>User Defined Variables 2, JSON_c_userDefinedVariable</td>
+                                        <td>The variable **'c_userDefinedVariable'** is defined multiple times. This can lead to values being overwritten and cause runtime errors. Sources found:
+- 'User Defined Variables 2' (User Defined Variables) in 'Global/Unassigned'
+- 'JSON_c_userDefinedVariable' (JSONPostProcessor) in 'Global/Unassigned'</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Duplicate Variable Definition</td>
+                                        <td>Regex_c_duplicateExtractorName, Regex_c_duplicateExtractorName</td>
+                                        <td>The variable **'duplicateExtractorName'** is defined multiple times. This can lead to values being overwritten and cause runtime errors. Sources found:
+- 'Regex_c_duplicateExtractorName' (RegexExtractor) in 'Global/Unassigned'
+- 'Regex_c_duplicateExtractorName' (RegexExtractor) in 'Global/Unassigned'</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Duplicate Variable Definition</td>
+                                        <td>Regex_c_duplicateExtractorPath1, Regex_c_duplicateExtractorPath2</td>
+                                        <td>The variable **'duplicateExtractorPath'** is defined multiple times. This can lead to values being overwritten and cause runtime errors. Sources found:
+- 'Regex_c_duplicateExtractorPath1' (RegexExtractor) in 'Global/Unassigned'
+- 'Regex_c_duplicateExtractorPath2' (RegexExtractor) in 'Global/Unassigned'</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Duplicate Extractor</td>
+                                        <td>REGEXP_c_userId_Template0, REGEXP_c_emptyTemplate, REGEXP_c_emptyDefaultValue</td>
+                                        <td>Multiple identical `RegexExtractor` extractors were found. They all use the same path/pattern: `<span>(.+?)</span>`. This is redundant and may indicate a copy-paste error. Found in elements: REGEXP_c_userId_Template0, REGEXP_c_emptyTemplate, REGEXP_c_emptyDefaultValue</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Duplicate Extractor</td>
+                                        <td>REGEXP_p_password, REGEXP_p_sessionPassword, REGEXP_p_sessionExpiry</td>
+                                        <td>Multiple identical `RegexExtractor` extractors were found. They all use the same path/pattern: `password:(.*?)`. This is redundant and may indicate a copy-paste error. Found in elements: REGEXP_p_password, REGEXP_p_sessionPassword, REGEXP_p_sessionExpiry</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Duplicate Extractor</td>
+                                        <td>REGEXP_c_token, REGEXP_c_sessionToken, REGEXP_c_sessionNo</td>
+                                        <td>Multiple identical `RegexExtractor` extractors were found. They all use the same path/pattern: `token:(.*?)`. This is redundant and may indicate a copy-paste error. Found in elements: REGEXP_c_token, REGEXP_c_sessionToken, REGEXP_c_sessionNo</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-WARNING">
+                                        <td>WARNING</td>
+                                        <td>Duplicate Extractor</td>
+                                        <td>Regex_c_duplicateExtractorPath1, Regex_c_duplicateExtractorPath2</td>
+                                        <td>Multiple identical `RegexExtractor` extractors were found. They all use the same path/pattern: `Path(.*?)Path`. This is redundant and may indicate a copy-paste error. Found in elements: Regex_c_duplicateExtractorPath1, Regex_c_duplicateExtractorPath2</td>
                                     </tr>
                                     
                                 </tbody>
