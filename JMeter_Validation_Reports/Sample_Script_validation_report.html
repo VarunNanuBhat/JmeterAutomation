@@ -150,11 +150,11 @@
 
         <div class="header-info">
             <p><strong>JMX File:</strong> Sample_Script.jmx</p>
-            <p><strong>Generated On:</strong> 2025-09-23 09:46:05</p>
+            <p><strong>Generated On:</strong> 2025-09-23 09:47:08</p>
         </div>
 
         <div class="summary-box">
-            <p><strong>Total Issues Found:</strong> 197</p>
+            <p><strong>Total Issues Found:</strong> 220</p>
             <p><strong>Validations Performed:</strong></p>
             
             <ul class="validations">
@@ -209,10 +209,10 @@
                     </li>
                 
                     
-                    <li class="no-issues-summary">
+                    <li class="has-issues">
                         <strong>Variable Naming Conventions:</strong>
                         
-                            <span class="issue-count-zero">No issues found</span>
+                            <span class="issue-count">33 Issue(s)</span>
                         
                     </li>
                 
@@ -244,7 +244,7 @@
                     <li class="has-issues">
                         <strong>Duplicate Extractors/Variable Conflicts:</strong>
                         
-                            <span class="issue-count">20 Issue(s)</span>
+                            <span class="issue-count">10 Issue(s)</span>
                         
                     </li>
                 
@@ -1003,12 +1003,287 @@
                 </div> 
                 <div class="validation-category-section">
                     
-                    <h2>Variable Naming Conventions: 0 Issue(s)</h2>
+                    <h2>Variable Naming Conventions: 33 Issue(s)</h2>
 
                     
-                        <div class="no-issues">
-                            <p>🎉 No issues found for this JMeter script w.r.t. Variable Naming Conventions. Well done!</p>
-                        </div>
+                        
+                        
+                            <h3>Thread Group / Test Fragment: <em>Global/Unassigned</em></h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Type</th>
+                                        <th>Location</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>UDV Naming Convention</td>
+                                        <td>User Defined Variables 1</td>
+                                        <td>User Defined Variable 'loginTimeout' does not start with 'u_'.</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h3>Thread Group / Test Fragment: <em>Thread Group</em></h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Type</th>
+                                        <th>Location</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Correlation Naming Convention</td>
+                                        <td>JSON_userToken</td>
+                                        <td>Correlated Variable 'userToken' does not start with 'c_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Correlation Naming Convention</td>
+                                        <td>JSON_c_user_ID</td>
+                                        <td>Correlated Variable 'c_user_ID' does not follow camelCase after 'c_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Correlation Naming Convention</td>
+                                        <td>JSON_c_token_SubSampleScope</td>
+                                        <td>Correlated Variable 'c_token_SubSampleScope' does not follow camelCase after 'c_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Correlation Naming Convention</td>
+                                        <td>JSON_c_allRoles_ConcatTrue</td>
+                                        <td>Correlated Variable 'c_allRoles_ConcatTrue' does not follow camelCase after 'c_'.</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h3>Thread Group / Test Fragment: <em>setUp Thread Group</em></h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Type</th>
+                                        <th>Location</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>UDV Naming Convention</td>
+                                        <td>User Defined Variables 2</td>
+                                        <td>User Defined Variable 'U_apiPath' does not start with 'u_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>UDV Naming Convention</td>
+                                        <td>User Defined Variables 2</td>
+                                        <td>User Defined Variable 'u_user_id' does not follow camelCase after 'u_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>UDV Naming Convention</td>
+                                        <td>User Defined Variables 2</td>
+                                        <td>User Defined Variable 'u_product-name' does not follow camelCase after 'u_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>UDV Naming Convention</td>
+                                        <td>User Defined Variables 2</td>
+                                        <td>User Defined Variable 'baseURL' does not start with 'u_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>UDV Naming Convention</td>
+                                        <td>User Defined Variables 2</td>
+                                        <td>User Defined Variable 'c_userDefinedVariable' does not start with 'u_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Parameterization Naming Convention</td>
+                                        <td>CSV Data Set Config</td>
+                                        <td>Parameterization Variable 'password' does not start with 'p_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Parameterization Naming Convention</td>
+                                        <td>CSV Data Set Config</td>
+                                        <td>Parameterization Variable 'P_Email' does not start with 'p_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Parameterization Naming Convention</td>
+                                        <td>CSV Data Set Config</td>
+                                        <td>Parameterization Variable 'p_login_id' does not follow camelCase after 'p_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Parameterization Naming Convention</td>
+                                        <td>CSV Data Set Config</td>
+                                        <td>Parameterization Variable 'p_session-token' does not follow camelCase after 'p_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Parameterization Naming Convention</td>
+                                        <td>CSV Data Set Config</td>
+                                        <td>Parameterization Variable 'p_2ndAttempt' does not follow camelCase after 'p_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>UDV Naming Convention</td>
+                                        <td>User Defined Variables 3</td>
+                                        <td>User Defined Variable 'u_1stRequest' does not follow camelCase after 'u_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>UDV Naming Convention</td>
+                                        <td>User Defined Variables 3</td>
+                                        <td>User Defined Variable 'u_TenantId' does not follow camelCase after 'u_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>UDV Naming Convention</td>
+                                        <td>User Defined Variables 3</td>
+                                        <td>User Defined Variable 'p_userDefinedVariable' does not start with 'u_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Correlation Naming Convention</td>
+                                        <td>JSON_userToken</td>
+                                        <td>Correlated Variable 'userToken' does not start with 'c_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Correlation Naming Convention</td>
+                                        <td>REGEXP_c_user_ID</td>
+                                        <td>Correlated Variable 'c_user_ID' does not follow camelCase after 'c_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Parameterization Naming Convention</td>
+                                        <td>JSON_c_userId</td>
+                                        <td>Parameterization Variable 'c_userID' does not start with 'p_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Parameterization Naming Convention</td>
+                                        <td>REGEXP_c_token</td>
+                                        <td>Parameterization Variable 'c_token' does not start with 'p_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Parameterization Naming Convention</td>
+                                        <td>JSON_c_userDefinedVariable</td>
+                                        <td>Parameterization Variable 'c_userDefinedVariable' does not start with 'p_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Parameterization Naming Convention</td>
+                                        <td>JSON_c_sessionId</td>
+                                        <td>Parameterization Variable 'c_sessionId' does not start with 'p_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Parameterization Naming Convention</td>
+                                        <td>REGEXP_c_sessionToken</td>
+                                        <td>Parameterization Variable 'c_sessionToken' does not start with 'p_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Correlation Naming Convention</td>
+                                        <td>JSON_p_session</td>
+                                        <td>Correlated Variable 'p_session' does not start with 'c_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Correlation Naming Convention</td>
+                                        <td>REGEXP_p_sessionExpiry</td>
+                                        <td>Correlated Variable 'p_sessionExpiry' does not start with 'c_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Correlation Naming Convention</td>
+                                        <td>JSON_c_UnusedExtractor</td>
+                                        <td>Correlated Variable 'c_UnusedExtractor' does not follow camelCase after 'c_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Correlation Naming Convention</td>
+                                        <td>JSON_c_UsedExtractor</td>
+                                        <td>Correlated Variable 'c_UsedExtractor' does not follow camelCase after 'c_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Correlation Naming Convention</td>
+                                        <td>Regex_c_duplicateExtractorName</td>
+                                        <td>Correlated Variable 'duplicateExtractorName' does not start with 'c_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Correlation Naming Convention</td>
+                                        <td>Regex_c_duplicateExtractorName</td>
+                                        <td>Correlated Variable 'duplicateExtractorName' does not start with 'c_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Correlation Naming Convention</td>
+                                        <td>Regex_c_duplicateExtractorPath1</td>
+                                        <td>Correlated Variable 'duplicateExtractorPath' does not start with 'c_'.</td>
+                                    </tr>
+                                    
+                                    <tr class="issue-severity-ERROR">
+                                        <td>ERROR</td>
+                                        <td>Correlation Naming Convention</td>
+                                        <td>Regex_c_duplicateExtractorPath2</td>
+                                        <td>Correlated Variable 'duplicateExtractorPath' does not start with 'c_'.</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
                     
                 </div> 
                 <div class="validation-category-section">
@@ -1824,7 +2099,7 @@
                 </div> 
                 <div class="validation-category-section">
                     
-                    <h2>Duplicate Extractors/Variable Conflicts: 20 Issue(s)</h2>
+                    <h2>Duplicate Extractors/Variable Conflicts: 10 Issue(s)</h2>
 
                     
                         
@@ -1945,104 +2220,6 @@
                                         <td>The variable **'duplicateExtractorPath'** is defined multiple times. This can lead to values being overwritten and cause runtime errors. Sources found:
 - 'Regex_c_duplicateExtractorPath1' (RegexExtractor) in 'Test Fragment 2'
 - 'Regex_c_duplicateExtractorPath2' (RegexExtractor) in 'Test Fragment 2'</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-WARNING">
-                                        <td>WARNING</td>
-                                        <td>Duplicate Extractor</td>
-                                        <td>Regex_c_duplicateExtractorPath1, Regex_c_duplicateExtractorPath2</td>
-                                        <td>Multiple identical `RegexExtractor` extractors were found. They all use the same path/pattern: `Path(.*?)Path`. This is redundant and may indicate a copy-paste error. Found in elements: Regex_c_duplicateExtractorPath1, Regex_c_duplicateExtractorPath2</td>
-                                    </tr>
-                                    
-                                </tbody>
-                            </table>
-                        
-                            <h3>Thread Group / Test Fragment: <em>Global/Unassigned</em></h3>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Severity</th>
-                                        <th>Type</th>
-                                        <th>Location</th>
-                                        <th>Description</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>Duplicate Variable Definition</td>
-                                        <td>JSON_c_sessionId, JSON_c_sessionId, JSON_c_sessionId</td>
-                                        <td>The variable **'c_sessionId'** is defined multiple times. This can lead to values being overwritten and cause runtime errors. Sources found:
-- 'JSON_c_sessionId' (JSONPostProcessor) in 'Global/Unassigned'
-- 'JSON_c_sessionId' (JSONPostProcessor) in 'Global/Unassigned'
-- 'JSON_c_sessionId' (JSONPostProcessor) in 'Global/Unassigned'</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>Duplicate Variable Definition</td>
-                                        <td>JSON_userToken, JSON_userToken</td>
-                                        <td>The variable **'userToken'** is defined multiple times. This can lead to values being overwritten and cause runtime errors. Sources found:
-- 'JSON_userToken' (JSONPostProcessor) in 'Global/Unassigned'
-- 'JSON_userToken' (JSONPostProcessor) in 'Global/Unassigned'</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>Duplicate Variable Definition</td>
-                                        <td>JSON_c_user_ID, REGEXP_c_user_ID</td>
-                                        <td>The variable **'c_user_ID'** is defined multiple times. This can lead to values being overwritten and cause runtime errors. Sources found:
-- 'JSON_c_user_ID' (JSONPostProcessor) in 'Global/Unassigned'
-- 'REGEXP_c_user_ID' (RegexExtractor) in 'Global/Unassigned'</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>Duplicate Variable Definition</td>
-                                        <td>User Defined Variables 2, JSON_c_userDefinedVariable</td>
-                                        <td>The variable **'c_userDefinedVariable'** is defined multiple times. This can lead to values being overwritten and cause runtime errors. Sources found:
-- 'User Defined Variables 2' (User Defined Variables) in 'Global/Unassigned'
-- 'JSON_c_userDefinedVariable' (JSONPostProcessor) in 'Global/Unassigned'</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>Duplicate Variable Definition</td>
-                                        <td>Regex_c_duplicateExtractorName, Regex_c_duplicateExtractorName</td>
-                                        <td>The variable **'duplicateExtractorName'** is defined multiple times. This can lead to values being overwritten and cause runtime errors. Sources found:
-- 'Regex_c_duplicateExtractorName' (RegexExtractor) in 'Global/Unassigned'
-- 'Regex_c_duplicateExtractorName' (RegexExtractor) in 'Global/Unassigned'</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-ERROR">
-                                        <td>ERROR</td>
-                                        <td>Duplicate Variable Definition</td>
-                                        <td>Regex_c_duplicateExtractorPath1, Regex_c_duplicateExtractorPath2</td>
-                                        <td>The variable **'duplicateExtractorPath'** is defined multiple times. This can lead to values being overwritten and cause runtime errors. Sources found:
-- 'Regex_c_duplicateExtractorPath1' (RegexExtractor) in 'Global/Unassigned'
-- 'Regex_c_duplicateExtractorPath2' (RegexExtractor) in 'Global/Unassigned'</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-WARNING">
-                                        <td>WARNING</td>
-                                        <td>Duplicate Extractor</td>
-                                        <td>REGEXP_c_userId_Template0, REGEXP_c_emptyTemplate, REGEXP_c_emptyDefaultValue</td>
-                                        <td>Multiple identical `RegexExtractor` extractors were found. They all use the same path/pattern: `<span>(.+?)</span>`. This is redundant and may indicate a copy-paste error. Found in elements: REGEXP_c_userId_Template0, REGEXP_c_emptyTemplate, REGEXP_c_emptyDefaultValue</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-WARNING">
-                                        <td>WARNING</td>
-                                        <td>Duplicate Extractor</td>
-                                        <td>REGEXP_p_password, REGEXP_p_sessionPassword, REGEXP_p_sessionExpiry</td>
-                                        <td>Multiple identical `RegexExtractor` extractors were found. They all use the same path/pattern: `password:(.*?)`. This is redundant and may indicate a copy-paste error. Found in elements: REGEXP_p_password, REGEXP_p_sessionPassword, REGEXP_p_sessionExpiry</td>
-                                    </tr>
-                                    
-                                    <tr class="issue-severity-WARNING">
-                                        <td>WARNING</td>
-                                        <td>Duplicate Extractor</td>
-                                        <td>REGEXP_c_token, REGEXP_c_sessionToken, REGEXP_c_sessionNo</td>
-                                        <td>Multiple identical `RegexExtractor` extractors were found. They all use the same path/pattern: `token:(.*?)`. This is redundant and may indicate a copy-paste error. Found in elements: REGEXP_c_token, REGEXP_c_sessionToken, REGEXP_c_sessionNo</td>
                                     </tr>
                                     
                                     <tr class="issue-severity-WARNING">
