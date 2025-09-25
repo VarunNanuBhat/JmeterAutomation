@@ -8,35 +8,29 @@ def _get_element_name(element):
     return element.get('testname', 'Unnamed Element')
 
 
-def _create_parent_map(root_element):
-    parent_map = {c: p for p in root_element.iter() for c in p}
-    return parent_map
-
-
-def _get_thread_group_context(element, parent_map):
-    ancestor = element
-    while ancestor is not None and ancestor.tag != 'TestPlan':
-        if ancestor.tag in ['ThreadGroup', 'SetupThreadGroup', 'PostThreadGroup', 'TestFragmentController']:
-            return _get_element_name(ancestor)
-        ancestor = parent_map.get(ancestor)
-    return "Global/Unassigned"
-
-
 def analyze_jmeter_script(root_element, enabled_validations):
     module_issues = []
 
     if THIS_VALIDATION_OPTION_NAME not in enabled_validations:
         return module_issues, []
 
-    parent_map = _create_parent_map(root_element)
-
     defined_variables = {}
 
-    for element in root_element.iter():
-        element_name = _get_element_name(element)
-        thread_group_context = _get_thread_group_context(element, parent_map)
+    # PASS 1: Find all DEFINED variables with their correct location
+    last_controller_name = "Global/Unassigned"
 
-        if element.tag == 'Arguments' and element.get('testclass') == 'Arguments':
+    for element in root_element.iter():
+        element_tag = element.tag
+        element_name = _get_element_name(element)
+
+        if element_tag in ['ThreadGroup', 'SetupThreadGroup', 'PostThreadGroup', 'TestFragmentController',
+                           'TransactionController']:
+            last_controller_name = element_name
+            continue
+
+        thread_group_context = last_controller_name
+
+        if element_tag == 'Arguments' and element.get('testclass') == 'Arguments':
             for arg in element.findall("./collectionProp[@name='Arguments.arguments']/elementProp"):
                 var_name_prop = arg.find("./stringProp[@name='Argument.name']")
                 if var_name_prop is not None and var_name_prop.text:
@@ -70,7 +64,6 @@ def analyze_jmeter_script(root_element, enabled_validations):
                     if var_name:
                         defined_variables[var_name] = {'type': element.tag, 'element_name': element_name,
                                                        'thread_group': thread_group_context}
-
                         match_no_val = match_no_prop.text if match_no_prop is not None else '1'
                         if match_no_val == '-1':
                             defined_variables[f'{var_name}_1'] = {'type': element.tag, 'element_name': element_name,
@@ -104,6 +97,7 @@ def analyze_jmeter_script(root_element, enabled_validations):
                     defined_variables[var_name] = {'type': 'Random Variable', 'element_name': element_name,
                                                    'thread_group': thread_group_context}
 
+    # PASS 2: Find all REFERENCED variables across the entire script
     referenced_variables = set()
     variable_pattern = re.compile(r'\${([^}]+)}')
     for element in root_element.iter():
@@ -129,6 +123,7 @@ def analyze_jmeter_script(root_element, enabled_validations):
             matches = variable_pattern.findall(value)
             referenced_variables.update(matches)
 
+    # FINAL STEP: Compare defined vs. referenced variables
     used_variable_families = set()
     for ref_var in referenced_variables:
         if ref_var.endswith('_matchNr') or re.match(r'.+_\d+$', ref_var):
@@ -148,7 +143,7 @@ def analyze_jmeter_script(root_element, enabled_validations):
             var_type = details['type']
             issue_description = f"The variable '{var}' defined by a '{var_type}' is not referenced anywhere else in the script. Consider removing this unused variable."
 
-            issue_type = f'Unused {var_type}' if 'Extractor' in var_type or 'PostProcessor' in var_type or 'PreProcessor' in var_type else 'Unused Variable'
+            issue_type = f'Unused {var_type}' if 'Extractor' in var_type or 'PostProcessor' in var_type else 'Unused Variable'
 
             module_issues.append({
                 'severity': 'INFO',
