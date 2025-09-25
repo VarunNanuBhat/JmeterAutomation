@@ -66,20 +66,6 @@ def _contains_env_specific_pattern(hostname):
     return False
 
 
-def _create_parent_map(root_element):
-    parent_map = {c: p for p in root_element.iter() for c in p}
-    return parent_map
-
-
-def _get_thread_group_context(element, parent_map):
-    ancestor = element
-    while ancestor is not None and ancestor.tag != 'TestPlan':
-        if ancestor.tag in ['ThreadGroup', 'SetupThreadGroup', 'PostThreadGroup', 'TestFragmentController']:
-            return _get_element_name(ancestor)
-        ancestor = parent_map.get(ancestor)
-    return "Global/Unassigned"
-
-
 def _get_full_url(sampler):
     domain = sampler.findtext("./stringProp[@name='HTTPSampler.domain']")
     path = sampler.findtext("./stringProp[@name='HTTPSampler.path']")
@@ -251,15 +237,49 @@ def _find_similar_correlated_value(root_element, issue, parent_map):
 def analyze_jmeter_script(root_element, enabled_validations):
     module_issues = []
     if THIS_VALIDATION_OPTION_NAME not in enabled_validations:
-        return module_issues
+        return module_issues, []
 
-    parent_map = _create_parent_map(root_element)
+    # Step 1: Pre-process the entire tree to build a reliable scope map.
+    element_to_controller_map = {}
+    controller_stack = ["Global/Unassigned"]
+
+    # We need a parent map to check for direct nesting.
+    parent_map = {c: p for p in root_element.iter() for c in p}
+
+    for element in root_element.iter():
+        element_tag = element.tag
+        element_name = _get_element_name(element)
+
+        parent_element = parent_map.get(element)
+
+        # Check for start of a new controller scope
+        if element_tag in ['ThreadGroup', 'SetupThreadGroup', 'PostThreadGroup', 'TestFragmentController',
+                           'TransactionController']:
+            controller_stack.append(element_name)
+
+        # All elements are mapped to the current controller at the top of the stack.
+        element_to_controller_map[element] = controller_stack[-1]
+
+        # Pop from the stack when a controller's scope ends. The 'hashTree' tag is a good
+        # signal for this. A controller's content is contained within a hashTree.
+        if element_tag == 'hashTree' and parent_element is not None and parent_element.tag in ['TestPlan',
+                                                                                               'ThreadGroup',
+                                                                                               'SetupThreadGroup',
+                                                                                               'PostThreadGroup',
+                                                                                               'TestFragmentController',
+                                                                                               'TransactionController']:
+            if len(controller_stack) > 1:
+                controller_stack.pop()
+
+    # The rest of the script is largely the same, but now uses the correct mapping.
     initial_issues = []
 
     for element in root_element.iter():
         element_tag = element.tag
         element_name = _get_element_name(element)
-        thread_group_context = _get_thread_group_context(element, parent_map)
+
+        # Use the pre-computed map for the thread group context
+        thread_group_context = element_to_controller_map.get(element, "Global/Unassigned")
 
         if element_tag == 'AuthManager':
             for auth_entry in element.findall("./collectionProp[@name='AuthManager.auths']/elementProp"):
@@ -345,6 +365,8 @@ def analyze_jmeter_script(root_element, enabled_validations):
         if issue['severity'] == 'ERROR' or 'Credential' in issue['type'] or 'Malformed' in issue['type']:
             final_issues.append(issue)
             continue
+        # The parent_map used here is now correctly generated
+        parent_map = {c: p for p in root_element.iter() for c in p}
         correlated_info = _find_similar_correlated_value(root_element, issue, parent_map)
         if correlated_info:
             issue['description'] = f"{issue['description']}\n[Found Correlation] {correlated_info}"
